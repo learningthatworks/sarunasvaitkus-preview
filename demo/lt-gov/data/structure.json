@@ -1,0 +1,1156 @@
+{
+  "schema_version": "3.1.0",
+  "updated_at": "2026-09-30",
+  "sources": {
+    "en": "Public data (lrv.lt, lrs.lt, VRK). Relations follow the Constitution of the Republic of Lithuania.",
+    "lt": "Vieši duomenys (lrv.lt, lrs.lt, VRK). Ryšiai pagal Lietuvos Respublikos Konstituciją."
+  },
+  "documents": {
+    "constitution": {
+      "name": {
+        "en": "Constitution of the Republic of Lithuania",
+        "lt": "Lietuvos Respublikos Konstitucija"
+      },
+      "short": {
+        "en": "Constitution",
+        "lt": "Konstitucija"
+      },
+      "url": {
+        "en": "https://www.lrs.lt/home/Konstitucija/Constitution.htm",
+        "lt": "https://www.lrs.lt/home/Konstitucija/Konstitucija.htm"
+      }
+    },
+    "seimas-statute": {
+      "name": {
+        "en": "Statute of the Seimas",
+        "lt": "Lietuvos Respublikos Seimo statutas"
+      },
+      "short": {
+        "en": "Seimas Statute",
+        "lt": "Seimo statutas"
+      }
+    },
+    "bank-law": {
+      "name": {
+        "en": "Law on the Bank of Lithuania",
+        "lt": "Lietuvos banko įstatymas"
+      },
+      "short": {
+        "en": "Bank Law",
+        "lt": "LB įstatymas"
+      }
+    },
+    "prosecution-law": {
+      "name": {
+        "en": "Law on the Prosecution Service",
+        "lt": "Prokuratūros įstatymas"
+      },
+      "short": {
+        "en": "Prosecution Law",
+        "lt": "Prokuratūros įst."
+      }
+    }
+  },
+  "sectors": [
+    {
+      "id": "leg",
+      "name": {
+        "en": "Legislative",
+        "lt": "Įstatymų leidžiamoji valdžia"
+      },
+      "short": {
+        "en": "Legislative",
+        "lt": "Įstatymų leidžiamoji"
+      },
+      "color": "#E3565C"
+    },
+    {
+      "id": "exe",
+      "name": {
+        "en": "Executive",
+        "lt": "Vykdomoji valdžia"
+      },
+      "short": {
+        "en": "Executive",
+        "lt": "Vykdomoji"
+      },
+      "color": "#34A86F"
+    },
+    {
+      "id": "jud",
+      "name": {
+        "en": "Judicial",
+        "lt": "Teisminė valdžia"
+      },
+      "short": {
+        "en": "Judicial",
+        "lt": "Teisminė"
+      },
+      "color": "#5E8FE8"
+    },
+    {
+      "id": "ind",
+      "name": {
+        "en": "Other constitutional institutions",
+        "lt": "Kitos konstitucinės institucijos"
+      },
+      "short": {
+        "en": "Other constitutional bodies",
+        "lt": "Kitos konstitucinės institucijos"
+      },
+      "color": "#A887E6"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "people",
+      "tier": 0,
+      "title": {
+        "en": "The People",
+        "lt": "Tauta"
+      },
+      "short": {
+        "en": "The People",
+        "lt": "Tauta"
+      },
+      "desc": {
+        "en": "Sovereignty is vested in the People (Constitution, Art. 2). Citizens elect the Seimas every four years and the President of the Republic every five.",
+        "lt": "Suverenitetas priklauso Tautai (Konstitucijos 2 straipsnis). Piliečiai renka Seimą kas ketverius metus, o Respublikos Prezidentą – kas penkerius."
+      }
+    },
+    {
+      "id": "seimas",
+      "tier": 1,
+      "sector": "leg",
+      "title": {
+        "en": "Seimas of the Republic of Lithuania",
+        "lt": "Lietuvos Respublikos Seimas"
+      },
+      "kind": {
+        "en": "Parliament",
+        "lt": "Parlamentas"
+      },
+      "desc": {
+        "en": "The 141-member parliament. It passes laws, approves the Prime Minister and the budget, and holds the Government to account.",
+        "lt": "Lietuvos parlamentas, kurį sudaro 141 Seimo narys. Leidžia įstatymus, pritaria Ministro Pirmininko kandidatūrai, tvirtina biudžetą ir prižiūri Vyriausybės veiklą."
+      },
+      "short": {
+        "en": "Seimas",
+        "lt": "Seimas"
+      },
+      "website": {
+        "lt": "https://www.lrs.lt/",
+        "en": "https://www.lrs.lt/sip/portal.show?p_k=2"
+      }
+    },
+    {
+      "id": "speaker",
+      "tier": 2,
+      "sector": "leg",
+      "parent": "seimas",
+      "title": {
+        "en": "Speaker of the Seimas",
+        "lt": "Seimo Pirmininkas"
+      },
+      "short": {
+        "en": "Speaker",
+        "lt": "Seimo Pirmininkas"
+      },
+      "desc": {
+        "en": "Chairs the Seimas. Temporarily acts for the President when the President cannot hold office.",
+        "lt": "Vadovauja Seimo darbui. Kai Respublikos Prezidentas negali eiti pareigų, laikinai jį pavaduoja."
+      }
+    },
+    {
+      "id": "president",
+      "tier": 1,
+      "sector": "exe",
+      "title": {
+        "en": "President of the Republic of Lithuania",
+        "lt": "Lietuvos Respublikos Prezidentas"
+      },
+      "short": {
+        "en": "President",
+        "lt": "Prezidentas"
+      },
+      "kind": {
+        "en": "Head of State",
+        "lt": "Valstybės vadovas"
+      },
+      "desc": {
+        "en": "Directly elected Head of State. Appoints the Prime Minister with the approval of the Seimas, appoints ministers on the Prime Minister's proposal, and nominates top judges and officials.",
+        "lt": "Tiesiogiai renkamas valstybės vadovas. Seimui pritarus skiria Ministrą Pirmininką, jo teikimu skiria ministrus, teikia Seimui aukščiausiųjų teisėjų ir pareigūnų kandidatūras."
+      },
+      "website": {
+        "lt": "https://www.lrp.lt/",
+        "en": "https://www.lrp.lt/en"
+      }
+    },
+    {
+      "id": "gov",
+      "tier": 1,
+      "sector": "exe",
+      "title": {
+        "en": "Government of the Republic of Lithuania",
+        "lt": "Lietuvos Respublikos Vyriausybė"
+      },
+      "kind": {
+        "en": "Prime Minister and ministers",
+        "lt": "Ministras Pirmininkas ir ministrai"
+      },
+      "desc": {
+        "en": "The 21st Government, formed on 14 July 2026: the Prime Minister and 14 ministers. It runs the state and answers to the Seimas.",
+        "lt": "21-oji Vyriausybė, sudaryta 2026 m. liepos 14 d.: Ministras Pirmininkas ir 14 ministrų. Tvarko krašto reikalus ir už savo veiklą atsako Seimui."
+      },
+      "short": {
+        "en": "Government",
+        "lt": "Vyriausybė"
+      },
+      "website": {
+        "lt": "https://www.lrv.lt/",
+        "en": "https://www.lrv.lt/en/"
+      }
+    },
+    {
+      "id": "pm",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Prime Minister",
+        "lt": "Ministras Pirmininkas"
+      },
+      "desc": {
+        "en": "Leads the Government and proposes ministers to the President.",
+        "lt": "Vadovauja Vyriausybei ir teikia Respublikos Prezidentui ministrų kandidatūras."
+      }
+    },
+    {
+      "id": "min-agri",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Agriculture",
+        "lt": "Žemės ūkio ministras"
+      },
+      "short": {
+        "en": "Agriculture",
+        "lt": "Žemės ūkis"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Agriculture. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Žemės ūkio ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://zum.lrv.lt/"
+    },
+    {
+      "id": "min-cult",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Culture",
+        "lt": "Kultūros ministras"
+      },
+      "short": {
+        "en": "Culture",
+        "lt": "Kultūra"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Culture. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Kultūros ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://lrkm.lrv.lt/"
+    },
+    {
+      "id": "min-econ",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of the Economy and Innovation",
+        "lt": "Ekonomikos ir inovacijų ministras"
+      },
+      "short": {
+        "en": "Economy",
+        "lt": "Ekonomika"
+      },
+      "desc": {
+        "en": "Heads the Ministry of the Economy and Innovation. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Ekonomikos ir inovacijų ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://eimin.lrv.lt/"
+    },
+    {
+      "id": "min-edu",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Education, Science and Sport",
+        "lt": "Švietimo, mokslo ir sporto ministras"
+      },
+      "short": {
+        "en": "Education",
+        "lt": "Švietimas"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Education, Science and Sport. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Švietimo, mokslo ir sporto ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://smsm.lrv.lt/"
+    },
+    {
+      "id": "min-energy",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Energy",
+        "lt": "Energetikos ministras"
+      },
+      "short": {
+        "en": "Energy",
+        "lt": "Energetika"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Energy. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Energetikos ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://enmin.lrv.lt/"
+    },
+    {
+      "id": "min-env",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Environment",
+        "lt": "Aplinkos ministras"
+      },
+      "short": {
+        "en": "Environment",
+        "lt": "Aplinka"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Environment. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Aplinkos ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://am.lrv.lt/"
+    },
+    {
+      "id": "min-fin",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Finance",
+        "lt": "Finansų ministras"
+      },
+      "short": {
+        "en": "Finance",
+        "lt": "Finansai"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Finance. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Finansų ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": {
+        "lt": "https://finmin.lrv.lt/",
+        "en": "https://finmin.lrv.lt/en/"
+      }
+    },
+    {
+      "id": "min-fa",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Foreign Affairs",
+        "lt": "Užsienio reikalų ministras"
+      },
+      "short": {
+        "en": "Foreign Affairs",
+        "lt": "Užsienio reikalai"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Foreign Affairs. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Užsienio reikalų ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://urm.lt/"
+    },
+    {
+      "id": "min-health",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Health",
+        "lt": "Sveikatos apsaugos ministras"
+      },
+      "short": {
+        "en": "Health",
+        "lt": "Sveikatos apsauga"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Health. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Sveikatos apsaugos ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://sam.lrv.lt/"
+    },
+    {
+      "id": "min-interior",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of the Interior",
+        "lt": "Vidaus reikalų ministras"
+      },
+      "short": {
+        "en": "Interior",
+        "lt": "Vidaus reikalai"
+      },
+      "desc": {
+        "en": "Heads the Ministry of the Interior. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Vidaus reikalų ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://vrm.lrv.lt/"
+    },
+    {
+      "id": "min-justice",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Justice",
+        "lt": "Teisingumo ministras"
+      },
+      "short": {
+        "en": "Justice",
+        "lt": "Teisingumas"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Justice. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Teisingumo ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://tm.lrv.lt/"
+    },
+    {
+      "id": "min-defence",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of National Defence",
+        "lt": "Krašto apsaugos ministras"
+      },
+      "short": {
+        "en": "Defence",
+        "lt": "Krašto apsauga"
+      },
+      "desc": {
+        "en": "Heads the Ministry of National Defence. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Krašto apsaugos ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": {
+        "lt": "https://kam.lt/",
+        "en": "https://kam.lt/en/"
+      }
+    },
+    {
+      "id": "min-social",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Social Security and Labour",
+        "lt": "Socialinės apsaugos ir darbo ministras"
+      },
+      "short": {
+        "en": "Social Security and Labour",
+        "lt": "Socialinė apsauga ir darbas"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Social Security and Labour. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Socialinės apsaugos ir darbo ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://socmin.lrv.lt/"
+    },
+    {
+      "id": "min-transport",
+      "tier": 2,
+      "sector": "exe",
+      "parent": "gov",
+      "title": {
+        "en": "Minister of Transport and Communications",
+        "lt": "Susisiekimo ministras"
+      },
+      "short": {
+        "en": "Transport",
+        "lt": "Susisiekimas"
+      },
+      "desc": {
+        "en": "Heads the Ministry of Transport and Communications. Appointed by the President on the Prime Minister's proposal.",
+        "lt": "Vadovauja Susisiekimo ministerijai. Ministrą skiria Respublikos Prezidentas Ministro Pirmininko teikimu."
+      },
+      "website": "https://sumin.lrv.lt/"
+    },
+    {
+      "id": "constcourt",
+      "tier": 1,
+      "sector": "jud",
+      "title": {
+        "en": "Constitutional Court of the Republic of Lithuania",
+        "lt": "Lietuvos Respublikos Konstitucinis Teismas"
+      },
+      "kind": {
+        "en": "Court",
+        "lt": "Teismas"
+      },
+      "desc": {
+        "en": "Nine judges decide whether laws and other legal acts comply with the Constitution.",
+        "lt": "Devyni teisėjai sprendžia, ar įstatymai ir kiti teisės aktai neprieštarauja Konstitucijai."
+      },
+      "short": {
+        "en": "Constitutional Court",
+        "lt": "Konstitucinis Teismas"
+      },
+      "website": {
+        "lt": "https://www.lrkt.lt/",
+        "en": "https://www.lrkt.lt/en"
+      }
+    },
+    {
+      "id": "cc-pres",
+      "tier": 2,
+      "sector": "jud",
+      "parent": "constcourt",
+      "title": {
+        "en": "President of the Constitutional Court",
+        "lt": "Konstitucinio Teismo pirmininkas"
+      },
+      "short": {
+        "en": "CC President",
+        "lt": "KT pirmininkas"
+      },
+      "desc": {
+        "en": "Appointed by the Seimas from among the Court's judges on the President's nomination.",
+        "lt": "Skiria Seimas iš Konstitucinio Teismo teisėjų Respublikos Prezidento teikimu."
+      }
+    },
+    {
+      "id": "supreme",
+      "tier": 1,
+      "sector": "jud",
+      "title": {
+        "en": "Supreme Court of Lithuania",
+        "lt": "Lietuvos Aukščiausiasis Teismas"
+      },
+      "kind": {
+        "en": "Court",
+        "lt": "Teismas"
+      },
+      "desc": {
+        "en": "The highest court for civil and criminal cases.",
+        "lt": "Aukščiausioji instancija civilinėse ir baudžiamosiose bylose."
+      },
+      "short": {
+        "en": "Supreme Court",
+        "lt": "Aukščiausiasis Teismas"
+      },
+      "website": {
+        "lt": "https://www.lat.lt/",
+        "en": "https://www.lat.lt/en"
+      }
+    },
+    {
+      "id": "sc-pres",
+      "tier": 2,
+      "sector": "jud",
+      "parent": "supreme",
+      "title": {
+        "en": "President of the Supreme Court of Lithuania",
+        "lt": "Lietuvos Aukščiausiojo Teismo pirmininkas"
+      },
+      "short": {
+        "en": "SC President",
+        "lt": "AT pirmininkas"
+      },
+      "desc": {
+        "en": "Appointed by the Seimas on the President's nomination.",
+        "lt": "Skiria Seimas Respublikos Prezidento teikimu."
+      }
+    },
+    {
+      "id": "bank",
+      "tier": 1,
+      "sector": "ind",
+      "title": {
+        "en": "Bank of Lithuania",
+        "lt": "Lietuvos bankas"
+      },
+      "kind": {
+        "en": "Central bank",
+        "lt": "Centrinis bankas"
+      },
+      "desc": {
+        "en": "The central bank of Lithuania and part of the Eurosystem.",
+        "lt": "Lietuvos centrinis bankas, Eurosistemos narys."
+      },
+      "website": {
+        "lt": "https://www.lb.lt/",
+        "en": "https://www.lb.lt/en"
+      }
+    },
+    {
+      "id": "bank-chair",
+      "tier": 2,
+      "sector": "ind",
+      "parent": "bank",
+      "title": {
+        "en": "Chair of the Board of the Bank of Lithuania",
+        "lt": "Lietuvos banko valdybos pirmininkas"
+      },
+      "short": {
+        "en": "Board Chair",
+        "lt": "LB valdybos pirmininkas"
+      },
+      "desc": {
+        "en": "Appointed by the Seimas on the President's nomination.",
+        "lt": "Skiria Seimas Respublikos Prezidento teikimu."
+      }
+    },
+    {
+      "id": "audit",
+      "tier": 1,
+      "sector": "ind",
+      "title": {
+        "en": "National Audit Office of the Republic of Lithuania",
+        "lt": "Lietuvos Respublikos valstybės kontrolė"
+      },
+      "kind": {
+        "en": "Supreme audit institution",
+        "lt": "Aukščiausioji audito institucija"
+      },
+      "desc": {
+        "en": "Checks whether state property is managed and the budget is spent lawfully and efficiently.",
+        "lt": "Prižiūri, ar teisėtai ir efektyviai valdomas valstybės turtas ir vykdomas biudžetas."
+      },
+      "short": {
+        "en": "National Audit Office",
+        "lt": "Valstybės kontrolė"
+      },
+      "website": "https://www.valstybeskontrole.lt/"
+    },
+    {
+      "id": "auditor",
+      "tier": 2,
+      "sector": "ind",
+      "parent": "audit",
+      "title": {
+        "en": "Auditor General",
+        "lt": "Valstybės kontrolierius"
+      },
+      "desc": {
+        "en": "Appointed by the Seimas on the President's nomination.",
+        "lt": "Skiria Seimas Respublikos Prezidento teikimu."
+      }
+    },
+    {
+      "id": "prosecution",
+      "tier": 1,
+      "sector": "ind",
+      "title": {
+        "en": "Prosecutor General's Office of the Republic of Lithuania",
+        "lt": "Lietuvos Respublikos generalinė prokuratūra"
+      },
+      "short": {
+        "en": "Prosecutor General's Office",
+        "lt": "Generalinė prokuratūra"
+      },
+      "kind": {
+        "en": "Prosecution service",
+        "lt": "Prokuratūra"
+      },
+      "desc": {
+        "en": "Organises and leads pre-trial investigations and brings public prosecutions.",
+        "lt": "Organizuoja ikiteisminį tyrimą ir jam vadovauja, palaiko valstybinį kaltinimą."
+      },
+      "website": {
+        "lt": "https://www.prokuraturos.lt/",
+        "en": "https://www.prokuraturos.lt/en"
+      }
+    },
+    {
+      "id": "prosecutor",
+      "tier": 2,
+      "sector": "ind",
+      "parent": "prosecution",
+      "title": {
+        "en": "Prosecutor General of the Republic of Lithuania",
+        "lt": "Lietuvos Respublikos generalinis prokuroras"
+      },
+      "desc": {
+        "en": "Appointed by the President with the consent of the Seimas.",
+        "lt": "Skiria Respublikos Prezidentas Seimo pritarimu."
+      },
+      "short": {
+        "en": "Prosecutor General",
+        "lt": "Generalinis prokuroras"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "from": "people",
+      "to": "seimas",
+      "type": "elects",
+      "basis": {
+        "doc": "constitution",
+        "art": "55"
+      }
+    },
+    {
+      "from": "people",
+      "to": "president",
+      "type": "elects",
+      "basis": {
+        "doc": "constitution",
+        "art": "78"
+      }
+    },
+    {
+      "from": "president",
+      "to": "pm",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "seimas",
+      "to": "pm",
+      "type": "approves",
+      "basis": {
+        "doc": "constitution",
+        "art": "67",
+        "item": "6"
+      }
+    },
+    {
+      "from": "seimas",
+      "to": "speaker",
+      "type": "elects",
+      "basis": {
+        "doc": "seimas-statute"
+      }
+    },
+    {
+      "from": "seimas",
+      "to": "gov",
+      "type": "oversees",
+      "basis": {
+        "doc": "constitution",
+        "art": "67",
+        "item": "9"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "gov",
+      "type": "leads",
+      "basis": {
+        "doc": "constitution",
+        "art": "97"
+      }
+    },
+    {
+      "from": "president",
+      "to": "cc-pres",
+      "type": "nominates",
+      "basis": {
+        "doc": "constitution",
+        "art": "103"
+      }
+    },
+    {
+      "from": "seimas",
+      "to": "cc-pres",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "103"
+      }
+    },
+    {
+      "from": "seimas",
+      "to": "constcourt",
+      "type": "appoints_judges",
+      "basis": {
+        "doc": "constitution",
+        "art": "103"
+      }
+    },
+    {
+      "from": "president",
+      "to": "sc-pres",
+      "type": "nominates",
+      "basis": {
+        "doc": "constitution",
+        "art": "112"
+      }
+    },
+    {
+      "from": "seimas",
+      "to": "sc-pres",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "112"
+      }
+    },
+    {
+      "from": "seimas",
+      "to": "supreme",
+      "type": "appoints_judges",
+      "basis": {
+        "doc": "constitution",
+        "art": "112"
+      }
+    },
+    {
+      "from": "president",
+      "to": "bank-chair",
+      "type": "nominates",
+      "basis": {
+        "doc": "constitution",
+        "art": "125"
+      }
+    },
+    {
+      "from": "seimas",
+      "to": "bank-chair",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "125"
+      }
+    },
+    {
+      "from": "bank-chair",
+      "to": "bank",
+      "type": "leads",
+      "basis": {
+        "doc": "bank-law"
+      }
+    },
+    {
+      "from": "president",
+      "to": "auditor",
+      "type": "nominates",
+      "basis": {
+        "doc": "constitution",
+        "art": "133"
+      }
+    },
+    {
+      "from": "seimas",
+      "to": "auditor",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "133"
+      }
+    },
+    {
+      "from": "auditor",
+      "to": "audit",
+      "type": "leads",
+      "basis": {
+        "doc": "constitution",
+        "art": "133"
+      }
+    },
+    {
+      "from": "president",
+      "to": "prosecutor",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "118"
+      }
+    },
+    {
+      "from": "seimas",
+      "to": "prosecutor",
+      "type": "consents",
+      "basis": {
+        "doc": "constitution",
+        "art": "118"
+      }
+    },
+    {
+      "from": "prosecutor",
+      "to": "prosecution",
+      "type": "leads",
+      "basis": {
+        "doc": "prosecution-law"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-agri",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-agri",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-cult",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-cult",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-econ",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-econ",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-edu",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-edu",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-energy",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-energy",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-env",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-env",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-fin",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-fin",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-fa",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-fa",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-health",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-health",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-interior",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-interior",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-justice",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-justice",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-defence",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-defence",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-social",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-social",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "president",
+      "to": "min-transport",
+      "type": "appoints",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    },
+    {
+      "from": "pm",
+      "to": "min-transport",
+      "type": "proposes",
+      "basis": {
+        "doc": "constitution",
+        "art": "92"
+      }
+    }
+  ]
+}

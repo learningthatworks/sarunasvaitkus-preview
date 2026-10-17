@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+// Shown inside the homepage popup: hide the page chrome and send non-case links to the main window.
+try { var svt = localStorage.getItem('sv-theme'), svh = new Date().getHours(); document.documentElement.setAttribute('data-theme', svt === 'dark' || svt === 'light' ? svt : (svh >= 19 || svh < 6 ? 'dark' : 'light')); } catch (e) {}
+if (window.self !== window.top) {
+  document.documentElement.classList.add('cs-embed');
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var h = a.getAttribute('href');
+      if (h.charAt(0) !== '#' && h.indexOf('/case-studies/') < 0) a.target = '_top';
+    });
+    // other case studies: ask the homepage popup to load them, so they stay in the same popup
+    document.addEventListener('click', function (ev) {
+      var a = ev.target.closest && ev.target.closest('a[href*="/case-studies/"]');
+      if (!a || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button === 1) return;
+      try { window.parent.postMessage({ svCase: a.href }, location.origin); ev.preventDefault(); } catch (e) {}
+    });
+  });
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KN31FWTLQ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KN31FWTLQ1');
+</script>
+<title>Case studies | Šarūnas Vaitkus</title>
+<meta name="description" content="Four case studies by Šarūnas Vaitkus: a K-12 learning platform, a UN indicator platform redesigned and rebuilt, the eTIR website and video, and KPMG and CBRE rollout training.">
+<link rel="canonical" href="https://sarunasvaitkus.com/case-studies/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Case studies | Šarūnas Vaitkus">
+<meta property="og:description" content="Four case studies by Šarūnas Vaitkus: a K-12 learning platform, a UN indicator platform redesigned and rebuilt, the eTIR website and video, and KPMG and CBRE rollout training.">
+<meta property="og:url" content="https://sarunasvaitkus.com/case-studies/">
+<meta property="og:image" content="https://sarunasvaitkus.com/assets/img/og-image.jpg">
+<link rel="icon" href="/sarunasvaitkus-preview/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..700;1,300..600&family=Oswald:wght@300..600&display=swap">
+<link rel="stylesheet" href="/sarunasvaitkus-preview/assets/css/tokens.css?v=20261016">
+<link rel="stylesheet" href="/sarunasvaitkus-preview/assets/css/case-studies.css?v=20261017b">
+<script>
+(function (d) {
+  var saved = null; try { saved = localStorage.getItem('sv-theme'); } catch (e) {}
+  if (saved !== 'light' && saved !== 'dark') saved = null;
+  function byClock() { var h = new Date().getHours(); return h >= 19 || h < 6 ? 'night' : h < 11 ? 'morning' : 'day'; }
+  var scene = saved === 'dark' ? 'night' : saved === 'light' ? 'morning' : byClock();
+  d.setAttribute('data-scene', scene); d.setAttribute('data-theme', scene === 'night' ? 'dark' : 'light'); d.setAttribute('data-theme-mode', saved || 'auto');
+  if (window.self !== window.top) d.classList.add('cs-embed');
+  window.svByClock = byClock;
+})(document.documentElement);
+</script>
+<link rel="stylesheet" href="/sarunasvaitkus-preview/assets/css/glass.css?v=20261018d">
+</head>
+<body class="glass-page">
+<!-- Window background and panels. Global settings for the whole page:
+     data-panel-opacity=".8"  how solid the content panels are (0-1). WCAG AA is guaranteed at .8 and above.
+     data-panel-blur="18"     px of blur behind the panels
+     data-blur="9" data-contrast="1.25" data-saturate="1.15" data-brightness="1"   the city behind the glass
+     data-veil=".2" data-veil-scroll=".5" data-texture=".55" data-grain=".4" data-grain-size="1"   the frost
+     data-drops="1" data-drop-size="1" data-speed="1" data-trails="1" data-refog="8" data-glare=".5"   water
+     data-parallax=".4" data-wipe="1" data-wipe-return="0" data-hd="1" data-hint="1"
+     data-blinds="1" data-blinds-close="1.2" data-blinds-slat="34"
+     Try values in the address bar first: ?wb-panel-opacity=.85&wb-blur=14 -->
+<div id="window-bg" aria-hidden="true" data-photos="/sarunasvaitkus-preview/assets/img/window/"
+     data-panel-opacity=".8" data-panel-blur="18"
+     data-blur="9" data-contrast="1.25" data-saturate="1.15" data-brightness="1"
+     data-veil=".2" data-veil-scroll=".5" data-texture=".55" data-grain=".4" data-grain-size="1"
+     data-drops="1" data-drop-size="1" data-speed="1" data-trails="1" data-refog="8"
+     data-glare=".5" data-parallax=".4" data-wipe="1" data-wipe-return="0"
+     data-hd="1" data-blinds="1" data-blinds-close="1.2" data-blinds-slat="34" data-hint="1">
+  <canvas class="win-city"></canvas>
+  <canvas class="win-patch"></canvas>
+  <div class="win-grain"></div>
+  <canvas class="win-clear"></canvas>
+  <canvas class="win-rain"></canvas>
+  <div class="win-glare"></div>
+  <div class="win-blinds"></div>
+  <div class="win-veil"></div>
+</div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="/sarunasvaitkus-preview/"><span class="b-name">Vaitkus</span><small>Learning<span class="bw2"> technology</span><span class="bw3"> lead</span></small></a>
+    <nav class="nav" aria-label="Site"><a href="/sarunasvaitkus-preview/#cases" aria-current="page">Case studies</a><a href="/sarunasvaitkus-preview/#what">Services</a><a href="/sarunasvaitkus-preview/#work">Portfolio</a><a href="/sarunasvaitkus-preview/#products">Tools</a><a href="/sarunasvaitkus-preview/cv/">CV</a><a class="nav-cta" href="/sarunasvaitkus-preview/#contact" data-contact>Contact</a></nav>
+    <div class="site-controls">
+  <button class="rain-toggle" type="button" aria-pressed="false">Stop rain</button>
+  <button class="blinds-toggle" type="button" aria-pressed="false">Close blinds</button>
+  <button class="theme-toggle" type="button" aria-label="Theme">
+    <svg class="i-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+  </button>
+</div>
+    <button class="nav-burger" type="button" aria-controls="side-nav" aria-expanded="false" aria-label="Open menu"><span aria-hidden="true"></span></button>
+  </div>
+</header>
+<nav class="side-nav" id="side-nav" aria-label="Menu" hidden><div class="sn-head">Menu</div><a href="/sarunasvaitkus-preview/#cases" aria-current="page">Case studies</a><a href="/sarunasvaitkus-preview/#what">Services</a><a href="/sarunasvaitkus-preview/#work">Portfolio</a><a href="/sarunasvaitkus-preview/#products">Tools</a><a href="/sarunasvaitkus-preview/cv/">CV</a><a class="nav-cta" href="/sarunasvaitkus-preview/#contact" data-contact>Contact</a></nav>
+<main id="main" class="cs glass-panel">
+<header class="cs-head">
+  <h1>Case studies</h1>
+  <p class="cs-stand">Four projects told in full: what the client needed, what I decided and why, what shipped, and what I would do differently. Each one links to the demos and to my CV.</p>
+</header>
+<ul class="ix"><li><a href="/sarunasvaitkus-preview/case-studies/alw/"><img loading="lazy" src="/sarunasvaitkus-preview/assets/media/demo/alw-1.jpg" alt="Advanced Learning World website"><span class="ix-client">Advanced Learning Company, Riyadh</span><span class="ix-title">A mentor-led learning platform for Saudi K‑12 students, live in three and a half months</span><span class="ix-card">Open edX platform with a custom front end, Arabic and English, from discovery to production during the pandemic.</span></a></li><li><a href="/sarunasvaitkus-preview/case-studies/sitcin/"><img loading="lazy" src="/sarunasvaitkus-preview/assets/media/demo/sitcin-web-cover.jpg" alt="sitcin.org landing page"><span class="ix-client">UNECE Sustainable Transport Division, Geneva</span><span class="ix-title">A UN indicator platform that countries can actually use</span><span class="ix-card">A redesigned landing page and a rebuilt Drupal platform for gathering indicator data, live on sitcin.org since June 2026, after a multilingual e-course in 2022.</span></a></li><li><a href="/sarunasvaitkus-preview/case-studies/etir/"><img loading="lazy" src="/sarunasvaitkus-preview/assets/media/demo/etir_web.jpg" alt="etir.org home page"><span class="ix-client">OSCE Economic Governance Unit, Vienna, with the UNECE TIR secretariat, Geneva</span><span class="ix-title">Building the public website and explainer video for the UN&#x27;s paperless customs transit system</span><span class="ix-card">The public website and explainer video for the UN&#x27;s paperless customs transit system, live on etir.org since May 2021.</span></a></li><li><a href="/sarunasvaitkus-preview/case-studies/system-adoption/"><img loading="lazy" src="/sarunasvaitkus-preview/assets/media/demo/cbre-mybuy-1.jpg" alt="CBRE myBuy training module"><span class="ix-client">KPMG UK and CBRE UK</span><span class="ix-title">Getting people ready for a new system on day one: CRM and Coupa rollouts at KPMG and CBRE</span><span class="ix-card">Change management and learning design for system migrations, with demos you can open.</span></a></li></ul>
+</main>
+<footer class="cs-foot glass-panel">
+  <p>Need something like this? <a class="cs-cta" href="/sarunasvaitkus-preview/#contact" data-contact>Tell me about your project</a> Questions first? <a href="#" data-ask-ai>Ask my AI assistant</a>, or read the <a href="/sarunasvaitkus-preview/cv/">CV</a>.</p>
+</footer>
+<nav class="findbar" aria-label="Find me">
+  <span class="fb-l"><span class="fb-t">Find me on</span> <a href="https://www.linkedin.com/in/vaitkus" target="_blank" rel="noopener"><svg class="lin" viewBox="0 0 24 24" role="img" aria-label="LinkedIn"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+  <span class="fb-sep" aria-hidden="true"></span><span class="fb-t">Work with me</span> <a href="https://www.upwork.com/freelancers/vaitkus?viewMode=1" target="_blank" rel="noopener"><svg class="upw" viewBox="0 0 102.4 30" role="img" aria-label="Upwork"><path fill="currentColor" d="M65.4 6.9c-4.5 0-8.1 3.6-8.1 8.1s3.6 8.1 8.1 8.1 8.1-3.6 8.1-8.1-3.6-8.1-8.1-8.1zm0 12.9c-2.6 0-4.8-2.1-4.8-4.8s2.1-4.8 4.8-4.8c2.6 0 4.8 2.1 4.8 4.7 0 2.7-2.1 4.9-4.8 4.9zM83.4 10.8c-2.3 0-4.2 1.9-4.2 4.2v7.7h-3.5V7.4h3.5v2.4c1-1.5 2.7-2.4 4.5-2.4h1.1v3.4h-1.4zM48.2 7.4L50.8 18l2.9-10.6h3.4l-4.4 15.3h-3.5L46.5 12l-2.7 10.7h-3.5L35.9 7.4h3.4L42.2 18l2.7-10.6zM95 14.4c2.6-1.4 4.1-4.1 4.1-7.1h-3.4c0 2.6-2.1 4.6-4.6 4.6h-.5V0h-3.5v22.7h3.5v-7.2h.4c.4 0 .8.2 1 .5l4.9 6.7h4.2L95 14.4z"/><path fill="#6fda44" d="M27.6 6.9c-3.8 0-6.7 2.5-7.9 6.5-1.8-2.7-3.1-5.7-4-8.8h-4.1v10.6c0 2.1-1.7 3.8-3.8 3.8S4 17.3 4 15.2V4.7H0v10.6c0 4.3 3.5 7.9 7.9 7.9s7.9-3.5 7.9-7.9v-1.8c.8 1.7 1.8 3.3 2.9 4.8L16.2 30h4.2l1.8-8.5c1.6 1.1 3.5 1.7 5.5 1.7 4.5 0 8.1-3.6 8.1-8.1-.1-4.5-3.7-8.2-8.2-8.2zm0 12.2c-1.7-.1-3.3-.7-4.6-1.8l.3-1.6v-.1c.3-1.7 1.3-4.6 4.2-4.6 2.2-.1 4 1.7 4.1 3.9.1 2.2-1.7 4-3.9 4.1l-.1.1z"/></svg></a></span>
+  <span class="fb-r"><a class="fb-ai" href="#" data-ask-ai><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 12a8 8 0 1 1 3.2 6.4L4 20l1.2-3.6A8 8 0 0 1 4 12z"/></svg><span class="fb-t">Ask my AI assistant</span></a>
+  <a class="fb-msg" href="/sarunasvaitkus-preview/#contact" data-contact>Message me</a></span>
+</nav>
+<script src="/sarunasvaitkus-preview/assets/js/assistant.js?v=20261016" defer></script>
+<script src="/sarunasvaitkus-preview/assets/js/contact.js?v=20261017a" defer></script>
+<script src="/sarunasvaitkus-preview/assets/js/nav.js?v=20261017a" defer></script>
+<script src="/sarunasvaitkus-preview/assets/js/window-bg.js?v=20261018d" defer></script>
+<script src="/sarunasvaitkus-preview/assets/js/site-chrome.js?v=20261018d" defer></script>
+</body>
+</html>

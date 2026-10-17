@@ -1,0 +1,77 @@
+# Sarunas Vaitkus — full site summary for AI agents and crawlers
+
+Last updated: 2026-10-09
+Canonical URL: https://sarunasvaitkus.com/
+
+## Identity
+
+- Name: Sarunas Vaitkus
+- Role: eLearning Specialist, Instructional Designer & Web Designer (who also ships instruments)
+- Tagline: "I design learning experiences and ship the instruments that make them work"
+- Based in: London, United Kingdom
+- Company: Metability (https://metability.ai)
+
+## What this site is
+
+A professional portfolio and service site for eLearning, instructional design, and web design. Shows enterprise learning experiences + useful instruments that turn messy public data, systems and technology into something you can actually explore. The site is a single HTML page (`index.html`) with in-page sections (Home, Shipped lately strip, How, What, Portfolio, Testimonials, Contact). Deep links use URL hashes (`#home`, `#shipped`, `#how`, `#what`, `#portfolio`, `#Testimonials`, `#contact`). Legacy hashes (`#How`, `#What`, `#Portfolio`, `#Home`, `#section-intro`) still resolve via client-side aliases.
+
+## Services & Instruments (What section)
+
+**Services** (Learning experiences that work):
+- eLearning, instructional design, and web design
+- Blended learning design and production
+- LMS implementation and learning technology consulting
+- Project and team leadership for L&D teams
+- Training needs analysis, workshops, and evaluation design
+- For organisations like OSCE, UNECE, KPMG, Clarksons
+
+**Instruments** (Useful instruments you can actually explore):
+- LT·GOV: Power, mapped. Interactive bilingual map of Lithuania's state institutions, who gives them their powers under the Constitution, the Seimas by party, and Lithuania's MEPs. Demo at /demo/lt-gov/. EU layer (EP view, added 2026-10-05): Lithuania's 11 Members of the European Parliament grouped by European Parliament political group, with national party and official profile links; at /demo/lt-gov/#eu
+- VibeList: AI, indexed. Directory of AI and vibecoding instruments you can leave (leaveability and trust first). Live at https://vibelist.metability.dev
+- LT School Atlas: Schools, mapped. Plain-language comparison of private and international schools in Lithuania (language, curriculum, diploma). Demo at /demo/school-compass/
+- Design Atlas: Interfaces, explored. Gallery of 43 visual styles with ready AI prompts (formerly Vibestyle). Demo at /demo/vibestyle/
+- Other shipped work still in Portfolio: FlexTab, SCORM editor, Vaikend, Kidness
+- Live demos also at https://metability.ai or *.metability.dev subdomains
+
+## Approach (How section)
+
+Focus on making learning technology and programmes practical and effective for organisations — from analysis and design through build, delivery, and stakeholder management.
+
+## Portfolio (Portfolio section)
+
+Showcases two categories (filterable):
+1. **Instruments**: LT·GOV, VibeList, LT School Atlas, Design Atlas, plus FlexTab, SCORM editor, Vaikend — live demos open in iframes.
+2. **Client Programmes**: Learning experiences for 50+ enterprise organisations (OSCE, UNECE, KPMG, Clarksons, CBRE, and others). Logo carousel and project grid with interactive demos (Storyline, Captivate, HTML5) in modals. Sectors: automotive, banking, government, mining, education.
+
+The instruments turn messy public data, systems and technology into something you can actually explore. They are evidence of modern practice, not a departure from eLearning/instructional design/web design craft.
+
+## Testimonials
+
+Client and colleague recommendations (LinkedIn-sourced quotes) appear in the Testimonials section.
+
+## Technical stack (public site)
+
+- Bootstrap 5.3.8, jQuery 3.7.0
+- Custom theme: `assets/css/theme.css`, `assets/css/dark-theme-index.css`
+- Scripts: `assets/js/theme.js`
+
+## Hire / contact / try
+
+**Hire for learning experiences:**
+- eLearning, instructional design, web design, and learning technology
+- LinkedIn: https://www.linkedin.com/in/vaitkus (primary)
+- Upwork freelancer profile: https://www.upwork.com/freelancers/vaitkus
+- Company site: https://metability.ai
+
+**Try instruments:**
+- Shipped lately strip: https://sarunasvaitkus.com/#shipped
+- Live demos in Portfolio section
+- Metability: https://metability.ai
+
+## Structured data
+
+The homepage includes JSON-LD (`@graph`) for Person, ImageObject, WebSite, ProfilePage, BreadcrumbList, and ProfessionalService (with OfferCatalog) in `index.html`. Open Graph / Twitter use `assets/img/og-image.jpg` (1200×630).
+
+## Paths not intended as primary marketing content
+
+Internal or legacy paths under `/clients/`, `/demo/`, and `/projects/` may exist for development and samples; the main public offering is the homepage and its hash sections.

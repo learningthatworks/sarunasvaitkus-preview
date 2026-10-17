@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Chart options · temporary preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..700;1,300..600&family=Oswald:wght@300..600&display=swap">
+<style>
+:root { --paper: #f7f6f3; --card: #fdfcfa; --ink: #141518; --ink-2: #2b2e33; --muted: #3d4248; --line: #cfccc5; --red: #c80000; color-scheme: light; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 "Open Sans", system-ui, sans-serif; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+header { padding: 48px 0 8px; }
+h1 { margin: 0; font: 400 clamp(30px, 4vw, 46px)/1.1 Oswald, sans-serif; text-transform: uppercase; letter-spacing: .02em; }
+h1 b { font-weight: 400; color: var(--red); }
+.intro { max-width: 70ch; color: var(--ink-2); }
+section { margin: 40px 0 56px; padding-top: 28px; border-top: 1px solid var(--red); }
+.opt { display: flex; align-items: baseline; gap: 14px; }
+.opt span { font: 400 40px/1 Oswald, sans-serif; color: var(--red); }
+h2 { margin: 0; font: 400 26px/1.2 Oswald, sans-serif; text-transform: uppercase; letter-spacing: .03em; }
+.why { margin: 10px 0 18px; max-width: 72ch; font-style: italic; color: var(--ink-2); }
+.chart { height: 620px; background: var(--card); border: 1px solid var(--line); }
+#opt2 .chart { height: 460px; }
+#opt3 .chart { height: 560px; }
+#opt4 .chart { height: 640px; }
+#opt5 .chart { height: auto; padding: 24px 16px; position: relative; }
+/* half circle of dots, as on the earlier homepage */
+.who-svg { display: block; width: 100%; max-width: 420px; margin: 6px auto 0; overflow: visible; }
+.who-dot { cursor: pointer; transition: transform .2s; transform-box: fill-box; transform-origin: center; }
+.who-dot:hover { transform: scale(1.3); }
+.who-n { font: 400 34px/1 Oswald, sans-serif; fill: var(--ink); }
+.who-leg { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; font: 400 12px/1.4 "Open Sans", sans-serif; color: var(--ink-2); }
+.who-leg span { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 0; }
+.who-leg b { font-weight: 600; color: var(--ink); }
+.who-tip { position: absolute; z-index: 3; transform: translate(-50%, calc(-100% - 8px)); padding: 6px 10px; background: var(--ink); color: var(--paper); font: 400 12px/1.35 "Open Sans", sans-serif; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .15s; }
+.who-tip strong { display: block; font-weight: 600; font-size: 13px; }
+.who-tip.on { opacity: 1; }
+.how { margin-top: 10px; font-size: 14px; color: var(--muted); }
+.note { margin: 0 0 64px; font-size: 14px; color: var(--muted); }
+@media (max-width: 700px) { .chart { height: 520px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Five ways to show <b>who, what and when</b></h1>
+    <p class="intro">The same projects from metabrain in three new forms, followed by the two charts used on the homepage so far. Everything before NSW Community Services (February 2012) is combined into one item, C-Learning / projects. Detail starts with NSW. Pick one (or a mix) and I will put it on the homepage in place of the radar timeline. This page is temporary and hidden from search engines.</p>
+  </header>
+
+  <section id="opt1">
+    <div class="opt"><span>1</span><h2>Project timeline by organisation</h2></div>
+    <p class="why">One row per organisation, one bar per project, from NSW Community Services in 2012 to today, with one grey bar for C-Learning and the projects before it. Reads like a CV at a glance: who you worked for, for how long, and how the work overlapped. UN and international work in red.</p>
+    <div class="chart" id="c1"></div>
+    <p class="how">Hover a bar for the project and dates. Scroll on the chart or drag the bar above it to zoom into a period.</p>
+  </section>
+
+  <section id="opt2">
+    <div class="opt"><span>2</span><h2>Months of work per year, by sector</h2></div>
+    <p class="why">Stacked columns: each year's total months of project work, split by sector. The first column, C-Learning / projects, shows the yearly average before 2012. Shows the shape of the career: agency and corporate work in Australia and the UK, then the growth of UN and international work after 2016.</p>
+    <div class="chart" id="c2"></div>
+    <p class="how">Hover a column for the breakdown. Click a sector in the legend to hide or show it.</p>
+  </section>
+
+  <section id="opt3">
+    <div class="opt"><span>3</span><h2>Where the time went</h2></div>
+    <p class="why">A treemap: each block is an organisation, its size the total months of work, grouped by sector. The grey block, C-Learning / projects, holds everything before 2012. Click a block to open its projects. Shows at once that OSCE and UNECE are the long-term relationships.</p>
+    <div class="chart" id="c3"></div>
+    <p class="how">Click an organisation to see its projects; use the path at the top to go back.</p>
+  </section>
+
+  <section id="opt4">
+    <div class="opt"><span>4</span><h2>Radar timeline (on the homepage now)</h2></div>
+    <p class="why">The chart currently on the preview homepage. Each column is a project, grouped by organisation on the outer ring, its height the months of work in the chosen year.</p>
+    <div class="chart" id="g-who"></div>
+    <p class="how">Drag the slider or press play to move through the years. Click an organisation on the outer ring to zoom in.</p>
+  </section>
+
+  <section id="opt5">
+    <div class="opt"><span>5</span><h2>30 organisations (earlier homepage)</h2></div>
+    <p class="why">The chart the homepage had before the radar timeline: one dot for each organisation, coloured by sector.</p>
+    <div class="chart" id="g-dots"></div>
+    <p class="how">Hover or tap a dot to see the organisation.</p>
+  </section>
+
+  <p class="note">Measure: months of work per project per year, from the dates in metabrain (work history and the OSCE project file). Bayer and Metability are left out. Charts by amCharts 5 (free licence, logo shown).</p>
+</div>
+
+<script src="assets/vendor/amcharts/amcharts5-options-5.21.2.min.js"></script>
+<script>
+(function () {
+  var A = window.SVAm2, am5 = A.am5;
+  // chart palette: c70000 e34c35 f27b36 e6a800 2f75b6 2a9d90 7553a2 d9d9d9 3b3b3b
+  var RED = "#c70000", SECTOR_COLOURS = { "UN and international": "#2f75b6", "Companies": "#f27b36", "Education and learning": "#2a9d90", "Government and public": "#7553a2" };
+  function root(id) {
+    var r = am5.Root.new(id);
+    var t = am5.Theme.new(r);
+    t.rule("Label").setAll({ fontFamily: "'Open Sans', system-ui, sans-serif", fill: am5.color("#2b2e33") });
+    r.setThemes([A.am5themes_Animated.new(r), A.am5themes_Responsive.new(r), t]);
+    return r;
+  }
+  // tooltips wrap at 300px so long lists stay inside the chart
+  function tip(r) {
+    var t = am5.Tooltip.new(r, {});
+    t.label.setAll({ maxWidth: 300, oversizedBehavior: "wrap", fontSize: 13 });
+    return t;
+  }
+  fetch("assets/data/glance.json").then(function (x) { return x.json(); }).then(function (d) {
+    var now = new Date(), Y1 = now.getFullYear();
+    // projects that started before NSW Community Services become one combined item; detail starts there
+    var nsw = d.projects.filter(function (p) { return /^NSW/.test(p.org); })[0];
+    var CUT_START = nsw ? nsw.start : "2012-02", CUT = +CUT_START.slice(0, 4);
+    var EARLY_NAME = "C-Learning / projects", EARLY_COLOUR = "#d9d9d9";
+    var early = { orgs: [], months: 0, bySector: {}, clients: [] }, P = [];
+    d.projects.forEach(function (p) {
+      if (p.start >= CUT_START) { P.push(p); return; }
+      Object.keys(p.months).forEach(function (y) {
+        early.months += p.months[y];
+        early.bySector[p.sector] = (early.bySector[p.sector] || 0) + p.months[y];
+      });
+      if (early.orgs.indexOf(p.org) < 0) early.orgs.push(p.org);
+      if (p.clients && !early.clients.length) early.clients = p.clients;
+    });
+    var EARLY_YEARS = CUT - d.first_year;
+    var earlyNote = early.orgs.length + " organisations: " + early.orgs.join(", ") +
+      (early.clients.length ? "\nC-Learning clients include " + early.clients.join(", ") : "");
+
+    // ---------- 1. Gantt: organisations as rows, projects as bars ----------
+    (function () {
+      var r = root("c1");
+      var chart = r.container.children.push(A.am5xy.XYChart.new(r, { panX: true, wheelX: "panX", wheelY: "zoomX", layout: r.verticalLayout, paddingLeft: 0 }));
+      // organisations ordered by first start, UN first
+      var orgs = {}, order = [];
+      P.forEach(function (p) {
+        var a = p.start;
+        if (!orgs[p.org]) { orgs[p.org] = { org: p.org, sector: p.sector, first: a }; order.push(orgs[p.org]); }
+        if (a < orgs[p.org].first) orgs[p.org].first = a;
+      });
+      order.sort(function (a, b) { return (b.sector === "UN and international") - (a.sector === "UN and international") || (a.first < b.first ? 1 : a.first > b.first ? -1 : 0) || (/^NSW/.test(a.org) ? 1 : /^NSW/.test(b.org) ? -1 : 0); });
+      order.push({ org: EARLY_NAME, sector: "early", first: "" });
+      var yr = A.am5xy.AxisRendererY.new(r, { minGridDistance: 8, inversed: false });
+      yr.labels.template.setAll({ fontSize: 11, oversizedBehavior: "truncate", maxWidth: 170 });
+      yr.grid.template.setAll({ strokeOpacity: .06 });
+      var yAxis = chart.yAxes.push(A.am5xy.CategoryAxis.new(r, { categoryField: "org", renderer: yr }));
+      var xAxis = chart.xAxes.push(A.am5xy.DateAxis.new(r, { baseInterval: { timeUnit: "month", count: 1 },
+        renderer: A.am5xy.AxisRendererX.new(r, { minGridDistance: 60 }), min: Date.UTC(CUT - 1, 0, 1), max: Date.UTC(Y1, 11, 31) }));
+      xAxis.get("renderer").grid.template.setAll({ strokeOpacity: .08 });
+      var s = chart.series.push(A.am5xy.ColumnSeries.new(r, { xAxis: xAxis, yAxis: yAxis, openValueXField: "start", valueXField: "end", categoryYField: "org" }));
+      s.columns.template.setAll({ height: am5.percent(62), strokeOpacity: 0, cornerRadiusTL: 3, cornerRadiusTR: 3, cornerRadiusBL: 3, cornerRadiusBR: 3,
+        tooltipText: "[bold]{project}[/]\n{org}\n{startTxt} to {endTxt}{clientsTxt}", tooltip: tip(r) });
+      s.columns.template.adapters.add("fill", function (f, c) { var dc = c.dataItem && c.dataItem.dataContext; return dc ? am5.color(dc.sector === "early" ? EARLY_COLOUR : (SECTOR_COLOURS[dc.sector] || "#3d4248")) : f; });
+      xAxis.get("renderer").labels.template.adapters.add("text", function (t, l) {
+        var di = l.dataItem, v = di && di.get("value");
+        return v != null && new Date(v).getUTCFullYear() < CUT ? String(d.first_year).slice(2) + "–" + String(CUT - 1).slice(2) : t;
+      });
+      var fmt = function (t) { return new Date(t).toLocaleDateString("en-GB", { month: "short", year: "numeric", timeZone: "UTC" }); };
+      function ts(v, end) {
+        if (!v) return Date.UTC(Y1, now.getMonth(), 28);
+        var m = String(v).match(/(\d{4})(?:-(\d{2}))?/), y = +m[1], mo = m[2] ? +m[2] - 1 : (end ? 11 : 0);
+        return Date.UTC(y, mo, end ? 28 : 1);
+      }
+      var rows = P.map(function (p) {
+        var start = ts(p.start), end = Math.max(ts(p.end, true), start + 75 * 864e5);  // short jobs stay visible
+        return { org: p.org, sector: p.sector, project: p.project, start: start, end: end, startTxt: fmt(start), endTxt: p.end ? fmt(end) : "now",
+          clientsTxt: p.clients ? "\nClients include " + p.clients.join(", ") : "" };
+      });
+      rows.push({ org: EARLY_NAME, sector: "early", project: "Earlier work, " + early.months + " months", start: Date.UTC(CUT - 1, 0, 1), end: Date.UTC(CUT - 1, 11, 28),
+        startTxt: String(d.first_year), endTxt: String(CUT - 1), clientsTxt: "\n" + earlyNote });
+      yAxis.data.setAll(order.reverse());
+      s.data.setAll(rows);
+      chart.set("scrollbarX", am5.Scrollbar.new(r, { orientation: "horizontal", height: 8 }));
+      chart.set("cursor", A.am5xy.XYCursor.new(r, { behavior: "none" }));
+      s.appear(900); chart.appear(900, 100);
+    })();
+
+    // ---------- 2. Stacked columns: months per year by sector ----------
+    (function () {
+      var r = root("c2");
+      var chart = r.container.children.push(A.am5xy.XYChart.new(r, { panX: false, panY: false, layout: r.verticalLayout, paddingLeft: 0 }));
+      var sectors = ["UN and international", "Companies", "Government and public", "Education and learning"];
+      var years = []; for (var y = CUT; y <= Y1; y++) years.push(y);
+      var first = { year: EARLY_NAME };
+      sectors.forEach(function (sc) { first[sc] = Math.round((early.bySector[sc] || 0) / EARLY_YEARS * 10) / 10; });
+      var data = [first].concat(years.map(function (y) {
+        var row = { year: String(y) };
+        sectors.forEach(function (sc) { row[sc] = 0; });
+        P.forEach(function (p) { if (p.months[y]) row[p.sector] += p.months[y]; });
+        return row;
+      }));
+      var xAxis = chart.xAxes.push(A.am5xy.CategoryAxis.new(r, { categoryField: "year", renderer: A.am5xy.AxisRendererX.new(r, { minGridDistance: 30 }) }));
+      xAxis.get("renderer").labels.template.setAll({ fontSize: 11, rotation: -45, centerY: am5.p50, centerX: am5.p100 });
+      xAxis.get("renderer").grid.template.setAll({ strokeOpacity: 0 });
+      var yAxis = chart.yAxes.push(A.am5xy.ValueAxis.new(r, { min: 0, renderer: A.am5xy.AxisRendererY.new(r, {}) }));
+      yAxis.get("renderer").grid.template.setAll({ strokeOpacity: .08 });
+      yAxis.children.unshift(am5.Label.new(r, { text: "Months of project work", rotation: -90, y: am5.p50, centerX: am5.p50, fontSize: 12 }));
+      var legend = chart.children.push(am5.Legend.new(r, { x: am5.p50, centerX: am5.p50 }));
+      sectors.forEach(function (sc) {
+        var s = chart.series.push(A.am5xy.ColumnSeries.new(r, { name: sc, xAxis: xAxis, yAxis: yAxis, valueYField: sc, categoryXField: "year", stacked: true, fill: am5.color(SECTOR_COLOURS[sc]), stroke: am5.color(SECTOR_COLOURS[sc]) }));
+        s.columns.template.setAll({ width: am5.percent(72), strokeOpacity: 0, tooltipText: "{categoryX}: {name}, {valueY} months", tooltip: tip(r) });
+        s.columns.template.adapters.add("tooltipText", function (t, c) { return c.dataItem && c.dataItem.get("categoryX") === first.year ? "{categoryX}, " + d.first_year + " to " + (CUT - 1) + ", average per year: {name}, {valueY} months" : t; });
+        s.data.setAll(data); s.appear(800);
+      });
+      xAxis.data.setAll(data);
+      legend.data.setAll(chart.series.values);
+      chart.appear(900, 100);
+    })();
+
+    // ---------- 3. Treemap: sector > organisation > project, sized by months ----------
+    (function () {
+      var r = root("c3");
+      r.container.set("layout", r.verticalLayout);
+      var tree = { name: "All work", children: [] };
+      var bySector = {};
+      P.forEach(function (p) {
+        var total = Object.keys(p.months).reduce(function (a, k) { return a + p.months[k]; }, 0);
+        var sc = bySector[p.sector] || (bySector[p.sector] = { name: p.sector, children: [], _orgs: {} });
+        var o = sc._orgs[p.org] || (sc._orgs[p.org] = { name: p.org, children: [] });
+        if (!o._in) { sc.children.push(o); o._in = true; }
+        o.children.push({ name: p.project, value: total, note: p.clients ? "\nClients include " + p.clients.join(", ") : "" });
+      });
+      ["UN and international", "Companies", "Education and learning", "Government and public"].forEach(function (k) { if (bySector[k]) tree.children.push(bySector[k]); });
+      tree.children.push({ name: EARLY_NAME, early: true, children: [{ name: EARLY_NAME, early: true, value: early.months, note: "\n" + earlyNote }] });
+      var nav = r.container.children.push(A.am5hierarchy.BreadcrumbBar.new(r, {}));
+      nav.labels.template.setAll({ fill: am5.color(RED), fontSize: 14 });
+      var s = r.container.children.push(A.am5hierarchy.Treemap.new(r, {
+        singleBranchOnly: false, downDepth: 1, upDepth: 0, initialDepth: 2, valueField: "value", categoryField: "name", childDataField: "children",
+        nodePaddingOuter: 0, nodePaddingInner: 2
+      }));
+      s.rectangles.template.setAll({ strokeWidth: 2, stroke: am5.color("#fdfcfa"), tooltipText: "{category}: {sum} months{note}", tooltip: tip(r) });
+      s.rectangles.template.adapters.add("tooltipText", function () { return "{category}: {sum} months{note}"; });
+      s.rectangles.template.adapters.add("fill", function (f, t) {
+        var di = t.dataItem; if (!di) return f;
+        var top = di; while (top.get("parent") && top.get("parent").get("depth") > 0) top = top.get("parent");
+        var c = top.dataContext.early ? EARLY_COLOUR : (SECTOR_COLOURS[top.dataContext.name] || "#3d4248");
+        return am5.color(c);
+      });
+      s.labels.template.setAll({ fontSize: 12, fill: am5.color("#ffffff"), text: "{category}" });
+      s.labels.template.adapters.add("fill", function (f, l) { var dc = l.dataItem && l.dataItem.dataContext; return dc && dc.early ? am5.color("#2b2e33") : f; });
+      s.data.setAll([tree]);
+      s.set("selectedDataItem", s.dataItems[0]);
+      nav.set("series", s);
+      s.appear(900, 100);
+    })();
+  });
+})();
+</script>
+<script src="assets/vendor/amcharts/amcharts5-5.21.2.min.js"></script>
+<script>
+// Options 4 and 5: copied from the homepage chart script (assets/js/glance.js), light theme colours
+(function () {
+  fetch("assets/data/glance.json").then(function (x) { return x.json(); }).then(function (data) {
+    var A = window.SVAm, am5 = A.am5, roots = [], reduce = false, dark = false;
+    function css(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+    var ink = am5.color("#141518"), ink2 = am5.color("#2b2e33"), muted = am5.color("#3d4248"), red = am5.color("#c80000"),
+        line = am5.color("#cfccc5"), paper = am5.color("#f7f6f3");
+    var pal = ["#2f75b6", "#f27b36", "#2a9d90", "#7553a2", "#e6a800"];
+    var SECTOR = { "UN and international": "#2f75b6", "Companies": "#f27b36", "Education and learning": "#2a9d90", "Government and public": "#7553a2" };
+
+    // ---------- 4. radar timeline ----------
+    (function () {
+      var el = document.getElementById("g-who"); if (!el) return;
+      var r = am5.Root.new("g-who");
+      var t = am5.Theme.new(r);
+      t.rule("Label").setAll({ fontFamily: "'Open Sans', system-ui, sans-serif", fill: ink2 });
+      var responsive = A.am5themes_Responsive.new(r);
+      r.setThemes(reduce ? [t, responsive] : [A.am5themes_Animated.new(r), t, responsive]);
+      roots.push(r);
+
+      // bands: organisations with several projects get their own band, the rest share a sector band
+      var many = {}; data.projects.forEach(function (p) { many[p.org] = (many[p.org] || 0) + 1; });
+      var rows = data.projects.map(function (p, i) {
+        var band = many[p.org] > 1 ? p.org : p.sector;
+        var row = { id: "p" + i, project: p.project, org: p.org, sector: p.sector, band: band, value: 0, full: 12 };
+        Object.keys(p.months).forEach(function (y) { row["y" + y] = p.months[y]; });
+        return row;
+      });
+      var bands = [];
+      rows.forEach(function (row) {
+        var last = bands[bands.length - 1];
+        if (!last || last.name !== row.band) bands.push({ name: row.band, sector: row.sector, first: row.id, last: row.id, n: 1 });
+        else { last.last = row.id; last.n++; }
+      });
+      var years = [], y0 = data.first_year, y1 = new Date().getFullYear();
+      for (var y = y0; y <= y1; y++) years.push(y);
+      var year = 2021;
+
+      r.container.set("layout", r.verticalLayout);
+      var chart = r.container.children.push(A.am5radar.RadarChart.new(r, {
+        panX: false, panY: false, wheelX: "none", wheelY: "none",
+        innerRadius: am5.percent(34), radius: am5.percent(96), startAngle: -84, endAngle: 264
+      }));
+      var xr = A.am5radar.AxisRendererCircular.new(r, { minGridDistance: 6, radius: -30 });
+      xr.labels.template.setAll({ textType: "radial", fontSize: 10, radius: 6, forceHidden: true });
+      xr.grid.template.set("forceHidden", true);
+      var xAxis = chart.xAxes.push(A.am5xy.CategoryAxis.new(r, { categoryField: "id", renderer: xr }));
+      xr.labels.template.adapters.add("text", function (txt, lab) {
+        var d = lab.dataItem && lab.dataItem.dataContext; return d ? d.project : txt;
+      });
+      // outer ring for the organisation bands
+      var br = A.am5radar.AxisRendererCircular.new(r, { innerRadius: -24, minGridDistance: 6 });
+      br.labels.template.set("forceHidden", true);
+      br.grid.template.set("forceHidden", true);
+      var bandAxis = chart.xAxes.push(A.am5xy.CategoryAxis.new(r, { categoryField: "id", renderer: br }));
+      var yr = A.am5radar.AxisRendererRadial.new(r, { radius: -30, minGridDistance: 20 });
+      yr.labels.template.set("forceHidden", true);
+      yr.grid.template.setAll({ stroke: line, strokeOpacity: .5 });
+      var yAxis = chart.yAxes.push(A.am5xy.ValueAxis.new(r, { renderer: yr, min: 0, max: 12, strictMinMax: true }));
+
+      // a faint full-height slot behind every project, so even a quiet year can be hovered
+      var track = chart.series.push(A.am5radar.RadarColumnSeries.new(r, {
+        xAxis: xAxis, yAxis: yAxis, valueYField: "full", categoryXField: "id"
+      }));
+      track.columns.template.setAll({ width: am5.percent(78), strokeOpacity: 0, cornerRadius: 3, fill: line, fillOpacity: dark ? .18 : .28, tooltipText: "x" });
+      var series = chart.series.push(A.am5radar.RadarColumnSeries.new(r, {
+        xAxis: xAxis, yAxis: yAxis, valueYField: "value", categoryXField: "id"
+      }));
+      series.columns.template.setAll({ width: am5.percent(78), strokeOpacity: 0, cornerRadius: 3, tooltipText: "x" });
+      function tip(txt, col) {
+        var d = col.dataItem && col.dataItem.dataContext; if (!d) return txt;
+        var v = d["y" + year] || 0;
+        return "[bold]" + d.project + "[/]\n" + d.org + "\n" + (v ? v + (v === 1 ? " month" : " months") + " in " + year : "not active in " + year);
+      }
+      series.columns.template.adapters.add("tooltipText", tip);
+      track.columns.template.adapters.add("tooltipText", tip);
+      var lo = dark ? am5.color("#3b3b3b") : am5.color("#d9d9d9");
+      function tone(v, sector) {
+        var c = am5.color(SECTOR[sector] || "#3b3b3b");
+        return v ? am5.Color.interpolate(Math.min(1, .35 + v / 12 * .65), lo, c) : lo;
+      }
+      // colour is the sector's hue, stronger with more months of work in the chosen year
+      series.columns.template.adapters.add("fill", function (f, col) {
+        var d = col.dataItem && col.dataItem.dataContext; return d ? tone(d["y" + year] || 0, d.sector) : f;
+      });
+      function paint() {
+        series.columns.each(function (col) {
+          var d = col.dataItem && col.dataItem.dataContext; if (d) col.set("fill", tone(d["y" + year] || 0, d.sector));
+        });
+      }
+
+      // centre: the year, large, and how many projects were running
+      var yearLabel = chart.radarContainer.children.push(am5.Label.new(r, {
+        centerX: am5.p50, centerY: am5.p50, textAlign: "center", fill: ink, populateText: false
+      }));
+      var back = chart.radarContainer.children.push(am5.Label.new(r, {
+        text: "← All organisations", centerX: am5.p50, y: 34, fontSize: 11, fill: red, visible: false,
+        cursorOverStyle: "pointer", background: am5.Rectangle.new(r, { fill: paper, fillOpacity: 0 })
+      }));
+      function centre() {
+        var n = rows.filter(function (row) { return row["y" + year]; }).length;
+        yearLabel.set("text", "[fontSize:44px fontFamily:Oswald]" + year + "[/]\n[fontSize:11px]" + n + (n === 1 ? " PROJECT" : " PROJECTS") + "[/]");
+      }
+
+      // the bands are a column series of their own on the outer ring, so they can be clicked
+      var bandY = chart.yAxes.push(A.am5xy.ValueAxis.new(r, {
+        renderer: A.am5radar.AxisRendererRadial.new(r, { innerRadius: -24 }), min: 0, max: 1, strictMinMax: true
+      }));
+      bandY.get("renderer").labels.template.set("forceHidden", true);
+      bandY.get("renderer").grid.template.set("forceHidden", true);
+      var bandSeries = chart.series.push(A.am5radar.RadarColumnSeries.new(r, {
+        xAxis: bandAxis, yAxis: bandY, categoryXField: "last", openCategoryXField: "first", valueYField: "v"
+      }));
+      bandSeries.columns.template.setAll({ width: am5.p100, strokeOpacity: 1, stroke: paper, strokeWidth: 2, cursorOverStyle: "pointer",
+        tooltipText: "{name}: {n} projects\nClick to zoom in" });
+      bandSeries.columns.template.adapters.add("fill", function (f, col) {
+        var d = col.dataItem && col.dataItem.dataContext; if (!d) return f;
+        return am5.color(SECTOR[d.sector] || "#3b3b3b");
+      });
+      // band names as circular axis-range labels (only where the arc is long enough to hold them)
+      bands.forEach(function (b) {
+        if (b.n < 6) return;
+        var lr = bandAxis.makeDataItem({ category: b.first, endCategory: b.last });
+        bandAxis.createAxisRange(lr);
+        lr.get("label").setAll({ forceHidden: false, text: b.name.toUpperCase(), textType: "circular", fontSize: 10,
+          fill: am5.color("#ffffff"), inside: true, radius: 3, location: .5 });
+        lr.get("grid").set("forceHidden", true);
+      });
+      bandSeries.columns.template.events.on("click", function (ev) {
+        var d = ev.target.dataItem.dataContext;
+        xAxis.zoomToCategories(d.first, d.last); bandAxis.zoomToCategories(d.first, d.last);
+        back.set("visible", true);
+      });
+      back.events.on("click", function () {
+        xAxis.zoom(0, 1); bandAxis.zoom(0, 1); back.set("visible", false);
+      });
+
+      // year control: slider plus play button
+      var ctrl = r.container.children.push(am5.Container.new(r, { layout: r.horizontalLayout, width: am5.percent(86), x: am5.p50, centerX: am5.p50, paddingTop: 6, paddingLeft: 44 }));
+      var play = ctrl.children.push(am5.Button.new(r, { themeTags: ["play"], centerY: am5.p50, marginRight: 12,
+        icon: am5.Graphics.new(r, { themeTags: ["icon"] }) }));
+      play.get("background").setAll({ fill: red, fillOpacity: 1 });
+      play.events.on("click", function () { playing ? stop() : go(); });
+      var slider = ctrl.children.push(am5.Slider.new(r, { orientation: "horizontal", start: (year - y0) / (y1 - y0), width: am5.percent(100), centerY: am5.p50 }));
+      slider.startGrip.get("background").setAll({ fill: red });
+      slider.get("background").setAll({ fill: line, fillOpacity: 1 });
+      slider.events.on("rangechanged", function () {
+        var yy = y0 + Math.round(slider.get("start", 0) * (y1 - y0));
+        if (yy !== year) { year = yy; update(); }
+      });
+      var playing = false, timer = null;
+      function go() {
+        playing = true; play.set("active", true);
+        if (year >= y1) slider.set("start", 0);
+        timer = setInterval(function () {
+          var next = year + 1; if (next > y1) return stop();
+          slider.animate({ key: "start", to: (next - y0) / (y1 - y0), duration: 500 });
+        }, 1200);
+      }
+      function stop() { playing = false; play.set("active", false); clearInterval(timer); }
+
+      function update() {
+        series.dataItems.forEach(function (di) {
+          var v = di.dataContext["y" + year] || 0;
+          di.set("valueY", v);
+          if (reduce) di.set("valueYWorking", v); else di.animate({ key: "valueYWorking", to: v, duration: 600, easing: am5.ease.out(am5.ease.cubic) });
+        });
+        paint(); centre();
+      }
+
+      // smaller screens: thinner band labels and a smaller year
+      responsive.addRule({ relevant: A.am5themes_Responsive.widthS,
+        applying: function () { bands.forEach(function () {}); yearLabel.set("scale", .75); },
+        removing: function () { yearLabel.set("scale", 1); } });
+
+      rows.forEach(function (row) { row.value = row["y" + year] || 0; });
+      chart.zoomOutButton.set("forceHidden", true);
+      xAxis.data.setAll(rows); bandAxis.data.setAll(rows); track.data.setAll(rows); series.data.setAll(rows);
+      bandSeries.data.setAll(bands.map(function (b, i) {
+        return { name: b.name, sector: b.sector, first: b.first, last: b.last, n: b.n, v: 1, i: i };
+      }));
+      series.events.on("datavalidated", function () { setTimeout(paint, 50); });
+      centre();
+      if (!reduce) { series.appear(900); chart.appear(900, 100); }
+    })();
+
+    // ---------- 5. half circle of organisations ----------
+    // 2. Who the work was for: a half circle of dots, one per organisation, coloured by sector.
+    //    Plain SVG (no amCharts) so the layout stays exact at every width.
+    (function () {
+      var el = document.getElementById("g-dots"); if (!el) return;
+      // UN and international first, so the work buyers care about most is the red wedge on the left
+      var groups = data.organisations.slice().sort(function (p, q) {
+        var u = (q.name.indexOf("UN") === 0) - (p.name.indexOf("UN") === 0); return u || q.children.length - p.children.length;
+      });
+      var dots = [];
+      groups.forEach(function (g, gi) { g.children.forEach(function (o) { dots.push({ name: o.name, sector: g.name, gi: gi }); }); });
+      var n = dots.length, rows = 4, cx = 150, cy = 150, R = 136, r0 = 62, radii = [], tot = 0, i, k;
+      for (i = 0; i < rows; i++) { radii.push(r0 + (R - r0) * i / (rows - 1)); tot += radii[i]; }
+      var seats = [], placed = 0;
+      for (i = 0; i < rows; i++) {
+        var m = i === rows - 1 ? n - placed : Math.round(n * radii[i] / tot); placed += m;
+        for (k = 0; k < m; k++) seats.push({ a: Math.PI * (m === 1 ? .5 : k / (m - 1)), r: radii[i] });
+      }
+      seats.sort(function (p, q) { return q.a - p.a || p.r - q.r; });
+      var svg = '<svg viewBox="0 0 300 158" class="who-svg" aria-hidden="true">';
+      seats.forEach(function (st, j) {
+        var d = dots[j];
+        svg += '<circle class="who-dot" data-i="' + j + '" cx="' + (cx + st.r * Math.cos(st.a)).toFixed(1) + '" cy="' + (cy - st.r * Math.sin(st.a)).toFixed(1) +
+          '" r="9.5" fill="' + pal[d.gi % pal.length] + '" stroke="' + css("--paper") + '" stroke-width="1.5"/>';
+      });
+      svg += '<text x="150" y="146" text-anchor="middle" class="who-n">' + n + '</text></svg>';
+      var leg = '<ul class="who-leg">' + groups.map(function (g, gi) {
+        return '<li><span style="background:' + pal[gi % pal.length] + '"></span>' + g.name + ' <b>' + g.children.length + '</b></li>';
+      }).join("") + "</ul>";
+      el.innerHTML = svg + leg + '<div class="who-tip" role="status" aria-live="polite"></div>';
+      var tip = el.querySelector(".who-tip");
+      el.querySelectorAll(".who-dot").forEach(function (c) {
+        function show() {
+          var d = dots[+c.getAttribute("data-i")], b = c.getBoundingClientRect(), e = el.getBoundingClientRect();
+          tip.innerHTML = "<strong>" + d.name + "</strong>" + d.sector;
+          tip.style.left = (b.left - e.left + b.width / 2) + "px"; tip.style.top = (b.top - e.top) + "px"; tip.classList.add("on");
+        }
+        c.addEventListener("mouseenter", show); c.addEventListener("click", show);
+        c.addEventListener("mouseleave", function () { tip.classList.remove("on"); });
+      });
+    })();
+  });
+})();
+</script>
+</body>
+</html>

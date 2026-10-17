@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KN31FWTLQ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KN31FWTLQ1');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skeuomorphism design system · Anti-Boring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<script>try{var m=localStorage.getItem('atlas-theme');if(m&&m!=='light')document.documentElement.classList.add('alt')}catch(e){}</script>
+<style id="kit">
+/* Skeuomorphism kit · Anti-Boring */
+:root{
+  --bg:#E6E0D4;
+  --surface:#F7F3EA;
+  --surface2:#DCD4C4;
+  --fg:#2B2520;
+  --muted:#5E554A;
+  --accent:#3B7DDD;
+  --accent-fg:#FFFFFF;
+  --accent2:#D9DCE0;
+  --accent2-fg:#2B2520;
+  --border:#A89C88;
+  --bw:1px;
+  --radius:8px;
+  --radius-sm:6px;
+  --shadow:0 1px 0 #fff inset, 0 2px 4px rgba(0,0,0,.25), 0 8px 18px rgba(0,0,0,.18);
+  --shadow-sm:0 1px 0 rgba(255,255,255,.7) inset, 0 1px 3px rgba(0,0,0,.3);
+  --font-d:"Arvo",Rockwell,serif;
+  --font-b:"Lato",system-ui,sans-serif;
+  --font-m:ui-monospace,Menlo,monospace;
+  --h-weight:700;
+  --h-track:0;
+  --h-case:none;
+  --h-style:normal;
+  --h-lh:1.1;
+  --gap:24px;
+  --pad:24px;
+  --focus:rgba(59,125,221,.45);
+  --ok:#2E7D32;
+  --warn:#8A5A00;
+  --danger:#B3261E;
+  --info:#3B7DDD;
+  --field-bg:#FFFFFF;
+  --field-shadow:inset 0 2px 3px rgba(0,0,0,.18);
+  --media:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 2px,transparent 2px 7px),repeating-linear-gradient(0deg,#A8683B 0 18px,#9A5E34 18px 22px,#B07244 22px 40px);
+  --code-bg:#2B2520;
+  --code-fg:#EDE3CF;
+  --btn-case:none;
+  --btn-track:0;
+  --btn-weight:700;
+  --badge-radius:999px;
+  --maxw:1160px;
+  --fs-sm:13.6px;
+  --fs-body:17px;
+  --fs-4:21.2px;
+  --fs-3:26.6px;
+  --fs-2:33.2px;
+  --fs-1:41.5px;
+  --fs-d:clamp(42px, 9vw, 81px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 var(--fs-body)/1.6 var(--font-b);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-d);font-weight:var(--h-weight);letter-spacing:var(--h-track);text-transform:var(--h-case);font-style:var(--h-style);line-height:var(--h-lh);margin:0 0 .4em}
+h1{font-size:var(--fs-1)} h2{font-size:var(--fs-2)} h3{font-size:var(--fs-3)} h4{font-size:var(--fs-4)}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+code,pre,kbd{font-family:var(--font-m)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font:var(--btn-weight) 1rem/1 var(--font-b);text-transform:var(--btn-case);letter-spacing:var(--btn-track);padding:.85em 1.4em;border:var(--bw) solid var(--border);border-radius:var(--radius);background:var(--accent);color:var(--accent-fg);box-shadow:var(--shadow-sm);text-decoration:none;cursor:pointer;transition:transform .12s,box-shadow .12s,background-color .12s,color .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.btn-2{background:var(--accent2);color:var(--accent2-fg)}
+.btn-ghost{background:transparent;color:var(--fg);box-shadow:none}
+.btn-sm{font-size:.85rem;padding:.6em 1em}
+.btn-lg{font-size:1.15rem;padding:1em 1.7em}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+
+/* forms */
+.field{display:grid;gap:.4em;margin-bottom:1.1em}
+.label{font-weight:600;font-size:.95rem}
+.help{font-size:.85rem;color:var(--muted)}
+.input,.select,.textarea{width:100%;font:1rem/1.4 var(--font-b);color:var(--fg);padding:.75em .9em;background:var(--field-bg);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--field-shadow);appearance:none}
+.select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.4em}
+.textarea{min-height:110px;resize:vertical}
+.input:focus,.select:focus,.textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--field-shadow),0 0 0 3px var(--focus)}
+.is-error .input{border-color:var(--danger)} .is-error .help{color:var(--danger)}
+.choice{display:flex;align-items:center;gap:.6em;margin:.35em 0;cursor:pointer}
+.check,.radio{appearance:none;width:1.25em;height:1.25em;margin:0;flex:none;border:var(--bw) solid var(--border);background:var(--field-bg);box-shadow:var(--field-shadow);display:grid;place-items:center;cursor:pointer}
+.check{border-radius:calc(var(--radius-sm)/2)} .radio{border-radius:50%}
+.check::after{content:"";width:.55em;height:.3em;border-left:2.5px solid var(--accent-fg);border-bottom:2.5px solid var(--accent-fg);transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.radio::after{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--accent-fg);opacity:0}
+.check:checked,.radio:checked{background:var(--accent);border-color:var(--border)}
+.check:checked::after,.radio:checked::after{opacity:1}
+.switch{appearance:none;width:2.8em;height:1.6em;margin:0;flex:none;border-radius:999px;border:var(--bw) solid var(--border);background:var(--surface2);position:relative;cursor:pointer;transition:background .15s;box-shadow:var(--field-shadow)}
+.switch::before{content:"";position:absolute;top:50%;left:.18em;width:1.1em;height:1.1em;border-radius:50%;background:var(--fg);transform:translateY(-50%);transition:left .15s}
+.switch:checked{background:var(--accent)}
+.switch:checked::before{left:calc(100% - 1.28em);background:var(--accent-fg)}
+.range{width:100%;accent-color:var(--accent)}
+
+/* surfaces */
+.card{background:var(--surface);color:var(--fg);border:var(--bw) solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--pad);position:relative}
+.card-media{aspect-ratio:16/9;border-radius:var(--radius-sm);background:var(--media);margin-bottom:1em}
+.badge{display:inline-block;font:600 .75rem/1 var(--font-b);padding:.45em .75em;border-radius:var(--badge-radius);background:var(--accent2);color:var(--accent2-fg);border:var(--bw) solid var(--border)}
+.alert{padding:1em 1.2em;border:var(--bw) solid var(--border);border-left:6px solid var(--c,var(--info));border-radius:var(--radius-sm);background:var(--surface);margin-bottom:.8em}
+.alert b{color:var(--c,var(--info))}
+.alert-ok{--c:var(--ok)} .alert-warn{--c:var(--warn)} .alert-danger{--c:var(--danger)}
+.progress{height:.8em;border-radius:999px;background:var(--surface2);border:var(--bw) solid var(--border);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent)}
+
+/* navigation */
+.tabs{display:flex;gap:.25em;border-bottom:var(--bw) solid var(--border);flex-wrap:wrap}
+.tab{font:600 .95rem var(--font-b);padding:.7em 1em;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);cursor:pointer;margin-bottom:calc(var(--bw) * -1)}
+.tab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.crumbs{display:flex;gap:.5em;flex-wrap:wrap;font-size:.9rem;color:var(--muted);list-style:none;padding:0;margin:0}
+.crumbs li+li::before{content:"/";margin-right:.5em;opacity:.6}
+.pager{display:flex;gap:.4em;list-style:none;padding:0;margin:0;flex-wrap:wrap}
+.pager a{display:grid;place-items:center;min-width:2.4em;height:2.4em;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);text-decoration:none;background:var(--surface)}
+.pager a[aria-current]{background:var(--accent);color:var(--accent-fg)}
+
+/* table */
+.table-wrap{overflow-x:auto;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);background:var(--surface)}
+.table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:460px}
+.table th,.table td{text-align:left;padding:.75em 1em;border-bottom:1px solid color-mix(in srgb,var(--border) 30%,transparent)}
+.table th{font-family:var(--font-d);font-weight:var(--h-weight)}
+
+/* grid */
+.row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
+.col-3{grid-column:span 3}.col-4{grid-column:span 4}.col-5{grid-column:span 5}.col-6{grid-column:span 6}.col-7{grid-column:span 7}.col-8{grid-column:span 8}.col-12{grid-column:span 12}
+@media (max-width:760px){.row{grid-template-columns:minmax(0,1fr);gap:min(var(--gap),16px)}.row>*{grid-column:auto!important;grid-row:auto!important}}
+
+/* signature */
+.btn{background:linear-gradient(#6FA7F2,#3B7DDD 50%,#2A67C2 51%,#4F8FE6);border-color:#1F4F96;text-shadow:0 -1px 0 rgba(0,0,0,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 1px 2px rgba(0,0,0,.35)}
+.btn:active{transform:none;background:linear-gradient(#2A67C2,#3B7DDD);box-shadow:inset 0 2px 4px rgba(0,0,0,.4)}
+.btn-2{background:linear-gradient(#F4F5F7,#D9DCE0 50%,#C9CDD3 51%,#E3E6EA);border-color:#8E949C;color:#2B2520;text-shadow:0 1px 0 #fff}
+.btn-ghost{background:transparent;border-color:transparent;text-shadow:none;box-shadow:none;color:var(--fg);text-decoration:underline}
+.card{background:linear-gradient(#FBF8F1,#F2ECDF)}
+.card-media{border:4px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);transform:rotate(-1deg)}
+.badge{background:linear-gradient(#E2463B,#B42A21);color:#fff;border:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 1px 2px rgba(0,0,0,.4);text-shadow:0 -1px 0 rgba(0,0,0,.3)}
+.switch{width:3.4em;background:linear-gradient(#C9CDD3,#E6E8EB);box-shadow:inset 0 2px 4px rgba(0,0,0,.3);border-color:#8E949C}
+.switch::before{width:1.3em;height:1.3em;background:linear-gradient(#FFFFFF,#D9DCE0);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.switch:checked{background:linear-gradient(#2A67C2,#6FA7F2)}
+.switch:checked::before{left:calc(100% - 1.45em);background:linear-gradient(#FFFFFF,#D9DCE0)}
+.check,.radio{background:linear-gradient(#fff,#E6E8EB);box-shadow:inset 0 1px 2px rgba(0,0,0,.2)}
+.check:checked,.radio:checked{background:linear-gradient(#6FA7F2,#2A67C2)}
+.progress{background:linear-gradient(#C9CDD3,#E6E8EB);box-shadow:inset 0 1px 3px rgba(0,0,0,.35)}
+.progress i{background:linear-gradient(#8FC0FF,#3B7DDD 50%,#2A67C2 51%,#6FA7F2)}
+.alert{background:linear-gradient(#FFFDF4,#F4EED8);box-shadow:var(--shadow-sm)}
+.tabs{background:linear-gradient(#E3E6EA,#C9CDD3);border-radius:8px;padding:3px;display:inline-flex;border:1px solid #8E949C}
+.tab{border:0;border-radius:6px;margin:0;color:#2B2520}
+.tab[aria-selected="true"]{background:linear-gradient(#6FA7F2,#3B7DDD);color:#fff;box-shadow:inset 0 1px 3px rgba(0,0,0,.3)}
+.pager a{background:linear-gradient(#F4F5F7,#D9DCE0);box-shadow:var(--shadow-sm)}
+.pager a[aria-current]{background:linear-gradient(#6FA7F2,#3B7DDD)}
+.table th{background:linear-gradient(#F4F5F7,#D9DCE0);text-shadow:0 1px 0 #fff}
+
+/* dark theme: add class="alt" to <html> */
+html.alt{
+  --bg:#1F1B17;
+  --surface:#2B2520;
+  --surface2:#25201B;
+  --fg:#F2EADB;
+  --muted:#C2B6A2;
+  --border:#5E554A;
+  --accent2:#4A4F57;
+  --accent2-fg:#F2EADB;
+  --field-bg:#1A1612;
+  --field-shadow:inset 0 2px 3px rgba(0,0,0,.5);
+  --shadow:0 1px 0 rgba(255,255,255,.06) inset, 0 2px 4px rgba(0,0,0,.5), 0 8px 18px rgba(0,0,0,.4);
+  --shadow-sm:0 1px 0 rgba(255,255,255,.08) inset, 0 1px 3px rgba(0,0,0,.5);
+  --code-bg:#120F0C;
+}
+html.alt .docnav{background:linear-gradient(#2B2520,#1A1612)!important}html.alt .card{background:linear-gradient(#2E2823,#26211C)}html.alt .alert{background:linear-gradient(#2E2823,#26211C)}html.alt .btn-2,html.alt .tab{text-shadow:none}html.alt .table th{background:linear-gradient(#3A342E,#2B2520);text-shadow:none}html.alt .tl li{box-shadow:none;border-color:#3A342E}
+</style>
+<style>
+
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.docnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--nav-bg,var(--bg));border-bottom:var(--bw) solid var(--border)}
+.docnav .container{display:flex;align-items:center;gap:6px;height:58px;overflow-x:auto;scrollbar-width:none}
+.docnav .container::-webkit-scrollbar{display:none}
+.docnav .brand{font-family:var(--font-d);font-weight:var(--h-weight);text-transform:var(--h-case);margin-right:auto;padding-right:16px;white-space:nowrap;text-decoration:none;font-size:1.05rem}
+.docnav a:not(.brand){text-decoration:none;font-size:.9rem;padding:6px 10px;border-radius:var(--radius-sm);white-space:nowrap;color:var(--muted)}
+.docnav a:not(.brand):hover{color:var(--fg);background:var(--surface2)}
+.hero{position:relative;overflow:hidden}
+.sec{padding:clamp(56px,9vw,104px) 0;position:relative}
+.sec.alt{background:var(--surface2)}
+.sec-title{font-size:var(--fs-2);margin-bottom:.3em}
+.sec-lede{font-size:1.1rem;color:var(--muted);max-width:62ch;margin-bottom:2.2em}
+.auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:var(--gap)}
+.traits .card h3{font-size:var(--fs-4)}
+.traits .card p:last-child,.pit .card p:last-child{margin:0}
+.tl{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.tl li{display:grid;grid-template-columns:minmax(90px,150px) 1fr;gap:20px;padding:18px 0;border-top:var(--bw) solid var(--border)}
+.tl .yr{font-family:var(--font-d);font-weight:var(--h-weight);font-size:var(--fs-3);line-height:1}
+.tl h4{margin-bottom:.25em}
+.tl p{margin:0;max-width:62ch}
+.stage{position:relative;height:clamp(240px,42vw,380px);overflow:hidden;border:var(--bw) solid var(--border);border-radius:var(--radius);background:var(--surface)}
+.stage.paused *,.stage.paused *::before,.stage.paused *::after{animation-play-state:paused!important}
+.stage-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+.stage-bar p{margin:0;color:var(--muted);max-width:60ch}
+.mocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:var(--gap)}
+.mocks figure{margin:0}
+.mocks figcaption{margin-top:14px}
+.mocks figcaption h4{font-size:var(--fs-4)}
+.mock{font-size:10px;height:250px;background:var(--bg);border:var(--bw) solid var(--border);border-radius:var(--radius);overflow:hidden;padding:12px;display:flex;flex-direction:column;gap:10px;position:relative}
+.mock .btn{font-size:9px}
+.mock .card{padding:10px}
+.m-nav{display:flex;align-items:center;gap:8px;font-family:var(--font-d);font-weight:var(--h-weight);font-size:12px}
+.m-nav i{flex:1}
+.m-nav s{width:26px;height:5px;background:var(--muted);opacity:.5;border-radius:3px}
+.m-h{font-family:var(--font-d);font-weight:var(--h-weight);text-transform:var(--h-case);font-style:var(--h-style);font-size:22px;line-height:1;letter-spacing:var(--h-track)}
+.m-line{height:6px;border-radius:3px;background:var(--muted);opacity:.35}
+.m-media{flex:1;border-radius:var(--radius-sm);background:var(--media)}
+.mock-app{align-items:center;justify-content:center;background:var(--surface2)}
+.phone{width:140px;height:226px;border:var(--bw) solid var(--border);border-radius:calc(var(--radius) + 10px);background:var(--bg);padding:10px;display:flex;flex-direction:column;gap:7px;box-shadow:var(--shadow);overflow:hidden}
+.phone .card{padding:7px;display:flex;align-items:center;justify-content:space-between;font-size:10px;box-shadow:var(--shadow-sm)}
+.phone .switch{font-size:8px}
+.mock-dash .card{flex:1;display:flex;flex-direction:column;gap:6px}
+.bars{flex:1;display:flex;align-items:flex-end;gap:6px}
+.bars i{flex:1;background:var(--accent);border-radius:var(--radius-sm) var(--radius-sm) 0 0}
+.bars i:nth-child(even){background:var(--accent2)}
+.stat{font-family:var(--font-d);font-weight:var(--h-weight);font-size:26px;line-height:1}
+.block{margin-top:64px}
+.block:first-of-type{margin-top:0}
+.block>h3{font-size:var(--fs-3)}
+.block>p{color:var(--muted);max-width:62ch}
+.demo{padding:clamp(18px,4vw,32px);border:var(--bw) dashed color-mix(in srgb,var(--border) 45%,transparent);border-radius:var(--radius);background:var(--bg);margin:18px 0 0}
+.demo-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.code{position:relative;margin-top:12px}
+.code pre{margin:0;max-height:340px;overflow:auto;padding:18px 18px 18px;background:var(--code-bg);color:var(--code-fg);border-radius:var(--radius-sm);font:400 .8rem/1.55 var(--font-m);tab-size:2}
+.code .copy{position:absolute;top:10px;right:10px;font:600 .75rem system-ui,sans-serif;padding:6px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:var(--code-fg);cursor:pointer;backdrop-filter:blur(4px)}
+.code .copy:hover{background:rgba(255,255,255,.25)}
+details.code-toggle{margin-top:12px}
+details.code-toggle summary{cursor:pointer;font-weight:600;font-size:.9rem;color:var(--muted)}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+.swatch{all:unset;cursor:pointer;display:block;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface)}
+.swatch:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.swatch i{display:block;height:84px}
+.swatch span{display:block;padding:10px 12px;font-size:.85rem;line-height:1.3}
+.swatch small{font-family:var(--font-m);color:var(--muted)}
+.specimen{display:grid;gap:18px}
+.spec{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;border-bottom:1px solid color-mix(in srgb,var(--border) 25%,transparent);padding-bottom:14px}
+.spec small{font-family:var(--font-m);color:var(--muted);font-size:.72rem;line-height:1.4}
+.spec>div{overflow-wrap:anywhere;min-width:0}
+.gdemo .row>div{min-height:64px;display:grid;place-items:center;font:600 .8rem var(--font-m);background:color-mix(in srgb,var(--accent) 22%,var(--surface));border:var(--bw) solid var(--border);border-radius:var(--radius-sm);color:var(--fg)}
+.gdemo+.gdemo{margin-top:12px}
+.shapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px}
+.shapes .card{min-height:110px;display:grid;place-items:end start;font-size:.85rem}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px;align-items:end}
+.pg label{display:grid;gap:6px;font-weight:600;font-size:.9rem}
+.pg input[type=color]{width:100%;height:44px;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);background:var(--surface);padding:3px}
+.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:4px 28px}
+.prompt pre{white-space:pre-wrap;max-height:none;font-size:.85rem}
+footer.docfoot{padding:36px 0 48px;border-top:var(--bw) solid var(--border);font-size:.9rem;color:var(--muted)}
+@media (max-width:640px){.tl li,.spec{grid-template-columns:1fr;gap:6px}}
+.theme-toggle{flex:none;display:inline-flex;align-items:center;gap:6px;margin-left:8px;font:600 .8rem/1 system-ui,sans-serif;color:var(--fg);background:transparent;border:1px solid currentColor;border-radius:999px;padding:7px 11px;cursor:pointer;opacity:.85}
+.theme-toggle:hover{opacity:1}
+.theme-toggle svg{width:15px;height:15px}
+html.alt body{background-color:var(--bg)!important}
+html.alt .sec.alt{background:var(--surface2)!important}
+html.alt .docnav{background:var(--bg)!important}
+html.alt .demo{background:var(--bg)!important}
+html.alt .mock,html.alt .phone{background:var(--bg)!important}
+html.alt .mock-app{background:var(--surface2)!important}
+html.alt .swatch{background:var(--surface)!important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+
+body{background-color:#E6E0D4;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.025) 0 1px,transparent 1px 3px)}
+.docnav{background:linear-gradient(#F4F1EA,#D8D1C3);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.hero{padding:40px 0 70px}
+.app{max-width:900px;margin:0 auto;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.leather{background:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px) 0 0/4px 4px,linear-gradient(#7A4A2E,#5E3620);padding:22px 26px;position:relative;color:#F3E6CF}
+.leather::after{content:"";position:absolute;left:8px;right:8px;bottom:8px;border-bottom:2px dashed #E8D2A6;opacity:.8}
+.leather h1{font:700 clamp(2rem,6vw,3.6rem)/1 "Arvo",serif;margin:0;text-shadow:0 -1px 0 rgba(0,0,0,.6),0 1px 0 rgba(255,255,255,.15)}
+.notepad{display:grid;grid-template-columns:1.4fr 1fr;background:#FFF9D9;background-image:repeating-linear-gradient(transparent 0 31px,#C9D9F2 31px 32px);position:relative}
+.notepad::before{content:"";position:absolute;left:52px;top:0;bottom:0;border-left:2px solid #F0A8A8}
+.notepad .txt{padding:20px 24px 24px 72px;line-height:32px;color:#2B2520;font-size:1.05rem}
+.notepad .txt p{margin:0 0 32px}
+.panel{background:linear-gradient(#EDEFF2,#C9CDD3);border-left:1px solid #8E949C;display:grid;place-items:center;gap:18px;padding:24px}
+.knob{width:120px;height:120px;border-radius:50%;background:repeating-conic-gradient(#C9CDD3 0 2deg,#EEF0F2 2deg 4deg);box-shadow:0 4px 8px rgba(0,0,0,.35),inset 0 2px 0 #fff;position:relative;animation:tw 5s ease-in-out infinite alternate}
+.knob::after{content:"";position:absolute;left:50%;top:10px;width:6px;height:22px;margin-left:-3px;border-radius:3px;background:#3B7DDD}
+@keyframes tw{from{transform:rotate(-100deg)}to{transform:rotate(100deg)}}
+.stage{background:linear-gradient(#EDEFF2,#C9CDD3);display:flex;align-items:center;justify-content:center;gap:clamp(20px,6vw,70px)}
+.vu{width:clamp(160px,34vw,260px);aspect-ratio:2/1.2;background:linear-gradient(#FFF3D6,#F2DFB0);border:6px solid #3A2F26;border-radius:10px;box-shadow:inset 0 4px 10px rgba(0,0,0,.3),0 4px 10px rgba(0,0,0,.35);position:relative;overflow:hidden}
+.vu::before{content:"";position:absolute;left:10%;right:10%;top:20%;height:60%;border-top:3px solid #3A2F26;border-radius:50% 50% 0 0}
+.needle{position:absolute;left:50%;bottom:10%;width:3px;height:70%;background:#C62828;transform-origin:bottom;animation:vuN 1.1s cubic-bezier(.3,1.6,.5,1) infinite alternate}
+@keyframes vuN{from{transform:rotate(-45deg)}to{transform:rotate(38deg)}}
+.flip{width:60px;height:110px;border-radius:30px;background:linear-gradient(90deg,#9EA4AC,#EEF0F2 40%,#9EA4AC);box-shadow:inset 0 2px 6px rgba(0,0,0,.35);position:relative}
+.flip::after{content:"";position:absolute;left:14px;right:14px;height:50px;top:10px;border-radius:12px;background:linear-gradient(#FFFFFF,#C9CDD3);box-shadow:0 3px 6px rgba(0,0,0,.4);animation:fl 2.4s steps(1) infinite}
+@keyframes fl{50%{top:50px}}
+.tl li{border-top:1px solid #C6BBA8;box-shadow:0 1px 0 #fff}
+.sec.alt{background:#DCD4C4}
+@media (max-width:760px){.notepad{grid-template-columns:1fr}.panel{border-left:0;border-top:1px solid #8E949C}}
+
+
+html.alt .docnav{background:linear-gradient(#2B2520,#1A1612)!important}html.alt .card{background:linear-gradient(#2E2823,#26211C)}html.alt .alert{background:linear-gradient(#2E2823,#26211C)}html.alt .btn-2,html.alt .tab{text-shadow:none}html.alt .table th{background:linear-gradient(#3A342E,#2B2520);text-shadow:none}html.alt .tl li{box-shadow:none;border-color:#3A342E}
+</style>
+</head>
+<body class="st-skeuomorphism">
+<nav class="docnav" aria-label="Sections"><div class="container"><a class="brand" href="#top">Skeuomorphism</a><a href="#overview">Overview</a><a href="#history">History</a><a href="#motion">Motion</a><a href="#examples">Examples</a><a href="#foundations">Foundations</a><a href="#components">Components</a><a href="#prompt">Prompt</a><a href="#pitfalls">Pitfalls</a><button class="theme-toggle" id="theme-toggle" data-native="light" aria-label="Switch colour theme"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6"/><path d="M8 2a6 6 0 0 0 0 12z" fill="currentColor"/></svg><span id="theme-lbl"></span></button></div></nav>
+<header class="hero" id="top"><div class="container"><div class="app"><div class="leather"><h1>Skeuomorphism</h1></div><div class="notepad"><div class="txt"><p>Interfaces that copy real objects: leather covers, stitched edges, paper notepads, metal knobs and glossy buttons.</p><p>It made early touchscreens feel familiar, until flat design swept it away in 2013.</p><p><a class="btn" href="#foundations">Open the kit</a> <a class="btn btn-2" href="#prompt">Copy prompt</a></p></div><div class="panel" aria-hidden="true"><div class="knob"></div><span class="badge">3</span></div></div></div></div></header>
+
+<section id="overview" class="sec"><div class="container">
+<h2 class="sec-title">What defines it</h2>
+<p class="sec-lede">Skeuomorphic design makes digital things look like their physical ancestors. Textures, stitching and lighting teach people how to use a screen by reminding them of objects they already know.</p>
+<div class="auto traits"><article class="card"><h3>Real materials</h3><p>Leather, wood, paper, brushed metal and glass rendered with gradients and texture.</p></article><article class="card"><h3>Physical controls</h3><p>Knobs, toggle switches and dials that look like they could be turned or flipped.</p></article><article class="card"><h3>Lighting and depth</h3><p>A light source from above gives every button a highlight on top and shadow below.</p></article><article class="card"><h3>Familiar metaphors</h3><p>A trash can deletes, a notepad takes notes, a bookshelf holds books.</p></article></div>
+</div></section>
+
+<section id="history" class="sec alt"><div class="container">
+<h2 class="sec-title">Where it came from</h2>
+<p class="sec-lede">Skeuomorphism shaped two decades of interfaces and then became the thing flat design rebelled against.</p>
+<ol class="tl"><li><span class="yr">1984</span><div><h4>The desktop metaphor</h4><p>Early graphical interfaces use desktops, folders and trash cans to explain computers.</p></div></li><li><span class="yr">2001</span><div><h4>Lickable buttons</h4><p>Operating systems introduce glossy, jelly-like aqua buttons and brushed metal windows.</p></div></li><li><span class="yr">2007</span><div><h4>Touchscreen realism</h4><p>The first iPhone uses realistic icons and textures to make touch feel natural.</p></div></li><li><span class="yr">2011</span><div><h4>Peak leather</h4><p>Calendar and contact apps with leather and stitching spark debates among designers.</p></div></li><li><span class="yr">2013</span><div><h4>Flat takes over</h4><p>iOS 7 removes almost all textures, and skeuomorphism becomes shorthand for old-fashioned.</p></div></li></ol>
+</div></section>
+
+<section id="motion" class="sec"><div class="container">
+<h2 class="sec-title">Motion study</h2>
+<p class="sec-lede">Skeuomorphic motion obeys physics. A needle swings and bounces, and a switch snaps from one position to the other.</p>
+<div class="stage" id="stage" role="img" aria-label="A VU meter needle swinging and a toggle switch flipping"><div class="vu"><i class="needle"></i></div><div class="flip"></div></div>
+<div class="stage-bar"><p>Physical objects overshoot and settle, so the needle uses a bouncy easing curve.</p><button class="btn btn-2 btn-sm" id="toggle">Pause</button></div>
+</div></section>
+
+<section id="examples" class="sec alt"><div class="container">
+<h2 class="sec-title">Where you meet it</h2>
+<p class="sec-lede">These three mockups are built only from the kit on this page. Swap the tokens and they change style with it.</p>
+<div class="mocks">
+<figure><div class="mock" aria-hidden="true"><div class="m-nav"><b>Notes</b><i></i><s></s><s></s><span class="btn btn-sm">Join</span></div><div class="m-h">Tuesday, shopping list</div><div class="m-line"></div><div class="m-line" style="width:60%"></div><div><span class="btn btn-sm">Get started</span></div><div class="m-media"></div></div>
+<figcaption><h4>Music and audio apps</h4><p>Synthesizers and recording apps still use knobs, meters and faders.</p></figcaption></figure>
+<figure><div class="mock mock-app" aria-hidden="true"><div class="phone"><div class="m-nav"><b>Studio</b></div><div class="card"><span>Reverb</span><input type="checkbox" class="switch" checked tabindex="-1"></div><div class="card"><span>Delay</span><input type="checkbox" class="switch" tabindex="-1"></div><div class="card"><span>Tape</span><span class="badge">3</span></div><span class="btn btn-sm">Continue</span></div></div>
+<figcaption><h4>Games and hobby tools</h4><p>Card, board and puzzle games use wood, felt and paper to feel tactile.</p></figcaption></figure>
+<figure><div class="mock mock-dash" aria-hidden="true"><div class="card"><span class="badge" style="align-self:flex-start">Level</span><div class="stat">-6 dB</div><div class="bars"><i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:85%"></i><i style="height:70%"></i><i style="height:95%"></i></div></div></div>
+<figcaption><h4>Retro and novelty apps</h4><p>Notes, calculators and clocks use realistic objects for charm.</p></figcaption></figure>
+</div>
+</div></section>
+
+<section id="foundations" class="sec"><div class="container">
+<h2 class="sec-title">Foundations</h2>
+<p class="sec-lede">The tokens every component on this page is built from. Copy them as a starting point, then adjust with intent.</p>
+<div class="block"><h3>Color</h3><p>Colours come from materials: leather brown, paper cream, metal grey and one glossy blue for action. Tap a swatch to copy its hex value.</p><div class="swatches" style="margin-top:18px"><button class="swatch" data-copy="#E6E0D4" aria-label="Copy Linen #E6E0D4"><i style="background:#E6E0D4"></i><span class="lbl"><b>Linen</b><br><small>#E6E0D4</small></span></button><button class="swatch" data-copy="#6B3E26" aria-label="Copy Leather #6B3E26"><i style="background:#6B3E26"></i><span class="lbl"><b>Leather</b><br><small>#6B3E26</small></span></button><button class="swatch" data-copy="#E8D2A6" aria-label="Copy Stitch #E8D2A6"><i style="background:#E8D2A6"></i><span class="lbl"><b>Stitch</b><br><small>#E8D2A6</small></span></button><button class="swatch" data-copy="#D9DCE0" aria-label="Copy Aluminium #D9DCE0"><i style="background:#D9DCE0"></i><span class="lbl"><b>Aluminium</b><br><small>#D9DCE0</small></span></button><button class="swatch" data-copy="#A8683B" aria-label="Copy Walnut #A8683B"><i style="background:#A8683B"></i><span class="lbl"><b>Walnut</b><br><small>#A8683B</small></span></button><button class="swatch" data-copy="#3B7DDD" aria-label="Copy Glossy blue #3B7DDD"><i style="background:#3B7DDD"></i><span class="lbl"><b>Glossy blue</b><br><small>#3B7DDD</small></span></button><button class="swatch" data-copy="#2B2520" aria-label="Copy Ink #2B2520"><i style="background:#2B2520"></i><span class="lbl"><b>Ink</b><br><small>#2B2520</small></span></button></div><div class="code"><button class="copy" data-copy="#palcss"><span class="lbl">Copy palette CSS</span></button><pre><code id="palcss">:root{
+  --linen: #E6E0D4;
+  --leather: #6B3E26;
+  --stitch: #E8D2A6;
+  --aluminium: #D9DCE0;
+  --walnut: #A8683B;
+  --glossy-blue: #3B7DDD;
+  --ink: #2B2520;
+}</code></pre></div></div>
+<div class="block"><h3>Typography</h3><p>A slab serif for titles that recalls printed labels, and a friendly sans for interface text.</p><div class="demo specimen"><div class="spec"><small>Display<br>clamp(42px, 9vw, 81px)</small><div style="font-family:var(--font-d);font-weight:var(--h-weight);text-transform:var(--h-case);font-style:var(--h-style);letter-spacing:var(--h-track);font-size:var(--fs-d);line-height:.95">Aa</div></div><div class="spec"><small>Heading 1<br>41.5px</small><div><h1 style="margin:0">Skeuomorphism heading</h1></div></div><div class="spec"><small>Heading 2<br>33.2px</small><div><h2 style="margin:0">Skeuomorphism heading</h2></div></div><div class="spec"><small>Heading 3<br>26.6px</small><div><h3 style="margin:0">Skeuomorphism heading</h3></div></div><div class="spec"><small>Heading 4<br>21.2px</small><div><h4 style="margin:0">Skeuomorphism heading</h4></div></div><div class="spec"><small>Body<br>17px</small><div><p style="margin:0;max-width:60ch">Body text carries the explanation. Keep lines under about 75 characters so the eye can find the next line.</p></div></div><div class="spec"><small>Small<br>13.6px</small><div style="font-size:var(--fs-sm);color:var(--muted)">Captions, helper text and metadata.</div></div><div class="spec"><small>Mono<br>13.6px</small><div style="font-family:var(--font-m);font-size:var(--fs-sm)">--radius: 8px;</div></div></div><div class="code"><button class="copy" data-copy="#typecss"><span class="lbl">Copy type CSS</span></button><pre><code id="typecss">:root{
+  --font-d: "Arvo",Rockwell,serif;
+  --font-b: "Lato",system-ui,sans-serif;
+  --font-m: ui-monospace,Menlo,monospace;
+  --fs-d: clamp(42px, 9vw, 81px);
+  --fs-1: 41.5px; --fs-2: 33.2px;
+  --fs-3: 26.6px; --fs-4: 21.2px;
+  --fs-body: 17px; --fs-sm: 13.6px;
+}
+h1,h2,h3,h4 {
+  font-family: var(--font-d);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.1;
+}
+/* fonts: Arvo and Lato */</code></pre></div></div>
+<div class="block"><h3>Grid</h3><p>Layouts imitate objects: a leather header, a notepad body, a metal control panel.</p><div class="demo"><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Even columns</h4><p class="help" style="margin:0 0 10px">Equal cards, product tiles, feature lists.</p><div class="row"><div class="col-4">4</div><div class="col-4">4</div><div class="col-4">4</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g0"><span class="lbl">Copy</span></button><pre><code id="g0">&lt;div class="row"&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Content and sidebar</h4><p class="help" style="margin:0 0 10px">Articles, documentation, settings pages.</p><div class="row"><div class="col-8">8</div><div class="col-4">4</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g1"><span class="lbl">Copy</span></button><pre><code id="g1">&lt;div class="row"&gt;&lt;div class="col-8"&gt;8&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Asymmetric split</h4><p class="help" style="margin:0 0 10px">Heroes and feature sections with tension.</p><div class="row"><div class="col-5">5</div><div class="col-7">7</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g2"><span class="lbl">Copy</span></button><pre><code id="g2">&lt;div class="row"&gt;&lt;div class="col-5"&gt;5&lt;/div&gt;&lt;div class="col-7"&gt;7&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Four up</h4><p class="help" style="margin:0 0 10px">Dense galleries and logo walls.</p><div class="row"><div class="col-3">3</div><div class="col-3">3</div><div class="col-3">3</div><div class="col-3">3</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g3"><span class="lbl">Copy</span></button><pre><code id="g3">&lt;div class="row"&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div></div><div class="code"><button class="copy" data-copy="#gridcss"><span class="lbl">Copy grid CSS</span></button><pre><code id="gridcss">.row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+}
+.col-3 { grid-column: span 3; }  .col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }  .col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+@media (max-width: 760px) {
+  .row { grid-template-columns: 1fr; }
+  .row &gt; * { grid-column: auto; }
+}</code></pre></div></div>
+<div class="block"><h3>Shape and depth</h3><p>Soft radius, inner highlights on top and shadows below, like light falling from the ceiling.</p><div class="demo"><div class="shapes">
+<div class="card" style="box-shadow:none">radius: 8px<br>border: 1px</div>
+<div class="card" style="border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)">radius-sm: 6px<br>shadow-sm</div>
+<div class="card">shadow (raised)</div>
+<div class="card" style="background:var(--media);color:var(--accent-fg)">media fill</div></div></div><div class="code"><button class="copy" data-copy="#shapecss"><span class="lbl">Copy shape tokens</span></button><pre><code id="shapecss">:root {
+  --radius: 8px;
+  --radius-sm: 6px;
+  --bw: 1px;
+  --shadow: 0 1px 0 #fff inset, 0 2px 4px rgba(0,0,0,.25), 0 8px 18px rgba(0,0,0,.18);
+  --shadow-sm: 0 1px 0 rgba(255,255,255,.7) inset, 0 1px 3px rgba(0,0,0,.3);
+  --gap: 24px;
+  --pad: 24px;
+}</code></pre></div></div>
+<div class="block"><h3>Token playground</h3><p>Change three tokens and the whole page responds, because every component reads from them. Reset brings back the style defaults.</p>
+<div class="demo"><div class="pg"><label>Corner radius<input type="range" class="range" id="pg-r" min="0" max="48"></label><label>Border width<input type="range" class="range" id="pg-b" min="0" max="8"></label><label>Accent color<input type="color" id="pg-a"></label><button class="btn btn-2" id="pg-reset">Reset tokens</button></div></div>
+<div class="code"><pre><code id="pg-out">Move a control to see the token change.</code></pre></div></div>
+</div></section>
+
+<section id="components" class="sec alt"><div class="container">
+<h2 class="sec-title">Components</h2>
+<p class="sec-lede">Every component below is plain HTML with class names from the kit. Copy the full kit CSS once, then paste any snippet.</p>
+<div class="code"><button class="copy" data-copy="#kitcss"><span class="lbl">Copy full kit CSS</span></button><pre><code id="kitcss">/* Skeuomorphism kit · Anti-Boring */
+:root{
+  --bg:#E6E0D4;
+  --surface:#F7F3EA;
+  --surface2:#DCD4C4;
+  --fg:#2B2520;
+  --muted:#5E554A;
+  --accent:#3B7DDD;
+  --accent-fg:#FFFFFF;
+  --accent2:#D9DCE0;
+  --accent2-fg:#2B2520;
+  --border:#A89C88;
+  --bw:1px;
+  --radius:8px;
+  --radius-sm:6px;
+  --shadow:0 1px 0 #fff inset, 0 2px 4px rgba(0,0,0,.25), 0 8px 18px rgba(0,0,0,.18);
+  --shadow-sm:0 1px 0 rgba(255,255,255,.7) inset, 0 1px 3px rgba(0,0,0,.3);
+  --font-d:"Arvo",Rockwell,serif;
+  --font-b:"Lato",system-ui,sans-serif;
+  --font-m:ui-monospace,Menlo,monospace;
+  --h-weight:700;
+  --h-track:0;
+  --h-case:none;
+  --h-style:normal;
+  --h-lh:1.1;
+  --gap:24px;
+  --pad:24px;
+  --focus:rgba(59,125,221,.45);
+  --ok:#2E7D32;
+  --warn:#8A5A00;
+  --danger:#B3261E;
+  --info:#3B7DDD;
+  --field-bg:#FFFFFF;
+  --field-shadow:inset 0 2px 3px rgba(0,0,0,.18);
+  --media:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 2px,transparent 2px 7px),repeating-linear-gradient(0deg,#A8683B 0 18px,#9A5E34 18px 22px,#B07244 22px 40px);
+  --code-bg:#2B2520;
+  --code-fg:#EDE3CF;
+  --btn-case:none;
+  --btn-track:0;
+  --btn-weight:700;
+  --badge-radius:999px;
+  --maxw:1160px;
+  --fs-sm:13.6px;
+  --fs-body:17px;
+  --fs-4:21.2px;
+  --fs-3:26.6px;
+  --fs-2:33.2px;
+  --fs-1:41.5px;
+  --fs-d:clamp(42px, 9vw, 81px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 var(--fs-body)/1.6 var(--font-b);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-d);font-weight:var(--h-weight);letter-spacing:var(--h-track);text-transform:var(--h-case);font-style:var(--h-style);line-height:var(--h-lh);margin:0 0 .4em}
+h1{font-size:var(--fs-1)} h2{font-size:var(--fs-2)} h3{font-size:var(--fs-3)} h4{font-size:var(--fs-4)}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+code,pre,kbd{font-family:var(--font-m)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font:var(--btn-weight) 1rem/1 var(--font-b);text-transform:var(--btn-case);letter-spacing:var(--btn-track);padding:.85em 1.4em;border:var(--bw) solid var(--border);border-radius:var(--radius);background:var(--accent);color:var(--accent-fg);box-shadow:var(--shadow-sm);text-decoration:none;cursor:pointer;transition:transform .12s,box-shadow .12s,background-color .12s,color .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.btn-2{background:var(--accent2);color:var(--accent2-fg)}
+.btn-ghost{background:transparent;color:var(--fg);box-shadow:none}
+.btn-sm{font-size:.85rem;padding:.6em 1em}
+.btn-lg{font-size:1.15rem;padding:1em 1.7em}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+
+/* forms */
+.field{display:grid;gap:.4em;margin-bottom:1.1em}
+.label{font-weight:600;font-size:.95rem}
+.help{font-size:.85rem;color:var(--muted)}
+.input,.select,.textarea{width:100%;font:1rem/1.4 var(--font-b);color:var(--fg);padding:.75em .9em;background:var(--field-bg);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--field-shadow);appearance:none}
+.select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.4em}
+.textarea{min-height:110px;resize:vertical}
+.input:focus,.select:focus,.textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--field-shadow),0 0 0 3px var(--focus)}
+.is-error .input{border-color:var(--danger)} .is-error .help{color:var(--danger)}
+.choice{display:flex;align-items:center;gap:.6em;margin:.35em 0;cursor:pointer}
+.check,.radio{appearance:none;width:1.25em;height:1.25em;margin:0;flex:none;border:var(--bw) solid var(--border);background:var(--field-bg);box-shadow:var(--field-shadow);display:grid;place-items:center;cursor:pointer}
+.check{border-radius:calc(var(--radius-sm)/2)} .radio{border-radius:50%}
+.check::after{content:"";width:.55em;height:.3em;border-left:2.5px solid var(--accent-fg);border-bottom:2.5px solid var(--accent-fg);transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.radio::after{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--accent-fg);opacity:0}
+.check:checked,.radio:checked{background:var(--accent);border-color:var(--border)}
+.check:checked::after,.radio:checked::after{opacity:1}
+.switch{appearance:none;width:2.8em;height:1.6em;margin:0;flex:none;border-radius:999px;border:var(--bw) solid var(--border);background:var(--surface2);position:relative;cursor:pointer;transition:background .15s;box-shadow:var(--field-shadow)}
+.switch::before{content:"";position:absolute;top:50%;left:.18em;width:1.1em;height:1.1em;border-radius:50%;background:var(--fg);transform:translateY(-50%);transition:left .15s}
+.switch:checked{background:var(--accent)}
+.switch:checked::before{left:calc(100% - 1.28em);background:var(--accent-fg)}
+.range{width:100%;accent-color:var(--accent)}
+
+/* surfaces */
+.card{background:var(--surface);color:var(--fg);border:var(--bw) solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--pad);position:relative}
+.card-media{aspect-ratio:16/9;border-radius:var(--radius-sm);background:var(--media);margin-bottom:1em}
+.badge{display:inline-block;font:600 .75rem/1 var(--font-b);padding:.45em .75em;border-radius:var(--badge-radius);background:var(--accent2);color:var(--accent2-fg);border:var(--bw) solid var(--border)}
+.alert{padding:1em 1.2em;border:var(--bw) solid var(--border);border-left:6px solid var(--c,var(--info));border-radius:var(--radius-sm);background:var(--surface);margin-bottom:.8em}
+.alert b{color:var(--c,var(--info))}
+.alert-ok{--c:var(--ok)} .alert-warn{--c:var(--warn)} .alert-danger{--c:var(--danger)}
+.progress{height:.8em;border-radius:999px;background:var(--surface2);border:var(--bw) solid var(--border);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent)}
+
+/* navigation */
+.tabs{display:flex;gap:.25em;border-bottom:var(--bw) solid var(--border);flex-wrap:wrap}
+.tab{font:600 .95rem var(--font-b);padding:.7em 1em;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);cursor:pointer;margin-bottom:calc(var(--bw) * -1)}
+.tab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.crumbs{display:flex;gap:.5em;flex-wrap:wrap;font-size:.9rem;color:var(--muted);list-style:none;padding:0;margin:0}
+.crumbs li+li::before{content:"/";margin-right:.5em;opacity:.6}
+.pager{display:flex;gap:.4em;list-style:none;padding:0;margin:0;flex-wrap:wrap}
+.pager a{display:grid;place-items:center;min-width:2.4em;height:2.4em;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);text-decoration:none;background:var(--surface)}
+.pager a[aria-current]{background:var(--accent);color:var(--accent-fg)}
+
+/* table */
+.table-wrap{overflow-x:auto;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);background:var(--surface)}
+.table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:460px}
+.table th,.table td{text-align:left;padding:.75em 1em;border-bottom:1px solid color-mix(in srgb,var(--border) 30%,transparent)}
+.table th{font-family:var(--font-d);font-weight:var(--h-weight)}
+
+/* grid */
+.row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
+.col-3{grid-column:span 3}.col-4{grid-column:span 4}.col-5{grid-column:span 5}.col-6{grid-column:span 6}.col-7{grid-column:span 7}.col-8{grid-column:span 8}.col-12{grid-column:span 12}
+@media (max-width:760px){.row{grid-template-columns:minmax(0,1fr);gap:min(var(--gap),16px)}.row&gt;*{grid-column:auto!important;grid-row:auto!important}}
+
+/* signature */
+.btn{background:linear-gradient(#6FA7F2,#3B7DDD 50%,#2A67C2 51%,#4F8FE6);border-color:#1F4F96;text-shadow:0 -1px 0 rgba(0,0,0,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 1px 2px rgba(0,0,0,.35)}
+.btn:active{transform:none;background:linear-gradient(#2A67C2,#3B7DDD);box-shadow:inset 0 2px 4px rgba(0,0,0,.4)}
+.btn-2{background:linear-gradient(#F4F5F7,#D9DCE0 50%,#C9CDD3 51%,#E3E6EA);border-color:#8E949C;color:#2B2520;text-shadow:0 1px 0 #fff}
+.btn-ghost{background:transparent;border-color:transparent;text-shadow:none;box-shadow:none;color:var(--fg);text-decoration:underline}
+.card{background:linear-gradient(#FBF8F1,#F2ECDF)}
+.card-media{border:4px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);transform:rotate(-1deg)}
+.badge{background:linear-gradient(#E2463B,#B42A21);color:#fff;border:0;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 1px 2px rgba(0,0,0,.4);text-shadow:0 -1px 0 rgba(0,0,0,.3)}
+.switch{width:3.4em;background:linear-gradient(#C9CDD3,#E6E8EB);box-shadow:inset 0 2px 4px rgba(0,0,0,.3);border-color:#8E949C}
+.switch::before{width:1.3em;height:1.3em;background:linear-gradient(#FFFFFF,#D9DCE0);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.switch:checked{background:linear-gradient(#2A67C2,#6FA7F2)}
+.switch:checked::before{left:calc(100% - 1.45em);background:linear-gradient(#FFFFFF,#D9DCE0)}
+.check,.radio{background:linear-gradient(#fff,#E6E8EB);box-shadow:inset 0 1px 2px rgba(0,0,0,.2)}
+.check:checked,.radio:checked{background:linear-gradient(#6FA7F2,#2A67C2)}
+.progress{background:linear-gradient(#C9CDD3,#E6E8EB);box-shadow:inset 0 1px 3px rgba(0,0,0,.35)}
+.progress i{background:linear-gradient(#8FC0FF,#3B7DDD 50%,#2A67C2 51%,#6FA7F2)}
+.alert{background:linear-gradient(#FFFDF4,#F4EED8);box-shadow:var(--shadow-sm)}
+.tabs{background:linear-gradient(#E3E6EA,#C9CDD3);border-radius:8px;padding:3px;display:inline-flex;border:1px solid #8E949C}
+.tab{border:0;border-radius:6px;margin:0;color:#2B2520}
+.tab[aria-selected="true"]{background:linear-gradient(#6FA7F2,#3B7DDD);color:#fff;box-shadow:inset 0 1px 3px rgba(0,0,0,.3)}
+.pager a{background:linear-gradient(#F4F5F7,#D9DCE0);box-shadow:var(--shadow-sm)}
+.pager a[aria-current]{background:linear-gradient(#6FA7F2,#3B7DDD)}
+.table th{background:linear-gradient(#F4F5F7,#D9DCE0);text-shadow:0 1px 0 #fff}
+
+/* dark theme: add class="alt" to &lt;html&gt; */
+html.alt{
+  --bg:#1F1B17;
+  --surface:#2B2520;
+  --surface2:#25201B;
+  --fg:#F2EADB;
+  --muted:#C2B6A2;
+  --border:#5E554A;
+  --accent2:#4A4F57;
+  --accent2-fg:#F2EADB;
+  --field-bg:#1A1612;
+  --field-shadow:inset 0 2px 3px rgba(0,0,0,.5);
+  --shadow:0 1px 0 rgba(255,255,255,.06) inset, 0 2px 4px rgba(0,0,0,.5), 0 8px 18px rgba(0,0,0,.4);
+  --shadow-sm:0 1px 0 rgba(255,255,255,.08) inset, 0 1px 3px rgba(0,0,0,.5);
+  --code-bg:#120F0C;
+}
+html.alt .docnav{background:linear-gradient(#2B2520,#1A1612)!important}html.alt .card{background:linear-gradient(#2E2823,#26211C)}html.alt .alert{background:linear-gradient(#2E2823,#26211C)}html.alt .btn-2,html.alt .tab{text-shadow:none}html.alt .table th{background:linear-gradient(#3A342E,#2B2520);text-shadow:none}html.alt .tl li{box-shadow:none;border-color:#3A342E}</code></pre></div>
+<div class="block" id="c-buttons"><h3>Buttons</h3><p>Three emphasis levels, three sizes and a disabled state. Keep one primary button per view.</p><div class="demo"><div class="demo-row">
+  <button class="btn">Primary</button>
+  <button class="btn btn-2">Secondary</button>
+  <button class="btn btn-ghost">Ghost</button>
+  <button class="btn" disabled>Disabled</button>
+</div>
+<div class="demo-row" style="margin-top:14px">
+  <button class="btn btn-sm">Small</button>
+  <button class="btn">Default</button>
+  <button class="btn btn-lg">Large</button>
+</div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cbuttons"><span class="lbl">Copy</span></button><pre><code id="cbuttons">&lt;div class="demo-row"&gt;
+  &lt;button class="btn"&gt;Primary&lt;/button&gt;
+  &lt;button class="btn btn-2"&gt;Secondary&lt;/button&gt;
+  &lt;button class="btn btn-ghost"&gt;Ghost&lt;/button&gt;
+  &lt;button class="btn" disabled&gt;Disabled&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="demo-row" style="margin-top:14px"&gt;
+  &lt;button class="btn btn-sm"&gt;Small&lt;/button&gt;
+  &lt;button class="btn"&gt;Default&lt;/button&gt;
+  &lt;button class="btn btn-lg"&gt;Large&lt;/button&gt;
+&lt;/div&gt;</code></pre></div></details></div><div class="block" id="c-forms"><h3>Form elements</h3><p>Text fields, choices and toggles share the same border, radius and focus ring, so a form reads as one family.</p><div class="demo"><form class="formgrid" onsubmit="return false">
+  <div>
+    <div class="field">
+      <label class="label" for="f-name">Full name</label>
+      <input class="input" id="f-name" placeholder="Ada Lovelace">
+      <span class="help">As it appears on your ID.</span>
+    </div>
+    <div class="field is-error">
+      <label class="label" for="f-mail">Email</label>
+      <input class="input" id="f-mail" type="email" value="ada@">
+      <span class="help">Enter a complete email address.</span>
+    </div>
+    <div class="field">
+      <label class="label" for="f-plan">Plan</label>
+      <select class="select" id="f-plan"><option>Starter</option><option>Studio</option><option>Team</option></select>
+    </div>
+  </div>
+  <div>
+    <div class="field">
+      <label class="label" for="f-msg">Message</label>
+      <textarea class="textarea" id="f-msg" placeholder="Tell us about your project"></textarea>
+    </div>
+    <fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em">
+      <legend class="label">Interests</legend>
+      <label class="choice"><input type="checkbox" class="check" checked> Typography</label>
+      <label class="choice"><input type="checkbox" class="check"> Motion</label>
+    </fieldset>
+    <fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em">
+      <legend class="label">Billing</legend>
+      <label class="choice"><input type="radio" name="bill" class="radio" checked> Monthly</label>
+      <label class="choice"><input type="radio" name="bill" class="radio"> Yearly</label>
+    </fieldset>
+    <label class="choice"><input type="checkbox" class="switch" checked> Email me updates</label>
+    <div class="field" style="margin-top:1em">
+      <label class="label" for="f-range">Budget</label>
+      <input class="range" id="f-range" type="range" value="60">
+    </div>
+    <button class="btn">Send request</button>
+  </div>
+</form></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cforms"><span class="lbl">Copy</span></button><pre><code id="cforms">&lt;form class="formgrid" onsubmit="return false"&gt;
+  &lt;div&gt;
+    &lt;div class="field"&gt;
+      &lt;label class="label" for="f-name"&gt;Full name&lt;/label&gt;
+      &lt;input class="input" id="f-name" placeholder="Ada Lovelace"&gt;
+      &lt;span class="help"&gt;As it appears on your ID.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="field is-error"&gt;
+      &lt;label class="label" for="f-mail"&gt;Email&lt;/label&gt;
+      &lt;input class="input" id="f-mail" type="email" value="ada@"&gt;
+      &lt;span class="help"&gt;Enter a complete email address.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="field"&gt;
+      &lt;label class="label" for="f-plan"&gt;Plan&lt;/label&gt;
+      &lt;select class="select" id="f-plan"&gt;&lt;option&gt;Starter&lt;/option&gt;&lt;option&gt;Studio&lt;/option&gt;&lt;option&gt;Team&lt;/option&gt;&lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;div class="field"&gt;
+      &lt;label class="label" for="f-msg"&gt;Message&lt;/label&gt;
+      &lt;textarea class="textarea" id="f-msg" placeholder="Tell us about your project"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em"&gt;
+      &lt;legend class="label"&gt;Interests&lt;/legend&gt;
+      &lt;label class="choice"&gt;&lt;input type="checkbox" class="check" checked&gt; Typography&lt;/label&gt;
+      &lt;label class="choice"&gt;&lt;input type="checkbox" class="check"&gt; Motion&lt;/label&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em"&gt;
+      &lt;legend class="label"&gt;Billing&lt;/legend&gt;
+      &lt;label class="choice"&gt;&lt;input type="radio" name="bill" class="radio" checked&gt; Monthly&lt;/label&gt;
+      &lt;label class="choice"&gt;&lt;input type="radio" name="bill" class="radio"&gt; Yearly&lt;/label&gt;
+    &lt;/fieldset&gt;
+    &lt;label class="choice"&gt;&lt;input type="checkbox" class="switch" checked&gt; Email me updates&lt;/label&gt;
+    &lt;div class="field" style="margin-top:1em"&gt;
+      &lt;label class="label" for="f-range"&gt;Budget&lt;/label&gt;
+      &lt;input class="range" id="f-range" type="range" value="60"&gt;
+    &lt;/div&gt;
+    &lt;button class="btn"&gt;Send request&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre></div></details></div><div class="block" id="c-cards"><h3>Cards</h3><p>A container for one idea. Media sits on top, then a badge, title, short text and one action.</p><div class="demo"><div class="auto">
+  <article class="card">
+    <div class="card-media"></div>
+    <span class="badge">New</span>
+    <h4 style="margin-top:.6em">Card title</h4>
+    <p>Short supporting text that explains what this card is about.</p>
+    <a class="btn btn-sm" href="#">Read more</a>
+  </article>
+  <article class="card">
+    <div class="card-media" style="filter:hue-rotate(40deg)"></div>
+    <span class="badge">Guide</span>
+    <h4 style="margin-top:.6em">Second card</h4>
+    <p>Cards in a row share height and spacing, so the grid stays calm.</p>
+    <a class="btn btn-sm btn-2" href="#">Open</a>
+  </article>
+</div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#ccards"><span class="lbl">Copy</span></button><pre><code id="ccards">&lt;div class="auto"&gt;
+  &lt;article class="card"&gt;
+    &lt;div class="card-media"&gt;&lt;/div&gt;
+    &lt;span class="badge"&gt;New&lt;/span&gt;
+    &lt;h4 style="margin-top:.6em"&gt;Card title&lt;/h4&gt;
+    &lt;p&gt;Short supporting text that explains what this card is about.&lt;/p&gt;
+    &lt;a class="btn btn-sm" href="#"&gt;Read more&lt;/a&gt;
+  &lt;/article&gt;
+  &lt;article class="card"&gt;
+    &lt;div class="card-media" style="filter:hue-rotate(40deg)"&gt;&lt;/div&gt;
+    &lt;span class="badge"&gt;Guide&lt;/span&gt;
+    &lt;h4 style="margin-top:.6em"&gt;Second card&lt;/h4&gt;
+    &lt;p&gt;Cards in a row share height and spacing, so the grid stays calm.&lt;/p&gt;
+    &lt;a class="btn btn-sm btn-2" href="#"&gt;Open&lt;/a&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre></div></details></div><div class="block" id="c-feedback"><h3>Feedback</h3><p>Alerts, badges and progress tell people what just happened and what to do next.</p><div class="demo"><div class="alert"><b>Info.</b> Your draft saves every 30 seconds.</div>
+<div class="alert alert-ok"><b>Saved.</b> Changes are live on your site.</div>
+<div class="alert alert-warn"><b>Check this.</b> Two images are missing alt text.</div>
+<div class="alert alert-danger"><b>Upload failed.</b> Files must be under 10 MB. Try a smaller file.</div>
+<div class="demo-row" style="margin-top:14px">
+  <span class="badge">Default</span>
+  <span class="badge" style="background:var(--accent);color:var(--accent-fg)">Accent</span>
+</div>
+<div style="margin-top:18px"><div class="progress" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" aria-label="Upload progress"><i style="width:64%"></i></div></div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cfeedback"><span class="lbl">Copy</span></button><pre><code id="cfeedback">&lt;div class="alert"&gt;&lt;b&gt;Info.&lt;/b&gt; Your draft saves every 30 seconds.&lt;/div&gt;
+&lt;div class="alert alert-ok"&gt;&lt;b&gt;Saved.&lt;/b&gt; Changes are live on your site.&lt;/div&gt;
+&lt;div class="alert alert-warn"&gt;&lt;b&gt;Check this.&lt;/b&gt; Two images are missing alt text.&lt;/div&gt;
+&lt;div class="alert alert-danger"&gt;&lt;b&gt;Upload failed.&lt;/b&gt; Files must be under 10 MB. Try a smaller file.&lt;/div&gt;
+&lt;div class="demo-row" style="margin-top:14px"&gt;
+  &lt;span class="badge"&gt;Default&lt;/span&gt;
+  &lt;span class="badge" style="background:var(--accent);color:var(--accent-fg)"&gt;Accent&lt;/span&gt;
+&lt;/div&gt;
+&lt;div style="margin-top:18px"&gt;&lt;div class="progress" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" aria-label="Upload progress"&gt;&lt;i style="width:64%"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="block" id="c-navigation"><h3>Navigation</h3><p>Tabs switch views in place. Breadcrumbs show location. Pagination moves through long lists.</p><div class="demo"><div class="tabs" role="tablist">
+  <button class="tab" role="tab" aria-selected="true">Overview</button>
+  <button class="tab" role="tab" aria-selected="false">Specs</button>
+  <button class="tab" role="tab" aria-selected="false">Reviews</button>
+</div>
+<ol class="crumbs" style="margin-top:20px">
+  <li><a href="#">Home</a></li><li><a href="#">Library</a></li><li aria-current="page">This page</li>
+</ol>
+<ul class="pager" style="margin-top:20px">
+  <li><a href="#">1</a></li><li><a href="#" aria-current="page">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li>
+</ul></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cnavigation"><span class="lbl">Copy</span></button><pre><code id="cnavigation">&lt;div class="tabs" role="tablist"&gt;
+  &lt;button class="tab" role="tab" aria-selected="true"&gt;Overview&lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false"&gt;Specs&lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false"&gt;Reviews&lt;/button&gt;
+&lt;/div&gt;
+&lt;ol class="crumbs" style="margin-top:20px"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;&lt;li aria-current="page"&gt;This page&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul class="pager" style="margin-top:20px"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#" aria-current="page"&gt;2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre></div></details></div><div class="block" id="c-table"><h3>Data table</h3><p>Tables scroll sideways on small screens instead of squashing columns.</p><div class="demo"><div class="table-wrap">
+  <table class="table">
+    <thead><tr><th>Project</th><th>Owner</th><th>Status</th><th>Due</th></tr></thead>
+    <tbody>
+      <tr><td>Homepage</td><td>Rūta</td><td><span class="badge">Review</span></td><td>12 Oct</td></tr>
+      <tr><td>Checkout</td><td>Tomas</td><td><span class="badge">Draft</span></td><td>19 Oct</td></tr>
+      <tr><td>Onboarding</td><td>Ieva</td><td><span class="badge">Live</span></td><td>2 Oct</td></tr>
+    </tbody>
+  </table>
+</div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#ctable"><span class="lbl">Copy</span></button><pre><code id="ctable">&lt;div class="table-wrap"&gt;
+  &lt;table class="table"&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Project&lt;/th&gt;&lt;th&gt;Owner&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Due&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;Homepage&lt;/td&gt;&lt;td&gt;Rūta&lt;/td&gt;&lt;td&gt;&lt;span class="badge"&gt;Review&lt;/span&gt;&lt;/td&gt;&lt;td&gt;12 Oct&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Tomas&lt;/td&gt;&lt;td&gt;&lt;span class="badge"&gt;Draft&lt;/span&gt;&lt;/td&gt;&lt;td&gt;19 Oct&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Onboarding&lt;/td&gt;&lt;td&gt;Ieva&lt;/td&gt;&lt;td&gt;&lt;span class="badge"&gt;Live&lt;/span&gt;&lt;/td&gt;&lt;td&gt;2 Oct&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre></div></details></div>
+</div></section>
+
+
+<section id="prompt" class="sec"><div class="container">
+<h2 class="sec-title">Prompt it</h2>
+<p class="sec-lede">A ready prompt for AI design and coding tools. It names exact tokens and bans the usual defaults, so the output keeps this style's point of view.</p>
+<div class="prompt"><div class="code"><button class="copy" data-copy="#prompttext"><span class="lbl">Copy prompt</span></button><pre><code id="prompttext">Design a responsive landing page for a vintage-style music recording app in an authentic Skeuomorphism style.
+
+Palette: Linen #E6E0D4, Leather #6B3E26, Stitch #E8D2A6, Aluminium #D9DCE0, Walnut #A8683B, Glossy blue #3B7DDD, Ink #2B2520.
+Typography: Arvo 700 for titles, Lato for interface text.
+Layout: The hero is an app window: a stitched leather header with embossed title, a lined yellow notepad body with a red margin line holding the intro and buttons, and a brushed metal control panel with a turning knob.
+Signature details: Materials drawn with CSS gradients (leather grain, brushed metal, ruled paper), a consistent light from above, inner highlights, soft drop shadows.
+Components: Glossy blue gel buttons, aluminium secondary buttons, physical toggle switches, red notification badges, segmented metal tab bar.
+Motion: Physical movement: a swinging VU needle with bounce, a flipping toggle, a turning knob.
+Avoid: flat colours only, photographic textures, mixed light directions, knobs that do nothing.
+Do not fall back on generic AI defaults: no centered hero with a gradient blob, no identical rounded cards with soft grey shadows, no purple-to-blue gradients, no emoji icons, unless this style explicitly calls for them.
+Accessibility: body text contrast of at least 4.5:1, visible keyboard focus on every control, labels on all form fields, and respect prefers-reduced-motion.
+Deliver one self-contained HTML file with CSS variables for every color, font, radius and shadow token.</code></pre></div></div>
+</div></section>
+
+<section id="pitfalls" class="sec alt"><div class="container">
+<h2 class="sec-title">Common mistakes</h2>
+<p class="sec-lede">Where this style usually goes wrong, and how to keep it honest.</p>
+<div class="auto pit"><article class="card"><h3>Texture overload</h3><p>Leather, wood and metal on one screen look like a furniture showroom. Pick one material per area.</p></article><article class="card"><h3>Heavy images</h3><p>Real textures as photos add weight. Build them with CSS gradients where you can.</p></article><article class="card"><h3>Fake affordances</h3><p>If it looks like a knob, it must turn. Controls must behave like the objects they copy.</p></article><article class="card"><h3>Low contrast labels</h3><p>Embossed text on textured surfaces is hard to read. Keep labels high contrast.</p></article></div>
+</div></section>
+
+<footer class="docfoot"><div class="container">Anti-Boring · Skeuomorphism · every illustration, animation and component on this page is original and drawn in code.</div></footer>
+<script>
+function copyText(t,btn){const o=btn.innerHTML;const done=()=>{btn.textContent='Copied';setTimeout(()=>btn.innerHTML=o,1400)};
+ const fb=()=>{const ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;top:0;left:0;opacity:0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();ok?done():(btn.textContent='Press Ctrl+C',setTimeout(()=>btn.innerHTML=o,1800))};
+ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,fb)}else fb()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;e.preventDefault();
+ const v=b.dataset.copy;const t=v.startsWith('#')?document.querySelector(v).textContent:v;copyText(t,b.querySelector('.lbl')||b)});
+(function(){const b=document.getElementById('theme-toggle');if(!b)return;const R=document.documentElement,nat=b.dataset.native,oth=nat==='light'?'dark':'light';
+ const cur=()=>R.classList.contains('alt')?oth:nat;const lbl=()=>{document.getElementById('theme-lbl').textContent=cur()==='light'?'Dark':'Light';b.setAttribute('aria-label','Switch to '+(cur()==='light'?'dark':'light')+' theme')};lbl();
+ b.onclick=()=>{R.classList.toggle('alt');try{localStorage.setItem('atlas-theme',cur())}catch(e){}lbl();try{parent.postMessage({atlasTheme:cur()},'*')}catch(e){}}})();
+const st=document.getElementById('stage'),tg=document.getElementById('toggle');
+if(st&&tg)tg.onclick=()=>{st.classList.toggle('paused');tg.textContent=st.classList.contains('paused')?'Play':'Pause'};
+document.querySelectorAll('.tabs').forEach(t=>t.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;t.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===b))}));
+document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+(function(){const R=document.documentElement,rad=document.getElementById('pg-r'),bw=document.getElementById('pg-b'),ac=document.getElementById('pg-a'),out=document.getElementById('pg-out'),rs=document.getElementById('pg-reset');
+ if(!rad)return;const cs=getComputedStyle(R);const init={r:cs.getPropertyValue('--radius').trim(),b:cs.getPropertyValue('--bw').trim(),a:cs.getPropertyValue('--accent').trim()};
+ rad.value=parseInt(init.r)||0;bw.value=parseInt(init.b)||0;if(/^#[0-9a-f]{6}$/i.test(init.a))ac.value=init.a;
+ function upd(){R.style.setProperty('--radius',rad.value+'px');R.style.setProperty('--radius-sm',Math.round(rad.value*.6)+'px');R.style.setProperty('--bw',bw.value+'px');R.style.setProperty('--accent',ac.value);
+ out.textContent=`:root {\n  --radius: ${rad.value}px;\n  --radius-sm: ${Math.round(rad.value*.6)}px;\n  --bw: ${bw.value}px;\n  --accent: ${ac.value};\n}`}
+ rad.oninput=bw.oninput=ac.oninput=upd;
+ rs.onclick=()=>{['--radius','--radius-sm','--bw','--accent'].forEach(p=>R.style.removeProperty(p));rad.value=parseInt(init.r)||0;bw.value=parseInt(init.b)||0;if(/^#/.test(init.a))ac.value=init.a;out.textContent='Tokens reset to the style defaults.'};
+})();
+</script>
+</body>
+</html>

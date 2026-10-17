@@ -1,0 +1,53 @@
+# Sarunas Vaitkus
+
+> I design learning experiences and ship instruments you can actually explore. eLearning, instructional design, and web design for enterprises (OSCE, UNECE, KPMG, Clarksons). Instruments: LT·GOV (Power, mapped.), VibeList (AI, indexed.), LT School Atlas (Schools, mapped.), Design Atlas (Interfaces, explored.). Based in London, UK.
+
+## Canonical site
+
+https://sarunasvaitkus.com/
+
+## Primary pages (single-page sections)
+
+Hash IDs are lowercase except Testimonials.
+
+- Home: https://sarunasvaitkus.com/#home — "I design learning experiences and ship the instruments that make them work"
+- Shipped lately: https://sarunasvaitkus.com/#shipped — Useful instruments that turn messy public data, systems and technology into something you can actually explore (LT·GOV, VibeList, LT School Atlas, Design Atlas)
+- How: https://sarunasvaitkus.com/#how — approach, process, and "making IT work" for learning
+- What: https://sarunasvaitkus.com/#what — services (eLearning, instructional design, web design) and instruments
+- Portfolio: https://sarunasvaitkus.com/#portfolio — learning experiences for 50+ organisations and instrument demos
+- Testimonials: https://sarunasvaitkus.com/#Testimonials — client and colleague recommendations
+- Contact: https://sarunasvaitkus.com/#contact — hire for learning experiences or try instruments
+
+Legacy hashes `#How`, `#What`, `#Portfolio`, `#Home`, and `#section-intro` still resolve via client-side aliases.
+
+## Extended summary for agents
+
+https://sarunasvaitkus.com/llms-full.txt
+
+## Professional profiles
+
+- LinkedIn: https://www.linkedin.com/in/vaitkus
+- Upwork: https://www.upwork.com/freelancers/vaitkus
+- Upwork (hire): https://www.upwork.com/workwith/sarunasvaitkus
+- Metability (company and instruments): https://metability.ai
+
+## Expertise (keywords)
+
+eLearning, instructional design, web design, learning experience design, blended learning, LMS (Moodle, SharePoint), SCORM, civic mapping, public-data instruments, Metability, HTML5/CSS3, Bootstrap, corporate L&D, banking, government, automotive, mining, education sectors.
+
+## Ask an AI assistant (for agents)
+
+An AI assistant answers questions about Šarūnas Vaitkus's work from his published material. It is an AI, not Šarūnas. Quotes, salary, availability and contract terms are handed off to him.
+
+- JSON: POST https://bmtnfhppzrkztmqzwrhx.supabase.co/functions/v1/ask with {"question": "..."}
+- MCP (Streamable HTTP): https://bmtnfhppzrkztmqzwrhx.supabase.co/functions/v1/mcp, tool `ask_about_sarunas`
+- CV: https://sarunasvaitkus.com/cv/
+
+## Contact
+
+- Location: London, UK
+- Preferred: LinkedIn or Upwork messages
+
+## Sitemap
+
+https://sarunasvaitkus.com/sitemap.xml
