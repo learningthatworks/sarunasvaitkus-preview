@@ -1,0 +1,105 @@
+# Šarūnas Vaitkus
+
+> Learning experience and technology consultant since 2000. Courses, platforms, AI tools and digital adoption for UN agencies, international organisations and global businesses. Eligible to work in the EU, the UK and Australia; works remotely, or on site by arrangement.
+
+Every page below is a standalone page with its own address. Link to the specific page, not the homepage.
+
+## Key pages
+
+- [Homepage](https://sarunasvaitkus.com/): services, case studies, selected work, recommendations and contact
+- [CV](https://sarunasvaitkus.com/cv/): dashboard of the work since 2000; [plain version](https://sarunasvaitkus.com/cv/#print) with the full work history
+- [Case studies](https://sarunasvaitkus.com/case-studies/): four projects in detail
+- [Selected work](https://sarunasvaitkus.com/work/): 29 projects, each on its own page with the brief, role, result and demo
+- [Privacy](https://sarunasvaitkus.com/privacy/): contact form, on-site AI assistant, Google Analytics, and how to ask for deletion
+
+## Case studies
+
+- [Advanced Learning World: A bilingual learning platform, launched to production in 3.5 months](https://sarunasvaitkus.com/case-studies/alw/) (Learning product and solution architecture)
+- [UNECE SITCIN: From learning the method to using the platform: UNECE SITCIN](https://sarunasvaitkus.com/case-studies/sitcin/) (Learning, UX and platform rebuild)
+- [OSCE and UNECE eTIR: A guidance website and explainer for a new customs system](https://sarunasvaitkus.com/case-studies/etir/) (Knowledge access and communication)
+- [KPMG and CBRE: Learning for system change: CRM and Coupa rollouts at KPMG and CBRE](https://sarunasvaitkus.com/case-studies/system-adoption/) (Learning for digital adoption)
+
+## Selected work
+
+### Courses and learning
+
+- [myBuy Training](https://sarunasvaitkus.com/work/cbre-mybuy-training/) (CBRE)
+- [Sustainable Inland Transport Connectivity Indicators (SITCIN) module](https://sarunasvaitkus.com/work/unece-sitcin-elearning/) (UNECE)
+- [Online Security Management course](https://sarunasvaitkus.com/work/osce-security-management-course/) (OSCE)
+- [Client Management Overview](https://sarunasvaitkus.com/work/kpmg-crm-training/) (KPMG)
+- [Trainee Broker Programme](https://sarunasvaitkus.com/work/clarksons-trainee-broker-programme/) (Clarksons)
+- [Keep Them Safe (KTS) Reforms Programme](https://sarunasvaitkus.com/work/nsw-keep-them-safe/) (NSW Community Services)
+
+### Video and explainers
+
+- [CBRE Restatement Playbook Evaluation](https://sarunasvaitkus.com/work/cbre-restatement-explainer/) (CBRE)
+- [Confidence-Building Measures Explainer](https://sarunasvaitkus.com/work/osce-cyber-cbm-explainer/) (OSCE)
+- [eTIR website launch promotional video](https://sarunasvaitkus.com/work/unece-etir-video/) (UNECE)
+- [The Vienna Document explainer](https://sarunasvaitkus.com/work/osce-vienna-document-explainer/) (OSCE)
+- [Confidence-building measures explainer](https://sarunasvaitkus.com/work/osce-csbm-explainer/) (OSCE)
+
+### Interactions and simulations
+
+- [FOD & Safety Awareness refresher](https://sarunasvaitkus.com/work/marshall-fod-microlearning/) (Marshall ADG)
+- [Custom Articulate Storyline 360 interaction](https://sarunasvaitkus.com/work/kpmg-storyline-interaction/) (KPMG)
+- [Custom Articulate Storyline 360 interaction](https://sarunasvaitkus.com/work/osce-storyline-interaction/) (OSCE)
+- [Interaction: Clean Tanker Routes](https://sarunasvaitkus.com/work/clarksons-tanker-routes/) (Clarksons)
+
+### Platforms and websites
+
+- [UNECE eTIR Website](https://sarunasvaitkus.com/work/unece-etir-website/) (UNECE)
+- [UNECE SITCIN Website](https://sarunasvaitkus.com/work/unece-sitcin-website/) (UNECE)
+- [Advanced Learning World platform](https://sarunasvaitkus.com/work/advanced-learning-world-platform/) (Advanced Learning World)
+- [Advanced Learning Company website](https://sarunasvaitkus.com/work/advanced-learning-company-website/) (Advanced Learning Company)
+
+### Apps and tools
+
+- [Knowledge visualisation app](https://sarunasvaitkus.com/work/clarksons-knowledge-map/) (Clarksons)
+- [FlexTab: tab, slider and accordion configurator](https://sarunasvaitkus.com/work/flextab/) (Own product)
+- [SCORM Package Editor](https://sarunasvaitkus.com/work/scorm-package-editor/) (Own product)
+- [VibeList](https://sarunasvaitkus.com/work/vibelist/) (Own product)
+- [Vaikend: family events search](https://sarunasvaitkus.com/work/vaikend/) (Own product)
+- [Kidness: exercise app for children](https://sarunasvaitkus.com/work/kidness/) (Own product)
+- [LT·GOV: who holds power in Lithuania](https://sarunasvaitkus.com/work/lt-gov/) (Own product)
+- [Design Atlas: 51 web styles](https://sarunasvaitkus.com/work/design-atlas/) (Own product)
+- [LT School Atlas: schools compared](https://sarunasvaitkus.com/work/lt-school-atlas/) (Own product)
+- [Abbreviation/Glossary App](https://sarunasvaitkus.com/work/clarksons-glossary-app/) (Clarksons)
+
+## Services
+
+- Learning experience design and production
+- Learning platforms, UX and solution architecture
+- AI tools and practical learning applications
+- Learning for change and digital adoption
+- Learning-library audits
+
+## Ask an AI assistant (for agents)
+
+An AI assistant answers questions about Šarūnas Vaitkus's work from his published material. It is an AI, not Šarūnas. Quotes, rates, availability and contract terms are handed off to him.
+
+- JSON: POST https://bmtnfhppzrkztmqzwrhx.supabase.co/functions/v1/ask with {"question": "..."}
+- MCP (Streamable HTTP): https://bmtnfhppzrkztmqzwrhx.supabase.co/functions/v1/mcp, tool `ask_about_sarunas`
+
+## Profiles and contact
+
+- Contact form: https://sarunasvaitkus.com/#contact (he normally replies within two working days)
+- Privacy: https://sarunasvaitkus.com/privacy/ (Lithuanian: https://sarunasvaitkus.com/lt/privatumas/)
+- LinkedIn: https://www.linkedin.com/in/vaitkus
+- Upwork: https://www.upwork.com/freelancers/vaitkus
+- Metability (his own learning app): https://metability.ai
+
+## Lietuviškai (Lithuanian site for organisations in Lithuania)
+
+Every English page has a Lithuanian version at the same address under /lt/. The Lithuanian site is a localisation with its own messaging, not a word-for-word translation.
+
+- [Pradžia](https://sarunasvaitkus.com/lt/): darbuotojų mokymai, mokymo platformos ir AI sprendimai
+- [Paslaugos įmonėms](https://sarunasvaitkus.com/lt/paslaugos/): situacijos, kuriose galiu padėti, ir kaip atrodo bendradarbiavimas
+- [Projektų istorijos](https://sarunasvaitkus.com/lt/case-studies/)
+- [Atrinkti darbai](https://sarunasvaitkus.com/lt/work/)
+- [Apie mane ir profesinė patirtis](https://sarunasvaitkus.com/lt/cv/)
+- [Privatumas](https://sarunasvaitkus.com/lt/privatumas/): kontaktų forma, AI asistentas, „Google Analytics“ ir kaip paprašyti ištrinti duomenis
+
+## More
+
+- Full summary for agents: https://sarunasvaitkus.com/llms-full.txt
+- Sitemap: https://sarunasvaitkus.com/sitemap.xml

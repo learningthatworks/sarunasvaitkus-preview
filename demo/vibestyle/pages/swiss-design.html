@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  try {
+    var svParams = new URLSearchParams(location.search);
+    if (svParams.get('notrack') === '1') localStorage.setItem('sv_notrack', '1');
+    else if (svParams.get('notrack') === '0') localStorage.removeItem('sv_notrack');
+  } catch (e) {}
+  var svNotrack = false;
+  try {
+    svNotrack = localStorage.getItem('sv_notrack') === '1';
+  } catch (e) {}
+  var svHost = '';
+  try {
+    svHost = String(location.hostname || '').toLowerCase();
+  } catch (e) {}
+  if (svNotrack || navigator.webdriver === true || (svHost !== 'sarunasvaitkus.com' && svHost !== 'www.sarunasvaitkus.com')) {
+    window['ga-disable-G-KN31FWTLQ1'] = true;
+    window.svNoTrack = true;
+  }
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5P279');</script>
+<!-- End Google Tag Manager -->
+<!-- design-atlas-seo -->
+<meta name="description" content="Swiss Design design system, one of the Design Atlas styles. Copy the ready-to-use prompt into a design tool.">
+<link rel="canonical" href="https://sarunasvaitkus.com/demo/vibestyle/pages/swiss-design.html">
+<link rel="alternate" hreflang="en" href="https://sarunasvaitkus.com/demo/vibestyle/pages/swiss-design.html">
+<link rel="alternate" hreflang="x-default" href="https://sarunasvaitkus.com/demo/vibestyle/pages/swiss-design.html">
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Swiss Design design system · Anti-Boring">
+<meta property="og:description" content="Swiss Design design system, one of the Design Atlas styles. Copy the ready-to-use prompt into a design tool.">
+<meta property="og:url" content="https://sarunasvaitkus.com/demo/vibestyle/pages/swiss-design.html">
+<meta property="og:image" content="https://sarunasvaitkus.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Swiss Design design system · Anti-Boring">
+<meta name="twitter:description" content="Swiss Design design system, one of the Design Atlas styles. Copy the ready-to-use prompt into a design tool.">
+<meta name="twitter:image" content="https://sarunasvaitkus.com/assets/img/og-image.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Swiss Design design system · Anti-Boring", "description": "Swiss Design design system, one of the Design Atlas styles. Copy the ready-to-use prompt into a design tool.", "url": "https://sarunasvaitkus.com/demo/vibestyle/pages/swiss-design.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Šarūnas Vaitkus", "url": "https://sarunasvaitkus.com/"}}</script>
+<!-- /design-atlas-seo -->
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Swiss Design design system · Anti-Boring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script>try{var m=localStorage.getItem('atlas-theme');if(m&&m!=='light')document.documentElement.classList.add('alt')}catch(e){}</script>
+<style id="kit">
+/* Swiss Design kit · Anti-Boring */
+:root{
+  --bg:#FFFFFF;
+  --surface:#FFFFFF;
+  --surface2:#EDEDED;
+  --fg:#111111;
+  --muted:#5E5E5E;
+  --accent:#E4002B;
+  --accent-fg:#FFFFFF;
+  --accent2:#111111;
+  --accent2-fg:#FFFFFF;
+  --border:#111111;
+  --bw:1px;
+  --radius:0px;
+  --radius-sm:0px;
+  --shadow:none;
+  --shadow-sm:none;
+  --font-d:"Helvetica Neue",Helvetica,"Inter",Arial,sans-serif;
+  --font-b:"Helvetica Neue",Helvetica,"Inter",Arial,sans-serif;
+  --font-m:ui-monospace,Menlo,monospace;
+  --h-weight:700;
+  --h-track:-.03em;
+  --h-case:none;
+  --h-style:normal;
+  --h-lh:1;
+  --gap:20px;
+  --pad:24px;
+  --focus:rgba(228,0,43,.3);
+  --ok:#1E6B3E;
+  --warn:#8A5A00;
+  --danger:#E4002B;
+  --info:#111111;
+  --field-bg:var(--surface);
+  --field-shadow:none;
+  --media:radial-gradient(circle at 70% 40%,#E4002B 0 22%,transparent 22.5%),linear-gradient(#111 0 0) 0 100%/60% 18% no-repeat,#EDEDED;
+  --code-bg:#111111;
+  --code-fg:#EDEDED;
+  --btn-case:none;
+  --btn-track:0;
+  --btn-weight:700;
+  --badge-radius:999px;
+  --maxw:1160px;
+  --fs-sm:12.8px;
+  --fs-body:17px;
+  --fs-4:22.6px;
+  --fs-3:30.1px;
+  --fs-2:40.0px;
+  --fs-1:53.2px;
+  --fs-d:clamp(53px, 9vw, 125px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 var(--fs-body)/1.6 var(--font-b);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-d);font-weight:var(--h-weight);letter-spacing:var(--h-track);text-transform:var(--h-case);font-style:var(--h-style);line-height:var(--h-lh);margin:0 0 .4em}
+h1{font-size:var(--fs-1)} h2{font-size:var(--fs-2)} h3{font-size:var(--fs-3)} h4{font-size:var(--fs-4)}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+code,pre,kbd{font-family:var(--font-m)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font:var(--btn-weight) 1rem/1 var(--font-b);text-transform:var(--btn-case);letter-spacing:var(--btn-track);padding:.85em 1.4em;border:var(--bw) solid var(--border);border-radius:var(--radius);background:var(--accent);color:var(--accent-fg);box-shadow:var(--shadow-sm);text-decoration:none;cursor:pointer;transition:transform .12s,box-shadow .12s,background-color .12s,color .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.btn-2{background:var(--accent2);color:var(--accent2-fg)}
+.btn-ghost{background:transparent;color:var(--fg);box-shadow:none}
+.btn-sm{font-size:.85rem;padding:.6em 1em}
+.btn-lg{font-size:1.15rem;padding:1em 1.7em}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+
+/* forms */
+.field{display:grid;gap:.4em;margin-bottom:1.1em}
+.label{font-weight:600;font-size:.95rem}
+.help{font-size:.85rem;color:var(--muted)}
+.input,.select,.textarea{width:100%;font:1rem/1.4 var(--font-b);color:var(--fg);padding:.75em .9em;background:var(--field-bg);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--field-shadow);appearance:none}
+.select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.4em}
+.textarea{min-height:110px;resize:vertical}
+.input:focus,.select:focus,.textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--field-shadow),0 0 0 3px var(--focus)}
+.is-error .input{border-color:var(--danger)} .is-error .help{color:var(--danger)}
+.choice{display:flex;align-items:center;gap:.6em;margin:.35em 0;cursor:pointer}
+.check,.radio{appearance:none;width:1.25em;height:1.25em;margin:0;flex:none;border:var(--bw) solid var(--border);background:var(--field-bg);box-shadow:var(--field-shadow);display:grid;place-items:center;cursor:pointer}
+.check{border-radius:calc(var(--radius-sm)/2)} .radio{border-radius:50%}
+.check::after{content:"";width:.55em;height:.3em;border-left:2.5px solid var(--accent-fg);border-bottom:2.5px solid var(--accent-fg);transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.radio::after{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--accent-fg);opacity:0}
+.check:checked,.radio:checked{background:var(--accent);border-color:var(--border)}
+.check:checked::after,.radio:checked::after{opacity:1}
+.switch{appearance:none;width:2.8em;height:1.6em;margin:0;flex:none;border-radius:999px;border:var(--bw) solid var(--border);background:var(--surface2);position:relative;cursor:pointer;transition:background .15s;box-shadow:var(--field-shadow)}
+.switch::before{content:"";position:absolute;top:50%;left:.18em;width:1.1em;height:1.1em;border-radius:50%;background:var(--fg);transform:translateY(-50%);transition:left .15s}
+.switch:checked{background:var(--accent)}
+.switch:checked::before{left:calc(100% - 1.28em);background:var(--accent-fg)}
+.range{width:100%;accent-color:var(--accent)}
+
+/* surfaces */
+.card{background:var(--surface);color:var(--fg);border:var(--bw) solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--pad);position:relative}
+.card-media{aspect-ratio:16/9;border-radius:var(--radius-sm);background:var(--media);margin-bottom:1em}
+.badge{display:inline-block;font:600 .75rem/1 var(--font-b);padding:.45em .75em;border-radius:var(--badge-radius);background:var(--accent2);color:var(--accent2-fg);border:var(--bw) solid var(--border)}
+.alert{padding:1em 1.2em;border:var(--bw) solid var(--border);border-left:6px solid var(--c,var(--info));border-radius:var(--radius-sm);background:var(--surface);margin-bottom:.8em}
+.alert b{color:var(--c,var(--info))}
+.alert-ok{--c:var(--ok)} .alert-warn{--c:var(--warn)} .alert-danger{--c:var(--danger)}
+.progress{height:.8em;border-radius:999px;background:var(--surface2);border:var(--bw) solid var(--border);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent)}
+
+/* navigation */
+.tabs{display:flex;gap:.25em;border-bottom:var(--bw) solid var(--border);flex-wrap:wrap}
+.tab{font:600 .95rem var(--font-b);padding:.7em 1em;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);cursor:pointer;margin-bottom:calc(var(--bw) * -1)}
+.tab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.crumbs{display:flex;gap:.5em;flex-wrap:wrap;font-size:.9rem;color:var(--muted);list-style:none;padding:0;margin:0}
+.crumbs li+li::before{content:"/";margin-right:.5em;opacity:.6}
+.pager{display:flex;gap:.4em;list-style:none;padding:0;margin:0;flex-wrap:wrap}
+.pager a{display:grid;place-items:center;min-width:2.4em;height:2.4em;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);text-decoration:none;background:var(--surface)}
+.pager a[aria-current]{background:var(--accent);color:var(--accent-fg)}
+
+/* table */
+.table-wrap{overflow-x:auto;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);background:var(--surface)}
+.table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:460px}
+.table th,.table td{text-align:left;padding:.75em 1em;border-bottom:1px solid color-mix(in srgb,var(--border) 30%,transparent)}
+.table th{font-family:var(--font-d);font-weight:var(--h-weight)}
+
+/* grid */
+.row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
+.col-3{grid-column:span 3}.col-4{grid-column:span 4}.col-5{grid-column:span 5}.col-6{grid-column:span 6}.col-7{grid-column:span 7}.col-8{grid-column:span 8}.col-12{grid-column:span 12}
+@media (max-width:760px){.row{grid-template-columns:minmax(0,1fr);gap:min(var(--gap),16px)}.row>*{grid-column:auto!important;grid-row:auto!important}}
+
+/* signature */
+.btn:hover{transform:none;background:#111;color:#fff}
+.btn:active{transform:none}
+.btn-2:hover{background:var(--accent)}
+.btn-ghost:hover{background:transparent;color:var(--accent)}
+.card{border-width:0;border-top:2px solid var(--fg);padding:16px 0 0;background:transparent}
+.badge{border-radius:0;background:transparent;border:1px solid var(--fg);color:var(--fg)}
+.alert{border:0;border-top:2px solid var(--c);border-left:0;background:var(--surface2)}
+.switch,.switch::before{border-radius:0}
+.check{border-radius:0}
+.progress{border-radius:0;height:.5em}
+.tab{font-weight:500}
+.tab[aria-selected="true"]{border-bottom-color:var(--fg);font-weight:700}
+.table th{font-weight:700;border-bottom:2px solid var(--fg)}
+.table-wrap{border:0;border-top:2px solid var(--fg)}
+
+/* dark theme: add class="alt" to <html> */
+html.alt{
+  --bg:#111111;
+  --surface:#111111;
+  --surface2:#1C1C1C;
+  --fg:#F2F2F2;
+  --muted:#A8A8A8;
+  --border:#F2F2F2;
+  --accent2:#F2F2F2;
+  --accent2-fg:#111111;
+  --code-bg:#000;
+}
+html.alt .btn:hover{background:#F2F2F2;color:#111}html.alt .hero h1{mix-blend-mode:normal}html.alt .facts div{border-color:#333}html.alt #gridbtn{background:#111;color:#F2F2F2;border-color:#F2F2F2}html.alt .stage .blk:first-of-type{background:#F2F2F2!important}html.alt .demo{border-color:#333!important}
+</style>
+<style>
+
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.docnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--nav-bg,var(--bg));border-bottom:var(--bw) solid var(--border)}
+.docnav .container{display:flex;align-items:center;gap:6px;height:58px;overflow-x:auto;scrollbar-width:none}
+.docnav .container::-webkit-scrollbar{display:none}
+.docnav .brand{font-family:var(--font-d);font-weight:var(--h-weight);text-transform:var(--h-case);margin-right:auto;padding-right:16px;white-space:nowrap;text-decoration:none;font-size:1.05rem}
+.docnav a:not(.brand){text-decoration:none;font-size:.9rem;padding:6px 10px;border-radius:var(--radius-sm);white-space:nowrap;color:var(--muted)}
+.docnav a:not(.brand):hover{color:var(--fg);background:var(--surface2)}
+.hero{position:relative;overflow:hidden}
+.sec{padding:clamp(56px,9vw,104px) 0;position:relative}
+.sec.alt{background:var(--surface2)}
+.sec-title{font-size:var(--fs-2);margin-bottom:.3em}
+.sec-lede{font-size:1.1rem;color:var(--muted);max-width:62ch;margin-bottom:2.2em}
+.auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:var(--gap)}
+.traits .card h3{font-size:var(--fs-4)}
+.traits .card p:last-child,.pit .card p:last-child{margin:0}
+.tl{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.tl li{display:grid;grid-template-columns:minmax(90px,150px) 1fr;gap:20px;padding:18px 0;border-top:var(--bw) solid var(--border)}
+.tl .yr{font-family:var(--font-d);font-weight:var(--h-weight);font-size:var(--fs-3);line-height:1}
+.tl h4{margin-bottom:.25em}
+.tl p{margin:0;max-width:62ch}
+.stage{position:relative;height:clamp(240px,42vw,380px);overflow:hidden;border:var(--bw) solid var(--border);border-radius:var(--radius);background:var(--surface)}
+.stage.paused *,.stage.paused *::before,.stage.paused *::after{animation-play-state:paused!important}
+.stage-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+.stage-bar p{margin:0;color:var(--muted);max-width:60ch}
+.mocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:var(--gap)}
+.mocks figure{margin:0}
+.mocks figcaption{margin-top:14px}
+.mocks figcaption h4{font-size:var(--fs-4)}
+.mock{font-size:10px;height:250px;background:var(--bg);border:var(--bw) solid var(--border);border-radius:var(--radius);overflow:hidden;padding:12px;display:flex;flex-direction:column;gap:10px;position:relative}
+.mock .btn{font-size:9px}
+.mock .card{padding:10px}
+.m-nav{display:flex;align-items:center;gap:8px;font-family:var(--font-d);font-weight:var(--h-weight);font-size:12px}
+.m-nav i{flex:1}
+.m-nav s{width:26px;height:5px;background:var(--muted);opacity:.5;border-radius:3px}
+.m-h{font-family:var(--font-d);font-weight:var(--h-weight);text-transform:var(--h-case);font-style:var(--h-style);font-size:22px;line-height:1;letter-spacing:var(--h-track)}
+.m-line{height:6px;border-radius:3px;background:var(--muted);opacity:.35}
+.m-media{flex:1;border-radius:var(--radius-sm);background:var(--media)}
+.mock-app{align-items:center;justify-content:center;background:var(--surface2)}
+.phone{width:140px;height:226px;border:var(--bw) solid var(--border);border-radius:calc(var(--radius) + 10px);background:var(--bg);padding:10px;display:flex;flex-direction:column;gap:7px;box-shadow:var(--shadow);overflow:hidden}
+.phone .card{padding:7px;display:flex;align-items:center;justify-content:space-between;font-size:10px;box-shadow:var(--shadow-sm)}
+.phone .switch{font-size:8px}
+.mock-dash .card{flex:1;display:flex;flex-direction:column;gap:6px}
+.bars{flex:1;display:flex;align-items:flex-end;gap:6px}
+.bars i{flex:1;background:var(--accent);border-radius:var(--radius-sm) var(--radius-sm) 0 0}
+.bars i:nth-child(even){background:var(--accent2)}
+.stat{font-family:var(--font-d);font-weight:var(--h-weight);font-size:26px;line-height:1}
+.block{margin-top:64px}
+.block:first-of-type{margin-top:0}
+.block>h3{font-size:var(--fs-3)}
+.block>p{color:var(--muted);max-width:62ch}
+.demo{padding:clamp(18px,4vw,32px);border:var(--bw) dashed color-mix(in srgb,var(--border) 45%,transparent);border-radius:var(--radius);background:var(--bg);margin:18px 0 0}
+.demo-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.code{position:relative;margin-top:12px}
+.code pre{margin:0;max-height:340px;overflow:auto;padding:18px 18px 18px;background:var(--code-bg);color:var(--code-fg);border-radius:var(--radius-sm);font:400 .8rem/1.55 var(--font-m);tab-size:2}
+.code .copy{position:absolute;top:10px;right:10px;font:600 .75rem system-ui,sans-serif;padding:6px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:var(--code-fg);cursor:pointer;backdrop-filter:blur(4px)}
+.code .copy:hover{background:rgba(255,255,255,.25)}
+details.code-toggle{margin-top:12px}
+details.code-toggle summary{cursor:pointer;font-weight:600;font-size:.9rem;color:var(--muted)}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+.swatch{all:unset;cursor:pointer;display:block;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface)}
+.swatch:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.swatch i{display:block;height:84px}
+.swatch span{display:block;padding:10px 12px;font-size:.85rem;line-height:1.3}
+.swatch small{font-family:var(--font-m);color:var(--muted)}
+.specimen{display:grid;gap:18px}
+.spec{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;border-bottom:1px solid color-mix(in srgb,var(--border) 25%,transparent);padding-bottom:14px}
+.spec small{font-family:var(--font-m);color:var(--muted);font-size:.72rem;line-height:1.4}
+.spec>div{overflow-wrap:anywhere;min-width:0}
+.gdemo .row>div{min-height:64px;display:grid;place-items:center;font:600 .8rem var(--font-m);background:color-mix(in srgb,var(--accent) 22%,var(--surface));border:var(--bw) solid var(--border);border-radius:var(--radius-sm);color:var(--fg)}
+.gdemo+.gdemo{margin-top:12px}
+.shapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px}
+.shapes .card{min-height:110px;display:grid;place-items:end start;font-size:.85rem}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px;align-items:end}
+.pg label{display:grid;gap:6px;font-weight:600;font-size:.9rem}
+.pg input[type=color]{width:100%;height:44px;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);background:var(--surface);padding:3px}
+.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:4px 28px}
+.prompt pre{white-space:pre-wrap;max-height:none;font-size:.85rem}
+footer.docfoot{padding:36px 0 48px;border-top:var(--bw) solid var(--border);font-size:.9rem;color:var(--muted)}
+@media (max-width:640px){.tl li,.spec{grid-template-columns:1fr;gap:6px}}
+.theme-toggle{flex:none;display:inline-flex;align-items:center;gap:6px;margin-left:8px;font:600 .8rem/1 system-ui,sans-serif;color:var(--fg);background:transparent;border:1px solid currentColor;border-radius:999px;padding:7px 11px;cursor:pointer;opacity:.85}
+.theme-toggle:hover{opacity:1}
+.theme-toggle svg{width:15px;height:15px}
+html.alt body{background-color:var(--bg)!important}
+html.alt .sec.alt{background:var(--surface2)!important}
+html.alt .docnav{background:var(--bg)!important}
+html.alt .demo{background:var(--bg)!important}
+html.alt .mock,html.alt .phone{background:var(--bg)!important}
+html.alt .mock-app{background:var(--surface2)!important}
+html.alt .swatch{background:var(--surface)!important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+
+.overlay{position:fixed;inset:0;pointer-events:none;z-index:50;display:none}
+.overlay .container{height:100%}
+.overlay .g{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;height:100%}
+.overlay i{background:rgba(228,0,43,.08);border-inline:1px solid rgba(228,0,43,.25)}
+body.show-grid .overlay{display:block}
+#gridbtn{font:700 .85rem var(--font-b);border:1px solid var(--fg);background:#fff;padding:6px 12px;cursor:pointer;white-space:nowrap;margin-left:8px;color:var(--fg)}
+body.show-grid #gridbtn{background:var(--accent);color:#fff;border-color:var(--accent)}
+.hero{padding:30px 0 70px;min-height:86vh}
+.hero .g12{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;row-gap:16px}
+.meta{grid-column:1/4;grid-row:1;font-size:.9rem;line-height:1.35;padding-top:30px}
+.circle{grid-column:5/12;grid-row:1/3;aspect-ratio:1;border-radius:50%;background:var(--accent);margin-top:30px}
+.hero h1{grid-column:1/11;grid-row:2/4;font-size:clamp(4rem,15vw,13rem);font-weight:900;letter-spacing:-.055em;line-height:.84;position:relative;z-index:1;mix-blend-mode:multiply;margin:0}
+.hero .lede{grid-column:1/7;grid-row:4;font-size:1.3rem;line-height:1.35;font-weight:500;margin-top:20px}
+.facts{grid-column:8/13;grid-row:4;font-size:.9rem;margin-top:26px;border-top:2px solid var(--fg);padding-top:12px}
+.facts div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #ddd;padding:6px 0}
+.hero .acts{grid-column:1/7;grid-row:5}
+.sec{border-top:1px solid var(--fg)}
+.sec.alt{background:#fff}
+.stage{aspect-ratio:16/9;height:auto;max-height:440px}
+.stage .col{position:absolute;top:0;bottom:0;width:1px;background:rgba(228,0,43,.3)}
+.stage .blk{position:absolute;animation-duration:6s;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.7,0,.2,1)}
+@keyframes in1{0%,8%{transform:translateX(-120%)}20%,85%{transform:none}100%{transform:translateX(-120%)}}
+@keyframes in2{0%,18%{transform:translateY(-130%)}30%,85%{transform:none}100%{transform:translateY(-130%)}}
+@keyframes in3{0%,28%{transform:scale(0)}40%,85%{transform:scale(1)}100%{transform:scale(0)}}
+@keyframes in4{0%,38%{transform:translateX(130%)}50%,85%{transform:none}100%{transform:translateX(130%)}}
+.tl .yr{font-weight:900;letter-spacing:-.04em}
+.demo{border:1px solid #ddd}
+@media (max-width:820px){.hero .g12{grid-template-columns:repeat(4,1fr);gap:14px}.circle{grid-column:3/5;grid-row:1}.hero h1{grid-column:1/5;grid-row:2}.meta{grid-column:1/3}.hero .lede,.facts,.hero .acts{grid-column:1/5;grid-row:auto}.overlay .g{grid-template-columns:repeat(4,1fr)}}
+
+
+html.alt .btn:hover{background:#F2F2F2;color:#111}html.alt .hero h1{mix-blend-mode:normal}html.alt .facts div{border-color:#333}html.alt #gridbtn{background:#111;color:#F2F2F2;border-color:#F2F2F2}html.alt .stage .blk:first-of-type{background:#F2F2F2!important}html.alt .demo{border-color:#333!important}
+</style>
+</head>
+<body class="st-swiss-design">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5P279"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav class="docnav" aria-label="Sections"><div class="container"><a class="brand" href="#top">Swiss Design</a><a href="#overview">Overview</a><a href="#history">History</a><a href="#motion">Motion</a><a href="#examples">Examples</a><a href="#foundations">Foundations</a><a href="#components">Components</a><a href="#prompt">Prompt</a><a href="#pitfalls">Pitfalls</a><button class="theme-toggle" id="theme-toggle" data-native="light" aria-label="Switch colour theme"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6"/><path d="M8 2a6 6 0 0 0 0 12z" fill="currentColor"/></svg><span id="theme-lbl"></span></button></div></nav>
+<header class="hero" id="top"><div class="overlay" aria-hidden="true"><div class="container"><div class="g" id="ov"></div></div></div>
+<div class="container g12"><div class="meta">International Typographic Style<br>Switzerland, 1950s<br>Basel and Zurich</div><div class="circle" aria-hidden="true"></div>
+<h1>Swiss<br>Design</h1>
+<p class="lede">A way of designing where the grid decides everything. Clean sans-serif type sits on strict columns, and empty space does as much work as the content.</p>
+<div class="facts"><div><span>Also called</span><span>International Typographic Style</span></div><div><span>Key typefaces</span><span>Helvetica, Univers</span></div><div><span>Signature tool</span><span>The modular grid</span></div><div><span>Try this</span><button id="gridbtn" aria-pressed="false">Show grid</button></div></div>
+<div class="acts"><a class="btn" href="#foundations">Open the kit</a> <a class="btn btn-ghost" href="#prompt">Copy the prompt</a></div></div></header>
+
+<section id="overview" class="sec"><div class="container">
+<h2 class="sec-title">What defines it</h2>
+<p class="sec-lede">Swiss design treats layout as a problem to solve with order. Grids, neutral type and asymmetric balance let content speak with clarity.</p>
+<div class="auto traits"><article class="card"><h3>The modular grid</h3><p>Every text block and image aligns to columns and rows. Designers plan the grid first and place content second.</p></article><article class="card"><h3>Objective sans-serif</h3><p>Grotesque typefaces with plain shapes carry the message. Text is set flush left with a ragged right edge.</p></article><article class="card"><h3>Asymmetry and space</h3><p>Layouts avoid a centered axis. Large empty areas create tension and guide the eye.</p></article><article class="card"><h3>Photography and geometry</h3><p>The movement preferred objective photos and pure shapes to decorative drawing.</p></article></div>
+</div></section>
+
+<section id="history" class="sec alt"><div class="container">
+<h2 class="sec-title">Where it came from</h2>
+<p class="sec-lede">Swiss design grew in Basel and Zurich schools and became the base of modern corporate and interface design.</p>
+<ol class="tl"><li><span class="yr">1928</span><div><h4>A new typography</h4><p>Jan Tschichold publishes Die neue Typographie, arguing for asymmetric layouts and sans-serif type, building on the Bauhaus.</p></div></li><li><span class="yr">1940s</span><div><h4>The Basel school</h4><p>Emil Ruder and Armin Hofmann teach typography at the Basel School of Design. Their students carry the method worldwide.</p></div></li><li><span class="yr">1957</span><div><h4>Landmark typefaces</h4><p>Max Miedinger and Eduard Hoffmann release Neue Haas Grotesk, later renamed Helvetica. Adrian Frutiger releases Univers the same year.</p></div></li><li><span class="yr">1958</span><div><h4>Neue Grafik</h4><p>Josef Müller-Brockmann and three fellow designers launch the journal Neue Grafik in Zurich, spreading the style internationally.</p></div></li><li><span class="yr">1981</span><div><h4>The grid book</h4><p>Müller-Brockmann publishes Grid Systems in Graphic Design, still a standard text.</p></div></li><li><span class="yr">Now</span><div><h4>Grids in code</h4><p>CSS Grid, design systems and transit signage follow the same logic. Much of interface design is Swiss at its core.</p></div></li></ol>
+</div></section>
+
+<section id="motion" class="sec"><div class="container">
+<h2 class="sec-title">Motion study</h2>
+<p class="sec-lede">Swiss motion is precise. Each element travels in a straight line and stops exactly on a grid line.</p>
+<div class="stage" id="stage" role="img" aria-label="Blocks snapping into a six-column grid"><i class="col" style="left:16.66%"></i><i class="col" style="left:33.33%"></i><i class="col" style="left:50%"></i><i class="col" style="left:66.66%"></i><i class="col" style="left:83.33%"></i><i class="blk" style="left:0;top:8%;width:66.66%;height:24%;background:#111;animation-name:in1"></i><i class="blk" style="left:66.66%;top:0;width:33.34%;height:60%;background:#E4002B;animation-name:in2"></i><i class="blk" style="left:16.66%;top:44%;width:33.33%;aspect-ratio:1;border-radius:50%;background:#111;animation-name:in3"></i><i class="blk" style="left:50%;top:70%;width:50%;height:10%;background:#5E5E5E;animation-name:in4"></i></div>
+<div class="stage-bar"><p>Six columns, four elements, every edge on a line. Easing is fast in the middle and sharp at the ends.</p><button class="btn btn-2 btn-sm" id="toggle">Pause</button></div>
+</div></section>
+
+<section id="examples" class="sec alt"><div class="container">
+<h2 class="sec-title">Where you meet it</h2>
+<p class="sec-lede">These three mockups are built only from the kit on this page. Swap the tokens and they change style with it.</p>
+<div class="mocks">
+<figure><div class="mock" aria-hidden="true"><div class="m-nav"><b>Nordwerk</b><i></i><s></s><s></s><span class="btn btn-sm">Join</span></div><div class="m-h">Konzert 20 Uhr</div><div class="m-line"></div><div class="m-line" style="width:60%"></div><div><span class="btn btn-sm">Get started</span></div><div class="m-media"></div></div>
+<figcaption><h4>Posters and culture</h4><p>Concert and museum posters use geometry and type as the whole image.</p></figcaption></figure>
+<figure><div class="mock mock-app" aria-hidden="true"><div class="phone"><div class="m-nav"><b>Gleis 7</b></div><div class="card"><span>Bern</span><input type="checkbox" class="switch" checked tabindex="-1"></div><div class="card"><span>Basel</span><input type="checkbox" class="switch" tabindex="-1"></div><div class="card"><span>Zürich</span><span class="badge">3</span></div><span class="btn btn-sm">Continue</span></div></div>
+<figcaption><h4>Wayfinding and transit</h4><p>Railway and airport apps depend on neutral type and a clear grid.</p></figcaption></figure>
+<figure><div class="mock mock-dash" aria-hidden="true"><div class="card"><span class="badge" style="align-self:flex-start">Pünktlich</span><div class="stat">98%</div><div class="bars"><i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:85%"></i><i style="height:70%"></i><i style="height:95%"></i></div></div></div>
+<figcaption><h4>Corporate systems</h4><p>Brand guidelines and design systems adopt grids and fixed type rules.</p></figcaption></figure>
+</div>
+</div></section>
+
+<section id="foundations" class="sec"><div class="container">
+<h2 class="sec-title">Foundations</h2>
+<p class="sec-lede">The tokens every component on this page is built from. Copy them as a starting point, then adjust with intent.</p>
+<div class="block"><h3>Color</h3><p>Black and white with one red. Color marks what matters and nothing else. Tap a swatch to copy its hex value.</p><div class="swatches" style="margin-top:18px"><button class="swatch" data-copy="#FFFFFF" aria-label="Copy White #FFFFFF"><i style="background:#FFFFFF"></i><span class="lbl"><b>White</b><br><small>#FFFFFF</small></span></button><button class="swatch" data-copy="#E4002B" aria-label="Copy Swiss red #E4002B"><i style="background:#E4002B"></i><span class="lbl"><b>Swiss red</b><br><small>#E4002B</small></span></button><button class="swatch" data-copy="#111111" aria-label="Copy Black #111111"><i style="background:#111111"></i><span class="lbl"><b>Black</b><br><small>#111111</small></span></button><button class="swatch" data-copy="#EDEDED" aria-label="Copy Light gray #EDEDED"><i style="background:#EDEDED"></i><span class="lbl"><b>Light gray</b><br><small>#EDEDED</small></span></button><button class="swatch" data-copy="#5E5E5E" aria-label="Copy Mid gray #5E5E5E"><i style="background:#5E5E5E"></i><span class="lbl"><b>Mid gray</b><br><small>#5E5E5E</small></span></button></div><div class="code"><button class="copy" data-copy="#palcss"><span class="lbl">Copy palette CSS</span></button><pre><code id="palcss">:root{
+  --white: #FFFFFF;
+  --swiss-red: #E4002B;
+  --black: #111111;
+  --light-gray: #EDEDED;
+  --mid-gray: #5E5E5E;
+}</code></pre></div></div>
+<div class="block"><h3>Typography</h3><p>One neo-grotesque in a few weights. Hierarchy comes from size and position, not from different typefaces.</p><div class="demo specimen"><div class="spec"><small>Display<br>clamp(53px, 9vw, 125px)</small><div style="font-family:var(--font-d);font-weight:var(--h-weight);text-transform:var(--h-case);font-style:var(--h-style);letter-spacing:var(--h-track);font-size:var(--fs-d);line-height:.95">Raster</div></div><div class="spec"><small>Heading 1<br>53.2px</small><div><h1 style="margin:0">Swiss Design heading</h1></div></div><div class="spec"><small>Heading 2<br>40.0px</small><div><h2 style="margin:0">Swiss Design heading</h2></div></div><div class="spec"><small>Heading 3<br>30.1px</small><div><h3 style="margin:0">Swiss Design heading</h3></div></div><div class="spec"><small>Heading 4<br>22.6px</small><div><h4 style="margin:0">Swiss Design heading</h4></div></div><div class="spec"><small>Body<br>17px</small><div><p style="margin:0;max-width:60ch">Body text carries the explanation. Keep lines under about 75 characters so the eye can find the next line.</p></div></div><div class="spec"><small>Small<br>12.8px</small><div style="font-size:var(--fs-sm);color:var(--muted)">Captions, helper text and metadata.</div></div><div class="spec"><small>Mono<br>12.8px</small><div style="font-family:var(--font-m);font-size:var(--fs-sm)">--radius: 8px;</div></div></div><div class="code"><button class="copy" data-copy="#typecss"><span class="lbl">Copy type CSS</span></button><pre><code id="typecss">:root{
+  --font-d: "Helvetica Neue",Helvetica,"Inter",Arial,sans-serif;
+  --font-b: "Helvetica Neue",Helvetica,"Inter",Arial,sans-serif;
+  --font-m: ui-monospace,Menlo,monospace;
+  --fs-d: clamp(53px, 9vw, 125px);
+  --fs-1: 53.2px; --fs-2: 40.0px;
+  --fs-3: 30.1px; --fs-4: 22.6px;
+  --fs-body: 17px; --fs-sm: 12.8px;
+}
+h1,h2,h3,h4 {
+  font-family: var(--font-d);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  text-transform: none;
+  line-height: 1;
+}
+/* fonts: Helvetica Neue where installed, Inter from Google Fonts as fallback */</code></pre></div></div>
+<div class="block"><h3>Grid</h3><p>A 12-column grid with 20px gutters. Press Show grid in the hero to see the page aligned to it.</p><div class="demo"><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Even columns</h4><p class="help" style="margin:0 0 10px">Equal cards, product tiles, feature lists.</p><div class="row"><div class="col-4">4</div><div class="col-4">4</div><div class="col-4">4</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g0"><span class="lbl">Copy</span></button><pre><code id="g0">&lt;div class="row"&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Content and sidebar</h4><p class="help" style="margin:0 0 10px">Articles, documentation, settings pages.</p><div class="row"><div class="col-8">8</div><div class="col-4">4</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g1"><span class="lbl">Copy</span></button><pre><code id="g1">&lt;div class="row"&gt;&lt;div class="col-8"&gt;8&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Asymmetric split</h4><p class="help" style="margin:0 0 10px">Heroes and feature sections with tension.</p><div class="row"><div class="col-5">5</div><div class="col-7">7</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g2"><span class="lbl">Copy</span></button><pre><code id="g2">&lt;div class="row"&gt;&lt;div class="col-5"&gt;5&lt;/div&gt;&lt;div class="col-7"&gt;7&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Four up</h4><p class="help" style="margin:0 0 10px">Dense galleries and logo walls.</p><div class="row"><div class="col-3">3</div><div class="col-3">3</div><div class="col-3">3</div><div class="col-3">3</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g3"><span class="lbl">Copy</span></button><pre><code id="g3">&lt;div class="row"&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Signature layout: Modular grid</h4><p class="help" style="margin:0 0 10px">Columns and rows form modules that images and text snap to.</p><div class="row" style="grid-auto-rows:60px"><div class="col-8" style="grid-row:span 2">8 × 2</div><div class="col-4">4</div><div class="col-4" style="background:#E4002B;color:#fff">4</div><div class="col-4">4</div><div class="col-8">8</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#gsig"><span class="lbl">Copy</span></button><pre><code id="gsig">&lt;!-- rows fixed with grid-auto-rows: 60px --&gt;
+&lt;div class="row" style="grid-auto-rows:60px"&gt;&lt;div class="col-8" style="grid-row:span 2"&gt;8 × 2&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;div class="col-4" style="background:#E4002B;color:#fff"&gt;4&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;div class="col-8"&gt;8&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div></div><div class="code"><button class="copy" data-copy="#gridcss"><span class="lbl">Copy grid CSS</span></button><pre><code id="gridcss">.row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+}
+.col-3 { grid-column: span 3; }  .col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }  .col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+@media (max-width: 760px) {
+  .row { grid-template-columns: 1fr; }
+  .row &gt; * { grid-column: auto; }
+}</code></pre></div></div>
+<div class="block"><h3>Shape and depth</h3><p>Zero radius, no shadow. Hairlines and heavy rules structure the page.</p><div class="demo"><div class="shapes">
+<div class="card" style="box-shadow:none">radius: 0px<br>border: 1px</div>
+<div class="card" style="border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)">radius-sm: 0px<br>shadow-sm</div>
+<div class="card">shadow (raised)</div>
+<div class="card" style="background:var(--media);color:var(--accent-fg)">media fill</div></div></div><div class="code"><button class="copy" data-copy="#shapecss"><span class="lbl">Copy shape tokens</span></button><pre><code id="shapecss">:root {
+  --radius: 0px;
+  --radius-sm: 0px;
+  --bw: 1px;
+  --shadow: none;
+  --shadow-sm: none;
+  --gap: 20px;
+  --pad: 24px;
+}</code></pre></div></div>
+<div class="block"><h3>Token playground</h3><p>Change three tokens and the whole page responds, because every component reads from them. Reset brings back the style defaults.</p>
+<div class="demo"><div class="pg"><label>Corner radius<input type="range" class="range" id="pg-r" min="0" max="48"></label><label>Border width<input type="range" class="range" id="pg-b" min="0" max="8"></label><label>Accent color<input type="color" id="pg-a"></label><button class="btn btn-2" id="pg-reset">Reset tokens</button></div></div>
+<div class="code"><pre><code id="pg-out">Move a control to see the token change.</code></pre></div></div>
+</div></section>
+
+<section id="components" class="sec alt"><div class="container">
+<h2 class="sec-title">Components</h2>
+<p class="sec-lede">Every component below is plain HTML with class names from the kit. Copy the full kit CSS once, then paste any snippet.</p>
+<div class="code"><button class="copy" data-copy="#kitcss"><span class="lbl">Copy full kit CSS</span></button><pre><code id="kitcss">/* Swiss Design kit · Anti-Boring */
+:root{
+  --bg:#FFFFFF;
+  --surface:#FFFFFF;
+  --surface2:#EDEDED;
+  --fg:#111111;
+  --muted:#5E5E5E;
+  --accent:#E4002B;
+  --accent-fg:#FFFFFF;
+  --accent2:#111111;
+  --accent2-fg:#FFFFFF;
+  --border:#111111;
+  --bw:1px;
+  --radius:0px;
+  --radius-sm:0px;
+  --shadow:none;
+  --shadow-sm:none;
+  --font-d:"Helvetica Neue",Helvetica,"Inter",Arial,sans-serif;
+  --font-b:"Helvetica Neue",Helvetica,"Inter",Arial,sans-serif;
+  --font-m:ui-monospace,Menlo,monospace;
+  --h-weight:700;
+  --h-track:-.03em;
+  --h-case:none;
+  --h-style:normal;
+  --h-lh:1;
+  --gap:20px;
+  --pad:24px;
+  --focus:rgba(228,0,43,.3);
+  --ok:#1E6B3E;
+  --warn:#8A5A00;
+  --danger:#E4002B;
+  --info:#111111;
+  --field-bg:var(--surface);
+  --field-shadow:none;
+  --media:radial-gradient(circle at 70% 40%,#E4002B 0 22%,transparent 22.5%),linear-gradient(#111 0 0) 0 100%/60% 18% no-repeat,#EDEDED;
+  --code-bg:#111111;
+  --code-fg:#EDEDED;
+  --btn-case:none;
+  --btn-track:0;
+  --btn-weight:700;
+  --badge-radius:999px;
+  --maxw:1160px;
+  --fs-sm:12.8px;
+  --fs-body:17px;
+  --fs-4:22.6px;
+  --fs-3:30.1px;
+  --fs-2:40.0px;
+  --fs-1:53.2px;
+  --fs-d:clamp(53px, 9vw, 125px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 var(--fs-body)/1.6 var(--font-b);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-d);font-weight:var(--h-weight);letter-spacing:var(--h-track);text-transform:var(--h-case);font-style:var(--h-style);line-height:var(--h-lh);margin:0 0 .4em}
+h1{font-size:var(--fs-1)} h2{font-size:var(--fs-2)} h3{font-size:var(--fs-3)} h4{font-size:var(--fs-4)}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+code,pre,kbd{font-family:var(--font-m)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font:var(--btn-weight) 1rem/1 var(--font-b);text-transform:var(--btn-case);letter-spacing:var(--btn-track);padding:.85em 1.4em;border:var(--bw) solid var(--border);border-radius:var(--radius);background:var(--accent);color:var(--accent-fg);box-shadow:var(--shadow-sm);text-decoration:none;cursor:pointer;transition:transform .12s,box-shadow .12s,background-color .12s,color .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.btn-2{background:var(--accent2);color:var(--accent2-fg)}
+.btn-ghost{background:transparent;color:var(--fg);box-shadow:none}
+.btn-sm{font-size:.85rem;padding:.6em 1em}
+.btn-lg{font-size:1.15rem;padding:1em 1.7em}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+
+/* forms */
+.field{display:grid;gap:.4em;margin-bottom:1.1em}
+.label{font-weight:600;font-size:.95rem}
+.help{font-size:.85rem;color:var(--muted)}
+.input,.select,.textarea{width:100%;font:1rem/1.4 var(--font-b);color:var(--fg);padding:.75em .9em;background:var(--field-bg);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--field-shadow);appearance:none}
+.select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.4em}
+.textarea{min-height:110px;resize:vertical}
+.input:focus,.select:focus,.textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--field-shadow),0 0 0 3px var(--focus)}
+.is-error .input{border-color:var(--danger)} .is-error .help{color:var(--danger)}
+.choice{display:flex;align-items:center;gap:.6em;margin:.35em 0;cursor:pointer}
+.check,.radio{appearance:none;width:1.25em;height:1.25em;margin:0;flex:none;border:var(--bw) solid var(--border);background:var(--field-bg);box-shadow:var(--field-shadow);display:grid;place-items:center;cursor:pointer}
+.check{border-radius:calc(var(--radius-sm)/2)} .radio{border-radius:50%}
+.check::after{content:"";width:.55em;height:.3em;border-left:2.5px solid var(--accent-fg);border-bottom:2.5px solid var(--accent-fg);transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.radio::after{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--accent-fg);opacity:0}
+.check:checked,.radio:checked{background:var(--accent);border-color:var(--border)}
+.check:checked::after,.radio:checked::after{opacity:1}
+.switch{appearance:none;width:2.8em;height:1.6em;margin:0;flex:none;border-radius:999px;border:var(--bw) solid var(--border);background:var(--surface2);position:relative;cursor:pointer;transition:background .15s;box-shadow:var(--field-shadow)}
+.switch::before{content:"";position:absolute;top:50%;left:.18em;width:1.1em;height:1.1em;border-radius:50%;background:var(--fg);transform:translateY(-50%);transition:left .15s}
+.switch:checked{background:var(--accent)}
+.switch:checked::before{left:calc(100% - 1.28em);background:var(--accent-fg)}
+.range{width:100%;accent-color:var(--accent)}
+
+/* surfaces */
+.card{background:var(--surface);color:var(--fg);border:var(--bw) solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--pad);position:relative}
+.card-media{aspect-ratio:16/9;border-radius:var(--radius-sm);background:var(--media);margin-bottom:1em}
+.badge{display:inline-block;font:600 .75rem/1 var(--font-b);padding:.45em .75em;border-radius:var(--badge-radius);background:var(--accent2);color:var(--accent2-fg);border:var(--bw) solid var(--border)}
+.alert{padding:1em 1.2em;border:var(--bw) solid var(--border);border-left:6px solid var(--c,var(--info));border-radius:var(--radius-sm);background:var(--surface);margin-bottom:.8em}
+.alert b{color:var(--c,var(--info))}
+.alert-ok{--c:var(--ok)} .alert-warn{--c:var(--warn)} .alert-danger{--c:var(--danger)}
+.progress{height:.8em;border-radius:999px;background:var(--surface2);border:var(--bw) solid var(--border);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent)}
+
+/* navigation */
+.tabs{display:flex;gap:.25em;border-bottom:var(--bw) solid var(--border);flex-wrap:wrap}
+.tab{font:600 .95rem var(--font-b);padding:.7em 1em;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);cursor:pointer;margin-bottom:calc(var(--bw) * -1)}
+.tab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.crumbs{display:flex;gap:.5em;flex-wrap:wrap;font-size:.9rem;color:var(--muted);list-style:none;padding:0;margin:0}
+.crumbs li+li::before{content:"/";margin-right:.5em;opacity:.6}
+.pager{display:flex;gap:.4em;list-style:none;padding:0;margin:0;flex-wrap:wrap}
+.pager a{display:grid;place-items:center;min-width:2.4em;height:2.4em;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);text-decoration:none;background:var(--surface)}
+.pager a[aria-current]{background:var(--accent);color:var(--accent-fg)}
+
+/* table */
+.table-wrap{overflow-x:auto;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);background:var(--surface)}
+.table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:460px}
+.table th,.table td{text-align:left;padding:.75em 1em;border-bottom:1px solid color-mix(in srgb,var(--border) 30%,transparent)}
+.table th{font-family:var(--font-d);font-weight:var(--h-weight)}
+
+/* grid */
+.row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
+.col-3{grid-column:span 3}.col-4{grid-column:span 4}.col-5{grid-column:span 5}.col-6{grid-column:span 6}.col-7{grid-column:span 7}.col-8{grid-column:span 8}.col-12{grid-column:span 12}
+@media (max-width:760px){.row{grid-template-columns:minmax(0,1fr);gap:min(var(--gap),16px)}.row&gt;*{grid-column:auto!important;grid-row:auto!important}}
+
+/* signature */
+.btn:hover{transform:none;background:#111;color:#fff}
+.btn:active{transform:none}
+.btn-2:hover{background:var(--accent)}
+.btn-ghost:hover{background:transparent;color:var(--accent)}
+.card{border-width:0;border-top:2px solid var(--fg);padding:16px 0 0;background:transparent}
+.badge{border-radius:0;background:transparent;border:1px solid var(--fg);color:var(--fg)}
+.alert{border:0;border-top:2px solid var(--c);border-left:0;background:var(--surface2)}
+.switch,.switch::before{border-radius:0}
+.check{border-radius:0}
+.progress{border-radius:0;height:.5em}
+.tab{font-weight:500}
+.tab[aria-selected="true"]{border-bottom-color:var(--fg);font-weight:700}
+.table th{font-weight:700;border-bottom:2px solid var(--fg)}
+.table-wrap{border:0;border-top:2px solid var(--fg)}
+
+/* dark theme: add class="alt" to &lt;html&gt; */
+html.alt{
+  --bg:#111111;
+  --surface:#111111;
+  --surface2:#1C1C1C;
+  --fg:#F2F2F2;
+  --muted:#A8A8A8;
+  --border:#F2F2F2;
+  --accent2:#F2F2F2;
+  --accent2-fg:#111111;
+  --code-bg:#000;
+}
+html.alt .btn:hover{background:#F2F2F2;color:#111}html.alt .hero h1{mix-blend-mode:normal}html.alt .facts div{border-color:#333}html.alt #gridbtn{background:#111;color:#F2F2F2;border-color:#F2F2F2}html.alt .stage .blk:first-of-type{background:#F2F2F2!important}html.alt .demo{border-color:#333!important}</code></pre></div>
+<div class="block" id="c-buttons"><h3>Buttons</h3><p>Three emphasis levels, three sizes and a disabled state. Keep one primary button per view.</p><div class="demo"><div class="demo-row">
+  <button class="btn">Primary</button>
+  <button class="btn btn-2">Secondary</button>
+  <button class="btn btn-ghost">Ghost</button>
+  <button class="btn" disabled>Disabled</button>
+</div>
+<div class="demo-row" style="margin-top:14px">
+  <button class="btn btn-sm">Small</button>
+  <button class="btn">Default</button>
+  <button class="btn btn-lg">Large</button>
+</div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cbuttons"><span class="lbl">Copy</span></button><pre><code id="cbuttons">&lt;div class="demo-row"&gt;
+  &lt;button class="btn"&gt;Primary&lt;/button&gt;
+  &lt;button class="btn btn-2"&gt;Secondary&lt;/button&gt;
+  &lt;button class="btn btn-ghost"&gt;Ghost&lt;/button&gt;
+  &lt;button class="btn" disabled&gt;Disabled&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="demo-row" style="margin-top:14px"&gt;
+  &lt;button class="btn btn-sm"&gt;Small&lt;/button&gt;
+  &lt;button class="btn"&gt;Default&lt;/button&gt;
+  &lt;button class="btn btn-lg"&gt;Large&lt;/button&gt;
+&lt;/div&gt;</code></pre></div></details></div><div class="block" id="c-forms"><h3>Form elements</h3><p>Text fields, choices and toggles share the same border, radius and focus ring, so a form reads as one family.</p><div class="demo"><form class="formgrid" onsubmit="return false">
+  <div>
+    <div class="field">
+      <label class="label" for="f-name">Full name</label>
+      <input class="input" id="f-name" placeholder="Ada Lovelace">
+      <span class="help">As it appears on your ID.</span>
+    </div>
+    <div class="field is-error">
+      <label class="label" for="f-mail">Email</label>
+      <input class="input" id="f-mail" type="email" value="ada@">
+      <span class="help">Enter a complete email address.</span>
+    </div>
+    <div class="field">
+      <label class="label" for="f-plan">Plan</label>
+      <select class="select" id="f-plan"><option>Starter</option><option>Studio</option><option>Team</option></select>
+    </div>
+  </div>
+  <div>
+    <div class="field">
+      <label class="label" for="f-msg">Message</label>
+      <textarea class="textarea" id="f-msg" placeholder="Tell us about your project"></textarea>
+    </div>
+    <fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em">
+      <legend class="label">Interests</legend>
+      <label class="choice"><input type="checkbox" class="check" checked> Typography</label>
+      <label class="choice"><input type="checkbox" class="check"> Motion</label>
+    </fieldset>
+    <fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em">
+      <legend class="label">Billing</legend>
+      <label class="choice"><input type="radio" name="bill" class="radio" checked> Monthly</label>
+      <label class="choice"><input type="radio" name="bill" class="radio"> Yearly</label>
+    </fieldset>
+    <label class="choice"><input type="checkbox" class="switch" checked> Email me updates</label>
+    <div class="field" style="margin-top:1em">
+      <label class="label" for="f-range">Budget</label>
+      <input class="range" id="f-range" type="range" value="60">
+    </div>
+    <button class="btn">Send request</button>
+  </div>
+</form></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cforms"><span class="lbl">Copy</span></button><pre><code id="cforms">&lt;form class="formgrid" onsubmit="return false"&gt;
+  &lt;div&gt;
+    &lt;div class="field"&gt;
+      &lt;label class="label" for="f-name"&gt;Full name&lt;/label&gt;
+      &lt;input class="input" id="f-name" placeholder="Ada Lovelace"&gt;
+      &lt;span class="help"&gt;As it appears on your ID.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="field is-error"&gt;
+      &lt;label class="label" for="f-mail"&gt;Email&lt;/label&gt;
+      &lt;input class="input" id="f-mail" type="email" value="ada@"&gt;
+      &lt;span class="help"&gt;Enter a complete email address.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="field"&gt;
+      &lt;label class="label" for="f-plan"&gt;Plan&lt;/label&gt;
+      &lt;select class="select" id="f-plan"&gt;&lt;option&gt;Starter&lt;/option&gt;&lt;option&gt;Studio&lt;/option&gt;&lt;option&gt;Team&lt;/option&gt;&lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;div class="field"&gt;
+      &lt;label class="label" for="f-msg"&gt;Message&lt;/label&gt;
+      &lt;textarea class="textarea" id="f-msg" placeholder="Tell us about your project"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em"&gt;
+      &lt;legend class="label"&gt;Interests&lt;/legend&gt;
+      &lt;label class="choice"&gt;&lt;input type="checkbox" class="check" checked&gt; Typography&lt;/label&gt;
+      &lt;label class="choice"&gt;&lt;input type="checkbox" class="check"&gt; Motion&lt;/label&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em"&gt;
+      &lt;legend class="label"&gt;Billing&lt;/legend&gt;
+      &lt;label class="choice"&gt;&lt;input type="radio" name="bill" class="radio" checked&gt; Monthly&lt;/label&gt;
+      &lt;label class="choice"&gt;&lt;input type="radio" name="bill" class="radio"&gt; Yearly&lt;/label&gt;
+    &lt;/fieldset&gt;
+    &lt;label class="choice"&gt;&lt;input type="checkbox" class="switch" checked&gt; Email me updates&lt;/label&gt;
+    &lt;div class="field" style="margin-top:1em"&gt;
+      &lt;label class="label" for="f-range"&gt;Budget&lt;/label&gt;
+      &lt;input class="range" id="f-range" type="range" value="60"&gt;
+    &lt;/div&gt;
+    &lt;button class="btn"&gt;Send request&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre></div></details></div><div class="block" id="c-cards"><h3>Cards</h3><p>A container for one idea. Media sits on top, then a badge, title, short text and one action.</p><div class="demo"><div class="auto">
+  <article class="card">
+    <div class="card-media"></div>
+    <span class="badge">New</span>
+    <h4 style="margin-top:.6em">Card title</h4>
+    <p>Short supporting text that explains what this card is about.</p>
+    <a class="btn btn-sm" href="#">Read more</a>
+  </article>
+  <article class="card">
+    <div class="card-media" style="filter:hue-rotate(40deg)"></div>
+    <span class="badge">Guide</span>
+    <h4 style="margin-top:.6em">Second card</h4>
+    <p>Cards in a row share height and spacing, so the grid stays calm.</p>
+    <a class="btn btn-sm btn-2" href="#">Open</a>
+  </article>
+</div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#ccards"><span class="lbl">Copy</span></button><pre><code id="ccards">&lt;div class="auto"&gt;
+  &lt;article class="card"&gt;
+    &lt;div class="card-media"&gt;&lt;/div&gt;
+    &lt;span class="badge"&gt;New&lt;/span&gt;
+    &lt;h4 style="margin-top:.6em"&gt;Card title&lt;/h4&gt;
+    &lt;p&gt;Short supporting text that explains what this card is about.&lt;/p&gt;
+    &lt;a class="btn btn-sm" href="#"&gt;Read more&lt;/a&gt;
+  &lt;/article&gt;
+  &lt;article class="card"&gt;
+    &lt;div class="card-media" style="filter:hue-rotate(40deg)"&gt;&lt;/div&gt;
+    &lt;span class="badge"&gt;Guide&lt;/span&gt;
+    &lt;h4 style="margin-top:.6em"&gt;Second card&lt;/h4&gt;
+    &lt;p&gt;Cards in a row share height and spacing, so the grid stays calm.&lt;/p&gt;
+    &lt;a class="btn btn-sm btn-2" href="#"&gt;Open&lt;/a&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre></div></details></div><div class="block" id="c-feedback"><h3>Feedback</h3><p>Alerts, badges and progress tell people what just happened and what to do next.</p><div class="demo"><div class="alert"><b>Info.</b> Your draft saves every 30 seconds.</div>
+<div class="alert alert-ok"><b>Saved.</b> Changes are live on your site.</div>
+<div class="alert alert-warn"><b>Check this.</b> Two images are missing alt text.</div>
+<div class="alert alert-danger"><b>Upload failed.</b> Files must be under 10 MB. Try a smaller file.</div>
+<div class="demo-row" style="margin-top:14px">
+  <span class="badge">Default</span>
+  <span class="badge" style="background:var(--accent);color:var(--accent-fg)">Accent</span>
+</div>
+<div style="margin-top:18px"><div class="progress" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" aria-label="Upload progress"><i style="width:64%"></i></div></div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cfeedback"><span class="lbl">Copy</span></button><pre><code id="cfeedback">&lt;div class="alert"&gt;&lt;b&gt;Info.&lt;/b&gt; Your draft saves every 30 seconds.&lt;/div&gt;
+&lt;div class="alert alert-ok"&gt;&lt;b&gt;Saved.&lt;/b&gt; Changes are live on your site.&lt;/div&gt;
+&lt;div class="alert alert-warn"&gt;&lt;b&gt;Check this.&lt;/b&gt; Two images are missing alt text.&lt;/div&gt;
+&lt;div class="alert alert-danger"&gt;&lt;b&gt;Upload failed.&lt;/b&gt; Files must be under 10 MB. Try a smaller file.&lt;/div&gt;
+&lt;div class="demo-row" style="margin-top:14px"&gt;
+  &lt;span class="badge"&gt;Default&lt;/span&gt;
+  &lt;span class="badge" style="background:var(--accent);color:var(--accent-fg)"&gt;Accent&lt;/span&gt;
+&lt;/div&gt;
+&lt;div style="margin-top:18px"&gt;&lt;div class="progress" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" aria-label="Upload progress"&gt;&lt;i style="width:64%"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="block" id="c-navigation"><h3>Navigation</h3><p>Tabs switch views in place. Breadcrumbs show location. Pagination moves through long lists.</p><div class="demo"><div class="tabs" role="tablist">
+  <button class="tab" role="tab" aria-selected="true">Overview</button>
+  <button class="tab" role="tab" aria-selected="false">Specs</button>
+  <button class="tab" role="tab" aria-selected="false">Reviews</button>
+</div>
+<ol class="crumbs" style="margin-top:20px">
+  <li><a href="#">Home</a></li><li><a href="#">Library</a></li><li aria-current="page">This page</li>
+</ol>
+<ul class="pager" style="margin-top:20px">
+  <li><a href="#">1</a></li><li><a href="#" aria-current="page">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li>
+</ul></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cnavigation"><span class="lbl">Copy</span></button><pre><code id="cnavigation">&lt;div class="tabs" role="tablist"&gt;
+  &lt;button class="tab" role="tab" aria-selected="true"&gt;Overview&lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false"&gt;Specs&lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false"&gt;Reviews&lt;/button&gt;
+&lt;/div&gt;
+&lt;ol class="crumbs" style="margin-top:20px"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;&lt;li aria-current="page"&gt;This page&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul class="pager" style="margin-top:20px"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#" aria-current="page"&gt;2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre></div></details></div><div class="block" id="c-table"><h3>Data table</h3><p>Tables scroll sideways on small screens instead of squashing columns.</p><div class="demo"><div class="table-wrap">
+  <table class="table">
+    <thead><tr><th>Project</th><th>Owner</th><th>Status</th><th>Due</th></tr></thead>
+    <tbody>
+      <tr><td>Homepage</td><td>Rūta</td><td><span class="badge">Review</span></td><td>12 Oct</td></tr>
+      <tr><td>Checkout</td><td>Tomas</td><td><span class="badge">Draft</span></td><td>19 Oct</td></tr>
+      <tr><td>Onboarding</td><td>Ieva</td><td><span class="badge">Live</span></td><td>2 Oct</td></tr>
+    </tbody>
+  </table>
+</div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#ctable"><span class="lbl">Copy</span></button><pre><code id="ctable">&lt;div class="table-wrap"&gt;
+  &lt;table class="table"&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Project&lt;/th&gt;&lt;th&gt;Owner&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Due&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;Homepage&lt;/td&gt;&lt;td&gt;Rūta&lt;/td&gt;&lt;td&gt;&lt;span class="badge"&gt;Review&lt;/span&gt;&lt;/td&gt;&lt;td&gt;12 Oct&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Tomas&lt;/td&gt;&lt;td&gt;&lt;span class="badge"&gt;Draft&lt;/span&gt;&lt;/td&gt;&lt;td&gt;19 Oct&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Onboarding&lt;/td&gt;&lt;td&gt;Ieva&lt;/td&gt;&lt;td&gt;&lt;span class="badge"&gt;Live&lt;/span&gt;&lt;/td&gt;&lt;td&gt;2 Oct&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre></div></details></div>
+</div></section>
+
+
+<section id="prompt" class="sec"><div class="container">
+<h2 class="sec-title">Prompt it</h2>
+<p class="sec-lede">A ready prompt for AI design and coding tools. It names exact tokens and bans the usual defaults, so the output keeps this style's point of view.</p>
+<div class="prompt"><div class="code"><button class="copy" data-copy="#prompttext"><span class="lbl">Copy prompt</span></button><pre><code id="prompttext">Design a responsive landing page for a contemporary music concert hall in an authentic Swiss Design style.
+
+Palette: White #FFFFFF, Swiss red #E4002B, Black #111111, Light gray #EDEDED, Mid gray #5E5E5E.
+Typography: Helvetica Neue or Inter, 900 weight with -0.055em tracking for the hero headline, 400 and 700 for everything else. Flush left, ragged right.
+Layout: Strict 12-column grid with 20px gutters. Hero: small meta text top left, a giant red circle spanning columns 5 to 11, a huge two-line headline overlapping it with multiply blend, a facts table on columns 8 to 12.
+Signature details: Black, white and one red. Hairline and 2px rules instead of boxes. Asymmetric balance, large empty areas.
+Components: Square buttons that invert on hover, cards defined by a top rule, square checkboxes, tables with a heavy header rule.
+Motion: Straight-line moves that stop exactly on grid lines, easing cubic-bezier(.7,0,.2,1).
+Avoid: centered layouts, rounded corners, shadows, gradients, decorative illustration, more than two typefaces.
+Do not fall back on generic AI defaults: no centered hero with a gradient blob, no identical rounded cards with soft grey shadows, no purple-to-blue gradients, no emoji icons, unless this style explicitly calls for them.
+Accessibility: body text contrast of at least 4.5:1, visible keyboard focus on every control, labels on all form fields, and respect prefers-reduced-motion.
+Deliver one self-contained HTML file with CSS variables for every color, font, radius and shadow token.</code></pre></div></div>
+</div></section>
+
+<section id="pitfalls" class="sec alt"><div class="container">
+<h2 class="sec-title">Common mistakes</h2>
+<p class="sec-lede">Where this style usually goes wrong, and how to keep it honest.</p>
+<div class="auto pit"><article class="card"><h3>Centering by habit</h3><p>Centered text breaks the asymmetric tension that defines the style. Start from the left edge.</p></article><article class="card"><h3>Too many sizes</h3><p>Pick a short type scale and stick to it. Seven sizes on one page destroy the order.</p></article><article class="card"><h3>Grid as decoration</h3><p>Visible grid lines look Swiss, but the real test is whether edges align when you hide them.</p></article><article class="card"><h3>Cold and empty</h3><p>Strict layouts can feel sterile. Strong photography and one bold color bring life back.</p></article></div>
+</div></section>
+
+<footer class="docfoot"><div class="container">Anti-Boring · Swiss Design · every illustration, animation and component on this page is original and drawn in code.</div></footer>
+<script>
+function copyText(t,btn){const o=btn.innerHTML;const done=()=>{btn.textContent='Copied';setTimeout(()=>btn.innerHTML=o,1400)};
+ const fb=()=>{const ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;top:0;left:0;opacity:0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();ok?done():(btn.textContent='Press Ctrl+C',setTimeout(()=>btn.innerHTML=o,1800))};
+ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,fb)}else fb()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;e.preventDefault();
+ const v=b.dataset.copy;const t=v.startsWith('#')?document.querySelector(v).textContent:v;copyText(t,b.querySelector('.lbl')||b)});
+(function(){const b=document.getElementById('theme-toggle');if(!b)return;const R=document.documentElement,nat=b.dataset.native,oth=nat==='light'?'dark':'light';
+ const cur=()=>R.classList.contains('alt')?oth:nat;const lbl=()=>{document.getElementById('theme-lbl').textContent=cur()==='light'?'Dark':'Light';b.setAttribute('aria-label','Switch to '+(cur()==='light'?'dark':'light')+' theme')};lbl();
+ b.onclick=()=>{R.classList.toggle('alt');try{localStorage.setItem('atlas-theme',cur())}catch(e){}lbl();try{parent.postMessage({atlasTheme:cur()},'*')}catch(e){}}})();
+const st=document.getElementById('stage'),tg=document.getElementById('toggle');
+if(st&&tg)tg.onclick=()=>{st.classList.toggle('paused');tg.textContent=st.classList.contains('paused')?'Play':'Pause'};
+document.querySelectorAll('.tabs').forEach(t=>t.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;t.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===b))}));
+document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+(function(){const R=document.documentElement,rad=document.getElementById('pg-r'),bw=document.getElementById('pg-b'),ac=document.getElementById('pg-a'),out=document.getElementById('pg-out'),rs=document.getElementById('pg-reset');
+ if(!rad)return;const cs=getComputedStyle(R);const init={r:cs.getPropertyValue('--radius').trim(),b:cs.getPropertyValue('--bw').trim(),a:cs.getPropertyValue('--accent').trim()};
+ rad.value=parseInt(init.r)||0;bw.value=parseInt(init.b)||0;if(/^#[0-9a-f]{6}$/i.test(init.a))ac.value=init.a;
+ function upd(){R.style.setProperty('--radius',rad.value+'px');R.style.setProperty('--radius-sm',Math.round(rad.value*.6)+'px');R.style.setProperty('--bw',bw.value+'px');R.style.setProperty('--accent',ac.value);
+ out.textContent=`:root {\n  --radius: ${rad.value}px;\n  --radius-sm: ${Math.round(rad.value*.6)}px;\n  --bw: ${bw.value}px;\n  --accent: ${ac.value};\n}`}
+ rad.oninput=bw.oninput=ac.oninput=upd;
+ rs.onclick=()=>{['--radius','--radius-sm','--bw','--accent'].forEach(p=>R.style.removeProperty(p));rad.value=parseInt(init.r)||0;bw.value=parseInt(init.b)||0;if(/^#/.test(init.a))ac.value=init.a;out.textContent='Tokens reset to the style defaults.'};
+})();
+(function(){const ov=document.getElementById('ov');const gb=document.getElementById('gridbtn');if(!ov||!gb)return;
+function draw(){ov.innerHTML='<i></i>'.repeat(innerWidth<820?4:12)}draw();addEventListener('resize',draw);
+gb.onclick=()=>{const on=document.body.classList.toggle('show-grid');gb.setAttribute('aria-pressed',on);gb.textContent=on?'Hide grid':'Show grid'}})();</script>
+</body>
+</html>

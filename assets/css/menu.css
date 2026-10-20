@@ -1,0 +1,369 @@
+/*---------------------------------------------------------------------------------
+* 
+* Navigation menu stylesheet
+* 
+* Name:			Expandable Navigation (off canvas menu)
+* Autor:			Claudia Romano
+* More info:	http://codyhouse.co/gem/secondary-expandable-navigation
+* 
+---------------------------------------------------------------------------------*/
+
+
+/* ------------------------------------ *
+ *  Header
+/* ------------------------------------ */
+
+#tt-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 90px;
+	width: 100%;
+	z-index: 9999;
+	pointer-events: none;
+	
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-property: -moz-transform;
+	transition-property: transform;
+	-webkit-transition-duration: .4s;
+	-moz-transition-duration: .4s;
+	transition-duration: .4s;
+}
+#tt-header.lateral-menu-is-open {
+	-webkit-transform: translate3d(-275px, 0, 0);
+	transform: translate3d(-275px, 0, 0);
+}
+#tt-header.is-fixed {
+	position: fixed;
+}
+@media (max-width: 768px) {
+	#tt-header {
+		height: 75px;
+	}
+}
+
+
+
+/* Header logo
+=============== */
+#cd-logo {
+	display: block;
+	float: left;
+	margin-right: 0;
+	margin-bottom: 0;
+	padding: 5px 0px 0px 13px;
+	pointer-events: initial;
+	
+}
+#cd-logo img {
+	display: block;
+	max-height: 54px;
+}
+@media (max-width: 768px) {
+	#cd-logo img {
+		max-height: 45px;
+	}
+}
+@media screen and (orientation:portrait) and (min-width:300px) and (max-width:420px) {
+	#cd-logo h1,
+	#cd-logo .site-mark {
+	padding-left: 8px;
+	font-size: 13px;
+	background-color: #FFF;
+	padding-bottom: 4px;
+	}
+}
+
+/* Navbar bottom
+=============== */
+#navbottom {
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-left: 13px;
+	padding-bottom: 0px;
+}
+
+
+@media screen and (orientation:portrait) and (min-width:300px) and (max-width:420px) {
+	#navbottom h5 {
+	font-size: 10px;
+	
+	
+	}
+}
+
+
+/* Header links
+================ */
+#cd-top-nav {
+	position: absolute;
+	display: none;
+	top: 0;
+	right: 90px;
+	height: 100%;
+	padding-top: 25px;
+	pointer-events: initial;
+}
+#cd-top-nav ul {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#cd-top-nav li {
+	display: inline-block;
+	margin-right: 15px;
+}
+#cd-top-nav a {
+	display: inline-block;
+	padding: 8px;
+	text-transform: uppercase;
+	font-size: 17px;
+	color: var(--red, #c80000);
+	font-weight: bold;
+	font-weight: 600;
+	text-decoration: none;
+}
+#cd-top-nav a.current {
+	background-color: var(--red, #c80000);
+	text-decoration: line-through;
+}
+#cd-top-nav a:hover {
+	color: var(--red, #c80000);
+	text-decoration: line-through;
+
+}
+@media only screen and (min-width: 768px) {
+	#cd-top-nav {
+		display: block;
+	}
+}
+
+
+/* ------------------------------------ *
+ *  Menu trigger
+/* ------------------------------------ */
+
+#cd-menu-trigger {
+	position: absolute;
+	right: 15px;
+	top: 14px;
+	height: 60px;
+	width: 60px;
+	background-color: #F8F9FA;
+	pointer-events: initial;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+#cd-menu-trigger .cd-menu-icon {
+	position: absolute;
+	display: inline-block;
+	left: 50%;
+	top: 50%;
+	margin-top: -1.5px;
+	margin-left: -10px;
+	width: 20px;
+	height: 3px;
+	background-color: var(--red, #c80000);
+}
+#cd-menu-trigger .cd-menu-icon::before, #cd-menu-trigger .cd-menu-icon:after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: inherit;
+	left: 0;
+}
+#cd-menu-trigger .cd-menu-icon::before {
+	bottom: 7px;
+}
+#cd-menu-trigger .cd-menu-icon::after {
+	top: 7px;
+}
+#cd-menu-trigger.is-clicked {
+	right: 0;
+}
+#cd-menu-trigger.is-clicked .cd-menu-icon {
+	background-color: rgba(255, 255, 255, 0);
+}
+#cd-menu-trigger.is-clicked .cd-menu-icon::before, #cd-menu-trigger.is-clicked .cd-menu-icon::after {
+	background-color: var(--red, #c80000);
+}
+#cd-menu-trigger.is-clicked .cd-menu-icon::before {
+	bottom: 0;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+#cd-menu-trigger.is-clicked .cd-menu-icon::after {
+	top: 0;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+
+/* ------------------------------------ *
+ *  Navigation menu
+/* ------------------------------------ */
+
+#cd-lateral-nav {
+	position: fixed;
+	height: 100%;
+	right: 15px;
+	top: 15px;
+	visibility: hidden;
+	z-index: 999;
+	width: 260px;
+	background-color: #181818;
+	overflow-y: auto;
+	-webkit-transform: translate3d(80px, 0, 0);
+	transform: translate3d(80px, 0, 0);
+	-webkit-transition: -webkit-transform .4s 0s, visibility 0s .4s;
+	transition: transform .4s 0s, visibility 0s .4s;
+}
+@media only screen and (max-width: 768px) {
+	#cd-lateral-nav {
+		top: 15px;
+	}
+}
+#cd-lateral-nav .nav-inner {
+	margin-bottom: 60px;
+}
+#cd-lateral-nav .cd-navigation {
+	margin: 10px 0 16px;
+	padding: 0;
+	list-style: none;
+}
+#cd-lateral-nav .menu-header {
+	background-color: rgba(255, 255, 255, 0.03);
+	margin-bottom: 22px;
+	padding: 17px 15px 15px 30px;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: bold;
+	color: #909090;
+	border-bottom: 1px dotted #333;
+}
+#cd-lateral-nav .sub-menu {
+	padding: 5px 10px 5px 15px;
+	display: none;
+}
+#cd-lateral-nav a {
+	display: block;
+	line-height: 31px;
+	padding: 0 16px 0 30px;
+	text-transform: uppercase;
+	font-size: 17px;
+	font-weight: 400;
+	color: #CDCDCD;
+}
+#cd-lateral-nav a.current {
+	background-color: #3a4a4d;
+	color: #F8F9FA;
+	text-decoration: line-through;
+}
+#cd-lateral-nav a:hover,
+#cd-lateral-nav a:focus {
+	background-color: var(--red, #c80000);
+	color: #F8F9FA;
+	text-decoration: line-through;
+}
+@media (min-width: 768px) {
+	#cd-lateral-nav .cd-navigation {
+		margin: 20px 0;
+	}
+}
+#cd-lateral-nav.lateral-menu-is-open {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	visibility: visible;
+	-webkit-transition: -webkit-transform .4s 0s, visibility 0s 0s;
+	transition: transform .4s 0s, visibility 0s 0s;
+	/* smooth the scrolling on touch devices - webkit browsers */
+	-webkit-overflow-scrolling: touch;
+}
+
+/* style menu items which have a submenu  */
+#cd-lateral-nav .item-has-children > a {
+	position: relative;
+}
+/* this is the right arrow to show that the item has a submenu  */
+#cd-lateral-nav .item-has-children > a::after {
+	content: '';
+	display: block;
+	height: 11px;
+	width: 8px;
+	position: absolute;
+	top: 50%;
+	bottom: auto;
+	-webkit-transform: translate3d(0, -50%, 0);
+	transform: translate3d(0, -50%, 0);
+	right: 1em;
+	background: url("../img/menu/cd-arrow.svg") no-repeat center center;
+	background-size: 8px 11px;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+#cd-lateral-nav .item-has-children > a.submenu-open::after {
+	-webkit-transform: translate3d(0, -50%, 0) rotate(90deg);
+	transform: translate3d(0, -50%, 0) rotate(90deg);
+}
+#cd-lateral-nav .sub-menu > li > a {
+	font-size: 16px;
+}
+
+#cd-lateral-nav .menu-separator {
+	margin: 17px 30px;
+	border-bottom: 1px solid #333;
+}
+
+
+/* ------------------------------------ *
+ *  Social icons
+/* ------------------------------------ */
+
+#cd-lateral-nav .social-icons {
+	display: inline-block;
+	margin-top: 15px;
+	padding: 0 30px;
+}
+#cd-lateral-nav .social-icons a {
+	float: left;
+	padding: 0;
+	margin-right: 8px;
+	font-size: 30px;
+	color: #F8F9FA;
+}
+#cd-lateral-nav .social-icons a:hover {
+	background-color: transparent;
+	color: var(--red, #c80000);
+}
+
+
+/* ------------------------------------ *
+ *  Body content
+/* ------------------------------------ */
+
+#body-content {
+	position: relative;
+	min-height: 100%;
+	z-index: 999;
+
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-property: -moz-transform;
+	transition-property: transform;
+	-webkit-transition-duration: .4s;
+	-moz-transition-duration: .4s;
+	transition-duration: .4s;
+}
+#body-content.lateral-menu-is-open {
+	cursor: e-resize;
+	-webkit-transform: translate3d(-260px, 0, 0);
+	transform: translate3d(-260px, 0, 0);
+}
+
+@media screen and (orientation:portrait) and (min-width:300px) and (max-width:412px){
+}

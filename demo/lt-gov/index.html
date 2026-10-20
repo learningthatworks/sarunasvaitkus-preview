@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KN31FWTLQ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KN31FWTLQ1');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="canonical" href="https://sarunasvaitkus.com/demo/lt-gov/" />
+  <title>How Lithuania Is Governed · Kaip valdoma Lietuva</title>
+  <meta name="description" content="Who holds state power in Lithuania, and who gave it to them. An interactive map for students, in English and Lithuanian, with the Constitution article behind every link." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["WebApplication", "LearningResource"],
+    "name": "How Lithuania Is Governed",
+    "alternateName": "Kaip valdoma Lietuva",
+    "url": "https://sarunasvaitkus.com/demo/lt-gov/",
+    "description": "An interactive map of who holds state power in Lithuania and who gave it to them, with the Constitution article behind every link.",
+    "inLanguage": ["en", "lt"],
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "learningResourceType": "Interactive map",
+    "educationalUse": "Civic education",
+    "audience": { "@type": "EducationalAudience", "educationalRole": "student" },
+    "about": [{ "@type": "Thing", "name": "Government of the Republic of Lithuania" }, { "@type": "Thing", "name": "Constitution of the Republic of Lithuania" }],
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "author": { "@type": "Person", "name": "Šarūnas Vaitkus", "url": "https://sarunasvaitkus.com/" }
+  }
+  </script>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Šarūnas Vaitkus" />
+  <meta property="og:title" content="How Lithuania Is Governed · Kaip valdoma Lietuva" />
+  <meta property="og:description" content="Who holds state power in Lithuania, and who gave it to them. Tap any office to trace its power back to the People." />
+  <meta property="og:url" content="https://sarunasvaitkus.com/demo/lt-gov/" />
+  <meta property="og:image" content="https://sarunasvaitkus.com/demo/lt-gov/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="How Lithuania Is Governed: the Seimas, the President, the Government, the courts and other institutions arranged around the People." />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale:alternate" content="lt_LT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ground: #0E1116; --ground-2: #12161C; --panel: #161A21; --line: #262C36; --line-2: #333A46;
+      --text: #ECE6D6; --muted: #8E96A3; --faint: #5B6370; --people: #FDB913;
+      --font: "Commissioner", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+      --ease: cubic-bezier(.65,0,.35,1);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; height: 100dvh; margin: 0; }
+    body { background: var(--ground); color: var(--text); font: 400 15px/1.45 var(--font); overflow: hidden; -webkit-font-smoothing: antialiased; overscroll-behavior: none; }
+    button, input { font: inherit; color: inherit; }
+    :focus-visible { outline: 2px solid var(--people); outline-offset: 2px; }
+    .stage { position: fixed; inset: 0; overflow: hidden; background: radial-gradient(120% 90% at 50% 45%, #151A22 0%, var(--ground) 62%); touch-action: none; }
+    .view { position: absolute; inset: 0; }
+    .view[hidden], [hidden] { display: none !important; }
+    svg { display: block; width: 100%; height: 100%; user-select: none; -webkit-user-select: none; }
+    #orbit.pan-ready, #orbit.pan-ready .node { cursor: grab; }
+    #orbit.panning, #orbit.panning .node { cursor: grabbing; }
+
+    /* top bar */
+    .bar { position: absolute; z-index: 35; top: calc(12px + env(safe-area-inset-top, 0px)); left: 16px; right: 16px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; pointer-events: none; }
+    .bar > * { pointer-events: auto; }
+    .pill { background: rgba(22,26,33,.88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 14px; }
+    .brand { display: flex; align-items: center; gap: 10px; padding: 8px 13px; font-weight: 700; }
+    .brand svg { width: 22px; height: 22px; flex: none; }
+    .brand small { font-weight: 500; color: var(--muted); }
+    .seg { display: flex; padding: 4px; gap: 2px; }
+    .seg button { border: 0; background: transparent; padding: 7px 12px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 14px; color: var(--muted); white-space: nowrap; }
+    .seg button[aria-pressed="true"] { background: var(--text); color: var(--ground); }
+    .seg button:disabled { opacity: .4; cursor: not-allowed; }
+    .spacer { flex: 1; }
+    .search { position: relative; }
+    .search-toggle { width: 44px; height: 44px; display: grid; place-items: center; cursor: pointer; }
+    .search-toggle svg { width: 18px; height: 18px; }
+    .share { position: relative; }
+    .share-box { position: absolute; z-index: 5; right: 0; top: 52px; padding: 8px; box-shadow: 0 12px 32px rgba(0,0,0,.45); }
+    .share-icons { display: flex; gap: 6px; }
+    .share-icons a, .share-icons button { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; border: 1px solid var(--line); background: var(--ground-2); color: var(--muted); cursor: pointer; padding: 0; transition: color .15s, border-color .15s; }
+    .share-icons a:hover, .share-icons button:hover, .share-icons a:focus-visible, .share-icons button:focus-visible { color: var(--text); border-color: var(--line-2); }
+    .share-icons svg { width: 17px; height: 17px; fill: currentColor; }
+    .share-icons .copied { color: var(--people); border-color: var(--people); }
+    .share-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .share-row > span { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+    .share-row .share-icons a, .share-row .share-icons button { width: 34px; height: 34px; }
+    .share-row .share-icons svg { width: 15px; height: 15px; }
+    .search-box { position: absolute; z-index: 5; right: 0; top: 52px; width: min(360px, calc(100vw - 32px)); padding: 8px; }
+    .search-box input { width: 100%; background: var(--ground-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 16px; }
+    .search-box input:focus { outline: none; border-color: var(--people); }
+    .results { list-style: none; margin: 6px 0 0; padding: 0; max-height: 50vh; overflow-y: auto; }
+    .results button { width: 100%; text-align: left; border: 0; background: transparent; padding: 8px 10px; border-radius: 8px; cursor: pointer; display: grid; }
+    .results button:hover, .results button:focus-visible { background: var(--ground-2); }
+    .results small { color: var(--muted); font-size: 12px; }
+    .results .empty { color: var(--muted); padding: 8px 10px; font-size: 14px; }
+    .hint { position: absolute; z-index: 14; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); font-size: 12px; color: var(--muted); padding: 6px 12px; border-radius: 999px; }
+
+    /* legend */
+    .legend { position: absolute; z-index: 15; left: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; gap: 6px 14px; max-width: min(640px, calc(100% - 32px)); padding: 8px 12px; font-size: 12px; color: var(--muted); border-radius: 12px; }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+    .legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+    .legend .ln { width: 22px; height: 0; border-top: 2px solid var(--text); border-radius: 0; }
+    .legend .ln.dash { border-top-style: dashed; }
+    .legend .ln.dot { border-top-style: dotted; }
+
+    /* details panel */
+    .panel { position: absolute; z-index: 30; right: 16px; top: calc(76px + env(safe-area-inset-top, 0px)); bottom: 16px; width: 360px; background: rgba(22,26,33,.95); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--line); border-radius: 18px; display: flex; flex-direction: column; transform: translateX(calc(100% + 24px)); transition: transform .55s var(--ease); visibility: hidden; }
+    .panel.open { transform: none; visibility: visible; }
+    .panel header { display: flex; align-items: center; gap: 8px; padding: 12px 12px 0 18px; }
+    .kicker { font: 500 11px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); flex: 1; }
+    .icon-btn { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line); background: var(--ground-2); cursor: pointer; display: grid; place-items: center; font-size: 16px; flex: none; }
+    .icon-btn:hover { border-color: var(--line-2); }
+    .panel .body { padding: 8px 18px 22px; overflow-y: auto; overscroll-behavior: contain; }
+    .panel h2 { font-size: 26px; line-height: 1.12; margin: 6px 0 4px; font-weight: 700; text-wrap: balance; }
+    .holder { font-size: 17px; font-weight: 600; margin: 0 0 10px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .chip { font-size: 12px; font-weight: 600; padding: 4px 9px; border-radius: 999px; background: var(--ground-2); border: 1px solid var(--line); display: inline-flex; align-items: center; gap: 6px; min-height: 24px; }
+    .chip i { width: 8px; height: 8px; border-radius: 50%; }
+    a.chip { color: var(--muted); text-decoration: none; cursor: pointer; }
+    a.chip:hover, a.chip:focus-visible { color: var(--people); border-color: var(--line-2); }
+    a.chip:focus-visible { outline: 2px solid var(--people); outline-offset: 2px; }
+    .ext-icon { font-size: 11px; opacity: 0.7; }
+    @media (pointer: coarse) { a.chip { min-height: 44px; } }
+    .panel p { color: #C9C3B5; margin: 0 0 14px; max-width: 60ch; }
+    .rel h3 { font: 500 11px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 16px 0 8px; }
+    .rel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+    .rel button { width: 100%; text-align: left; background: var(--ground-2); border: 1px solid var(--line); border-radius: 12px; padding: 9px 12px; cursor: pointer; display: grid; gap: 1px; }
+    .rel button:hover { border-color: var(--line-2); }
+    .rel .verb { font: 500 11px/1.2 var(--mono); color: var(--muted); }
+    .rel li { position: relative; }
+    .rel li:has(.basis) button { padding-right: 132px; }
+    .basis { position: absolute; top: 8px; right: 8px; max-width: 122px; font: 500 10.5px/1.2 var(--mono); color: var(--muted); border: 1px solid var(--line-2); border-radius: 6px; padding: 3px 6px; text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    a.basis:hover, a.basis:focus-visible { color: var(--people); border-color: var(--people); }
+    #orbit.no-names text.sub { display: none; }
+    .names-btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line-2); background: var(--ground-2); color: var(--muted); border-radius: 999px; padding: 2px 10px 2px 4px; font-size: 12px; font-weight: 600; cursor: pointer; }
+    .names-btn i { width: 26px; height: 16px; border-radius: 999px; background: var(--line-2); position: relative; transition: background .2s; }
+    .names-btn i::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--muted); transition: transform .2s, background .2s; }
+    .names-btn[aria-pressed="true"] { color: var(--text); }
+    .names-btn[aria-pressed="true"] i { background: var(--people); }
+    .names-btn[aria-pressed="true"] i::after { transform: translateX(10px); background: var(--ground); }
+    @media (prefers-reduced-motion: reduce) { .names-btn i, .names-btn i::after { transition: none; } }
+    /* Learn mode */
+    /* slide-in menu */
+    .menu { position: fixed; z-index: 50; top: 0; left: 0; bottom: 0; width: min(360px, 88vw); background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; transform: translateX(-102%); transition: transform .4s var(--ease); padding-top: env(safe-area-inset-top, 0px); }
+    .menu.open { transform: none; }
+    .menu[hidden] { display: flex !important; visibility: hidden; }
+    .menu.open[hidden] { visibility: visible; }
+    .menu header { display: flex; align-items: center; justify-content: space-between; padding: 16px 16px 4px 20px; }
+    .menu h2 { margin: 0; font-size: 20px; }
+    .menu-body { overflow-y: auto; padding: 4px 20px 28px; overscroll-behavior: contain; }
+    .menu h3 { font: 500 11px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
+    .menu p { margin: 0 0 10px; color: var(--text); font-size: 14px; }
+    .menu .note { color: var(--muted); font-size: 13px; }
+    .menu a { color: var(--text); }
+    .menu .pick { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    .menu .pick button { width: 100%; text-align: left; display: grid; gap: 3px; padding: 12px 14px; border: 1px solid var(--line-2); background: var(--ground-2); border-radius: 12px; font-weight: 600; cursor: pointer; }
+    .menu .pick button:hover { border-color: var(--people); }
+    .menu .pick small { font: 500 11px/1.3 var(--mono); color: var(--muted); }
+    .menu .tips { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; }
+    .menu .srcs { margin: 0 0 10px; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; }
+    .menu-shade { position: fixed; inset: 0; z-index: 45; background: rgba(8,10,14,.5); }
+    .menu-hint { position: absolute; z-index: 36; left: 16px; top: calc(66px + env(safe-area-inset-top, 0px)); display: flex; align-items: center; gap: 4px; padding: 4px 4px 4px 4px; max-width: calc(100% - 32px); }
+    .menu-hint::before { content: ""; position: absolute; top: -6px; left: 16px; width: 10px; height: 10px; background: inherit; border-left: 1px solid var(--line); border-top: 1px solid var(--line); transform: rotate(45deg); }
+    .menu-hint #menu-hint-go { border: 0; background: var(--people); color: var(--ground); font-weight: 700; border-radius: 10px; padding: 8px 12px; cursor: pointer; text-align: left; }
+    .menu-hint .icon-btn { width: 32px; height: 32px; font-size: 13px; }
+    @media (prefers-reduced-motion: reduce) { .menu { transition: none; } }
+    .panel.story { bottom: auto; max-height: calc(100% - 92px); }
+    .story .step-text { font-size: 19px; line-height: 1.45; margin: 6px 0 12px; }
+    .story h2 { font-size: 22px; margin: 4px 0 12px; }
+    .story .basis { position: static; display: inline-block; max-width: none; }
+    .story .dots { display: flex; gap: 6px; margin: 16px 0 0; }
+    .story .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line-2); }
+    .story .dots i.on { background: var(--people); }
+    .story .nav { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+    .story .nav button, .story .pick button { border: 1px solid var(--line-2); background: var(--ground-2); border-radius: 12px; padding: 10px 16px; font-weight: 600; cursor: pointer; }
+    .story .nav button.primary { background: var(--text); color: var(--ground); border-color: var(--text); margin-left: auto; }
+    .story .nav button:disabled { opacity: .35; cursor: default; }
+    .story .pick { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
+    .story .pick button { width: 100%; text-align: left; display: grid; gap: 3px; padding: 12px 14px; }
+    .story .pick small { font: 500 11px/1.3 var(--mono); color: var(--muted); }
+    .story .opts { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
+    .story .opts button { width: 100%; text-align: left; border: 1px solid var(--line-2); background: var(--ground-2); border-radius: 12px; padding: 11px 14px; font-weight: 600; cursor: pointer; }
+    .story .opts button.right { border-color: #34A86F; background: rgba(52,168,111,.16); }
+    .story .opts button.wrong { border-color: #E3565C; background: rgba(227,86,92,.14); }
+    .story .opts button:disabled { cursor: default; }
+    .story .feedback { font-weight: 700; margin: 14px 0 4px; }
+    body.learning .legend, body.learning .hint { display: none; }
+    @media (max-width: 760px) { .panel.story { top: auto; bottom: 0; height: auto; max-height: 56%; } .story .step-text { font-size: 17px; } }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .embed-dlg { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: rgba(8,10,14,.6); padding: 16px; }
+    .embed-card { width: min(520px, 100%); padding: 18px; display: grid; gap: 10px; background: var(--panel); }
+    .embed-card header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .embed-card h2 { margin: 0; font-size: 18px; }
+    .embed-card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .embed-card textarea { width: 100%; height: 108px; resize: none; background: var(--ground-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px; font: 500 12px/1.45 var(--mono); color: var(--text); }
+    .embed-card .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .embed-card .row button { border: 0; border-radius: 10px; padding: 9px 14px; font-weight: 600; cursor: pointer; background: var(--text); color: var(--ground); }
+    .embed-card .row button.ok { background: var(--people); }
+    .embed-card label { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+    .embed-card select { background: var(--ground-2); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; }
+    body.embed .brand { cursor: pointer; }
+    body.embed .brand::after { content: "↗"; margin-left: 4px; color: var(--muted); }
+    body.embed [data-net="embed"] { display: none; }
+    .note { font-size: 12px; color: var(--faint) !important; margin-top: 18px !important; }
+
+    /* orbit */
+    .sector-label { font: 700 12px/1 var(--font); letter-spacing: .26em; text-transform: uppercase; }
+    .node { cursor: pointer; }
+    .node .lbl { font: 600 12px/1.1 var(--font); fill: var(--text); paint-order: stroke; stroke: var(--ground); stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
+    .node .sub { font: 500 10px/1.1 var(--mono); fill: var(--muted); paint-order: stroke; stroke: var(--ground); stroke-width: 4px; pointer-events: none; }
+    .node:focus { outline: none; }
+    .node:focus-visible .shape { stroke: var(--people); stroke-width: 3; }
+    .dim .node:not(.on) { opacity: .22; }
+    .dim .sector:not(.on) { opacity: .45; }
+    .node, .sector { transition: opacity .45s ease; }
+    .rel-line { fill: none; stroke-width: 2.4; stroke-linecap: round; }
+    .rel-tag { font: 500 10px/1 var(--mono); fill: var(--text); paint-order: stroke; stroke: var(--ground); stroke-width: 4px; }
+
+    /* parliament */
+    .parl-caption { font: 700 13px/1 var(--mono); fill: var(--muted); letter-spacing: .06em; }
+    .parl-big { font: 800 44px/1 var(--font); fill: var(--text); }
+    .seat { transition: opacity .3s; }
+    .party-list { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(64px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; width: min(760px, calc(100% - 32px)); }
+    .party-list button { border: 1px solid var(--line); background: rgba(22,26,33,.92); border-radius: 999px; padding: 6px 11px; font-size: 13px; font-weight: 600; cursor: pointer; display: inline-flex; gap: 7px; align-items: center; }
+    .party-list button[aria-pressed="true"] { border-color: var(--text); }
+    .party-list i { width: 9px; height: 9px; border-radius: 50%; }
+    .party-list b { font-family: var(--mono); font-weight: 500; color: var(--muted); }
+    .party-list .split-btn { background: var(--text); color: var(--ground); border-color: var(--text); }
+
+    /* EU MEPs — compact list, same tokens as the other views */
+    #v-eu { overflow: auto; overscroll-behavior: contain; }
+    .eu-list { width: min(640px, calc(100% - 32px)); margin: 0 auto; padding: calc(88px + env(safe-area-inset-top, 0px)) 0 calc(80px + env(safe-area-inset-bottom, 0px)); }
+    .eu-list > h2 { font-size: 22px; line-height: 1.2; margin: 0 0 6px; font-weight: 700; text-wrap: balance; }
+    .eu-list > p { color: var(--muted); margin: 0 0 18px; font-size: 14px; }
+    .eu-list section { margin: 0 0 16px; }
+    .eu-list h3 { font: 500 11px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+    .eu-list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+    .eu-list button { width: 100%; text-align: left; background: rgba(22,26,33,.92); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; display: grid; gap: 2px; }
+    .eu-list button:hover { border-color: var(--line-2); }
+    .eu-list button[aria-pressed="true"] { border-color: var(--text); }
+    .eu-list small { color: var(--muted); font-size: 12px; }
+    #modes button { overflow: hidden; text-overflow: ellipsis; }
+
+    /* loading and errors */
+    .overlay { position: absolute; inset: 0; z-index: 40; display: grid; place-items: center; background: var(--ground); text-align: center; padding: 20px; }
+    .spinner { width: 44px; height: 44px; margin: 0 auto 14px; border: 4px solid var(--line); border-top-color: var(--people); border-radius: 50%; animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .overlay p { color: var(--muted); margin: 0 0 16px; max-width: 36ch; }
+    .overlay .err { color: var(--text); font-size: 17px; }
+    .primary { min-height: 44px; background: var(--people); color: #1B1400; border: 0; border-radius: 10px; padding: 12px 22px; font-weight: 700; cursor: pointer; }
+
+    @media (max-width: 760px) {
+      .brand small, .hint, .brand svg { display: none; }
+      .menu-hint { top: calc(114px + env(safe-area-inset-top, 0px)); }
+      .brand { padding: 8px 11px; flex: 1; min-width: 0; }
+      .brand span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .spacer { display: none; }
+      #modes { order: 5; flex-basis: 100%; }
+      #modes button { flex: 1; }
+      .seg button { padding: 7px 10px; font-size: 13px; }
+      .bar { gap: 6px; }
+      .search-toggle { width: 40px; height: 40px; }
+      .search-box, .share-box { top: 48px; }
+      .panel { top: auto; }
+      .panel { left: 0; right: 0; top: auto; bottom: 0; width: auto; height: 56%; border-radius: 18px 18px 0 0; transform: translateY(105%); padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .panel h2 { font-size: 22px; }
+      .legend { font-size: 11px; }
+      .party-list { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
+      .eu-list { padding-top: calc(148px + env(safe-area-inset-top, 0px)); }
+    }
+    @media (prefers-reduced-motion: reduce) { .panel { transition: none; } .spinner { animation-duration: 2s; } }
+  </style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <div class="view" id="v-orbit"><svg id="orbit" role="group"></svg></div>
+    <div class="view" id="v-parl" hidden><svg id="parl" role="img"></svg><div class="party-list" id="party-list"></div></div>
+    <div class="view" id="v-eu" hidden><div class="eu-list" id="eu-list"></div></div>
+
+    <h1 class="sr-only" id="page-title">How Lithuania Is Governed · Kaip valdoma Lietuva</h1>
+    <noscript><p style="padding:16px">How Lithuania Is Governed: who exercises state power in Lithuania, and who gave it to them. Kaip valdoma Lietuva: kas Lietuvoje vykdo valstybės valdžią ir kas ją suteikė. This map needs JavaScript. / Žemėlapiui reikia JavaScript.</p></noscript>
+    <div class="bar">
+      <button class="search-toggle pill" id="menu-toggle" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="brand pill"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="22" height="6" rx="1.5" fill="#FDB913"/><rect x="1" y="9" width="22" height="6" fill="#34A86F"/><rect x="1" y="15" width="22" height="6" rx="1.5" fill="#E3565C"/></svg><span id="brand-name">How Lithuania Is Governed</span> <small id="brand-sub"></small></div>
+      <div class="seg pill" role="group" id="modes">
+        <button id="m-orbit" aria-pressed="true"></button>
+        <button id="m-parl" aria-pressed="false"></button>
+        <button id="m-eu" aria-pressed="false" hidden></button>
+      </div>
+      <div class="spacer"></div>
+      <div class="seg pill" role="group" id="langs">
+        <button id="btn-en" aria-pressed="true" lang="en">EN</button>
+        <button id="btn-lt" aria-pressed="false" lang="lt">LT</button>
+      </div>
+      <div class="share">
+        <button class="search-toggle pill" id="share-toggle" aria-expanded="false" aria-controls="share-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></button>
+        <div class="share-box pill" id="share-box" hidden></div>
+      </div>
+      <div class="search">
+        <button class="search-toggle pill" id="search-toggle" aria-expanded="false" aria-controls="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+        <div class="search-box pill" id="search-box" hidden>
+          <input type="search" id="search" autocomplete="off" enterkeyhint="search" />
+          <ul class="results" id="results"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="legend pill" id="legend"></div>
+    <div class="hint pill" id="hint"></div>
+
+    <div class="menu-hint pill" id="menu-hint" hidden><button id="menu-hint-go"></button><button class="icon-btn" id="menu-hint-x">✕</button></div>
+    <div class="menu-shade" id="menu-shade" hidden></div>
+    <nav class="menu" id="menu" aria-labelledby="menu-title" hidden>
+      <header><h2 id="menu-title"></h2><button class="icon-btn" id="menu-close">✕</button></header>
+      <div class="menu-body">
+        <section id="menu-learn"><h3 id="menu-learn-h"></h3><ul class="pick" id="menu-stories"></ul></section>
+        <section><h3 id="menu-help-h"></h3><ul class="tips" id="menu-help"></ul></section>
+        <section><h3 id="menu-about-h"></h3><p id="menu-about"></p><p class="note" id="menu-checked"></p><ul class="srcs" id="menu-sources"></ul><p class="note" id="menu-author"></p></section>
+      </div>
+    </nav>
+
+    <aside class="panel story" id="story" aria-live="polite" aria-labelledby="s-kicker">
+      <header>
+        <span class="kicker" id="s-kicker"></span>
+        <button class="icon-btn" id="s-close">✕</button>
+      </header>
+      <div class="body" id="s-body"></div>
+    </aside>
+
+    <aside class="panel" id="panel" aria-live="polite">
+      <header>
+        <span class="kicker" id="p-kicker"></span>
+        <button class="icon-btn" id="p-prev">‹</button>
+        <button class="icon-btn" id="p-next">›</button>
+        <button class="icon-btn" id="p-close">✕</button>
+      </header>
+      <div class="body" id="p-body"></div>
+    </aside>
+
+    <div class="embed-dlg" id="embed-dlg" hidden>
+      <div class="embed-card pill" role="dialog" aria-modal="true" aria-labelledby="embed-title">
+        <header><h2 id="embed-title"></h2><button class="icon-btn" id="embed-close">✕</button></header>
+        <p id="embed-help"></p>
+        <label><input type="checkbox" id="embed-names"> <span id="embed-names-label"></span></label>
+        <label><span id="embed-h-label"></span> <select id="embed-h"><option value="600">600 px</option><option value="720" selected>720 px</option><option value="900">900 px</option></select></label>
+        <textarea id="embed-code" readonly spellcheck="false"></textarea>
+        <div class="row"><button id="embed-copy"></button></div>
+      </div>
+    </div>
+
+    <div class="overlay" id="loading" aria-live="polite"><div><div class="spinner"></div><p id="loading-text">Loading…</p></div></div>
+    <div class="overlay" id="error" role="alert" hidden><div><p class="err" id="error-text"></p><button class="primary" id="retry"></button></div></div>
+  </div>
+
+<script>
+(() => {
+  const I18N = {
+    en: {
+      brand: "How Lithuania Is Governed", sub: "Lithuania", orbit: "Institutions", parl: "Seimas", views: "Views", langs: "Language",
+      hint: "Tap · drag to spin · two fingers / right-drag / Space-drag to pan · pinch or scroll to zoom", hintParl: "Tap a party · split the chamber",
+      orbitLabel: "Map of Lithuania's state power", parlLabel: "Seimas seats by party",
+      search: "Search people and offices", openSearch: "Search", noResults: "No matches",
+      prev: "Previous", next: "Next", close: "Close details",
+      source: "Source of power", coalition: "Coalition", opposition: "Opposition", independent: "Independent", since: "Since",
+      chosenBy: "Chosen by", ledBy: "Led or supervised by", powerOver: "Has power over", more: "more",
+      note: "Coalition as listed in the data.",
+      people: "The People", legend: { solid: "elects / appoints", dash: "nominates / proposes", dot: "approves / supervises" },
+      verbs: { elects: "elects", appoints: "appoints", nominates: "nominates", approves: "approves", proposes: "proposes", consents: "consents", oversees: "supervises", leads: "leads", appoints_judges: "appoints judges" },
+      majority: "MAJORITY", seatsIn: "SEATS IN THE SEIMAS", coalitionCap: "COALITION", oppCap: "OPPOSITION & OTHERS",
+      split: "Split coalition / opposition", join: "Join the chamber", other: "Other",
+      coalParty: "Coalition party", oppParty: "Opposition party", otherSeats: "Other seats", otherTitle: "Other members",
+      seatsOf: n => `${n} of 141 seats`, shareOf: p => `${p}% of the chamber`,
+      coalText: n => n ? `Part of the governing coalition. Posts in the Government: ${n}.` : "Part of the governing coalition.",
+      oppText: "In opposition. Scrutinises the Government from the Seimas.",
+      otherText: "Members not in the seven parties listed, such as independents and smaller groups.",
+      inGov: "In the Government", parlLegend: "Tap a party to see its seats and ministers",
+      seatNote: "Seats won in the 2024 Seimas election.",
+      loading: "Loading…",
+      errorNetwork: "Couldn't load the government data. Check your connection and try again.",
+      errorData: "The government data couldn't be read. Please try again later.",
+      tryAgain: "Try again",
+      share: "Share", shareThis: "Share", copyLink: "Copy link", copied: "Link copied", moreShare: "More options",
+      shareOn: n => `Share on ${n}`,
+      art: (a, i) => `Art. ${a}${i ? `(${i})` : ""}`, basisOf: (doc, a, i) => a ? `${doc}, Article ${a}${i ? `, item ${i}` : ""}` : doc,
+      embed: "Embed", embedTitle: "Embed this map", embedHelp: "Paste this code into a website, a school learning platform or an article. It opens on the view you have now, in English.",
+      menu: "Menu", openMenu: "Open menu", howTo: "How to use", aboutSources: "About & sources",
+      hintText: "New here? Start with a 2-minute story", dismiss: "Dismiss",
+      tips: ["Tap an office to see who gave it power. Tap the empty map to go back.", "Drag to spin. Two-finger drag, right-drag, or hold Space and drag to pan. Pinch or scroll to zoom.", "Small tags like Art. 92 open that article of the Constitution.", "Names shows who holds each office now.", "Seimas shows the 141 seats by party."],
+      aboutText: "An interactive map of who holds state power in Lithuania and who gave it to them. Made for students, free to use and to embed.",
+      checked: d => `Data checked on ${d}.`, madeBy: "Made by", officialSources: "Official sources:",
+      learn: "Learn", pickStory: "Choose a story", storyMeta: n => `${n} steps · 1 question`, stepOf: (i, n) => `Step ${i} of ${n}`,
+      back: "Back", next: "Next", checkYourself: "Check yourself", right: "Correct.", wrong: "Not quite.",
+      anotherStory: "Another story", toMap: "Back to the map", closeLearn: "Close Learn",
+      names: "Names", namesLabel: "Show the names of officeholders on the map", embedNames: "Show names",
+      embedHeight: "Height", copyCode: "Copy code", codeCopied: "Copied", openFull: "Open the full map in a new tab",
+      website: "Visit site", profile: "Profile",
+      websiteLabel: name => `${name} — official website (opens in new tab)`,
+      profileLabel: name => `${name} — official profile (opens in new tab)`,
+      eu: "EP", hintEu: "Tap a representative · grouped by EP group",
+      euSeats: n => `${n} seats in the European Parliament`,
+    },
+    lt: {
+      brand: "Kaip valdoma Lietuva", sub: "Lietuva", orbit: "Institucijos", parl: "Seimas", views: "Vaizdai", langs: "Kalba",
+      hint: "Palieskite · vilkite suktis · dviem pirštais / deš. pelės / Tarpu slinkti · artinkite pirštais ar ratuku", hintParl: "Palieskite partiją · atskirkite koaliciją",
+      orbitLabel: "Lietuvos valstybės valdžios žemėlapis", parlLabel: "Seimo mandatai pagal partijas",
+      search: "Ieškoti asmenų ir pareigų", openSearch: "Paieška", noResults: "Nieko nerasta",
+      prev: "Ankstesnis", next: "Kitas", close: "Uždaryti",
+      source: "Valdžios šaltinis", coalition: "Koalicija", opposition: "Opozicija", independent: "Nepartinis", since: "Nuo",
+      chosenBy: "Įgaliojimus suteikia", ledBy: "Vadovauja ar prižiūri", powerOver: "Skiria, teikia ar prižiūri", more: "daugiau",
+      note: "Koalicija nurodyta duomenyse.",
+      people: "Tauta", legend: { solid: "renka / skiria", dash: "teikia kandidatūras", dot: "pritaria / prižiūri" },
+      verbs: { elects: "renka", appoints: "skiria", nominates: "teikia kandidatūrą", approves: "pritaria", proposes: "teikia kandidatūrą", consents: "pritaria", oversees: "prižiūri", leads: "vadovauja", appoints_judges: "skiria teisėjus" },
+      majority: "DAUGUMA", seatsIn: "MANDATAI SEIME", coalitionCap: "KOALICIJA", oppCap: "OPOZICIJA IR KITI",
+      split: "Atskirti koaliciją ir opoziciją", join: "Sujungti salę", other: "Kiti",
+      coalParty: "Koalicijos partija", oppParty: "Opozicijos partija", otherSeats: "Kiti mandatai", otherTitle: "Kiti Seimo nariai",
+      seatsOf: n => `${n} iš 141 mandato`, shareOf: p => `${p} % Seimo narių`,
+      coalText: n => n ? `Valdančiosios koalicijos narė. Pareigos Vyriausybėje: ${n}.` : "Valdančiosios koalicijos narė.",
+      oppText: "Opozicijoje. Seime prižiūri ir kritikuoja Vyriausybės darbą.",
+      otherText: "Seimo nariai, nepriklausantys septynioms išvardytoms partijoms, pavyzdžiui, nepartiniai ir mažesnių grupių atstovai.",
+      inGov: "Vyriausybėje", parlLegend: "Palieskite partiją – pamatysite jos mandatus ir ministrus",
+      seatNote: "2024 m. Seimo rinkimuose laimėti mandatai.",
+      loading: "Įkeliama…",
+      errorNetwork: "Nepavyko įkelti valdžios duomenų. Patikrinkite ryšį ir bandykite dar kartą.",
+      errorData: "Nepavyko nuskaityti duomenų. Bandykite dar kartą vėliau.",
+      tryAgain: "Bandyti dar kartą",
+      share: "Dalintis", shareThis: "Dalintis", copyLink: "Kopijuoti nuorodą", copied: "Nuoroda nukopijuota", moreShare: "Daugiau būdų",
+      shareOn: n => `Dalintis per ${n}`,
+      art: (a, i) => `${a} str.${i ? ` ${i} p.` : ""}`, basisOf: (doc, a, i) => a ? `${doc}, ${a} straipsnis${i ? `, ${i} punktas` : ""}` : doc,
+      embed: "Įterpti", embedTitle: "Įterpkite šį žemėlapį", embedHelp: "Įklijuokite šį kodą į svetainę, mokyklos mokymosi aplinką ar straipsnį. Jis atsidarys dabartiniame vaizde, lietuvių kalba.",
+      menu: "Meniu", openMenu: "Atidaryti meniu", howTo: "Kaip naudotis", aboutSources: "Apie žemėlapį ir šaltiniai",
+      hintText: "Pirmą kartą čia? Pradėkite nuo 2 minučių istorijos", dismiss: "Uždaryti",
+      tips: ["Palieskite pareigas – pamatysite, kas suteikė valdžią. Palieskite tuščią žemėlapio vietą, kad grįžtumėte.", "Vilkite, kad pasuktumėte. Perstumkite dviem pirštais, dešiniuoju pelės mygtuku arba laikydami tarpo klavišą. Artinkite pirštais ar pelės ratuku.", "Žymos, pvz., 92 str., atveria tą Konstitucijos straipsnį.", "Jungiklis „Vardai“ rodo, kas dabar eina pareigas.", "Skiltis „Seimas“ rodo 141 mandatą pagal partijas."],
+      aboutText: "Interaktyvus žemėlapis, rodantis, kas Lietuvoje turi valstybės valdžią ir kas ją suteikė. Sukurtas mokiniams, laisvai naudojamas ir įterpiamas.",
+      checked: d => `Duomenys patikrinti ${d}.`, madeBy: "Sukūrė", officialSources: "Oficialūs šaltiniai:",
+      learn: "Mokytis", pickStory: "Pasirinkite istoriją", storyMeta: n => `${n} žingsniai · 1 klausimas`, stepOf: (i, n) => `${i} žingsnis iš ${n}`,
+      back: "Atgal", next: "Toliau", checkYourself: "Pasitikrinkite", right: "Teisingai.", wrong: "Ne visai.",
+      anotherStory: "Kita istorija", toMap: "Grįžti į žemėlapį", closeLearn: "Uždaryti mokymąsi",
+      names: "Vardai", namesLabel: "Rodyti žemėlapyje pareigas einančių asmenų vardus", embedNames: "Rodyti vardus",
+      embedHeight: "Aukštis", copyCode: "Kopijuoti kodą", codeCopied: "Nukopijuota", openFull: "Atidaryti visą žemėlapį naujame skirtuke",
+      website: "Svetainė", profile: "Profilis",
+      websiteLabel: name => `${name} — oficiali svetainė (atsidaro naujame skirtuke)`,
+      profileLabel: name => `${name} — oficialus profilis (atsidaro naujame skirtuke)`,
+      eu: "EP", hintEu: "Palieskite atstovą · grupuota pagal EP frakciją",
+      euSeats: n => `${n} mandatai Europos Parlamente`,
+    },
+  };
+  const STYLE = { elects: "solid", appoints: "solid", leads: "solid", appoints_judges: "solid", nominates: "dash", proposes: "dash", approves: "dot", consents: "dot", oversees: "dot" };
+  const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+  const qLang = new URLSearchParams(location.search).get("lang"); // shared links carry the sharer's language
+  let lang = (I18N[qLang] && qLang) || store.get("ltgov-lang") || ((navigator.language || "").toLowerCase().startsWith("lt") ? "lt" : "en");
+  if (!I18N[lang]) lang = "en";
+  const t = k => I18N[lang][k] ?? I18N.en[k];
+  // names of officeholders on the map: off by default (a calmer first view); ?names=1 or the reader's last choice turns them on
+  const qNames = new URLSearchParams(location.search).get("names");
+  let names = qNames === "1" ? true : qNames === "0" ? false : store.get("ltgov-names") === "1";
+  const tx = v => (v && (v[lang] || v.en)) || "";
+  const $ = id => document.getElementById(id);
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isPhone = () => innerWidth <= 760;
+  const ease = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  const NS = "http://www.w3.org/2000/svg";
+  const el = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+  const h = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const HEX = /^#[0-9a-fA-F]{6}$/;
+  const safeColor = c => HEX.test(c || "") ? c : "#8E96A3";
+  const fold = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+  /* ---------- data ---------- */
+  let D = null, BY = {}, PARTY = {}, SECTOR = {}, STORIES = null;
+  // Learn stories are dropped as a whole if any part is broken
+  function validStories(list, d) {
+    const txt = v => v && typeof v.en === "string" && v.en.trim() && typeof v.lt === "string" && v.lt.trim();
+    const ids = new Set(d.nodes.map(n => n.id)), obj = v => v !== null && typeof v === "object" && !Array.isArray(v);
+    if (!Array.isArray(list) || !list.length) return null;
+    for (const s of list) {
+      if (!obj(s) || typeof s.id !== "string" || !txt(s.title) || !Array.isArray(s.steps) || !s.steps.length) return null;
+      for (const p of s.steps) if (!obj(p) || !ids.has(p.focus) || !txt(p.text)) return null;
+      const q = s.quiz;
+      if (!obj(q) || !txt(q.question) || !txt(q.explain) || !Array.isArray(q.options) || !q.options.every(obj) || q.options.filter(o => o.correct === true).length !== 1) return null;
+      for (const o of q.options) if (!txt(o.text) || (o.show != null && !ids.has(o.show))) return null;
+    }
+    return list;
+  }
+  function validate(d) {
+    const txt = v => v && typeof v.en === "string" && v.en.trim() && typeof v.lt === "string" && v.lt.trim();
+    if (!d || typeof d !== "object" || typeof d.schema_version !== "string" || !d.schema_version.startsWith("3.")) return "schema";
+    if (!Array.isArray(d.nodes) || !Array.isArray(d.relations) || !Array.isArray(d.parties) || !Array.isArray(d.sectors)) return "structure";
+    if (d.parties.length && !(d.seimas && Number.isInteger(d.seimas.total_seats) && Number.isInteger(d.seimas.other_seats))) return "seimas";
+    const ids = new Set(d.nodes.map(n => n.id)), secs = new Set(d.sectors.map(s => s.id)), pids = new Set(d.parties.map(p => p.id));
+    if (ids.size !== d.nodes.length || !ids.has("people")) return "ids";
+    for (const n of d.nodes) {
+      if (typeof n.id !== "string" || ![0, 1, 2].includes(n.tier) || !txt(n.title) || !txt(n.desc)) return "node " + n.id;
+      if (n.tier > 0 && !secs.has(n.sector)) return "sector " + n.id;
+      if (n.tier === 2 && !ids.has(n.parent)) return "parent " + n.id;
+      if (n.party != null && !pids.has(n.party)) return "party " + n.id;
+      for (const k of ["short", "kind", "note"]) if (n[k] != null && !txt(n[k])) return k + " " + n.id;
+      if (n.holder != null && typeof n.holder !== "string") return "holder " + n.id;
+      if (n.since != null && !/^\d{4}-\d{2}(-\d{2})?$/.test(n.since)) return "since " + n.id;
+    }
+    for (const r of d.relations) if (!ids.has(r.from) || !ids.has(r.to) || !STYLE[r.type]) return "relation";
+    for (const p of d.parties) if (!txt(p.name) || !txt(p.short) || !Number.isInteger(p.seats) || typeof p.abbr !== "string") return "party";
+    for (const s of d.sectors) if (!txt(s.name) || !txt(s.short)) return "sector";
+    return null;
+  }
+  // Extra layers (EU, …) are optional: schema 3.x and a meps list; a broken layer is dropped, not fatal.
+  function validEu(f) {
+    const txt = v => v && typeof v.en === "string" && v.en.trim() && typeof v.lt === "string" && v.lt.trim();
+    if (!v3(f) || !f.ep || !Number.isInteger(f.ep.seats) || !Array.isArray(f.meps) || !f.meps.length) return null;
+    if (f.ep_groups != null && !Array.isArray(f.ep_groups)) return null;
+    const groups = Array.isArray(f.ep_groups) ? f.ep_groups : [];
+    const byGroup = {};
+    for (const g of groups) {
+      if (!g || typeof g !== "object" || typeof g.id !== "string" || !g.id.trim()) return null;
+      if (typeof g.abbr !== "string" || !g.abbr.trim() || byGroup[g.id]) return null;
+      byGroup[g.id] = g;
+    }
+    f.ep_groups = groups;
+    const byParty = Object.fromEntries((Array.isArray(f.parties) ? f.parties : []).filter(p => p && typeof p.id === "string").map(p => [p.id, p]));
+    const seen = {};
+    for (const m of f.meps) {
+      if (!m || typeof m.id !== "string" || !m.id.trim() || !/^[a-z0-9-]+$/.test(m.id) || seen[m.id] || !txt(m.name)) return null;
+      seen[m.id] = true;
+      if (m.party) {
+        const p = byParty[m.party];
+        if (!p || typeof p.abbr !== "string" || !p.abbr.trim() || !(txt(p.name) || txt(p.short))) return null;
+      }
+      if (m.ep_group && !byGroup[m.ep_group]) return null;
+      if (m.since != null && (typeof m.since !== "string" || !/^\d{4}-\d{2}(-\d{2})?$/.test(m.since))) return null;
+    }
+    if (f.updated_at != null && (typeof f.updated_at !== "string" || !/^\d{4}-\d{2}(-\d{2})?$/.test(f.updated_at))) return null;
+    return f;
+  }
+  function validLayer(id, f) {
+    const v = id === "eu" ? validEu(f) : (v3(f) ? f : null);
+    if (!v) return null;
+    if (v.updated_at != null && (typeof v.updated_at !== "string" || !/^\d{4}-\d{2}(-\d{2})?$/.test(v.updated_at))) return null;
+    return v;
+  }
+  // data/manifest.json lists the files. The structure is required; without holders.json the map shows
+  // roles only, and without seimas.json the Parliament view is switched off. Optional layers in
+  // man.layers are fetched the same way.
+  async function getJSON(file) {
+    let res;
+    try { res = await fetch("data/" + file, { cache: "no-cache" }); } catch { return { err: "network" }; }
+    if (!res.ok) return { err: "data" };
+    try { return { v: JSON.parse(await res.text()) }; } catch { return { err: "data" }; }
+  }
+  const FILE = /^[a-z0-9-]+\.json$/, v3 = f => f && typeof f === "object" && typeof f.schema_version === "string" && f.schema_version.startsWith("3.");
+  async function load() {
+    const m = await getJSON("manifest.json");
+    if (m.err) return m.err;
+    const man = m.v;
+    if (!v3(man) || !man.files || !FILE.test(man.files.structure || "")) { console.error("Data validation failed: manifest"); return "data"; }
+    const opt = k => FILE.test(man.files[k] || "") ? getJSON(man.files[k]) : Promise.resolve({ err: "data" });
+    const layerList = Array.isArray(man.layers) ? man.layers.filter(l => l && typeof l.id === "string" && /^[a-z0-9-]+$/.test(l.id) && FILE.test(l.file || "") && l.name) : [];
+    const [st, ho, se, sto, ...layerRes] = await Promise.all([getJSON(man.files.structure), opt("holders"), opt("seimas"), man.files.stories ? opt("stories") : Promise.resolve({ err: "none" }), ...layerList.map(l => getJSON(l.file))]);
+    if (st.err) return st.err;
+    if (!v3(st.v)) { console.error("Data validation failed: structure schema"); return "data"; }
+    let seimas = !se.err && v3(se.v) && se.v.seimas && Array.isArray(se.v.parties) ? se.v : null;
+    let holders = !ho.err && v3(ho.v) && ho.v.holders && typeof ho.v.holders === "object" ? ho.v : null;
+    const build = () => {
+      const d = JSON.parse(JSON.stringify(st.v));
+      d.updated_at = [st.v.updated_at, holders?.updated_at, seimas?.updated_at].filter(x => typeof x === "string").sort().pop();
+      d.seimas = seimas ? seimas.seimas : null; d.parties = seimas ? seimas.parties : [];
+      for (const n of d.nodes || []) { for (const k of ["holder", "party", "independent", "since", "note", "profile"]) delete n[k];
+        const hd = holders && holders.holders[n.id]; if (!hd) continue;
+        if (hd.name != null) n.holder = hd.name; if (hd.party != null && seimas) n.party = hd.party;
+        for (const k of ["independent", "since", "note", "profile"]) if (hd[k] != null) n[k] = hd[k]; }
+      return d;
+    };
+    let d = build(), problem = validate(d);
+    // a broken optional file is dropped, not fatal: try without holders first, then without seats, then without both
+    for (const drop of [["holders"], ["seimas"], ["holders", "seimas"]]) {
+      if (!problem) break;
+      const keep = { holders, seimas };
+      if (drop.includes("holders")) holders = null;
+      if (drop.includes("seimas")) seimas = null;
+      d = build();
+      if (!validate(d)) { console.warn(drop.join(" and ") + " dropped:", problem); problem = null; break; }
+      ({ holders, seimas } = keep);
+    }
+    if (problem) d = build();
+    if (problem) { console.error("Data validation failed:", problem); return "data"; }
+    if (ho.err || !holders) console.warn("No officeholders loaded; showing roles only.");
+    d.hasHolders = !!holders; d.hasSeimas = !!seimas;
+    STORIES = !sto.err && v3(sto.v) ? validStories(sto.v.stories, d) : null;
+    if (!sto.err && !STORIES) console.warn("stories.json dropped: invalid");
+    D = d; BY = Object.fromEntries(d.nodes.map(n => [n.id, n])); PARTY = Object.fromEntries(d.parties.map(p => [p.id, p])); SECTOR = Object.fromEntries(d.sectors.map(s => [s.id, s]));
+    d.layers = layerList; d.layerData = {};
+    layerList.forEach((l, i) => {
+      const r = layerRes[i], v = !r.err ? validLayer(l.id, r.v) : null;
+      if (v) {
+        d.layerData[l.id] = v;
+        if (typeof v.updated_at === "string" && /^\d{4}-\d{2}(-\d{2})?$/.test(v.updated_at)) d.updated_at = [d.updated_at, v.updated_at].filter(x => typeof x === "string").sort().pop();
+      } else console.warn("layer " + l.id + " dropped: invalid");
+    });
+    d.eu = d.layerData.eu || null; d.hasEu = !!d.eu;
+    return null;
+  }
+  const inc = id => D.relations.filter(r => r.to === id);
+  const out = id => D.relations.filter(r => r.from === id);
+  function chain(id) {
+    const seen = new Set([id]), edges = [], q = [id];
+    while (q.length) { const cur = q.shift(); for (const r of inc(cur)) { edges.push(r); if (!seen.has(r.from)) { seen.add(r.from); q.push(r.from); } } }
+    return { nodes: seen, edges };
+  }
+  const colorOf = n => n.tier === 0 ? "#FDB913" : safeColor(SECTOR[n.sector].color);
+  const partyColor = n => n.party ? safeColor(PARTY[n.party].color) : "#9AA3AF";
+  const nameOf = n => tx(n.short) || tx(n.title);
+  function fmtDate(s) {
+    const [y, m, d] = s.split("-").map(Number); const date = new Date(Date.UTC(y, m - 1, d || 1));
+    const opts = d ? { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" } : { month: "long", year: "numeric", timeZone: "UTC" };
+    try { return new Intl.DateTimeFormat(lang === "lt" ? "lt-LT" : "en-GB", opts).format(date); } catch { return s; }
+  }
+
+  /* ---------- details panel ---------- */
+  const panel = $("panel");
+  let onSelect = () => {}, onClose = () => {}, order = [], current = null;
+  function openPanel() { panel.classList.add("open"); syncUrl(); }
+  function showDetails(id) {
+    const n = BY[id]; current = id;
+    $("p-kicker").textContent = n.tier === 0 ? t("source") : tx(SECTOR[n.sector].name) + (n.kind ? " · " + tx(n.kind) : "");
+    const b = $("p-body"); b.textContent = "";
+    b.append(h("h2", "", tx(n.title)));
+    if (n.holder) b.append(h("p", "holder", n.holder));
+    const chips = h("div", "chips");
+    if (n.party) { const p = PARTY[n.party]; const c = h("span", "chip"); const i = h("i"); i.style.background = safeColor(p.color); c.append(i, tx(p.short)); chips.append(c, h("span", "chip", p.coalition ? t("coalition") : t("opposition"))); }
+    else if (n.independent) chips.append(h("span", "chip", t("independent")));
+    if (n.since) chips.append(h("span", "chip", t("since") + " " + fmtDate(n.since) + (n.note ? " · " + tx(n.note) : "")));
+    if (chips.childNodes.length) b.append(chips);
+    b.append(h("p", "", tx(n.desc)));
+    // Add website/profile links if present (profile guard: hide if equals website or is bare homepage)
+    const links = h("div", "chips");
+    const entityName = tx(n.title);
+    if (n.website) {
+      const a = externalLink(n.website, entityName, "website", stateDomain);
+      if (a) { a.classList.add("chip"); links.append(a); }
+    }
+    if (n.profile) {
+      const profUrl = resolveUrl(n.profile), webUrl = resolveUrl(n.website);
+      const profCanon = canon(profUrl), webCanon = canon(webUrl);
+      if (profUrl && (profCanon && webCanon && profCanon === webCanon || isHomepage(profUrl))) {
+        // Profile guard: skip if profile equals website (canonicalized) or is bare homepage
+      } else {
+        const a = externalLink(n.profile, entityName, "profile", stateDomain);
+        if (a) { a.classList.add("chip"); links.append(a); }
+      }
+    }
+    if (links.childNodes.length) b.append(links);
+    const list = (title, rels, key) => {
+      if (!rels.length) return;
+      const s = h("div", "rel"); s.append(h("h3", "", title)); const ul = h("ul");
+      for (const r of rels) { const o = BY[r[key]]; const li = h("li"), btn = h("button");
+        btn.append(h("span", "verb", t("verbs")[r.type]), h("span", "", o.tier === 2 && o.holder ? nameOf(o) + " · " + o.holder : tx(o.title)));
+        btn.onclick = () => onSelect(o.id); li.append(btn);
+        const bs = basisEl(r.basis); if (bs) li.append(bs);
+        ul.append(li); }
+      s.append(ul); b.append(s);
+    };
+    // choosing (elects, appoints, approves...) is kept apart from leading and supervising
+    const steer = r => r.type === "leads" || r.type === "oversees";
+    list(t("chosenBy"), inc(id).filter(r => !steer(r)), "from");
+    list(t("ledBy"), inc(id).filter(steer), "from");
+    const outs = out(id); list(t("powerOver"), outs.slice(0, 16), "to");
+    if (outs.length > 16) b.append(h("p", "note", "+ " + (outs.length - 16) + " " + t("more")));
+    b.append(h("p", "note", tx(D.sources) + " " + t("note") + " " + fmtDate(D.updated_at).replace(/\.?$/, ".")));
+    b.append(shareRow());
+    openPanel();
+  }
+  // only official Lithuanian state and party sites are linked
+  // STATE_DOMAINS: official state sites (for institution websites, legal sources, and profiles)
+  const STATE_DOMAINS = ["lrs.lt", "e-tar.lt", "lrv.lt", "lrkt.lt", "vrk.lt", "prezidentas.lt", "lrp.lt", "lb.lt", "valstybeskontrole.lt", "prokuraturos.lt", "teismai.lt", "lat.lt", "urm.lt", "kam.lt"];
+  // PARTY_DOMAINS_MAP: binds each party to its own official domain (only for party websites)
+  const PARTY_DOMAINS_MAP = { lsdp: "lsdp.lt", dsvl: "demokratai.lt", lvzs: "lvzs.lt", llra: "awpl.lt", tslkd: "tsajunga.lt", ppna: "nemunoausra.lt", ls: "liberalai.lt" };
+  const checkDomain = (url, domains) => { try { if (typeof url !== "string") return false; const u = new URL(url); if (u.protocol !== "https:" || u.port) return false; return domains.some(d => u.hostname === d || u.hostname.endsWith("." + d)); } catch { return false; } };
+  const isHomepage = url => { try { if (typeof url !== "string") return false; const u = new URL(url); return !u.pathname || u.pathname === "/"; } catch { return false; } };
+  const stateSource = url => typeof url === "string" ? checkDomain(url, STATE_DOMAINS) : false;
+  const stateDomain = url => typeof url === "string" ? checkDomain(url, STATE_DOMAINS) : false;
+  const partyDomainFor = (url, partyId) => { if (typeof url !== "string") return false; const domain = PARTY_DOMAINS_MAP[partyId]; return domain ? checkDomain(url, [domain]) : false; };
+  const epProfile = url => typeof url === "string" ? checkDomain(url, ["europarl.europa.eu"]) : false;
+  const partyOf = id => {
+    if (!id) return null;
+    const fromEu = (D.eu && D.eu.parties || []).find(p => p.id === id);
+    return PARTY[id] || fromEu || null;
+  };
+  const epGroupOf = id => (D.eu && D.eu.ep_groups || []).find(g => g.id === id) || null;
+  const layerMeta = id => (D && D.layers || []).find(l => l.id === id);
+  // Canonicalize URLs for comparison: lowercase host, drop default port 443, resolve dot segments, normalize percent-encoding, remove hash and trailing slashes from pathname
+  const canon = s => { if (typeof s !== "string") return null; try { const u = new URL(s); u.pathname = u.pathname.replace(/%([0-9A-Fa-f]{2})/g, (m, h) => { const c = String.fromCharCode(parseInt(h, 16)); return /[A-Za-z0-9\-._~]/.test(c) ? c : m.toUpperCase(); }).replace(/\/+$/, ""); u.hash = ""; return u.href; } catch { return null; } };
+  // Helper to resolve bilingual URL to current language (safely ignores invalid shapes)
+  const resolveUrl = url => {
+    if (typeof url === "string" && url.trim()) return url;
+    if (url && typeof url === "object" && !Array.isArray(url)) {
+      const val = url[lang] || url.lt || url.en;
+      return (typeof val === "string" && val.trim()) ? val : null;
+    }
+    return null;
+  };
+  // Create a safe external link element: bilingual URLs, accessible name, ↗ icon, domain validation
+  function externalLink(url, entityName, type, validator) {
+    try {
+      const href = resolveUrl(url);
+      if (!href) return null;
+      try {
+        if (!validator(href)) return null;
+      } catch { return null; }
+      const a = h("a", "ext-link");
+      const labelFn = type === "profile" ? t("profileLabel") : t("websiteLabel");
+      a.setAttribute("aria-label", labelFn(entityName));
+      a.textContent = type === "profile" ? t("profile") : t("website");
+      const icon = h("span", "ext-icon");
+      icon.textContent = "↗";
+      icon.setAttribute("aria-hidden", "true");
+      a.append(icon);
+      a.href = href;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      return a;
+    } catch { return null; }
+  }
+  // the article or law that gives a relation its force; links to the official text when there is one
+  function basisEl(b) {
+    const doc = b && D.documents && D.documents[b.doc];
+    if (!doc) return null;
+    const art = /^\d+$/.test(b.art || "") ? b.art : null, item = art && /^\d+$/.test(b.item || "") ? b.item : null;
+    const url = doc.url ? tx(doc.url) : "", ok = stateSource(url);
+    const e = h(ok ? "a" : "span", "basis", art ? t("art")(art, item) : tx(doc.short));
+    e.title = t("basisOf")(tx(doc.name), art, item);
+    if (ok) { e.href = url; e.target = "_blank"; e.rel = "noopener noreferrer"; e.setAttribute("aria-label", e.title); }
+    return e;
+  }
+  function hideDetails() { panel.classList.remove("open"); current = null; syncUrl(); }
+  $("p-close").onclick = () => onClose();
+  // phone: swipe the details sheet down to close it (only when its text is scrolled to the top)
+  let swipeY = null;
+  panel.addEventListener("touchstart", e => { swipeY = isPhone() && e.touches.length === 1 && !$("p-body").scrollTop ? e.touches[0].clientY : null; }, { passive: true });
+  panel.addEventListener("touchend", e => { if (swipeY !== null && e.changedTouches.length && e.changedTouches[0].clientY - swipeY > 80 && panel.classList.contains("open")) onClose(); swipeY = null; }, { passive: true });
+  const step = d => { if (!current || !order.length) return; const i = order.indexOf(current); onSelect(order[(i + d + order.length) % order.length]); };
+  $("p-prev").onclick = () => step(-1);
+  $("p-next").onclick = () => step(1);
+  addEventListener("keydown", e => {
+    if (e.target.tagName === "INPUT") return;
+    if (e.key === "Escape" && current) onClose();
+    if (current && (e.key === "ArrowRight" || e.key === "ArrowLeft")) step(e.key === "ArrowRight" ? 1 : -1);
+  });
+  function setLegend(items) {
+    const L = $("legend"); L.textContent = "";
+    for (const [label, sw] of items) { const s = h("span"), i = h("i"); if (sw.startsWith("line:")) i.className = "ln " + sw.slice(5); else i.style.background = sw; s.append(i, label); L.append(s); }
+  }
+
+  function namesBtn() {
+    const b = h("button", "names-btn"); b.type = "button"; b.id = "names-toggle";
+    b.setAttribute("aria-pressed", String(names)); b.setAttribute("aria-label", t("namesLabel")); b.title = t("namesLabel");
+    b.append(h("i"), t("names")); b.onclick = () => setNames(!names); return b;
+  }
+  function setNames(on) {
+    names = on; if (!EMBED) store.set("ltgov-names", on ? "1" : "0");
+    $("orbit").classList.toggle("no-names", !on);
+    $("names-toggle")?.setAttribute("aria-pressed", String(on));
+    syncUrl();
+  }
+
+  /* ================= Orbit ================= */
+  const Orbit = (() => {
+    const svg = $("orbit");
+    const R0 = 70, R1 = 250, R2 = 420, RIN = 128, ROUT = 500, GAP = .05;
+    let pos = {}, span = {}, nodeEls = {}, world, gSec, gRel, relTags = [], sel = null, selQuiet = false, W = 0, H = 0, anim = null, built = false;
+    const cam = { x: 0, y: 0, s: 1, r: 0 };
+    function layout() {
+      const weight = {}; for (const s of D.sectors) { const inside = D.nodes.filter(n => n.sector === s.id); weight[s.id] = Math.max(3.2, inside.filter(n => n.tier === 2).length * .7 + inside.filter(n => n.tier === 1).length * 1.2 + 1); }
+      const total = Object.values(weight).reduce((a, b) => a + b, 0);
+      let a0 = -Math.PI / 2 - (weight[D.sectors[0].id] / total) * Math.PI; // first sector centred at the top
+      span = {}; for (const s of D.sectors) { const w = weight[s.id] / total * Math.PI * 2; span[s.id] = [a0 + GAP / 2, a0 + w - GAP / 2]; a0 += w; }
+      pos = { people: { x: 0, y: 0, a: 0 } };
+      for (const s of D.sectors) {
+        const [sA, eA] = span[s.id];
+        const t1 = D.nodes.filter(n => n.tier === 1 && n.sector === s.id);
+        t1.forEach((n, i) => { const a = sA + (eA - sA) * (i + .5) / t1.length; pos[n.id] = { x: Math.cos(a) * R1, y: Math.sin(a) * R1, a }; });
+        const t2 = D.nodes.filter(n => n.tier === 2 && n.sector === s.id);
+        t2.forEach((n, i) => {
+          const sib = D.nodes.filter(m => m.tier === 2 && m.parent === n.parent);
+          const a = sib.length === 1 ? pos[n.parent].a : sA + (eA - sA) * (i + .5) / t2.length;
+          const r = sib.length > 6 ? R2 + (i % 2) * 46 : R2;
+          pos[n.id] = { x: Math.cos(a) * r, y: Math.sin(a) * r, a };
+        });
+      }
+    }
+    const arc = (r1, r2, a1, a2) => { const la = a2 - a1 > Math.PI ? 1 : 0, p = (r, a) => `${Math.cos(a) * r} ${Math.sin(a) * r}`;
+      return `M${p(r1, a1)} A${r1} ${r1} 0 ${la} 1 ${p(r1, a2)} L${p(r2, a2)} A${r2} ${r2} 0 ${la} 0 ${p(r2, a1)}Z`; };
+    const sun = (r, k = 16) => { let d = ""; for (let i = 0; i < k * 2; i++) { const a = i * Math.PI / k, rr = i % 2 ? r * .86 : r; d += (i ? "L" : "M") + Math.cos(a) * rr + " " + Math.sin(a) * rr; } return d + "Z"; };
+    function build() {
+      layout(); svg.textContent = ""; nodeEls = {}; relTags = [];
+      svg.setAttribute("aria-label", t("orbitLabel"));
+      const defs = el("defs", {}, svg);
+      world = el("g", {}, svg); gSec = el("g", {}, world); const gLinks = el("g", {}, world); gRel = el("g", {}, world); const gNodes = el("g", {}, world);
+      for (const s of D.sectors) {
+        const [a1, a2] = span[s.id], col = safeColor(s.color);
+        const g = el("g", { class: "sector", "data-s": s.id }, gSec);
+        el("path", { d: arc(RIN, ROUT, a1, a2), fill: col, "fill-opacity": .09, stroke: col, "stroke-opacity": .28 }, g);
+        el("path", { d: arc(R1 - 36, R1 + 36, a1 + .01, a2 - .01), fill: col, "fill-opacity": .07 }, g);
+        const bottom = Math.sin((a1 + a2) / 2) > .2, rl = ROUT - 22, pa = bottom ? a2 - .02 : a1 + .02, pb = bottom ? a1 + .02 : a2 - .02;
+        el("path", { id: "sl-" + s.id, d: `M${Math.cos(pa) * rl} ${Math.sin(pa) * rl} A${rl} ${rl} 0 ${a2 - a1 > Math.PI ? 1 : 0} ${bottom ? 0 : 1} ${Math.cos(pb) * rl} ${Math.sin(pb) * rl}`, fill: "none" }, defs);
+        const tEl = el("text", { class: "sector-label", fill: col, dy: bottom ? 10 : 4 }, g);
+        el("textPath", { href: "#sl-" + s.id, startOffset: "50%", "text-anchor": "middle" }, tEl).textContent = tx(s.short);
+      }
+      for (const r of [R1, R2]) el("circle", { r, fill: "none", stroke: "#ECE6D6", "stroke-opacity": .07, "stroke-dasharray": "2 6" }, gSec);
+      for (const n of D.nodes) if (n.parent) { const a = pos[n.parent], b = pos[n.id]; el("line", { x1: a.x, y1: a.y, x2: b.x, y2: b.y, stroke: colorOf(n), "stroke-opacity": .22 }, gLinks); }
+      for (const r of out("people")) { const b = pos[r.to]; el("line", { x1: 0, y1: 0, x2: b.x, y2: b.y, stroke: "#FDB913", "stroke-opacity": .35, "stroke-width": 1.4, "stroke-dasharray": "1 5", "stroke-linecap": "round" }, gLinks); }
+      for (const n of D.nodes) {
+        const p = pos[n.id], c = colorOf(n);
+        const g = el("g", { class: "node", tabindex: 0, role: "button", "aria-label": tx(n.title) + (n.holder ? ", " + n.holder : ""), "data-id": n.id }, gNodes);
+        const inner = el("g", {}, g);
+        if (n.tier === 0) {
+          el("path", { class: "shape", d: sun(R0), fill: "#FDB913", stroke: "#FFE08A", "stroke-width": 1.5 }, inner);
+          const [first, rest] = lang === "lt" ? ["Tauta", ""] : ["The", "People"];
+          el("text", { class: "lbl", "text-anchor": "middle", y: rest ? -3 : 6, style: `fill:#241A00;stroke:none;font-size:${rest ? 13 : 19}px;font-weight:${rest ? 600 : 800}` }, inner).textContent = first;
+          if (rest) el("text", { class: "lbl", "text-anchor": "middle", y: 16, style: "fill:#241A00;stroke:none;font-size:18px;font-weight:800" }, inner).textContent = rest;
+        } else if (n.tier === 1) {
+          el("rect", { class: "shape", x: -17, y: -17, width: 34, height: 34, rx: 9, fill: "#12161C", stroke: c, "stroke-width": 2.2 }, inner);
+          el("rect", { x: -7, y: -7, width: 14, height: 14, rx: 3, fill: c }, inner);
+          if (n.party || n.independent) el("circle", { cx: 14, cy: -14, r: 6, fill: partyColor(n), stroke: "#12161C", "stroke-width": 2 }, inner);
+          el("text", { class: "lbl", "text-anchor": "middle", y: 34, style: "font-size:13px;font-weight:700" }, inner).textContent = nameOf(n);
+          if (n.holder) el("text", { class: "sub", "text-anchor": "middle", y: 48 }, inner).textContent = n.holder;
+        } else {
+          el("circle", { class: "shape", r: 11, fill: "#12161C", stroke: c, "stroke-width": 2 }, inner);
+          el("circle", { r: 5.5, fill: n.party || n.independent ? partyColor(n) : c }, inner);
+          el("text", { class: "lbl", "text-anchor": "middle", y: 27 }, inner).textContent = nameOf(n);
+          if (n.holder) el("text", { class: "sub", "text-anchor": "middle", y: 40 }, inner).textContent = n.holder.split(" ").slice(-1)[0];
+        }
+        g.setAttribute("transform", `translate(${p.x} ${p.y})`);
+        nodeEls[n.id] = { g, inner };
+      }
+      built = true; apply();
+    }
+    const home = () => ({ x: W / 2, y: H / 2 + (isPhone() ? 0 : 24), s: isPhone() ? Math.min(W * 1.3, H * .8) / (R2 * 2 + 40) : Math.min(W, H) / (R2 * 2 + 20), r: 0 });
+    function apply() {
+      if (!world) return;
+      world.setAttribute("transform", `translate(${cam.x} ${cam.y}) scale(${cam.s}) rotate(${cam.r * 180 / Math.PI})`);
+      const deg = -cam.r * 180 / Math.PI;
+      for (const id in nodeEls) nodeEls[id].inner.setAttribute("transform", `rotate(${deg})`);
+      for (const tg of relTags) tg.setAttribute("transform", `rotate(${deg} ${tg.dataset.x} ${tg.dataset.y})`);
+    }
+    function fly(to, dur = 1100) {
+      const from = { ...cam }; let dr = to.r - from.r; dr = Math.atan2(Math.sin(dr), Math.cos(dr));
+      if (reduce) dur = 0; const t0 = performance.now(); cancelAnimationFrame(anim);
+      const tick = now => { const k = dur ? Math.min(1, (now - t0) / dur) : 1, e = ease(k), dip = 1 - Math.sin(Math.PI * e) * .12;
+        cam.x = from.x + (to.x - from.x) * e; cam.y = from.y + (to.y - from.y) * e; cam.r = from.r + dr * e; cam.s = (from.s + (to.s - from.s) * e) * dip;
+        apply(); if (k < 1) anim = requestAnimationFrame(tick); };
+      if (dur) anim = requestAnimationFrame(tick); else tick(performance.now());
+    }
+    function measure() { const b = svg.getBoundingClientRect(); W = b.width; H = b.height; }
+    function target(id) {
+      const p = pos[id], phone = isPhone(), cx = phone ? W / 2 : (W - 380) / 2;
+      if (id === "people") return { x: cx, y: phone ? H * .24 : H / 2, s: home().s * 1.35, r: cam.r };
+      const topY = phone ? H * .22 : H * .2, botY = phone ? H * .42 : H * .74;
+      return { x: cx, y: topY, s: Math.min(2.6, (botY - topY) / Math.hypot(p.x, p.y)), r: Math.PI / 2 - p.a };
+    }
+    function select(id, instant, quiet) {
+      if (!BY[id]) return;
+      sel = id; selQuiet = !!quiet; const n = BY[id];
+      svg.classList.add("dim");
+      const ch = chain(id);
+      for (const k in nodeEls) nodeEls[k].g.classList.toggle("on", ch.nodes.has(k) || k === n.parent || BY[k].parent === id);
+      for (const s of gSec.querySelectorAll(".sector")) s.classList.toggle("on", s.dataset.s === n.sector);
+      drawRelations(ch.edges, instant);
+      fly(target(id), instant ? 0 : 1100);
+      if (quiet) return;
+      showDetails(id);
+      order = n.tier === 0 ? D.nodes.map(x => x.id) : D.nodes.filter(m => m.sector === n.sector).map(m => m.id);
+    }
+    function drawRelations(edges, instant) {
+      gRel.textContent = "";
+      edges.forEach((r, i) => {
+        const A = pos[r.from], B = pos[r.to], mx = (A.x + B.x) / 2, my = (A.y + B.y) / 2;
+        const bend = .18 * (i % 2 ? 1 : -1), qx = mx - (B.y - A.y) * bend, qy = my + (B.x - A.x) * bend;
+        const col = r.from === "people" ? "#FDB913" : colorOf(BY[r.from]), st = STYLE[r.type];
+        const path = el("path", { class: "rel-line", d: `M${A.x} ${A.y} Q${qx} ${qy} ${B.x} ${B.y}`, stroke: col, "data-type": r.type }, gRel);
+        const len = path.getTotalLength();
+        if (st === "solid" && !reduce && !instant && path.animate) { path.style.strokeDasharray = len; path.style.strokeDashoffset = len; path.animate([{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { duration: 700, delay: 350 + i * 120, easing: "cubic-bezier(.65,0,.35,1)", fill: "forwards" }); }
+        else if (st !== "solid") path.setAttribute("stroke-dasharray", st === "dash" ? "8 6" : "2 6");
+        const m = path.getPointAtLength(len * .5);
+        const tag = el("text", { class: "rel-tag", x: m.x, y: m.y, "text-anchor": "middle" }, gRel); tag.textContent = t("verbs")[r.type];
+        tag.dataset.x = m.x; tag.dataset.y = m.y;
+      });
+      relTags = [...gRel.querySelectorAll(".rel-tag")]; apply();
+    }
+    function close() { sel = null; svg.classList.remove("dim"); if (gRel) gRel.textContent = ""; relTags = []; hideDetails(); fly(home(), 900); }
+    // input: tap, drag to spin, two-finger / right-drag / Space-drag to pan, pinch or wheel to zoom
+    const pts = new Map(); let drag = null, moved = false, spaceDown = false, spacePan = false, spaceArmed = null;
+    const isSpace = e => e.key === " " || e.code === "Space";
+    const spaceBlocked = el => el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.tagName === "SELECT" || el.isContentEditable);
+    const syncPanCursor = () => { svg.classList.toggle("panning", !!(drag && drag.pan)); svg.classList.toggle("pan-ready", !!(spaceDown && !(drag && drag.pan))); };
+    const rebaseDrag = (p, pan) => { drag = { r: cam.r, s: cam.s, x: cam.x, y: cam.y, d: 0, mx: 0, my: 0, start: null, px: p.x, py: p.y, pan, hit: null }; syncPanCursor(); };
+    addEventListener("keydown", e => {
+      if (!isSpace(e) || e.repeat || spaceBlocked(e.target)) return;
+      spaceDown = true; if (!drag) spacePan = false;
+      const n = e.target.closest?.(".node");
+      spaceArmed = n && svg.contains(n) ? n.dataset.id : null;
+      syncPanCursor();
+      if (e.target === document.body || e.target === document.documentElement || e.target === svg || (n && svg.contains(n))) e.preventDefault();
+    });
+    addEventListener("keyup", e => {
+      if (!isSpace(e)) return;
+      if (!spaceBlocked(e.target)) {
+        const n = e.target.closest?.(".node");
+        if (n && svg.contains(n) && n.dataset.id === spaceArmed && !spacePan && !Learn.active()) select(n.dataset.id);
+      }
+      spaceDown = false; spaceArmed = null; syncPanCursor();
+    });
+    addEventListener("blur", () => { spaceDown = false; spaceArmed = null; syncPanCursor(); });
+    svg.addEventListener("contextmenu", e => e.preventDefault());
+    svg.addEventListener("pointerdown", e => {
+      const hit = e.target.closest?.(".node"); try { svg.setPointerCapture(e.pointerId); } catch {}
+      pts.set(e.pointerId, { x: e.clientX, y: e.clientY }); cancelAnimationFrame(anim);
+      if (pts.size >= 2) {
+        const [p1, p2] = [...pts.values()], d = Math.hypot(p1.x - p2.x, p1.y - p2.y), mx = (p1.x + p2.x) / 2, my = (p1.y + p2.y) / 2;
+        drag = { r: cam.r, s: cam.s, x: cam.x, y: cam.y, d: d || 1, mx, my, start: null, px: e.clientX, py: e.clientY, pan: false, hit: null };
+        moved = true; syncPanCursor(); return;
+      }
+      const pan = e.button === 2 || (e.button === 0 && spaceDown);
+      if (pan) { spacePan = true; e.preventDefault(); }
+      moved = false;
+      const b = svg.getBoundingClientRect(), start = Math.atan2(e.clientY - b.top - cam.y, e.clientX - b.left - cam.x);
+      drag = { r: cam.r, s: cam.s, x: cam.x, y: cam.y, d: 0, mx: 0, my: 0, start: pan ? null : start, px: e.clientX, py: e.clientY, pan, hit: hit && !pan ? hit.dataset.id : null };
+      syncPanCursor();
+    });
+    svg.addEventListener("pointermove", e => {
+      if (!pts.has(e.pointerId) || !drag) return; pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pts.size >= 2) {
+        const [p1, p2] = [...pts.values()], d = Math.hypot(p1.x - p2.x, p1.y - p2.y), mx = (p1.x + p2.x) / 2, my = (p1.y + p2.y) / 2;
+        if (!drag.d) { drag.d = d || 1; drag.mx = mx; drag.my = my; drag.x = cam.x; drag.y = cam.y; drag.s = cam.s; }
+        cam.s = Math.max(.25, Math.min(4, drag.s * d / drag.d));
+        cam.x = drag.x + (mx - drag.mx); cam.y = drag.y + (my - drag.my);
+        moved = true; apply(); return;
+      }
+      if (drag.pan) {
+        const dx = e.clientX - drag.px, dy = e.clientY - drag.py;
+        if (Math.hypot(dx, dy) > 2) moved = true;
+        if (moved) { cam.x = drag.x + dx; cam.y = drag.y + dy; apply(); }
+        return;
+      }
+      const b = svg.getBoundingClientRect(), a = Math.atan2(e.clientY - b.top - cam.y, e.clientX - b.left - cam.x);
+      if (drag.start == null) drag.start = a;
+      const da = Math.atan2(Math.sin(a - drag.start), Math.cos(a - drag.start));
+      if (Math.abs(da) > .02) moved = true;
+      if (moved) { cam.r = drag.r + da; apply(); }
+    });
+    const up = e => {
+      pts.delete(e.pointerId);
+      if (pts.size === 1) { rebaseDrag([...pts.values()][0], false); return; }
+      if (pts.size) return;
+      if (!moved && drag && !drag.pan && !Learn.active()) { if (drag.hit) select(drag.hit); else if (sel) close(); }
+      drag = null; syncPanCursor();
+    };
+    svg.addEventListener("pointerup", up); svg.addEventListener("pointercancel", up);
+    svg.addEventListener("wheel", e => { e.preventDefault(); cancelAnimationFrame(anim); cam.s = Math.max(.25, Math.min(4, cam.s * Math.exp(-e.deltaY * .0015))); apply(); }, { passive: false });
+    svg.addEventListener("keydown", e => { const n = e.target.closest?.(".node"); if (n && e.key === "Enter" && !Learn.active()) { e.preventDefault(); select(n.dataset.id); } });
+    return {
+      show(first) { measure(); onSelect = select; onClose = close;
+        setLegend([[t("people"), "#FDB913"], ...D.sectors.map(s => [tx(s.short), safeColor(s.color)]), [t("legend").solid, "line:solid"], [t("legend").dash, "line:dash"], [t("legend").dot, "line:dot"]]);
+        if (D.hasHolders) $("legend").prepend(namesBtn());
+        svg.classList.toggle("no-names", !names || !D.hasHolders);
+        if (!built) build();
+        if (sel) { select(sel, true, selQuiet); return; }
+        if (first && !reduce) { Object.assign(cam, home(), { s: home().s * 1.7, r: -.5 }); apply(); fly(home(), 1600); } else { Object.assign(cam, home()); apply(); } },
+      rebuild() { const keep = sel; built = false; build(); if (keep) select(keep, true, selQuiet); },
+      resize() { measure(); if (sel) fly(target(sel), 0); else { Object.assign(cam, home()); apply(); } },
+      select, close, state: () => ({ ...cam, W, H, sel, pos }),
+    };
+  })();
+
+  /* ================= Parliament ================= */
+  const Parliament = (() => {
+    const svg = $("parl"); let built = false, split = false, focus = null, seats = [], raf = null;
+    const W = 900, H = 640, CX = 450, CY = 470, rows = 8, rIn = 150, rOut = 400;
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    const groups = () => [...D.parties.filter(p => p.coalition), { id: "other", other: true, seats: D.seimas.other_seats, color: "#9AA3AF" }, ...D.parties.filter(p => !p.coalition)];
+    const isCoal = key => !!PARTY[key]?.coalition;
+    function positions() {
+      const radii = [...Array(rows)].map((_, i) => rIn + (rOut - rIn) * i / (rows - 1)), sum = radii.reduce((a, b) => a + b, 0), total = D.seimas.total_seats;
+      const counts = radii.map(r => Math.round(total * r / sum)); counts[rows - 1] += total - counts.reduce((a, b) => a + b, 0);
+      const p = []; radii.forEach((r, i) => { for (let k = 0; k < counts[i]; k++) { const a = Math.PI - Math.PI * k / (counts[i] - 1); p.push({ x: CX + Math.cos(a) * r, y: CY - Math.sin(a) * r, a, r }); } });
+      return p.sort((u, v) => v.a - u.a || u.r - v.r);
+    }
+    function build(animate) {
+      svg.textContent = ""; seats = [];
+      svg.setAttribute("aria-label", t("parlLabel"));
+      const pos = positions(); let i = 0; const g = el("g", {}, svg);
+      for (const grp of groups()) for (let k = 0; k < grp.seats; k++, i++) {
+        const p = pos[i], c = el("circle", { class: "seat", r: 9.5, cx: animate ? CX : p.x, cy: animate ? CY : p.y, fill: safeColor(grp.color), "data-p": grp.id }, g);
+        seats.push({ c, p, key: grp.id, i });
+      }
+      const maj = el("g", {}, svg);
+      el("line", { x1: CX, y1: CY - rIn + 30, x2: CX, y2: CY - rOut - 24, stroke: "#ECE6D6", "stroke-dasharray": "3 5", "stroke-opacity": .6 }, maj);
+      el("text", { class: "parl-caption", x: CX, y: CY - rOut - 34, "text-anchor": "middle" }, maj).textContent = `${t("majority")} ${D.seimas.majority}`;
+      el("text", { class: "parl-big", x: CX, y: CY - 40, "text-anchor": "middle" }, svg).textContent = String(D.seimas.total_seats);
+      el("text", { class: "parl-caption", x: CX, y: CY - 10, "text-anchor": "middle" }, svg).textContent = t("seatsIn");
+      const coal = D.parties.filter(p => p.coalition).reduce((a, p) => a + p.seats, 0);
+      el("text", { class: "parl-caption", x: 70, y: CY + 36, "text-anchor": "start", id: "coal-count" }, svg).textContent = `${t("coalitionCap")} ${coal}`;
+      el("text", { class: "parl-caption", x: W - 70, y: CY + 36, "text-anchor": "end" }, svg).textContent = `${t("oppCap")} ${D.seimas.total_seats - coal}`;
+      const list = $("party-list"); list.textContent = "";
+      for (const grp of groups()) { const b = h("button"); b.dataset.p = grp.id; b.setAttribute("aria-pressed", String(focus === grp.id)); const i2 = h("i"); i2.style.background = safeColor(grp.color);
+        b.append(i2, grp.other ? t("other") : grp.abbr, h("b", "", String(grp.seats))); b.title = grp.other ? t("otherTitle") : tx(grp.name);
+        b.onclick = () => focusParty(focus === grp.id ? null : grp.id); list.append(b); }
+      const sb = h("button", "split-btn", split ? t("join") : t("split")); sb.id = "split"; sb.setAttribute("aria-pressed", String(split));
+      sb.onclick = () => { split = !split; sb.textContent = split ? t("join") : t("split"); sb.setAttribute("aria-pressed", String(split)); place(700); };
+      list.append(sb);
+      built = true; if (focus) focusParty(focus); else paintFocus();
+      place(animate ? 1200 : 0, animate);
+    }
+    function place(dur, fromCenter) {
+      const t0 = performance.now();
+      const plan = seats.map(s => ({ s, fx: +s.c.getAttribute("cx"), fy: +s.c.getAttribute("cy"), tx: s.p.x + (split ? (isCoal(s.key) ? -34 : 34) : 0), ty: s.p.y + (split ? -8 : 0), delay: fromCenter ? s.i * 7 : 0 }));
+      cancelAnimationFrame(raf);
+      const tick = now => { let busy = false;
+        for (const q of plan) { const k = reduce || !dur ? 1 : Math.max(0, Math.min(1, (now - t0 - q.delay) / dur)), e = ease(k); if (k < 1) busy = true;
+          q.s.c.setAttribute("cx", q.fx + (q.tx - q.fx) * e); q.s.c.setAttribute("cy", q.fy + (q.ty - q.fy) * e); }
+        if (busy) raf = requestAnimationFrame(tick); };
+      tick(t0);
+    }
+    function paintFocus() {
+      for (const s of seats) s.c.style.opacity = !focus || s.key === focus ? 1 : .15;
+      for (const b of $("party-list").querySelectorAll("button[data-p]")) b.setAttribute("aria-pressed", String(b.dataset.p === focus));
+    }
+    function focusParty(key) {
+      focus = key; paintFocus();
+      if (!key) { hideDetails(); return; }
+      const p = PARTY[key], other = key === "other", seatsN = other ? D.seimas.other_seats : p.seats;
+      const mins = other ? [] : D.nodes.filter(n => n.party === key && n.tier === 2 && n.sector === "exe");
+      current = "party:" + key; order = [];
+      $("p-kicker").textContent = other ? t("otherSeats") : (p.coalition ? t("coalParty") : t("oppParty"));
+      const b = $("p-body"); b.textContent = "";
+      b.append(h("h2", "", other ? t("otherTitle") : tx(p.name)));
+      const chips = h("div", "chips"); chips.append(h("span", "chip", t("seatsOf")(seatsN)), h("span", "chip", t("shareOf")(Math.round(seatsN / D.seimas.total_seats * 100)))); b.append(chips);
+      b.append(h("p", "", other ? t("otherText") : p.coalition ? t("coalText")(mins.length) : t("oppText")));
+      // Add party website link if present
+      if (!other && p.website) {
+        const links = h("div", "chips");
+        const a = externalLink(p.website, tx(p.name), "website", url => partyDomainFor(url, p.id));
+        if (a) { a.classList.add("chip"); links.append(a); b.append(links); }
+      }
+      if (mins.length) { const s = h("div", "rel"); s.append(h("h3", "", t("inGov"))); const ul = h("ul");
+        for (const m of mins) { const li = h("li"), btn = h("button"); btn.append(h("span", "verb", nameOf(m)), h("span", "", m.holder)); btn.onclick = () => { switchMode("orbit"); Orbit.select(m.id); }; li.append(btn); ul.append(li); }
+        s.append(ul); b.append(s); }
+      b.append(h("p", "note", t("seatNote") + " " + t("note")));
+      b.append(shareRow());
+      openPanel();
+    }
+    return {
+      show() { onClose = () => focusParty(null); onSelect = () => {};
+        setLegend([[`${t("coalition")} ${D.parties.filter(p => p.coalition).reduce((a, p) => a + p.seats, 0)}`, "#E3565C"], [t("opposition"), "#1FA7E0"], [t("parlLegend"), "#8E96A3"]]);
+        if (!built) build(true); else if (focus) focusParty(focus); },
+      rebuild() { if (built) build(false); },
+      focusParty, state: () => ({ split, focus, seats: seats.map(s => ({ key: s.key, x: +s.c.getAttribute("cx"), y: +s.c.getAttribute("cy") })) }),
+    };
+  })();
+
+  /* ================= EU MEPs ================= */
+  const EuView = (() => {
+    const list = $("eu-list"); let focus = null;
+    function grouped() {
+      const eu = D.eu, map = new Map();
+      for (const g of eu.ep_groups || []) map.set(g.id, []);
+      const other = [];
+      for (const m of eu.meps) { if (map.has(m.ep_group)) map.get(m.ep_group).push(m); else other.push(m); }
+      const out = [];
+      for (const [id, meps] of map) if (meps.length) out.push({ group: epGroupOf(id), meps });
+      if (other.length) out.push({ group: null, meps: other });
+      return out;
+    }
+    function build() {
+      const eu = D.eu; list.textContent = "";
+      list.append(h("h2", "", tx(eu.name) || tx(layerMeta("eu")?.name)));
+      list.append(h("p", "", t("euSeats")(eu.ep.seats)));
+      for (const { group, meps } of grouped()) {
+        const sec = h("section");
+        sec.append(h("h3", "", group ? (tx(group.short) || group.abbr) : t("other")));
+        const ul = h("ul");
+        for (const m of meps) {
+          const li = h("li"), b = h("button");
+          b.type = "button"; b.dataset.id = m.id; b.setAttribute("aria-pressed", String(focus === m.id));
+          const p = partyOf(m.party);
+          b.append(h("span", "", tx(m.name)));
+          const sub = [p ? p.abbr : "", group ? group.abbr : ""].filter(Boolean).join(" · ");
+          if (sub) b.append(h("small", "", sub));
+          b.onclick = () => showMep(m.id);
+          li.append(b); ul.append(li);
+        }
+        sec.append(ul); list.append(sec);
+      }
+    }
+    function showMep(id) {
+      const m = D.eu.meps.find(x => x.id === id); if (!m) return;
+      focus = id; current = id; order = grouped().flatMap(s => s.meps.map(x => x.id));
+      const p = partyOf(m.party), g = epGroupOf(m.ep_group);
+      $("p-kicker").textContent = tx(D.eu.name) || t("eu");
+      const b = $("p-body"); b.textContent = "";
+      b.append(h("h2", "", tx(m.name)));
+      const chips = h("div", "chips");
+      if (p) { const c = h("span", "chip"); if (p.color) { const i = h("i"); i.style.background = safeColor(p.color); c.append(i); } c.append(p.abbr + " · " + tx(p.short || p.name)); chips.append(c); }
+      if (g) chips.append(h("span", "chip", g.abbr + " · " + tx(g.short || g.name)));
+      if (m.since) chips.append(h("span", "chip", t("since") + " " + fmtDate(m.since)));
+      if (chips.childNodes.length) b.append(chips);
+      const links = h("div", "chips");
+      const a = m.profile ? externalLink(m.profile, tx(m.name), "profile", epProfile) : null;
+      if (a) { a.classList.add("chip"); links.append(a); b.append(links); }
+      if (m.note) b.append(h("p", "", tx(m.note)));
+      b.append(h("p", "note", tx(D.eu.sources)));
+      b.append(shareRow());
+      for (const btn of list.querySelectorAll("button[data-id]")) btn.setAttribute("aria-pressed", String(btn.dataset.id === id));
+      openPanel();
+    }
+    return {
+      show() { onClose = () => { focus = null; hideDetails(); build(); }; onSelect = showMep;
+        setLegend([[t("euSeats")(D.eu.ep.seats), "#8E96A3"]]);
+        build(); if (focus) showMep(focus); },
+      rebuild() { build(); if (focus && current === focus) showMep(focus); },
+      focusMep: showMep, state: () => ({ focus, n: D.eu ? D.eu.meps.length : 0 }),
+    };
+  })();
+
+  /* ---------- search ---------- */
+  const sInput = $("search"), sBox = $("search-box"), sToggle = $("search-toggle"), results = $("results");
+  function openSearch(open) { sBox.hidden = !open; sToggle.setAttribute("aria-expanded", String(open)); if (open) { openShare(false); sInput.focus(); renderResults(); } }
+  sToggle.onclick = () => openSearch(sBox.hidden);
+  function matches(q) {
+    const f = fold(q); if (!f) return [];
+    const hits = [];
+    for (const n of D.nodes) { const hay = fold([n.title.en, n.title.lt, n.short?.en, n.short?.lt, n.holder, n.party && PARTY[n.party].abbr].join(" ")); if (hay.includes(f)) hits.push({ type: "node", id: n.id, label: tx(n.title), sub: n.holder || "" }); }
+    for (const p of D.parties) { const hay = fold([p.abbr, p.name.en, p.name.lt, p.short.en, p.short.lt].join(" ")); if (hay.includes(f)) hits.push({ type: "party", id: p.id, label: tx(p.name), sub: p.abbr + " · " + t("seatsOf")(p.seats) }); }
+    if (D.hasEu) for (const m of D.eu.meps) {
+      const p = partyOf(m.party), g = epGroupOf(m.ep_group);
+      const hay = fold([m.name.en, m.name.lt, p && p.abbr, g && g.abbr].join(" "));
+      if (hay.includes(f)) hits.push({ type: "mep", id: m.id, label: tx(m.name), sub: [p && p.abbr, g && g.abbr].filter(Boolean).join(" · ") });
+    }
+    return hits.slice(0, 8);
+  }
+  function renderResults() {
+    results.textContent = ""; if (!D) return;
+    const q = sInput.value.trim(); if (!q) return;
+    const hits = matches(q);
+    if (!hits.length) { results.append(h("li", "empty", t("noResults"))); return; }
+    for (const hit of hits) { const li = h("li"), b = h("button"); b.append(h("span", "", hit.label)); if (hit.sub) b.append(h("small", "", hit.sub));
+      b.onclick = () => choose(hit); li.append(b); results.append(li); }
+  }
+  function choose(hit) { openSearch(false); sInput.value = "";
+    if (hit.type === "party") { switchMode("parl"); Parliament.focusParty(hit.id); }
+    else if (hit.type === "mep") { switchMode("eu"); EuView.focusMep(hit.id); }
+    else { switchMode("orbit"); Orbit.select(hit.id); } }
+  sInput.addEventListener("input", renderResults);
+  sInput.addEventListener("keydown", e => { if (e.key === "Enter") { const hits = matches(sInput.value); if (hits[0]) choose(hits[0]); } if (e.key === "Escape") openSearch(false); });
+
+  /* ---------- links and sharing ---------- */
+  // #power/<office>, #seimas, #seimas/<party>, #eu, #eu/<mep>; ?lang= keeps the sharer's language
+  const SITE = "https://sarunasvaitkus.com/demo/lt-gov/";
+  const ICONS = {
+    facebook: "M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z",
+    linkedin: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 1 1 0-4.128 2.064 2.064 0 0 1 0 4.128zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+    x: "M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z",
+    whatsapp: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z",
+    link: "M10.6 13.4a1 1 0 0 1 0-1.4l3.5-3.5a3 3 0 1 1 4.2 4.2l-2 2a1 1 0 1 1-1.4-1.4l2-2a1 1 0 0 0-1.4-1.4L12 13.4a1 1 0 0 1-1.4 0zM13.4 10.6a1 1 0 0 1 0 1.4l-3.5 3.5a3 3 0 1 1-4.2-4.2l2-2a1 1 0 1 1 1.4 1.4l-2 2a1 1 0 0 0 1.4 1.4l3.5-3.5a1 1 0 0 1 1.4 0z",
+    embed: "M8.7 6.3a1 1 0 0 1 0 1.4L4.4 12l4.3 4.3a1 1 0 1 1-1.4 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.4 0zm6.6 0a1 1 0 0 1 1.4 0l5 5a1 1 0 0 1 0 1.4l-5 5a1 1 0 1 1-1.4-1.4l4.3-4.3-4.3-4.3a1 1 0 0 1 0-1.4z",
+    more: "M6 10a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z",
+  };
+  function stateHash() {
+    if (Learn.active()) return "#learn" + (Learn.storyId() ? "/" + Learn.storyId() : "");
+    if (mode === "eu") return current && D.eu && D.eu.meps.some(m => m.id === current) ? "#eu/" + current : "#eu";
+    if (mode === "parl") return current && current.startsWith("party:") ? "#seimas/" + current.slice(6) : "#seimas";
+    return current && BY[current] ? "#power/" + current : "";
+  }
+  const namesQ = () => names && D && D.hasHolders ? "&names=1" : "";
+  function syncUrl() { if (!mode) return; try { history.replaceState(null, "", location.pathname + "?lang=" + lang + namesQ() + (EMBED ? "&embed=1" : "") + stateHash()); } catch {} }
+  const shareUrl = () => SITE + "?lang=" + lang + namesQ() + stateHash();
+  function shareTitle() {
+    const brand = t("brand");
+    if (mode === "eu" && current && D.eu) { const m = D.eu.meps.find(x => x.id === current); return (m ? tx(m.name) : tx(D.eu.name) || t("eu")) + " · " + brand; }
+    if (current && current.startsWith("party:")) { const k = current.slice(6); return (k === "other" ? t("otherTitle") : tx(PARTY[k].name)) + " · " + brand; }
+    if (current && BY[current]) { const n = BY[current]; return tx(n.title) + (n.holder ? ": " + n.holder : "") + " · " + brand; }
+    return brand;
+  }
+  function track(method) { try { gtag("event", "share", { method, content_type: mode === "eu" ? "eu" : mode === "parl" ? "seimas" : "power", item_id: stateHash().slice(1) || "overview" }); } catch {} }
+  function svgIcon(d) { const s = document.createElementNS(NS, "svg"); s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("aria-hidden", "true"); const p = document.createElementNS(NS, "path"); p.setAttribute("d", d); s.append(p); return s; }
+  async function copyLink(btn) {
+    const url = shareUrl();
+    try { await navigator.clipboard.writeText(url); }
+    catch { const ta = h("textarea"); ta.value = url; ta.style.cssText = "position:fixed;opacity:0"; document.body.append(ta); ta.select(); try { document.execCommand("copy"); } catch {} ta.remove(); }
+    btn.classList.add("copied"); btn.setAttribute("aria-label", t("copied")); btn.title = t("copied");
+    setTimeout(() => { btn.classList.remove("copied"); btn.setAttribute("aria-label", t("copyLink")); btn.title = t("copyLink"); }, 1800);
+    track("copy_link");
+  }
+  function shareIcons(withEmbed) {
+    const box = h("div", "share-icons"), url = encodeURIComponent(shareUrl()), title = encodeURIComponent(shareTitle());
+    const links = [
+      ["facebook", "Facebook", `https://www.facebook.com/sharer/sharer.php?u=${url}`],
+      ["linkedin", "LinkedIn", `https://www.linkedin.com/sharing/share-offsite/?url=${url}`],
+      ["x", "X", `https://x.com/intent/tweet?text=${title}&url=${url}`],
+      ["whatsapp", "WhatsApp", `https://wa.me/?text=${title}%20${url}`],
+    ];
+    for (const [key, name, href] of links) {
+      const a = h("a"); a.href = href; a.target = "_blank"; a.rel = "noopener noreferrer"; a.dataset.net = key;
+      a.setAttribute("aria-label", t("shareOn")(name)); a.title = name; a.append(svgIcon(ICONS[key]));
+      a.onclick = () => { track(key); openShare(false); }; box.append(a);
+    }
+    const c = h("button"); c.type = "button"; c.dataset.net = "copy"; c.setAttribute("aria-label", t("copyLink")); c.title = t("copyLink"); c.append(svgIcon(ICONS.link));
+    c.onclick = () => copyLink(c); box.append(c);
+    if (withEmbed) {
+      const e = h("button"); e.type = "button"; e.dataset.net = "embed"; e.setAttribute("aria-label", t("embed")); e.title = t("embed"); e.append(svgIcon(ICONS.embed));
+      e.onclick = () => { openShare(false); openEmbed(true); }; box.append(e);
+    }
+    if (navigator.share) {
+      const m = h("button"); m.type = "button"; m.dataset.net = "native"; m.setAttribute("aria-label", t("moreShare")); m.title = t("moreShare"); m.append(svgIcon(ICONS.more));
+      // the system share sheet can be refused (inside frames, some browsers): copy the link instead
+      m.onclick = async () => { try { await navigator.share({ title: shareTitle(), url: shareUrl() }); track("native"); } catch (e) { if (e && e.name !== "AbortError") copyLink(c); } }; box.append(m);
+    }
+    return box;
+  }
+  function shareRow() { const r = h("div", "share-row"); r.append(h("span", "", t("shareThis")), shareIcons()); return r; }
+  const shToggle = $("share-toggle"), shBox = $("share-box");
+  function openShare(on) {
+    shBox.hidden = !on; shToggle.setAttribute("aria-expanded", String(on));
+    if (on) { shBox.textContent = ""; shBox.append(shareIcons(true)); openSearch(false); }
+  }
+  shToggle.onclick = () => openShare(shBox.hidden);
+
+  // embed code for teachers and news sites
+  const embedDlg = $("embed-dlg");
+  function embedCode() {
+    const src = SITE + "?lang=" + lang + ($("embed-names").checked ? "&names=1" : "") + "&embed=1" + stateHash();
+    return `<iframe src="${src}" title="${t("brand")}" width="100%" height="${$("embed-h").value}" style="border:0;border-radius:12px;max-width:100%" loading="lazy" allow="clipboard-write; web-share" allowfullscreen></iframe>`;
+  }
+  function openEmbed(on) {
+    embedDlg.hidden = !on;
+    if (!on) { shToggle.focus(); return; }
+    $("embed-title").textContent = t("embedTitle"); $("embed-help").textContent = t("embedHelp");
+    $("embed-h-label").textContent = t("embedHeight"); $("embed-names-label").textContent = t("embedNames");
+    $("embed-names").checked = names; $("embed-names").parentElement.hidden = !D.hasHolders; $("embed-copy").textContent = t("copyCode"); $("embed-copy").className = "";
+    $("embed-close").setAttribute("aria-label", t("close"));
+    $("embed-code").value = embedCode(); $("embed-copy").focus();
+    track("embed_open");
+  }
+  $("embed-h").onchange = $("embed-names").onchange = () => { $("embed-code").value = embedCode(); };
+  $("embed-close").onclick = () => openEmbed(false);
+  embedDlg.addEventListener("pointerdown", e => { if (e.target === embedDlg) openEmbed(false); });
+  $("embed-copy").onclick = async () => {
+    const code = $("embed-code").value;
+    try { await navigator.clipboard.writeText(code); } catch { $("embed-code").select(); try { document.execCommand("copy"); } catch {} }
+    $("embed-copy").textContent = t("codeCopied"); $("embed-copy").className = "ok"; track("embed_copy");
+  };
+  addEventListener("keydown", e => { if (e.key === "Escape" && !embedDlg.hidden) { e.stopPropagation(); openEmbed(false); } }, true);
+  // embedded: the brand opens the full map in a new tab
+  const EMBED = new URLSearchParams(location.search).get("embed") === "1";
+  if (EMBED) {
+    document.body.classList.add("embed");
+    const nr = document.createElement("meta"); nr.name = "robots"; nr.content = "noindex"; document.head.append(nr); // the full page is the one to index
+    const br = document.querySelector(".brand");
+    br.setAttribute("role", "link"); br.tabIndex = 0;
+    const go = () => { window.open(shareUrl(), "_blank", "noopener"); track("open_full"); };
+    br.onclick = go; br.onkeydown = e => { if (e.key === "Enter") go(); };
+  }
+  document.addEventListener("pointerdown", e => { if (!shBox.hidden && !e.target.closest(".share")) openShare(false); });
+  addEventListener("keydown", e => { if (e.key === "Escape" && !shBox.hidden) { e.stopPropagation(); openShare(false); shToggle.focus(); } }, true);
+  function route() {
+    const [view, key] = decodeURIComponent(location.hash.slice(1)).split("/");
+    if (view === "learn" && STORIES) { switchMode("orbit"); Learn.open(key); return; }
+    if (Learn.active()) Learn.exit(true);
+    if (view === "seimas" && D.hasSeimas) { switchMode("parl"); if (key && (PARTY[key] || key === "other")) Parliament.focusParty(key); }
+    else if ((view === "eu" || view === (D.eu && D.eu.id)) && D.hasEu) { switchMode("eu"); if (key && D.eu.meps.some(m => m.id === key)) EuView.focusMep(key); }
+    else if (!view) {
+      const def = (D.layers || []).find(l => l.default && D.layerData[l.id]);
+      if (def) switchMode(def.id); else switchMode("orbit");
+    }
+    else { switchMode("orbit"); if (view === "power" && BY[key]) Orbit.select(key); }
+  }
+  addEventListener("hashchange", () => { if (D) route(); });
+
+  /* ---------- Learn: short guided stories, each ending with one question ---------- */
+  const Learn = (() => {
+    const card = $("story"), body = $("s-body");
+    let on = false, story = null, idx = 0, answered = null, before = null;
+    const btn = (label, cls, fn) => { const b = h("button", cls || "", label); b.type = "button"; b.onclick = fn; return b; };
+    const ev = (name, extra) => { try { gtag("event", name, { story_id: story ? story.id : "", language: lang, ...extra }); } catch {} };
+    function show() { card.classList.add("open"); document.body.classList.add("learning"); syncUrl(); }
+    function render() {
+      body.textContent = "";
+      $("s-close").setAttribute("aria-label", t("closeLearn"));
+      if (!story) {
+        $("s-kicker").textContent = t("learn");
+        body.append(h("h2", "", t("pickStory")));
+        const ul = h("ul", "pick");
+        STORIES.forEach(s => { const li = h("li"), b = btn("", "", () => start(s.id)); b.dataset.story = s.id;
+          b.append(h("span", "", tx(s.title)), h("small", "", t("storyMeta")(s.steps.length))); li.append(b); ul.append(li); });
+        body.append(ul); return;
+      }
+      const n = story.steps.length;
+      if (idx < n) {
+        const p = story.steps[idx];
+        $("s-kicker").textContent = tx(story.title);
+        body.append(h("p", "note", t("stepOf")(idx + 1, n)), h("p", "step-text", tx(p.text)));
+        const bs = basisEl(p.basis); if (bs) body.append(bs);
+      } else {
+        const q = story.quiz;
+        $("s-kicker").textContent = t("checkYourself");
+        body.append(h("p", "step-text", tx(q.question)));
+        const ul = h("ul", "opts");
+        q.options.forEach((o, i) => { const li = h("li"), b = btn(tx(o.text), "", () => answer(i)); b.dataset.opt = i;
+          if (answered != null) { b.disabled = true; if (o.correct) b.classList.add("right"); else if (i === answered) b.classList.add("wrong"); }
+          li.append(b); ul.append(li); });
+        body.append(ul);
+        if (answered != null) {
+          const ok = q.options[answered].correct;
+          body.append(h("p", "feedback", ok ? t("right") : t("wrong")), h("p", "", tx(q.explain)));
+          const bs = basisEl(q.basis); if (bs) body.append(bs);
+          const nav = h("div", "nav"); nav.append(btn(t("anotherStory"), "", () => { story = null; idx = 0; answered = null; Orbit.close(); render(); syncUrl(); }), btn(t("toMap"), "primary", () => exit()));
+          body.append(nav); return;
+        }
+      }
+      const dots = h("div", "dots"); for (let i = 0; i <= n; i++) { const d = h("i"); if (i === idx) d.className = "on"; dots.append(d); } body.append(dots);
+      const nav = h("div", "nav");
+      const back = btn(t("back"), "", () => go(idx - 1)); back.disabled = idx === 0;
+      nav.append(back);
+      if (idx < n) nav.append(btn(idx === n - 1 ? t("checkYourself") : t("next"), "primary", () => go(idx + 1)));
+      body.append(nav);
+    }
+    function go(i) {
+      if (!story || i < 0 || i > story.steps.length) return;
+      idx = i; answered = null;
+      if (i < story.steps.length) Orbit.select(story.steps[i].focus, false, true);
+      render();
+      body.querySelector(".primary")?.focus({ preventScroll: true });
+    }
+    function answer(i) {
+      if (answered != null) return;
+      answered = i; const o = story.quiz.options[i], right = story.quiz.options.find(x => x.correct);
+      if (right.show) Orbit.select(right.show, false, true);
+      ev("learn_answer", { correct: !!o.correct });
+      render();
+      body.querySelector(".feedback")?.scrollIntoView({ block: "nearest", behavior: reduce ? "auto" : "smooth" });
+      body.querySelector(".nav .primary")?.focus({ preventScroll: true });
+    }
+    function start(id) {
+      story = STORIES.find(s => s.id === id) || null;
+      if (!story) { render(); return; }
+      ev("learn_start"); go(0); syncUrl();
+    }
+    function open(id) {
+      if (!STORIES) return;
+      if (!on) { before = { mode, current }; on = true; }
+      if (mode !== "orbit") switchMode("orbit");
+      hideDetails(); story = null; idx = 0; answered = null;
+      Orbit.close(); show();
+      if (id) start(id); else render();
+      $("s-close").focus({ preventScroll: true });
+    }
+    // leave Learn and put the map back as it was
+    function exit(quietly) {
+      if (!on) return;
+      on = false; story = null; card.classList.remove("open"); document.body.classList.remove("learning");
+      Orbit.close();
+      const b = before; before = null;
+      if (!quietly && b) {
+        if (b.mode === "parl" && D.hasSeimas) { switchMode("parl"); if (b.current && b.current.startsWith("party:")) Parliament.focusParty(b.current.slice(6)); }
+        else if (b.mode === "eu" && D.hasEu) { switchMode("eu"); if (b.current && D.eu.meps.some(m => m.id === b.current)) EuView.focusMep(b.current); }
+        else if (b.current && BY[b.current]) Orbit.select(b.current);
+      }
+      syncUrl();
+    }
+    $("s-close").onclick = () => exit();
+    addEventListener("keydown", e => {
+      if (!on || e.target.tagName === "INPUT") return;
+      if (e.key === "Escape") { e.stopPropagation(); exit(); }
+      else if (story && answered == null && idx <= story.steps.length && (e.key === "ArrowRight" || e.key === "ArrowLeft")) { e.stopPropagation(); go(idx + (e.key === "ArrowRight" ? 1 : -1)); }
+    }, true);
+    return { open, exit, active: () => on, storyId: () => story && story.id, rerender: () => on && render(),
+      state: () => ({ on, story: story && story.id, step: idx, answered, open: card.classList.contains("open") }) };
+  })();
+
+  /* ---------- slide-in menu: Learn, How to use, About & sources ---------- */
+  const Menu = (() => {
+    const nav = $("menu"), shade = $("menu-shade"), tog = $("menu-toggle"), hint = $("menu-hint");
+    let opened = false;
+    function render() {
+      $("menu-title").textContent = t("menu"); $("menu-close").setAttribute("aria-label", t("close"));
+      tog.setAttribute("aria-label", t("openMenu")); tog.title = t("menu");
+      $("menu-learn").hidden = !STORIES;
+      $("menu-learn-h").textContent = t("learn");
+      const ul = $("menu-stories"); ul.textContent = "";
+      for (const s of STORIES || []) { const li = h("li"), b = h("button"); b.type = "button"; b.dataset.story = s.id;
+        b.append(h("span", "", tx(s.title)), h("small", "", t("storyMeta")(s.steps.length)));
+        b.onclick = () => { open(false); Learn.open(s.id); }; li.append(b); ul.append(li); }
+      $("menu-help-h").textContent = t("howTo");
+      const tips = $("menu-help"); tips.textContent = ""; for (const x of t("tips")) tips.append(h("li", "", x));
+      $("menu-about-h").textContent = t("aboutSources"); $("menu-about").textContent = t("aboutText");
+      $("menu-checked").textContent = D ? t("checked")(fmtDate(D.updated_at)).replace(/\.\.$/, ".") : "";
+      const src = $("menu-sources"); src.textContent = "";
+      if (D) { src.append(h("li", "", tx(D.sources)));
+        for (const doc of Object.values(D.documents || {})) { const url = doc.url ? tx(doc.url) : ""; if (!stateSource(url)) continue;
+          const li = h("li"), a = h("a", "", tx(doc.name)); a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; li.append(a); src.append(li); } }
+      const au = $("menu-author"); au.textContent = t("madeBy") + " ";
+      const a = h("a", "", "Šarūnas Vaitkus"); a.href = "https://sarunasvaitkus.com/"; a.target = "_blank"; a.rel = "noopener"; au.append(a);
+      $("menu-hint-go").textContent = t("hintText"); $("menu-hint-x").setAttribute("aria-label", t("dismiss"));
+    }
+    function open(on) {
+      opened = on; nav.classList.toggle("open", on); shade.hidden = !on; tog.setAttribute("aria-expanded", String(on));
+      if (on) { nav.hidden = false; render(); dismissHint(); openSearch(false); openShare(false); $("menu-close").focus({ preventScroll: true }); try { gtag("event", "menu_open"); } catch {} }
+      else { setTimeout(() => { if (!opened) nav.hidden = true; }, reduce ? 0 : 420); }
+    }
+    function dismissHint() { if (!hint.hidden) hint.hidden = true; }
+    tog.onclick = () => open(!opened);
+    $("menu-close").onclick = () => { open(false); tog.focus(); };
+    shade.onclick = () => open(false);
+    addEventListener("keydown", e => { if (e.key === "Escape" && opened) { e.stopPropagation(); open(false); tog.focus(); } }, true);
+    // a one-time pointer to the menu on the first visit
+    $("menu-hint-go").onclick = () => open(true);
+    $("menu-hint-x").onclick = dismissHint;
+    document.addEventListener("pointerdown", e => { if (!hint.hidden && !e.target.closest("#menu-hint")) dismissHint(); });
+    function ready() {
+      render();
+      if (!STORIES || EMBED || Learn.active() || store.get("ltgov-hint")) return;
+      store.set("ltgov-hint", "1"); hint.hidden = false;
+    }
+    return { ready, render, open, isOpen: () => opened };
+  })();
+
+  /* ---------- modes, language, boot ---------- */
+  let mode = null, booted = false, errKind = null;
+  function switchMode(m) {
+    if (m === mode) return;
+    if ((m === "parl" || m === "eu") && Learn.active()) Learn.exit(true);
+    if (m === "parl" && !D.hasSeimas) return;
+    if (m === "eu" && !D.hasEu) return;
+    hideDetails(); mode = m;
+    $("m-orbit").setAttribute("aria-pressed", String(m === "orbit")); $("m-parl").setAttribute("aria-pressed", String(m === "parl"));
+    $("m-eu").setAttribute("aria-pressed", String(m === "eu"));
+    $("v-orbit").hidden = m !== "orbit"; $("v-parl").hidden = m !== "parl"; $("v-eu").hidden = m !== "eu";
+    $("hint").textContent = m === "parl" ? t("hintParl") : m === "eu" ? t("hintEu") : t("hint");
+    if (m === "orbit") Orbit.show(!booted); else if (m === "parl") Parliament.show(); else if (m === "eu") EuView.show();
+    booted = true;
+    syncUrl();
+  }
+  $("m-orbit").onclick = () => switchMode("orbit");
+  $("m-parl").onclick = () => switchMode("parl");
+  $("m-eu").onclick = () => switchMode("eu");
+  function applyLayerLabels() {
+    const b = $("m-eu"), meta = layerMeta("eu");
+    const full = tx((D && D.eu && D.eu.name) || meta?.name) || t("eu");
+    b.textContent = t("eu"); b.title = full; b.setAttribute("aria-label", full);
+    b.hidden = !(D && D.hasEu);
+  }
+  function applyLang() {
+    document.documentElement.lang = lang;
+    $("brand-name").textContent = t("brand");
+    $("brand-sub").textContent = D ? fmtDate(D.updated_at.slice(0, 7)) : "";
+    $("m-orbit").textContent = t("orbit"); $("m-parl").textContent = t("parl");
+    applyLayerLabels();
+    $("modes").setAttribute("aria-label", t("views")); $("langs").setAttribute("aria-label", t("langs"));
+    $("btn-en").setAttribute("aria-pressed", String(lang === "en")); $("btn-lt").setAttribute("aria-pressed", String(lang === "lt"));
+    $("hint").textContent = mode === "parl" ? t("hintParl") : mode === "eu" ? t("hintEu") : t("hint");
+    sInput.placeholder = t("search"); sInput.setAttribute("aria-label", t("search")); sToggle.setAttribute("aria-label", t("openSearch"));
+    $("p-prev").setAttribute("aria-label", t("prev")); $("p-next").setAttribute("aria-label", t("next")); $("p-close").setAttribute("aria-label", t("close"));
+    $("share-toggle").setAttribute("aria-label", t("share"));
+    $("page-title").textContent = t("brand");
+    if (document.body.classList.contains("embed")) document.querySelector(".brand").setAttribute("aria-label", t("openFull"));
+    if (!embedDlg.hidden) openEmbed(true);
+    $("loading-text").textContent = t("loading"); $("retry").textContent = t("tryAgain");
+  }
+  function setLang(l) {
+    if (l === lang) return; lang = l; store.set("ltgov-lang", l); applyLang(); showError(); syncUrl(); openShare(false); Learn.rerender(); Menu.render();
+    if (!D) return;
+    const cur = current;
+    Orbit.rebuild(); Parliament.rebuild();
+    if (mode === "orbit") Orbit.show(false); else if (mode === "parl") Parliament.show(); else if (mode === "eu") EuView.show();
+    if (cur && mode === "orbit" && BY[cur]) Orbit.select(cur, true);
+    if (cur && mode === "eu" && D.hasEu && D.eu.meps.some(m => m.id === cur)) EuView.focusMep(cur);
+    renderResults();
+  }
+  $("btn-en").onclick = () => setLang("en");
+  $("btn-lt").onclick = () => setLang("lt");
+  addEventListener("resize", () => { if (mode === "orbit") Orbit.resize(); });
+
+  async function boot() {
+    $("error").hidden = true; $("loading").hidden = false;
+    for (const b of document.querySelectorAll(".bar button")) b.disabled = true;
+    const err = await load().catch(e => { console.error("Data load failed:", e); return "data"; });
+    $("loading").hidden = true;
+    for (const b of document.querySelectorAll(".bar button")) b.disabled = !!err && !["btn-en", "btn-lt"].includes(b.id);
+    if (!err && !D.hasSeimas) $("m-parl").disabled = true;
+    if (!err && !D.hasEu) $("m-eu").hidden = true;
+    if (!err) Menu.ready();
+    if (err) { errKind = err; showError(); return; }
+    applyLang();
+    route();
+  }
+  $("retry").onclick = () => { errKind = null; boot(); };
+  // language buttons stay usable during errors so the message can be read in either language
+  function showError() { if (!errKind) return; $("error-text").textContent = errKind === "network" ? t("errorNetwork") : t("errorData"); $("error").hidden = false; }
+  applyLang();
+  // hooks for automated checks (read-only)
+  window.__ltgov = { menu: () => Menu.isOpen(), learn: () => Learn.state(), orbit: () => Orbit.state(), parl: () => Parliament.state(), eu: () => EuView.state(), current: () => current, mode: () => mode, lang: () => lang, hasEu: () => !!(D && D.hasEu) };
+  boot();
+})();
+</script>
+</body>
+</html>
