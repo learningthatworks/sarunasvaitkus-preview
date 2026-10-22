@@ -1,0 +1,4 @@
+Contact: mailto:info@metability.ai
+Preferred-Languages: en, lt
+Canonical: https://metability.ai/.well-known/security.txt
+Policy: https://metability.ai/about

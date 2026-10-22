@@ -1,0 +1,17 @@
+{
+  "name": "Metability",
+  "short_name": "Metability",
+  "description": "Learning that sticks after the course ends.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1024",
+  "theme_color": "#6E378C",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
