@@ -1,0 +1,184 @@
+{
+  "retrieved": "2026-10-22",
+  "preview": "Static preview. Real figures were fetched on this date. Anything not fetched is omitted or marked Example data in the HTML. No estimated numbers are stored here.",
+  "sources": [
+    {
+      "id": "rc-municipalities",
+      "title": "Registrų centras address register, municipalities",
+      "url": "https://get.data.gov.lt/datasets/gov/rc/ar/savivaldybe/Savivaldybe",
+      "retrieved": "2026-10-22",
+      "used_for": "60 municipalities, official sav_kodas, Lithuanian name stem, county link",
+      "licence": "Not restated on the rows retrieved for this preview."
+    },
+    {
+      "id": "rc-counties",
+      "title": "Registrų centras address register, counties",
+      "url": "https://get.data.gov.lt/datasets/gov/rc/ar/apskritis/Apskritis",
+      "retrieved": "2026-10-22",
+      "used_for": "10 county names and adm_kodas",
+      "licence": "Not restated on the rows retrieved for this preview."
+    },
+    {
+      "id": "eurostat-demo-pjan",
+      "title": "Eurostat, population on 1 January by age and sex",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table?lang=en",
+      "api": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_pjan?format=JSON&lang=EN&geo=LT&sex=T&age=TOTAL",
+      "retrieved": "2026-10-22",
+      "dataset_updated": "2026-09-25",
+      "used_for": "Lithuania population, 1 January 2024 and 1 January 2025",
+      "licence": "Eurostat reuse with attribution to Eurostat."
+    },
+    {
+      "id": "eurostat-demo-r-pjangrp3",
+      "title": "Eurostat, population on 1 January by age group, sex and NUTS 3 region",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_pjangrp3/default/table?lang=en",
+      "retrieved": "2026-10-22",
+      "dataset_updated": "2026-08-28",
+      "time": "2024",
+      "used_for": "Population of the 10 Lithuanian counties on 1 January 2024",
+      "licence": "Eurostat reuse with attribution to Eurostat."
+    },
+    {
+      "id": "ltgov-seimas",
+      "title": "LT·GOV seimas.json",
+      "url": "https://sarunasvaitkus.com/demo/lt-gov/data/seimas.json",
+      "map": "https://sarunasvaitkus.com/demo/lt-gov/#seimas",
+      "file_updated": "2026-09-30",
+      "retrieved": "2026-10-22",
+      "used_for": "141 seats, majority 71, election 2024"
+    },
+    {
+      "id": "ltgov-structure",
+      "title": "LT·GOV structure.json",
+      "url": "https://sarunasvaitkus.com/demo/lt-gov/data/structure.json",
+      "map": "https://sarunasvaitkus.com/demo/lt-gov/#power/gov",
+      "file_updated": "2026-09-30",
+      "retrieved": "2026-10-22",
+      "used_for": "14 ministry offices"
+    },
+    {
+      "id": "ltgov-eu",
+      "title": "LT·GOV eu.json",
+      "url": "https://sarunasvaitkus.com/demo/lt-gov/data/eu.json",
+      "map": "https://sarunasvaitkus.com/demo/lt-gov/#eu",
+      "upstream": "https://www.europarl.europa.eu/meps/en/search/advanced?countryCode=LT",
+      "file_updated": "2026-10-05",
+      "retrieved": "2026-10-22",
+      "used_for": "11 Lithuanian seats in the European Parliament, 2024 allocation"
+    },
+    {
+      "id": "vda-schools-2024-2025",
+      "title": "State Data Agency article on general-education schools, 2020–2025",
+      "url": "https://vda.lrv.lt/lt/naujienos/bendrojo-ugdymo-mokyklos-ir-mokiniai-lietuvoje-20202025-m-tendencijos-S6Z/",
+      "article_date": "2025-09-01",
+      "retrieved": "2026-10-22",
+      "used_for": "885 general-education schools in the 2024–2025 school year",
+      "note": "May be out of date for the current school year. The live NŠA registry was not counted."
+    },
+    {
+      "id": "school-atlas",
+      "title": "School Atlas published demo",
+      "url": "https://sarunasvaitkus.com/demo/school-compass/",
+      "asset_last_modified": "2026-10-20",
+      "retrieved": "2026-10-22",
+      "used_for": "29 schools, 37 campuses, and the city-tag counts for Vilnius, Kaunas and Klaipėda",
+      "note": "Counts were read from the published JavaScript dataset. They match the 6 October 2026 snapshot named in the concept (29 and 37). Status marks: 32 active, 4 uncertain, 1 recruiting."
+    },
+    {
+      "id": "ec-partnership-2022",
+      "title": "European Commission, Partnership Agreement with Lithuania for 2021–2027",
+      "url": "https://european-social-fund-plus.ec.europa.eu/en/news/commission-adopts-partnership-agreement-lithuania",
+      "published": "2022-04-22",
+      "retrieved": "2026-10-22",
+      "used_for": "€6.4 billion headline and the rounded lines quoted on the EU page",
+      "note": "May be out of date. Not a current extract from esinvesticijos.lt."
+    }
+  ],
+  "figures": {
+    "municipalities": 60,
+    "lithuania_residents_2025_01_01": 2890664,
+    "lithuania_residents_2024_01_01": 2885891,
+    "counties_2024_01_01": {
+      "LT021": {
+        "name_en": "Alytus County",
+        "residents": 134181
+      },
+      "LT022": {
+        "name_en": "Kaunas County",
+        "residents": 585430
+      },
+      "LT023": {
+        "name_en": "Klaipėda County",
+        "residents": 339831
+      },
+      "LT024": {
+        "name_en": "Marijampolė County",
+        "residents": 134663
+      },
+      "LT025": {
+        "name_en": "Panevėžys County",
+        "residents": 209093
+      },
+      "LT026": {
+        "name_en": "Šiauliai County",
+        "residents": 266803
+      },
+      "LT027": {
+        "name_en": "Tauragė County",
+        "residents": 90534
+      },
+      "LT028": {
+        "name_en": "Telšiai County",
+        "residents": 130913
+      },
+      "LT029": {
+        "name_en": "Utena County",
+        "residents": 126192
+      },
+      "LT011": {
+        "name_en": "Vilnius County",
+        "residents": 868251
+      }
+    },
+    "seimas_seats": 141,
+    "seimas_majority": 71,
+    "ministries": 14,
+    "meps": 11,
+    "general_education_schools_2024_2025": 885,
+    "school_atlas_schools": 29,
+    "school_atlas_campuses": 37,
+    "school_atlas_by_city": {
+      "Vilnius": {
+        "campuses": 22,
+        "active": 19,
+        "uncertain": 2,
+        "recruiting": 1,
+        "entities": 22
+      },
+      "Kaunas": {
+        "campuses": 7,
+        "active": 6,
+        "uncertain": 1,
+        "recruiting": 0,
+        "entities": 7
+      },
+      "Klaipėda": {
+        "campuses": 5,
+        "active": 4,
+        "uncertain": 1,
+        "recruiting": 0,
+        "entities": 5
+      }
+    },
+    "eu_funds_announcement_eur_billion": 6.4
+  },
+  "not_retrieved": [
+    "Registrų centras population-by-municipality workbook (site returned a Cloudflare challenge to this preview).",
+    "A full count from the NŠA general-education registry. Direct data.gov.lt API calls returned HTTP 500. The HTML table that did load was a partial page, not a population of the registry.",
+    "A current programme total from esinvesticijos.lt.",
+    "EU-funded projects by municipality from Kohesio.",
+    "Council and mayor data."
+  ],
+  "english_names": "English municipality names are the standard English forms of the official Lithuanian legal names. The address register extract used here is in Lithuanian only.",
+  "school_atlas_join": "school_atlas_city is set only on a city municipality when the published School Atlas dataset tags campuses with that city name. It is never set on the district municipality that shares the name. Vilnius, Kaunas and Klaipėda city tags therefore do not include the district municipalities."
+}
