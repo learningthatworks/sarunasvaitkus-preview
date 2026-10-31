@@ -1,0 +1,1107 @@
+/* ==========================================================================
+   case-studies.css: reading pages built by the Python builders.
+     /case-studies/ and /lt/case-studies/   scripts/build-cases.py
+     /work/<slug>/ and /lt/work/<slug>/      scripts/build-work.py (project pages)
+     /services/<slug>/ and /lt/paslaugos/    scripts/build-services.py
+     /privacy/ and /lt/privatumas/           scripts/build-privacy.py
+   Load order on every page: tokens.css (design-system values, generated) -> theme.css
+   (shared site layer) -> the page's own stylesheet. A page stylesheet only adds layout for
+   its own sections; it does not restyle buttons, links, type or colours.
+
+   Contents, in file order:
+     - Case study: head, delivery track, facts rail and reading column, decision log,
+       results, evidence, other cases, index
+     - Image slideshow and before/after comparison
+     - Embed mode: the page inside the homepage popup (.cs-embed)
+     - Glass design shared with the homepage and CV
+     - Project pages (/work/): meta line, media, two columns, facts, back links
+     - Lithuanian pages and the Lithuanian services page
+
+   Case study idea: a project file. One bold element (the delivery track); the rest stays quiet.
+   Design-system rule: brand red is for fills, rules, markers and text 24px or larger; smaller text stays ink.
+   ========================================================================== */
+:root {
+  --panel: var(--canvas);
+  --muted: var(--ink-muted);
+  --rule: var(--line);
+  --red: var(--brand-red);
+  --display: var(--font-display);
+  --body: var(--font-body);
+  --measure: 68ch;
+}
+
+/* base: box sizing, page, links, focus ring, images */
+
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: var(--text-body);
+}
+a {
+  color: inherit;
+  text-decoration-color: var(--red-large);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover {
+  color: var(--red);
+}
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+/* skip link: hidden until it gets keyboard focus */
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 16px;
+  top: 8px;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  background: var(--paper);
+  padding: 0 16px;
+  z-index: 10;
+}
+
+/* Head */
+.cs {
+  padding: 0 clamp(16px, 4vw, 48px);
+}
+.cs-head {
+  max-width: none;
+  padding: clamp(40px, 8vw, 96px) 0 28px;
+}
+.cs-client {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  font: var(--text-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.cs-client::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--red);
+  flex: none;
+}
+.cs-head h1 {
+  margin: 0;
+  max-width: 26ch;
+  text-wrap: balance;
+}
+.cs-stand {
+  margin: 26px 0 0;
+  max-width: var(--measure);
+}
+
+/* The delivery track: real dates from first contact to handover */
+.track-wrap {
+  margin: 28px calc(-1 * clamp(16px, 4vw, 48px)) 0;
+  padding: 0 clamp(16px, 4vw, 48px);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: clamp(16px, 4vw, 48px);
+  background: var(--panel);
+  border-block: 1px solid var(--rule);
+}
+.track {
+  list-style: none;
+  margin: 0;
+  padding: 34px 0 28px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(132px, 1fr);
+  position: relative;
+  min-width: 100%;
+}
+.track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 46px;
+  height: 3px;
+  background: var(--ink);
+}
+.track li {
+  position: relative;
+  padding: 30px var(--space-20) 0 0;
+  scroll-snap-align: start;
+}
+.track li::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--panel);
+  border: 3px solid var(--ink);
+}
+.track time {
+  display: block;
+  margin-bottom: var(--space-10);
+  font-variant-numeric: tabular-nums;
+}
+.track span {
+  display: block;
+  margin-top: 0;
+  color: var(--muted);
+}
+.track li.key::before {
+  width: 27px;
+  height: 27px;
+  top: 0;
+  left: -6px;
+  background: var(--red);
+  border-color: var(--red-large);
+}
+.track li.key time {
+  color: var(--red-large);
+}
+.track li.key span {
+  color: var(--ink);
+}
+
+/* Body: facts rail and reading column */
+.cs-body {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, var(--measure));
+  gap: clamp(28px, 5vw, 72px);
+  padding: 48px 0 24px;
+  max-width: none;
+}
+.rail {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+}
+.facts {
+  margin: 0;
+}
+.facts div {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.facts dt {
+  font: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+.facts dd {
+  margin: 3px 0 0;
+}
+.rail-h {
+  margin: 26px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--red);
+}
+.see {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.see li {
+  padding: 6px 0;
+}
+
+.read h2 {
+  margin: 52px 0 14px;
+}
+.read section:first-child h2 {
+  margin-top: 0;
+}
+.read p {
+  margin: 0 0 16px;
+}
+/* One source under "Why it matters". Small and muted, including at 390px. */
+.read .sv-source {
+  margin: -8px 0 16px;
+  max-width: 36em;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.read .sv-source a {
+  color: inherit;
+  text-underline-offset: 0.15em;
+}
+
+.ticks {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.ticks li {
+  margin-bottom: 8px;
+}
+.ticks li::marker {
+  color: var(--red-large);
+}
+
+/* Decision log: dated entries on a red rule */
+.decisions {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 22px;
+  border-left: 2px solid var(--red);
+}
+.decisions li {
+  padding: 0 0 26px;
+}
+.decisions li:last-child {
+  padding-bottom: 4px;
+}
+.decisions time {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.decisions h3 {
+  margin: 4px 0 6px;
+}
+.decisions p {
+  margin: 0;
+}
+
+/* Results */
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0;
+  margin: 0 0 22px;
+  border-top: 3px solid var(--ink);
+}
+.results div {
+  padding: 14px 18px 14px 0;
+}
+.results dt {
+  color: var(--red-large);
+  font-variant-numeric: tabular-nums;
+}
+.results dd {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.quote {
+  margin: 44px 0 0;
+  padding: 4px 0 4px 22px;
+  border-left: 2px solid var(--red);
+}
+.quote blockquote {
+  margin: 0;
+}
+.quote p {
+  margin: 0;
+}
+.quote figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+/* Evidence */
+.evidence {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+.ev {
+  display: block;
+  text-decoration: none;
+}
+.ev img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
+.ev span {
+  display: block;
+  margin-top: 8px;
+}
+.ev:hover span {
+  color: var(--red);
+}
+
+/* Other cases */
+.cs-more {
+  max-width: none;
+  margin: 40px 0 0;
+  padding: 30px 0 10px;
+  border-top: 1px solid var(--red);
+}
+.cs-more h2 {
+  margin: 0 0 14px;
+}
+/* card list kept for the Lithuanian services examples */
+.cs-more ul:not(.more-list) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.cs-more ul:not(.more-list) a {
+  display: block;
+  text-decoration: none;
+}
+.cs-more ul:not(.more-list) :is(strong, span) {
+  display: block;
+}
+.cs-more ul:not(.more-list) span {
+  margin-top: 4px;
+}
+
+/* Index */
+.ix {
+  list-style: none;
+  margin: 20px 0 60px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px 32px;
+  max-width: 1180px;
+}
+.ix a {
+  display: block;
+  text-decoration: none;
+}
+.ix a.sv-link {
+  text-decoration: underline 1px var(--red);
+  text-underline-offset: 3px;
+}
+.ix img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
+.ix-client {
+  margin-top: 14px;
+}
+.ix-title {
+  display: block;
+  margin-top: 6px;
+}
+.ix a:hover .ix-title {
+  color: var(--red);
+}
+.ix-card {
+  display: block;
+  margin-top: 8px;
+}
+
+.cs-foot {
+  margin-top: 56px;
+  padding: 26px clamp(16px, 4vw, 48px) 90px;
+  background: var(--panel);
+  border-top: 1px solid var(--rule);
+}
+.cs-foot p {
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .cs-body {
+    grid-template-columns: 1fr;
+  }
+  .rail {
+    position: static;
+  }
+}
+@media print {
+  .cs-more,
+  .sva-btn,
+  .sva-panel {
+    display: none !important;
+  }
+  .cs-foot {
+    display: none !important;
+  }
+  .track-wrap {
+    overflow: visible;
+  }
+  .track {
+    min-width: 0;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .track::before {
+    display: none;
+  }
+  .rail {
+    position: static;
+  }
+  body {
+    font-size: 12pt;
+  }
+}
+
+/* Before/after slideshow (case studies) */
+.gal {
+  max-width: none;
+  margin: 44px 0 0;
+}
+.gal-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.gal-head h2 {
+  margin: 0;
+}
+.gal-count {
+  margin: 0;
+  color: var(--muted);
+}
+.gal-slide {
+  margin: 0;
+}
+.gal-slide[hidden] {
+  display: none;
+}
+.gal-img,
+.cmp {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: min(72svh, 900px);
+  border: 1px solid var(--rule);
+  background: var(--panel);
+}
+.gal-img {
+  object-fit: cover;
+  object-position: top;
+}
+/* before/after comparison: drag the handle to reveal the new version */
+.cmp {
+  position: relative;
+  overflow: hidden;
+  --pos: 50%;
+}
+.cmp img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.cmp-before {
+  clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+.cmp::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 3px;
+  margin-left: -1.5px;
+  background: var(--red);
+  pointer-events: none;
+}
+.cmp-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+.cmp-range:focus-visible {
+  opacity: 0.01;
+}
+.cmp:has(.cmp-range:focus-visible) {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+.cmp-tag {
+  top: 12px;
+  pointer-events: none;
+}
+.cmp-tag-b {
+  left: 12px;
+}
+.cmp-tag-a {
+  right: 12px;
+}
+.gal-slide figcaption {
+  margin-top: 12px;
+  max-width: 68ch;
+}
+/* slideshow controls: arrows, dots and the full-size button */
+.gal-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  row-gap: 4px;
+  margin-top: 14px;
+}
+/* arrows: round Outline buttons (theme.css), the same as the recommendation arrows on the homepage */
+.gal-prev,
+.gal-next {
+  width: var(--tap-min);
+  padding: 0;
+  font: 400 28px/1 var(--display);
+  cursor: pointer;
+}
+.gal-dots {
+  display: flex;
+  gap: 8px;
+}
+.gal-dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.gal-dot[aria-current="true"] {
+  background: var(--red);
+  border-color: var(--red-large);
+}
+@media print {
+  .gal-nav,
+  .cmp-range {
+    display: none;
+  }
+  .gal-slide[hidden] {
+    display: block;
+  }
+}
+.gal-open {
+  display: block;
+}
+.gal-fit-contain .gal-img {
+  object-fit: contain;
+  object-position: center;
+  aspect-ratio: 4 / 3;
+  max-height: 82vh;
+}
+
+/* Inside the homepage popup (iframe): the popup supplies the frame and close button */
+.cs-embed .cs-foot,
+.cs-embed .sva-btn,
+.cs-embed .sva-panel,
+.cs-embed .skip,
+.cs-embed .wk-crumbs,
+.cs-embed .wk-back {
+  display: none !important;
+}
+.cs-embed .cs-head {
+  padding-top: clamp(28px, 5vw, 56px);
+}
+.cs-embed body {
+  background: transparent;
+}
+.cs-embed .track-wrap {
+  background: color-mix(in srgb, var(--panel) 70%, transparent);
+}
+.cs-embed .cs-more {
+  margin-bottom: 40px;
+}
+
+/* glass design (shared with the homepage and CV): the window behind, content on frosted panels */
+.glass-page main.cs {
+  max-width: 1240px;
+  margin: clamp(16px, 3vw, 36px) auto 0;
+}
+.glass-page .track-wrap {
+  background: color-mix(in srgb, var(--sunk) 70%, transparent);
+}
+.glass-page .cs-foot {
+  width: min(96vw, 1760px);
+  max-width: none;
+  margin: 24px auto 0;
+}
+.glass-page .cs-client,
+.glass-page .facts dt,
+.glass-page .gal-count {
+  color: var(--muted);
+}
+/* inside the popup: the popup sheet is the glass */
+.cs-embed main.cs,
+.cs-embed .cs-foot {
+  background: transparent !important;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  margin-top: 0;
+}
+
+/* free-section case studies (SITCIN): stage sub-headings, closing call to action */
+.read h3.sub {
+  margin: 28px 0 10px;
+  color: var(--ink);
+}
+.read .cs-end {
+  margin-top: 34px;
+  padding-top: 20px;
+  border-top: 1px solid var(--red);
+  font-style: italic;
+}
+
+/* ---------- project pages (/work/<slug>/, built by scripts/build-work.py) ----------
+   Same colour rule as the homepage cards: the client's sector colour marks who it was for. */
+.wk {
+  --c-text: color-mix(in srgb, var(--c, var(--own)) 72%, #000);
+}
+:root[data-theme="dark"] .wk,
+:root[data-theme="dark"] .wk-index li {
+  --c-text: color-mix(in srgb, var(--c, #d9d9d9) 55%, #fff);
+}
+/* Breadcrumb: links and the current page share one size and spacing */
+.wk-crumbs {
+  max-width: none;
+  padding-top: 28px;
+  font: var(--text-small);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+/* nav.wk-crumbs: one step stronger than the shared text-link rule in theme.css,
+   which loads later and resets the capitals */
+nav.wk-crumbs a {
+  color: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+.wk .cs-head {
+  padding-top: clamp(20px, 4vw, 40px);
+}
+.wk-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 0 0 14px;
+}
+.wk-client {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--c-text);
+}
+.wk-client::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c);
+}
+.wk-kind,
+.wk-date {
+  padding: 4px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 50px;
+  color: var(--muted);
+}
+/* project media: video frame, single image or a sideways gallery */
+.wk-media {
+  max-width: none;
+  margin: 8px 0 36px;
+  border-top: 4px solid var(--c);
+}
+.wk-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0f1012;
+}
+.wk-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+/* live demos (not video) need height on phones, 16:9 gives a 200px slot */
+@media (max-width: 860px) {
+  .wk-frame:has(> iframe[src*="/demo"]) {
+    aspect-ratio: auto;
+    height: min(78svh, 640px);
+  }
+}
+/* while a demo loads, show the page's own sunk tone, not a black slab */
+.wk-frame:has(> iframe[src*="/demo"]) {
+  background: var(--sunk);
+}
+.wk-media figcaption {
+  margin-top: var(--space-10);
+  color: var(--muted);
+}
+.wk-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(72svh, 900px);
+  object-fit: cover;
+  object-position: top;
+}
+.wk-gallery {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+}
+.wk-gallery img {
+  flex: 0 0 min(88%, 760px);
+  scroll-snap-align: start;
+  width: min(88%, 760px);
+  max-height: min(72svh, 900px);
+  object-fit: cover;
+  object-position: top;
+  height: auto;
+  border: 1px solid var(--rule);
+}
+/* two columns: the write-up, then the facts (client, year, role, tools) */
+.wk-grid {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, var(--measure)) minmax(260px, 340px);
+  justify-content: start;
+  gap: 24px clamp(40px, 5vw, 96px);
+  align-items: start;
+}
+
+.wk-body h2 {
+  margin: 26px 0 10px;
+}
+.wk-body h2:first-child {
+  margin-top: 0;
+}
+.wk-body ul {
+  padding-left: 20px;
+}
+.wk-case {
+  margin-top: 26px;
+}
+.wk-side {
+  padding: 20px 22px;
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--c);
+  background: var(--glass-card, var(--surface));
+}
+.wk-facts {
+  margin: 0;
+}
+.wk-facts div + div {
+  margin-top: 14px;
+}
+.wk-facts dt {
+  color: var(--muted);
+}
+.wk-facts dd {
+  margin: 4px 0 0;
+}
+.wk-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.wk-tech span {
+  padding: 3px 9px;
+  border-radius: 50px;
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+}
+
+/* back link and the /work/ index of all projects */
+.wk-back {
+  max-width: none;
+  margin: 36px 0 0;
+  padding-bottom: 48px;
+}
+.wk-index .wk-group h2 {
+  margin: 12px 0 0;
+}
+.wk-index .ix li {
+  border-top: 4px solid var(--c);
+  padding-top: 0;
+}
+.wk-index .ix-title {
+  color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .wk-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Lithuanian pages: a row of actions after the text */
+.lt-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 28px;
+}
+
+/* project page action row: one primary button, text links beside it, every target 44px */
+.wk-body .lt-btns {
+  gap: var(--space-10) var(--space-20);
+}
+
+.wk-body .lt-btns a:not(.cs-cta) {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+}
+/* Lithuanian services page (/lt/paslaugos/) */
+
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.sp .svc-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 24px;
+  background: color-mix(in srgb, var(--c) 7%, var(--glass-card, var(--surface)));
+  border: 1px solid color-mix(in srgb, var(--c) 30%, var(--rule));
+  border-top: 5px solid var(--c);
+}
+.sp .svc-card h3 {
+  margin: 0;
+}
+.sp .svc-card p {
+  margin: 0;
+  flex: 1;
+}
+
+/* Services: the problem is a sentence, so the title stays in sentence case */
+main.sv .cs-head h1,
+main.sv-detail .cs-head h1 {
+  max-width: 18em;
+}
+.cs-head .cs-service {
+  margin: 22px 0 0;
+  max-width: 62ch;
+}
+.cs-head .cs-service a {
+  font-weight: 600;
+}
+.wk-body .cs-service {
+  margin-top: 22px;
+}
+.sv-prose {
+  max-width: 68ch;
+  margin: 0 0 12px;
+}
+.sv-prose p,
+.sv-block p {
+  margin: 0 0 16px;
+  max-width: 68ch;
+}
+.sv-prose h3 {
+  margin: 4px 0 10px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.sv-ways {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sv-ways li {
+  margin: 0 0 16px;
+  max-width: 68ch;
+}
+.sv-group {
+  margin: 36px 0 14px;
+  color: var(--muted);
+}
+.sv-offers {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+}
+/* "More ways I can help" cards use the shared card style (theme.css). The whole
+   card is clickable through its "Open" link (.sv-stretch), so the link itself
+   stays a short text link: do not style ".sv-offers a" as a card again. */
+.sv-n {
+  color: var(--c, var(--red));
+}
+.sv-problem {
+  color: var(--ink);
+}
+.sv-offers > li:hover .sv-problem {
+  color: var(--red);
+}
+.sv-change {
+  color: var(--muted);
+}
+.sv-block {
+  max-width: 68ch;
+  margin-top: 56px;
+  padding-top: 8px;
+}
+.sv-block h2 {
+  margin: 0 0 18px;
+}
+
+.sv-block h3.sub {
+  margin: 22px 0 8px;
+}
+
+/* ---------- One layout for project, tool and case study pages (Oct 2026) ----------
+   The content uses the full width of the popup or the page. Media, timelines and
+   lists run edge to edge; running text keeps --measure. */
+/* project, tool and case study pages: as wide as the homepage popup (services pages keep 1240px) */
+.glass-page main.cs:not(.sv, .sv-detail, .wk-index) {
+  width: min(96vw, 1760px);
+  max-width: none;
+}
+@media (min-width: 1100px) {
+  /* a wide gallery shows two whole images, then scrolls */
+  .wk-gallery img {
+    flex-basis: calc((100% - 12px) / 2);
+    width: calc((100% - 12px) / 2);
+  }
+}
+/* inside the popup frame the popup sheet is the only panel: no card inside it */
+html.cs-embed body.glass-page main.cs {
+  width: auto;
+  max-width: none;
+  margin: 0;
+}
+/* the summary under the title keeps a reading width (theme.css lets leads run full width) */
+.cs .cs-head .cs-stand {
+  max-width: var(--measure);
+}
+/* project meta: client, type and date as one grey line */
+.wk-meta {
+  gap: 0;
+  color: var(--muted);
+  font: var(--text-eyebrow);
+  letter-spacing: var(--letter-spacing-caps);
+  text-transform: uppercase;
+}
+.wk-kind,
+.wk-date {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--muted);
+}
+.wk-meta > span + span::before {
+  content: "\00B7";
+  margin: 0 10px;
+  color: var(--muted);
+}
+/* related work and other case studies: a plain list of links */
+.more-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px 32px;
+}
+.more-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.more-list .more-sub {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+}
+
+/* Facts column (project pages: right, case studies: left): 30% wide, no card,
+   no background. Each group is separated by a dark grey rule. */
+.wk-grid {
+  grid-template-columns: minmax(0, 1fr) 30%;
+}
+.wk-body {
+  max-width: var(--measure);
+}
+.cs-body {
+  grid-template-columns: 30% minmax(0, var(--measure));
+}
+.wk-side {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.wk-facts > div,
+.facts > div {
+  margin: 0;
+  padding: 12px 0;
+  border: 0;
+  border-top: 1px solid var(--muted);
+}
+.wk-facts > div + div {
+  margin-top: 0;
+}
+.wk-side > :not(.wk-facts),
+.rail-h {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--muted);
+  border-bottom: 0;
+}
+@media (max-width: 860px) {
+  .wk-grid,
+  .cs-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Own tool pages: the summary opens the left column, the red actions close it */
+.wk-lede {
+  margin: 0 0 18px;
+  font: var(--text-lead);
+}
+.wk-body > .sv-actions {
+  margin-top: 28px;
+}
+
+/* Tool screens (the case study slideshow with fit "shots"): each screen fills the
+   visible height of the popup or the window, full width */
+.gal-fit-shots {
+  margin: 8px 0 40px;
+}
+.gal-fit-shots .gal-img {
+  border: 0;
+  background: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  max-height: calc(100svh - 150px);
+  object-fit: cover;
+  object-position: top;
+}

@@ -1,0 +1,6 @@
+# The Power Map may be embedded by schools and news sites (the site root sends X-Frame-Options: SAMEORIGIN).
+<IfModule mod_headers.c>
+  Header always unset X-Frame-Options
+  Header unset X-Frame-Options
+  Header set Content-Security-Policy "frame-ancestors *"
+</IfModule>

@@ -1,0 +1,167 @@
+/* ==========================================================================
+   cv-dashboard.css: the CV dashboard view (/cv/ and /lt/cv/): the Dashboard and
+   Plain version tabs, chart cards and colour key (charts drawn by assets/js/cv-dashboard.js).
+   Loaded after cv.css. The tabs and the PDF button are the shared buttons in theme.css.
+   ========================================================================== */
+
+/* tab row and PDF row */
+.cv-tabs {
+  max-width: 1080px;
+  margin: 18px auto 12px;
+  padding: 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+/* the tabs are the shared Outline buttons (theme.css); the selected tab is red like every pressed control */
+.cv-tabs [role="tab"] {
+  cursor: pointer;
+}
+.cv-pdf-row {
+  max-width: 1080px;
+  margin: 0 auto 12px;
+  padding: 0 16px;
+}
+/* "Download PDF" is the shared Main button (.sv-btn in theme.css) */
+
+/* dashboard panel and its heading */
+
+.dash {
+  max-width: 1080px;
+  margin: 0 auto 48px;
+  padding: clamp(20px, 3vw, 36px);
+}
+.dash-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--red);
+}
+.dash-head h1 {
+  margin: 6px 0 0;
+}
+.dash-head p {
+  margin: 0;
+  color: var(--muted);
+}
+/* chart cards: one per chart, with a fixed height for each chart */
+.dash-card {
+  margin-top: 26px;
+}
+.dash-card h2 {
+  margin: 0;
+}
+.dash-card .cv-note {
+  margin: 6px 0 12px;
+  max-width: 72ch;
+  font-style: italic;
+  color: var(--ink-2);
+}
+.dash-chart {
+  position: relative;
+}
+#cv-serp {
+  height: 680px;
+}
+#cv-globe {
+  height: 340px;
+}
+#cv-gantt {
+  height: 640px;
+}
+#cv-months {
+  height: 440px;
+}
+.dash:not(.is-live) .dash-chart {
+  display: none;
+}
+.dash.is-static .dash-fallback {
+  display: block;
+}
+/* text shown when the charts cannot load (no script or no network) */
+.dash-fallback {
+  display: none;
+  color: var(--muted);
+}
+/* colour key under the charts */
+.dash-legend {
+  list-style: none;
+  margin: 0 0 6px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  color: var(--ink-2);
+}
+.dash-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.dash-legend i {
+  display: inline-block;
+  width: 18px;
+  height: 8px;
+  border-radius: 3px;
+}
+.dash-legend i.uk {
+  background: var(--own);
+}
+:root[data-theme="dark"] .dash-legend i.uk {
+  background: #d9d9d9;
+}
+.dash-legend i.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.dash-legend .sep {
+  width: 1px;
+  height: 14px;
+  background: var(--line);
+}
+/* card grid: two columns on wide screens, one on phones */
+.dash-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(16px, 3vw, 36px);
+  align-items: center;
+}
+.dash-note {
+  margin: 22px 0 0;
+  color: var(--muted);
+}
+.dash-note a {
+  color: inherit;
+}
+@media (max-width: 760px) {
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+  #cv-serp {
+    height: 1250px;
+  }
+  #cv-globe {
+    height: 280px;
+  }
+  #cv-gantt {
+    height: 600px;
+  }
+  #cv-months {
+    height: 400px;
+  }
+}
+@media print {
+  .cv-tabs,
+  .cv-pdf-row,
+  #cv-dash {
+    display: none !important;
+  }
+  #cv-print[hidden] {
+    display: block !important;
+  }
+}

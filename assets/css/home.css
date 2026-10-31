@@ -1,0 +1,1702 @@
+/* ==========================================================================
+   home.css: homepage layout (/ and /lt/; the Lithuanian page adds home-lt.css).
+   Load order on every page: tokens.css (design-system values, generated) -> theme.css
+   (shared site layer) -> the page's own stylesheet. A page stylesheet only adds layout for
+   its own sections; it does not restyle buttons, links, type or colours.
+   Behaviour (popup, filter, slider) is in assets/js/home.js; the hero slides in hero.js.
+
+   Contents, in file order:
+     - Base, layout helpers and frosted section panes
+     - Hero: slides, tabs, play button, lead text, in-text switches, blinds-shut colours
+     - Client ribbon, client logos, "Where I have worked" globe and table
+     - Services cards, case study cards, how I work (habits), products (tools)
+     - Client work: project cards grid and category filter
+     - Recommendations slider
+     - Readability fixes for text on frosted panels (both themes)
+     - Popup: the <dialog> that shows a project, tool or case study page
+
+   Built on the Vaitkus EdTech design system: Oswald display, Open Sans body, square corners, one red.
+   Departures, on purpose: warmer paper, lighter heading weights, red as a thin accent instead of fill blocks.
+   ========================================================================== */
+:root {
+  --wrap: 1180px;
+  --gut: clamp(16px, 4vw, 40px);
+  /* Shared content column inside each section panel (not a fixed px/ch). */
+  --panel-prose: 88%;
+}
+/* base: box sizing, page, images, links, focus ring */
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+/* layout helpers: content width and screen-reader-only text */
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 var(--gut);
+}
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* surfaces that sit on the glass become frosted panes */
+.q {
+  background: color-mix(in srgb, var(--card) 62%, transparent) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+.clients {
+  background: color-mix(in srgb, var(--paper) 35%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* hero */
+.hero {
+  padding: clamp(48px, 9vw, 120px) 0 clamp(40px, 6vw, 80px);
+}
+.hero .wrap {
+  display: block;
+}
+.hero {
+  min-height: min(78vh, 760px);
+  display: flex;
+  align-items: flex-end;
+}
+.hero .wrap {
+  width: 100%;
+}
+/* wide enough for the longer Lithuanian headlines to stay on two lines */
+.hero :is(h1, .hs-h) {
+  max-width: 23ch;
+}
+.hero .wrap > div {
+  position: relative;
+  max-width: 860px;
+}
+/* hero slides: three messages; proof line, main button and controls stay put (assets/js/hero.js) */
+.hero .wrap > .hero-slides {
+  max-width: none;
+}
+.hs-stage {
+  display: grid;
+}
+.hs {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0s 0.6s;
+}
+.hs.is-on {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0s;
+}
+.marker .hs-h {
+  margin: 0;
+}
+/* slide entrance (recipe: "staggered blur-rise", MotionSites web-builder skill, MIT): each time a slide comes on,
+   the headline rises out of a light blur, then the lead text, then the buttons, all settled within about a second.
+   "both" hides an element only during its own delay, so if animations never run the text is simply there. */
+@keyframes hsBlurRise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+@keyframes hsRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hs.is-on :is(h1, .hs-h) {
+  animation: hsBlurRise 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+.hs.is-on .lede {
+  animation: hsRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+.hs.is-on .hs-links {
+  animation: hsRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hs.is-on :is(h1, .hs-h, .lede, .hs-links) {
+    animation: none;
+  }
+}
+/* slide buttons: a row under the lead text, in both themes */
+.hs-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 26px 0 0;
+}
+
+/* hero footer: proof line, main button and slide controls */
+.hero-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+  margin-top: clamp(24px, 3vw, 36px);
+}
+.hs-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+/* slide tabs 01, 02, 03 with a progress bar under the active one */
+.hs-tabs {
+  display: flex;
+  gap: 4px;
+}
+/* the tabs are the shared Outline buttons (theme.css); here only the room for the progress line */
+.hs-tab {
+  position: relative;
+  min-width: 46px;
+  padding: 0 8px 4px;
+  cursor: pointer;
+}
+.hs-tab::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 6px;
+  height: 2px;
+  background: var(--line);
+}
+.hs-bar {
+  position: absolute;
+  z-index: 1;
+  left: 8px;
+  bottom: 6px;
+  height: 2px;
+  width: 0;
+  background: var(--red-bg);
+}
+.hs-tab[aria-selected="true"] .hs-bar {
+  width: calc(100% - 16px);
+}
+.hero-slides.is-timing .hs-tab[aria-selected="true"] .hs-bar {
+  animation: hs-fill 7s linear forwards;
+}
+@keyframes hs-fill {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(100% - 16px);
+  }
+}
+/* play / pause: a round Outline button (theme.css) */
+.hs-play {
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+}
+.hs-play:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+.hs-play svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.hs-play .i-play {
+  fill: currentColor;
+  stroke: none;
+  display: none;
+}
+.hero-slides.is-paused .hs-play .i-pause {
+  display: none;
+}
+.hero-slides.is-paused .hs-play .i-play {
+  display: block;
+}
+.hero-proof {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--ink-2);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hs,
+  .hs.is-on {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* the hero fills the screen between the header and the bottom bar; the client ribbon starts below the fold */
+.hero {
+  min-height: calc(100svh - 58px - 56px) !important;
+  box-sizing: border-box;
+}
+@media (max-width: 720px) {
+  .hero {
+    min-height: calc(100svh - 61px - 56px) !important;
+  }
+}
+/* hero text sits on the photo with no panel behind it: the site's heading and lede styles,
+   plus a soft halo in the page colour so the words stay readable over any part of the city */
+.marker :is(h1, .hs-h),
+.marker .lede {
+  text-shadow:
+    0 0 18px color-mix(in srgb, var(--paper) 85%, transparent),
+    0 0 4px color-mix(in srgb, var(--paper) 70%, transparent);
+}
+/* hero lead text: darker, semi-bold and larger than body lead text, so it holds its own on the photo
+   (beats the ":root .lede" weight and colour rule further down) */
+:root .marker .lede {
+  color: color-mix(in srgb, var(--ink) 90%, #000);
+  /* only the wide, soft glow: a tight glow on the letter edges made the text look grey */
+  text-shadow: 0 0 18px color-mix(in srgb, var(--paper) 80%, transparent);
+}
+/* dark theme: the ink is light, so 10% darker would fade it; keep it at full strength */
+:root[data-theme="dark"] .marker .lede {
+  color: var(--ink);
+}
+/* a phrase set as white text on a red band (welcome slide: "learning… that works") */
+.tag-red {
+  padding: 0.05em 0.35em;
+  border-radius: 3px;
+  background: var(--red-bg, #c80000);
+  color: #fff;
+  text-shadow: none;
+  white-space: nowrap; /* the phrase stays in one piece */
+}
+/* words in a sentence that act as switches ("stop the rain", "close the blinds"): a red underline marks them
+   as clickable; once done they are struck through, and a second click undoes it */
+.in-text {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-shadow: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+}
+.in-text:hover {
+  color: var(--red-text, var(--red));
+}
+.in-text.is-done {
+  text-decoration-line: line-through;
+  text-decoration-thickness: 2px;
+}
+.in-text:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+/* blinds shut in the light theme: the slats are dark, so the hero borrows the dark theme's colours
+   (light text, light red, dark glow), exactly as it looks at night (values from glass.css) */
+:root:not([data-theme="dark"]) #window-bg.blinds-shut ~ main .hero {
+  --paper: #141619;
+  --card: #1a1d21;
+  --ink: #f0eeea;
+  --ink-2: #dad7d2;
+  --muted: #c3c0ba;
+  --line: #3a3f45;
+  --red: #ff7070;
+  --red-text: #ff7070;
+  --red-large: #ff7070;
+  --glass-card: color-mix(in srgb, #1a1d21 82%, transparent);
+  color: var(--ink);
+}
+/* availability, name line and actions sit on the client ribbon */
+.ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 28px;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.ribbon .eyebrow {
+  margin: 0;
+}
+.ribbon .cta {
+  margin: 0;
+}
+
+/* client names shown as words where there is no logo file */
+.logo-word {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  color: var(--muted);
+  opacity: 0.85;
+}
+/* service cards: one chart colour each (see the chart palette), Metability as a wide card of its own */
+.steps-h {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin: 8px 0 18px;
+}
+/* Odd last card (05) spans the row, same idea as a lone case. */
+.svc-grid > .svc-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+.svc-audience {
+  margin: 0;
+  color: var(--muted);
+  font: 400 12px/1.3 var(--display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+/* ==========================================================================
+   Cards: one shell for Services, Case studies, Client work and Tools
+   (homepage and /lt/). Builders: build-home.py, build-lt.py.
+
+   Two looks, nothing else:
+     Plain   white card, grey border (Case studies, Tools)
+     Colour  add .sv-card--colour and style="--c:var(--chart-N)": a light tint
+             of the colour, a tinted border, a 5px top edge and a soft glow in
+             the top right corner (Services, Client work)
+   Both lift a little on hover. The whole card is clickable through its
+   .sv-stretch link (theme.css).
+
+   Every card ends in one .card-actions row, pinned to the bottom:
+     left   the "Open" text link (.sv-link .sv-stretch)
+     right  "Case study", an Outline button (.sv-btn-outline .card-case)
+   Do not add another card look or another link position; change this one.
+   ========================================================================== */
+.svc-card,
+.cases > .case,
+.pfs > .pf,
+.prods > .prod {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+:is(.svc-card, .cases > .case, .pfs > .pf, .prods > .prod):is(:hover, :focus-within) {
+  transform: translateY(-3px);
+  box-shadow: var(--glass-shadow, 0 18px 40px -24px rgba(0, 0, 0, 0.35));
+}
+/* the shared card hover in theme.css changes the background; cards keep theirs */
+:root :is(.svc-card, .cases > .case, .pfs > .pf, .prods > .prod):is(:hover, :focus-within),
+:root[data-theme] :is(.svc-card, .cases > .case, .pfs > .pf, .prods > .prod):is(:hover, :focus-within) {
+  background: var(--card);
+}
+/* Colour look */
+:root .sv-card--colour,
+:root[data-theme] .sv-card--colour,
+:root[data-theme] .sv-card--colour:is(:hover, :focus-within) {
+  background: color-mix(in srgb, var(--c) 7%, var(--card));
+  border-color: color-mix(in srgb, var(--c) 30%, var(--line));
+  border-top: 5px solid var(--c);
+}
+:root .sv-card--colour:is(:hover, :focus-within) {
+  background: color-mix(in srgb, var(--c) 7%, var(--card));
+  box-shadow: 0 18px 40px -24px color-mix(in srgb, var(--c) 70%, transparent);
+}
+.sv-card--colour::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--c) 22%, transparent), transparent 70%);
+  pointer-events: none;
+}
+/* pictures at the top of a card */
+.cases > .case img,
+.pfs > .pf img,
+.prods > .prod img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--sunk);
+  position: relative;
+  z-index: 1; /* above the colour glow */
+}
+/* the action row */
+.card-actions {
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+.card-actions .sv-link {
+  margin-right: auto;
+}
+/* Services card: a container for the small charts */
+.svc-card {
+  container-type: inline-size;
+  container-name: svc-card;
+}
+.svc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.svc-n {
+  color: var(--c);
+}
+
+.svc-ic {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: var(--c);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.svc-card h3 {
+  margin: 0;
+  color: var(--ink);
+}
+/* needs-led offers: the title is a sentence, so it stays in sentence case */
+a.svc-need {
+  text-decoration: none;
+  color: inherit;
+}
+
+.svc-intro {
+  margin: -8px 0 28px;
+}
+.svc-intro p {
+  margin: 0 0 14px;
+  color: var(--ink-2);
+}
+.svc-intro p:last-child {
+  margin-bottom: 0;
+}
+.svc-card p {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+/* products line under the service cards */
+
+@media (max-width: 760px) {
+  .svc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prods-cta {
+  margin-top: 22px;
+}
+@media (max-width: 860px) {
+  .hero .wrap > div {
+    margin-left: 0;
+  }
+}
+/* hero type: eyebrow, headline, highlighted words and lead text */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 26px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--red);
+}
+/* page headline; the hero's second and third slides (.hs-h) look the same as the first slide's h1 */
+h1,
+.hs-h {
+  margin: 0;
+  text-wrap: balance;
+}
+:is(h1, .hs-h) .red {
+  color: var(--red);
+}
+:is(h1, .hs-h) .hl {
+  white-space: nowrap;
+}
+.lede {
+  margin: 30px 0 0;
+  max-width: 54ch;
+  color: var(--ink-2);
+}
+@media (max-width: 860px) {
+  .hero .wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clients {
+  border-block: 1px solid var(--line);
+}
+.clients ul {
+  list-style: none;
+  margin: 0;
+  padding: 18px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 28px;
+  justify-content: center;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* sections */
+.sec {
+  padding: clamp(64px, 9vw, 112px) 0 0;
+}
+/* Uniform column inside every section panel: same left and right inset for all blocks. */
+.sec > .wrap > * {
+  width: var(--panel-prose);
+  max-width: none;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+.sec-head {
+  display: block;
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+.sec-head h2 {
+  margin: 0;
+}
+.sec-head h2 b {
+  font-weight: 300;
+  color: var(--red);
+}
+
+/* client logos: one-colour marks that follow the theme, in a slow loop that pauses on hover */
+.clients-h {
+  margin: 0;
+  padding: 18px 0 4px;
+  text-align: center;
+  color: var(--muted);
+}
+.marquee {
+  display: flex;
+  overflow: hidden;
+  padding: 14px 0 20px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee .track {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(36px, 5vw, 64px);
+  margin: 0;
+  padding: 0 clamp(18px, 2.5vw, 32px);
+  list-style: none;
+  flex-wrap: nowrap;
+  animation: logos 60s linear infinite;
+}
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+@keyframes logos {
+  to {
+    transform: translateX(-100%);
+  }
+}
+.logo {
+  height: calc(26px + 18px / var(--r));
+  aspect-ratio: var(--r);
+  max-width: 140px;
+  background: var(--ink-2);
+  opacity: 0.78;
+  -webkit-mask: var(--m) center / contain no-repeat;
+  mask: var(--m) center / contain no-repeat;
+  transition:
+    background 0.25s,
+    opacity 0.25s;
+}
+.logo:hover {
+  background: var(--red);
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .marquee .track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 22px;
+    flex: 1;
+  }
+  .marquee .track[aria-hidden] {
+    display: none;
+  }
+}
+
+/* footer: dark band, like the classic page */
+.foot {
+  margin-top: clamp(72px, 10vw, 128px);
+  border-top: 1px solid var(--red);
+  padding: clamp(56px, 7vw, 96px) 0 clamp(96px, 10vw, 128px);
+  background: #111214;
+  color: #c9ccd1;
+}
+.foot .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px 64px;
+}
+.foot h2 {
+  margin: 0 0 12px;
+  color: #f4f2ee;
+}
+.foot h2 b {
+  font-weight: 400;
+  color: #ff7070;
+}
+.foot p {
+  margin: 0;
+  color: #a3a9b0;
+}
+.foot-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 32px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.foot-links a {
+  color: #f4f2ee;
+  text-decoration: none;
+}
+.foot a:hover {
+  color: #ff7070 !important;
+}
+.foot small {
+  flex-basis: 100%;
+  padding-top: 24px;
+  border-top: 1px solid #2a2d31;
+  color: #8d939a;
+}
+/* 'Ask my AI assistant' link */
+.ask-ai {
+  margin: 22px 0 0 !important;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.ask-ai a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-underline-offset: 4px;
+}
+
+/* at a glance: globe and the "Where the work was done" table (assets/js/glance.js) */
+/* globe and table sit inside the client panel, under the logos */
+.glance-grid {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(36px, 5vw, 64px) 0 clamp(28px, 4vw, 48px);
+}
+.g-chart {
+  height: 380px;
+}
+.glance-grid:not(.is-live) .g-chart {
+  display: none;
+}
+.g-table h2 {
+  margin: 0;
+  color: var(--ink);
+}
+.g-table h2 b {
+  font-weight: 400;
+  color: var(--red-large, var(--red));
+}
+.g-lead {
+  margin: 8px 0 18px;
+  max-width: 52ch;
+  color: var(--ink-2);
+}
+@media (max-width: 860px) {
+  .glance-grid {
+    grid-template-columns: 1fr;
+  }
+  .g-chart {
+    height: 300px;
+  }
+}
+/* who I work with: bubble chart, legend and tooltip */
+.who-svg {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  margin: 6px auto 0;
+  overflow: visible;
+}
+.who-dot {
+  cursor: pointer;
+  transition: transform 0.2s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.who-dot:hover {
+  transform: scale(1.3);
+}
+.who-n {
+  fill: var(--ink);
+}
+.who-leg {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+  color: var(--ink-2);
+}
+.who-leg span {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: 0;
+}
+.who-leg b {
+  font-weight: 600;
+  color: var(--ink);
+}
+.who-tip {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-50%, calc(-100% - 8px));
+  padding: 6px 10px;
+  background: var(--ink);
+  color: var(--paper);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.who-tip strong {
+  display: block;
+  font-weight: 600;
+}
+.who-tip.on {
+  opacity: 1;
+}
+/* calls to action */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin: 26px 0 0;
+}
+
+/* numbers strip */
+.stats {
+  background: var(--glass-panel);
+  border-bottom: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(var(--panel-blur));
+  backdrop-filter: blur(var(--panel-blur));
+}
+.stats dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.stats dl > div {
+  padding: 22px 20px;
+  border-left: 1px solid var(--line);
+}
+.stats dl > div:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+.stats dt {
+  color: var(--red-large);
+}
+.stats dd {
+  margin: 8px 0 0;
+  color: var(--ink-2);
+  max-width: 26ch;
+}
+@media (max-width: 760px) {
+  .stats dl {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stats dl > div {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+/* closing call-to-action band */
+.cta-band {
+  margin-top: clamp(40px, 5vw, 64px);
+  padding: clamp(22px, 3vw, 34px);
+  border-top: 1px solid var(--red);
+  background: var(--glass-card);
+}
+.cta-band > p:first-child {
+  margin: 0;
+  color: var(--ink-2);
+}
+.cta-band strong {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
+}
+.cta-band .cta {
+  margin-top: 18px;
+}
+/* contact section: the text sits straight on the section panel (.sec > .wrap),
+   no second panel inside it */
+.contact-panel h2 {
+  margin: 0;
+}
+.contact-panel h2 b {
+  font-weight: 400;
+  color: var(--red-large);
+}
+.contact-panel > p {
+  margin: 18px 0 0;
+  max-width: none;
+  width: 100%;
+  color: var(--ink-2);
+}
+
+/* subheading: under the heading, a 1px red rule above, larger italic lead text */
+.sec-head p {
+  margin: clamp(16px, 2vw, 22px) 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--red);
+  max-width: none;
+  width: 100%;
+  color: var(--ink-2);
+}
+.more {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* products */
+.prods {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
+}
+@media (max-width: 1200px) {
+  .prods {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.prod .prod-name {
+  margin: 4px 0 0;
+  text-transform: none;
+}
+.prod .prod-line {
+  margin: 0;
+  color: var(--ink-2);
+}
+@media (max-width: 980px) {
+  .prods {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 520px) {
+  .prods {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* cases */
+.cases {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 56px) clamp(24px, 3vw, 40px);
+}
+.case-n {
+  color: var(--red);
+}
+.case-client {
+  color: var(--muted);
+}
+.case-title {
+  margin: 0;
+  text-wrap: balance;
+}
+@media (max-width: 760px) {
+  .cases {
+    grid-template-columns: 1fr;
+  }
+}
+.sec-foot {
+  margin-top: 40px;
+}
+
+/* How I work: an accordion without JavaScript (build-home.py, build-lt.py).
+   Each step is <details name="how">, so opening one closes the others; step 01
+   starts open. The row looks like the old "what I do" list: number, heading, and
+   a plus that turns into a red cross when open. */
+.habits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.habit {
+  border-bottom: 1px solid var(--line);
+}
+.habit summary {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.habit summary::-webkit-details-marker {
+  display: none;
+}
+.habit summary::after {
+  content: "+";
+  margin-left: auto;
+  font: 300 28px/1 var(--display);
+  color: var(--muted);
+  transition:
+    transform 0.25s,
+    color 0.25s;
+}
+.habit details[open] summary::after {
+  transform: rotate(45deg);
+  color: var(--red);
+}
+.habit summary:hover h3 {
+  color: var(--red);
+}
+.habit summary:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+.habit-n {
+  flex: 0 0 18px; /* fixed, so the text below can line up with the heading */
+  color: var(--red);
+}
+.habit h3 {
+  margin: 0;
+  transition: color 0.2s;
+}
+/* the text lines up under the heading, not under the number */
+.habit-body {
+  max-width: 68ch;
+  padding: 0 0 26px calc(18px + 22px);
+}
+.habit p {
+  margin: 0;
+  color: var(--ink-2);
+}
+.habit p + p {
+  margin-top: 12px;
+}
+/* a video inside a step: 16:9, full width of the text column (from the accordion sample) */
+.habit-video {
+  position: relative;
+  margin-top: 20px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card, 12px);
+  background: var(--sunk);
+}
+.habit-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media (max-width: 560px) {
+  .habit-body {
+    padding-left: 0;
+  }
+}
+/* opening and closing slide, in browsers that can animate to "auto" height;
+   other browsers open and close instantly. Skipped with reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .habits {
+    interpolate-size: allow-keywords;
+  }
+  .habit details::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+      content-visibility 0.35s allow-discrete;
+  }
+  .habit details[open]::details-content {
+    block-size: auto;
+  }
+}
+
+/* portfolio */
+
+/* Project cards: a plain CSS grid, three columns, then two, then one.
+   Newest first (build-home.py sorts them); the filter (home.js) hides cards with [hidden]. */
+.pfs {
+  width: var(--panel-prose);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+/* after a filter click the shown cards fade and rise in (home.js adds .pf-in) */
+@media (prefers-reduced-motion: no-preference) {
+  .pfs > .pf.pf-in {
+    animation: pf-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+}
+@keyframes pf-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+/* filter buttons in one wrapping row; the buttons are the shared Outline style ([data-filter] in theme.css) */
+.pf-filters ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+.pf img {
+  filter: saturate(0.75);
+}
+.pf:hover img {
+  filter: saturate(1);
+}
+/* card colour system: sector colour = who the client is (card top edge, tint and name), grey pill = format, ink = title, red = action */
+.pf {
+  --c-text: color-mix(in srgb, var(--c) 72%, #000);
+}
+:root[data-theme="dark"] .pf,
+:root[data-theme="dark"] .pf-key li {
+  --c-text: color-mix(in srgb, var(--c) 55%, #fff);
+}
+:root[data-theme="dark"] .pf[data-sector="Own product"],
+:root[data-theme="dark"] .pf-key li:last-child {
+  --c: #d9d9d9 !important;
+}
+.pf-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-top: 4px;
+}
+:root .pf-meta {
+  color: inherit;
+  font-weight: 400;
+}
+.pf-client {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--c-text);
+}
+.pf-kind:empty {
+  display: none;
+}
+.pf-title {
+  display: block;
+  margin: 0;
+  color: var(--ink);
+}
+.pf-key {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: -14px 0 26px;
+  padding: 0;
+  color: var(--ink-2);
+}
+.pf-key li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+/* legend: a short line in the sector colour, like the cards' top edge */
+.pf-key i {
+  width: 18px;
+  height: 4px;
+  background: var(--c);
+}
+@media (max-width: 900px) {
+  .pfs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 520px) {
+  .pfs {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* testimonials: one at a time, with arrows, dots and a count (as in the case study galleries) */
+.sec-head.stack {
+  display: block;
+}
+.qs-stage {
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+.q {
+  grid-area: 1 / 1;
+  list-style: none;
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: clamp(28px, 4vw, 52px);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(14px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 0s 0.45s;
+}
+.q.is-on {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 0.45s ease,
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.q blockquote {
+  margin: 0;
+  flex: 1;
+}
+.q blockquote p {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+}
+.q blockquote p::before {
+  content: "“";
+  display: block;
+  height: 44px;
+  margin-bottom: 6px;
+  font: 400 76px/1 var(--display);
+  color: var(--red);
+}
+.q-by {
+  margin: 26px 0 0;
+}
+.q-by a {
+  text-decoration-color: var(--red);
+  text-underline-offset: 3px;
+}
+.q-by span {
+  display: block;
+  color: var(--muted);
+}
+.qs-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+/* previous / next: round Outline buttons (theme.css), the same as the case study gallery arrows */
+.qs-nav .qs-btn {
+  width: var(--tap-min);
+  padding: 0;
+  cursor: pointer;
+}
+.qs-nav .qs-btn svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.qs-dots {
+  display: flex;
+  gap: 0;
+}
+.qs-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+.qs-dot::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid var(--ink-2);
+  background: transparent;
+}
+.qs-dot::after {
+  content: none;
+}
+.qs-dot[aria-current="true"] {
+  background: transparent;
+  border-color: transparent;
+}
+.qs-dot[aria-current="true"]::before {
+  background: var(--red);
+  border-color: var(--red);
+}
+.qs-count {
+  margin-left: auto;
+  color: var(--muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  .q,
+  .q.is-on {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* keep the theme from restyling this page's own elements */
+body {
+  padding: 0 !important;
+  border: 0 !important;
+  font-family: var(--body);
+}
+a {
+  font-weight: inherit;
+  color: inherit;
+}
+
+.q blockquote {
+  padding: 0;
+  font-size: inherit;
+}
+
+.lede {
+  font-family: var(--body);
+}
+.prod-line,
+.case-title,
+.habit p,
+.sec-head p {
+  font-family: var(--body);
+}
+.case-title {
+  font-family: var(--display);
+}
+h2,
+h3 {
+  color: inherit;
+}
+h1 {
+  color: inherit;
+}
+a:hover {
+  color: var(--red);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== Readability (WCAG AA), both themes: text sits on frosted panels (opacity set globally, see glass.css),
+   so contrast holds whatever the photo or the blinds show behind them. Worst case over black:
+   ink 12.8:1, ink-2 9.6:1, muted 6.3:1, small red 5.5:1, large red 3.9:1. ===== */
+:root[data-theme="dark"] .sec > .wrap {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+:root body {
+  font-weight: 400;
+}
+:root .sec > .wrap {
+  background: var(--glass-panel);
+  -webkit-backdrop-filter: blur(var(--panel-blur)) saturate(1.1);
+  backdrop-filter: blur(var(--panel-blur)) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 24px 60px -36px rgba(20, 22, 26, 0.35);
+  padding-top: clamp(28px, 4vw, 48px);
+  padding-bottom: clamp(28px, 4vw, 48px);
+}
+
+/* the client ribbon is a panel the same width as the sections below it */
+:root .clients {
+  background: none !important;
+  border: 0;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  padding-top: clamp(24px, 4vw, 48px);
+}
+:root .clients-panel {
+  background: var(--glass-panel);
+  -webkit-backdrop-filter: blur(var(--panel-blur)) saturate(1.1);
+  backdrop-filter: blur(var(--panel-blur)) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 24px 60px -36px rgba(20, 22, 26, 0.35);
+  padding-top: clamp(28px, 4vw, 44px);
+  overflow: hidden;
+}
+:root[data-theme="dark"] .clients-panel {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+/* ribbon: name line on top, then two columns that each pair a message with its own button */
+.clients-panel .ribbon {
+  display: block;
+  padding: 0 0 clamp(26px, 3vw, 36px);
+  border-bottom: 1px solid var(--line);
+}
+.clients-panel .ribbon .eyebrow {
+  margin: 0 0 clamp(20px, 2.4vw, 28px);
+}
+.rb-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+}
+.rb-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+.rb-col + .rb-col {
+  padding-left: clamp(28px, 4vw, 56px);
+  margin-left: clamp(28px, 4vw, 56px);
+  border-left: 1px solid var(--line);
+}
+.rb-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--ink);
+}
+.rb-label .dot {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #1e8e3e;
+  box-shadow: 0 0 0 4px color-mix(in srgb, #1e8e3e 22%, transparent);
+}
+.rb-label.rb-red {
+  color: var(--red-text, var(--red));
+}
+.rb-text {
+  margin: 0;
+  flex: 1;
+  max-width: 46ch;
+  color: var(--ink-2);
+}
+
+@media (max-width: 760px) {
+  .rb-cols {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .rb-col + .rb-col {
+    padding: 26px 0 0;
+    margin: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .clients-panel .ribbon .eyebrow {
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+  }
+}
+.clients-panel .clients-h {
+  padding: clamp(22px, 3vw, 30px) 0 4px;
+}
+.clients-panel .marquee {
+  margin-inline: calc(-1 * var(--gut));
+  padding-bottom: clamp(22px, 3vw, 30px);
+}
+:root .q {
+  background: var(--glass-card) !important;
+}
+/* weights: no light (300) text on the light theme */
+
+:root .lede {
+  font-weight: 400;
+  color: var(--ink-2);
+}
+:root .sec-head p,
+:root .habit p,
+:root .prod-line,
+:root .q blockquote p {
+  color: var(--ink-2);
+}
+:root .pf-meta,
+:root .clients ul,
+:root .eyebrow {
+  color: var(--muted);
+  font-weight: 400;
+}
+:root .case-client,
+:root .q-by span,
+:root .qs-count {
+  color: var(--muted);
+}
+/* red: deeper tones for text; the brand red stays on rules, dots and fills */
+:root .sec-head h2 b,
+:root :is(h1, .hs-h) .red {
+  color: var(--red-large);
+  font-weight: 300;
+}
+:root .case-n {
+  color: var(--red-large);
+}
+
+:root .habit-n {
+  color: var(--red-text);
+}
+
+/* ==========================================================================
+   Popup (home.js): projects, tools and case studies open here.
+   A native <dialog>: a bar with the label and the close button, then the
+   page itself in a frame. The page hides its own header and footer when it
+   is framed (.cs-embed, see case-studies.css and theme.css).
+   ========================================================================== */
+html.pop-open {
+  overflow: hidden; /* the page behind does not scroll while the popup is open */
+}
+.pop {
+  width: min(96vw, 1760px);
+  max-width: none;
+  height: min(92svh, 1400px);
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+  background: var(--glass-panel);
+  -webkit-backdrop-filter: blur(var(--panel-blur)) saturate(1.3);
+  backdrop-filter: blur(var(--panel-blur)) saturate(1.3);
+  border: 1px solid var(--glass-edge);
+  border-top: 1px solid var(--red);
+  box-shadow: var(--glass-shadow);
+}
+.pop:not([open]) {
+  display: none;
+}
+/* the page behind: dimmed and blurred */
+.pop::backdrop {
+  background: var(--veil);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  backdrop-filter: blur(18px) saturate(1.15);
+}
+/* opening: a short rise and fade, and the backdrop fades in.
+   closing: home.js adds .is-closing, waits for the animation, then closes.
+   All skipped when the visitor prefers less motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .pop[open] {
+    animation: pop-in 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .pop[open]::backdrop {
+    animation: pop-fade 0.35s ease;
+  }
+  .pop.is-closing {
+    animation: pop-out 0.25s ease forwards;
+  }
+  .pop.is-closing::backdrop {
+    animation: pop-fade 0.25s ease reverse forwards;
+  }
+  .pop-x:hover {
+    transform: rotate(90deg);
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px); /* no scaling, so every target keeps its full 44px size */
+  }
+}
+@keyframes pop-out {
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@keyframes pop-fade {
+  from {
+    opacity: 0;
+  }
+}
+/* bar: a red square and the label, the close button on the right */
+.pop-bar {
+  flex: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 12px 10px 24px;
+  border-bottom: 1px solid var(--line);
+  font: 400 var(--font-size-small) / 1.2 var(--display);
+  letter-spacing: var(--letter-spacing-caps);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+/* Copy link and close sit together on the right */
+.pop-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* the close button keeps the shared round Outline look (theme.css); here it is a fixed 44px target */
+.pop-x,
+.pop-share {
+  flex: none;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  box-sizing: border-box;
+}
+.pop-label::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  background: var(--red);
+  vertical-align: 1px;
+}
+/* the page in the popup: fades in once loaded */
+.pop-frame {
+  flex: 1;
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.pop-frame.is-ready {
+  opacity: 1;
+}
+/* phones: the popup fills the screen */
+@media (max-width: 768px) {
+  .pop {
+    width: 100vw;
+    height: 100svh;
+    border: 0;
+  }
+  .pop-bar {
+    padding-left: 16px;
+  }
+}

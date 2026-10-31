@@ -1,0 +1,213 @@
+# Šarūnas Vaitkus: full summary for AI agents and crawlers
+
+> Learning experience and technology consultant since 2000. Courses, platforms, AI tools and digital adoption for UN agencies, international organisations and global businesses. Eligible to work in the EU, the UK and Australia; works remotely, or on site by arrangement.
+
+Canonical site: https://sarunasvaitkus.com/ · Updated 2026-10-31
+
+## Identity
+
+- Name: Šarūnas Vaitkus (Sarunas Vaitkus; known as Shas)
+- Role: Learning Experience & Technology Consultant
+- Working in learning and digital technology since 2000
+- Languages: English (bilingual), Lithuanian (native), Russian (spoken, professional)
+- Qualifications: Professional Diploma in Digital Learning Design, Digital Learning Institute, 2024; Certificate IV, RMIT University, 2010
+
+## Profile
+
+I have worked in learning and digital technology since 2000, from instructional writing and multimedia production to LMS/LXP architecture, UX, platform development and AI-assisted tools. I often work where learning, technology and change meet: explaining what users must do, designing the right experience and ensuring the technical delivery can support it.
+My projects have included UN learning programmes, multilingual platforms, enterprise software adoption and independent educational tools. I work directly with subject experts and within L&D, product, technology and change teams. I am comfortable defining the scope, building the learning assets, working with developers and handing the result to the people who will run it.
+I use tools such as Storyline, Rise, Synthesia, ChatGPT, Claude, Cursor and Lovable where they help with quality or turnaround. The method matters less than whether the result works for its users.
+
+## Services
+
+SAP, Dynamics, a new process or Copilot. Every new system pays off only when people use it in their daily work.
+
+The licence is paid on day one. The value comes when people can do their real work with it. I build the learning and practice layer that gets them there, end to end: change, training, e-learning and practice on the job, as one package.
+
+### "Your people have had the AI training. They still don't use it in their work."
+
+For organisations and managers. From pilot to everyday work: a Copilot agent built for your team's daily workflow, and people who actually use it. Practice on your own tasks, not slides about AI. A value check at the end: time saved, not just logins.
+
+82% vs 41%. Employees with clear leadership support use AI regularly at twice the rate of those without it. (BCG, 2025)
+
+Source: BCG, 2025 (https://www.bcg.com/publications/2025/ai-at-work-momentum-builds-but-gaps-remain)
+
+
+- From pilot to everyday work: a Copilot agent built for your team's daily workflow, and people who actually use it.
+- Practice on your own tasks, not slides about AI.
+- A value check at the end: time saved, not just logins.
+
+Chart: 1A
+Page: https://sarunasvaitkus.com/services/ai-licences/
+### "We're launching SAP, Dynamics, Workday or a new process. People need to work in it from day one."
+
+For organisations and managers. People who have practised their own tasks before go-live. A readiness check per role and per country, so nobody is surprised on launch day. Support that keeps getting better after go-live, not a one-off session.
+
+10 planned changes per employee in 2022, up from 2 in 2016. (Gartner)
+
+Source: Gartner (https://emt.gartnerweb.com/ngw/globalassets/en/insights/gartner-business-quarterly/documents/gartner_business_quarterly1q23.pdf)
+
+
+- People who have practised their own tasks before go-live.
+- A readiness check per role and per country, so nobody is surprised on launch day.
+- Support that keeps getting better after go-live, not a one-off session.
+
+Chart: 2A
+Page: https://sarunasvaitkus.com/services/system-launch/
+### "We trained people. We can't show it changed the work."
+
+For organisations and managers. From usage, to behaviour change, to business impact. Not tick-box. A one-page scorecard you can take to your budget holder. A clear view of where to coach next.
+
+63% of L&D teams say they need help measuring impact. (Synthesia, 2026)
+
+Source: Synthesia, 2026 (https://elearningindustry.com/ai-in-ld-has-passed-the-tipping-point-heres-what-the-data-shows)
+
+
+- From usage, to behaviour change, to business impact. Not tick-box.
+- A one-page scorecard you can take to your budget holder.
+- A clear view of where to coach next.
+
+Chart: 3A
+Page: https://sarunasvaitkus.com/services/training-impact/
+### "The answers are in a few people's heads and a hundred documents."
+
+For subject matter experts (SMEs) and the teams who rely on them. New starters who find answers without queuing for an expert. Your documents made ready for an assistant to answer from. Experts who see only the hard questions.
+
+9 hours a week. That is how long UK workers spend looking for the information they need. (Atlassian, 2025)
+
+Source: Atlassian, 2025 (https://www.itpro.com/business/business-strategy/digital-hide-and-seek-workers-are-wasting-hundreds-of-hours-a-year-sourcing-the-information-they-need-to-carry-out-their-role)
+
+
+- New starters who find answers without queuing for an expert.
+- Your documents made ready for an assistant to answer from.
+- Experts who see only the hard questions.
+
+Chart: 4A
+Page: https://sarunasvaitkus.com/services/expert-knowledge/
+### "Our courses are out of date, our platform is hard to use, and every update feels like a rebuild."
+
+For L&D and training teams. A clear call on every course: keep, fix, convert, rebuild or retire. Updates only where the content changed. A platform learners finish and admins can run.
+
+74% of companies say they are not keeping up with their demand for new skills. (Josh Bersin, 2026)
+
+Source: Josh Bersin, 2026 (https://jbc.joshbersin.com/new-research-how-ai-transforms-400-billion-of-corporate-learning/)
+
+
+- A clear call on every course: keep, fix, convert, rebuild or retire.
+- Updates only where the content changed.
+- A platform learners finish and admins can run.
+
+Chart: 5A
+Page: https://sarunasvaitkus.com/services/course-library/
+
+## Two ways to work together
+
+- **A fixed project:** one team, one system, one process or one course library.
+- **An interim adoption and enablement lead** for three to six months, while you hire or set up your AI academy.
+
+## Questions
+
+- **Is this only about AI?** No. A new ERP, CRM or HR system needs the same thing as Copilot: people who can do their real work with it.
+- **Do you build AI models or chatbots?** No. I build Copilot agents in your existing Microsoft 365 setup and train people to use them. Your IT team owns the deep integration.
+- **Is it safe to use AI on our content?** We agree in writing what data any tool may use before anything is built.
+
+## Case studies
+
+- [Advanced Learning World: A bilingual learning platform, launched to production in 3.5 months](https://sarunasvaitkus.com/case-studies/alw/) (Learning product and solution architecture)
+  How I represented the client's learning technology requirements for a bilingual K-12 platform built with EPAM on Open edX, launched to production in 3.5 months.
+- [UNECE SITCIN: From learning the method to using the platform: UNECE SITCIN](https://sarunasvaitkus.com/case-studies/sitcin/) (Learning, UX and platform rebuild)
+  From a multilingual UNECE learning course to a working national transport assessment platform: UX redesign, Drupal rebuild, pilot testing and handover.
+- [OSCE and UNECE eTIR: A guidance website and explainer for a new customs system](https://sarunasvaitkus.com/case-studies/etir/) (Knowledge access and communication)
+  How I scoped, designed and built the Drupal guidance website and six-minute explainer video for OSCE and UNECE eTIR, with long-term client handover.
+- [KPMG and CBRE: Learning for system change: CRM and Coupa rollouts at KPMG and CBRE](https://sarunasvaitkus.com/case-studies/system-adoption/) (Learning for digital adoption)
+  Case study on CRM and Coupa adoption at KPMG and CBRE: role-based learning, simulations and communications planned alongside change programmes.
+
+## Client work
+
+### Courses and learning
+
+- [myBuy Training](https://sarunasvaitkus.com/work/cbre-mybuy-training/) (CBRE): CBRE was introducing Coupa as myBuy. I developed task-based system simulations in Show Me, Try Me and Test Me modes, giving staff a chance to practise before go-live. I also coordinated the French adaptation.
+- [Sustainable Inland Transport Connectivity Indicators (SITCIN) module](https://sarunasvaitkus.com/work/unece-sitcin-elearning/) (UNECE): UNECE needed government officials to understand its transport-connectivity indicator framework. I designed and wrote a self-paced course of up to 180 minutes, including interactive content and AI-assisted media. The programme was prepared in English and adapted for French and Russian audiences.
+- [Online Security Management course](https://sarunasvaitkus.com/work/osce-security-management-course/) (OSCE): I designed a seven-module OSCE security-management course, built the modules in Storyline and published them to TalentLMS. The reusable course template also supported later development.
+- [Client Management Overview](https://sarunasvaitkus.com/work/kpmg-crm-training/) (KPMG): KPMG UK moved its staff to Microsoft Dynamics CRM. Working inside the change team, I built role-based e-learning, job aids and videos, so each group learned the part of the system it uses.
+- [Trainee Broker Programme](https://sarunasvaitkus.com/work/clarksons-trainee-broker-programme/) (Clarksons): Clarksons, a company of 1,379 staff in 46 offices worldwide, needed one licence programme for trainee shipbrokers. I built 20 units of competency with assessments and interactive visual aids.
+- [Keep Them Safe (KTS) Reforms Programme](https://sarunasvaitkus.com/work/nsw-keep-them-safe/) (NSW Community Services): NSW Community Services needed online training for NGO staff on the major child-protection law changes in the Keep Them Safe reforms. I built all nine modules of the programme in Adobe Captivate, with case studies to practise on. The demo is Module 1, the overview.
+
+### Video and explainers
+
+- [CBRE Restatement Playbook Evaluation](https://sarunasvaitkus.com/work/cbre-restatement-explainer/) (CBRE): CBRE needed staff to understand its restatement playbook. I wrote and storyboarded a short explainer, then produced the video using VideoScribe and Synthesia.
+- [Confidence-Building Measures Explainer](https://sarunasvaitkus.com/work/osce-cyber-cbm-explainer/) (OSCE): Part of an OSCE course on cyber and ICT confidence-building measures. I turned dense policy material into a short narrated explainer for staff and mission members.
+- [eTIR website launch promotional video](https://sarunasvaitkus.com/work/unece-etir-video/) (UNECE): The new eTIR website needed a short film to introduce the system. The TIR secretariat wrote the script, and I storyboarded, animated, edited and captioned "eTIR turn borders into bridges".
+- [The Vienna Document explainer](https://sarunasvaitkus.com/work/osce-vienna-document-explainer/) (OSCE): Part of the OSCE Forum for Security Co-operation programme for participating States and their points of contact. A short explainer of the Vienna Document and what it asks of each State.
+- [Confidence-building measures explainer](https://sarunasvaitkus.com/work/osce-csbm-explainer/) (OSCE): Part of the same Forum for Security Co-operation programme. It explains confidence- and security-building measures in a few minutes, with animation and AI video.
+
+### Interactions and simulations
+
+- [FOD & Safety Awareness refresher](https://sarunasvaitkus.com/work/marshall-fod-microlearning/) (Marshall ADG): A micro-learning refresher for the Marshall Aerospace and Defence Group training centre on foreign object debris and the habits that keep a site safe. Rise modules with Synthesia video, edited in Premiere.
+- [Custom Articulate Storyline 360 interaction](https://sarunasvaitkus.com/work/kpmg-storyline-interaction/) (KPMG): A custom Storyline 360 interaction from the KPMG system rollout training, where staff practise a step before they meet it in the live system.
+- [Custom Articulate Storyline 360 interaction](https://sarunasvaitkus.com/work/osce-storyline-interaction/) (OSCE): A custom Storyline 360 interaction built for an OSCE staff course.
+- [Interaction: Clean Tanker Routes](https://sarunasvaitkus.com/work/clarksons-tanker-routes/) (Clarksons): Trainee brokers at Clarksons had to learn the six Baltic Clean Tanker routes and the cargo each one carries. I turned the route data into an interactive map they explore at their own pace.
+
+### Platforms and websites
+
+- [UNECE eTIR Website](https://sarunasvaitkus.com/work/unece-etir-website/) (UNECE): Customs authorities and transport associations needed clear, role-specific guidance on the eTIR system. I scoped, designed and built the Drupal website with the OSCE and UNECE, including a searchable documentation structure and administrator handover.
+- [UNECE SITCIN Website](https://sarunasvaitkus.com/work/unece-sitcin-website/) (UNECE): UNECE asked for a public-site redesign. The audit revealed a deeper problem: officials could not complete an assessment reliably. I redesigned the focal point experience and rebuilt the core Drupal workflow, added new indicators and supported a three-country pilot. Live since June 2026.
+- [Advanced Learning World platform](https://sarunasvaitkus.com/work/advanced-learning-world-platform/) (Advanced Learning World): Advanced Learning World is a bilingual, mentor-led platform for Saudi K-12 students, built on Open edX with a custom front end. As Learning Technology Lead and Solution Architect, I represented the client across content, UX, platform requirements and testing, working with delivery partner EPAM.
+- [Advanced Learning Company website](https://sarunasvaitkus.com/work/advanced-learning-company-website/) (Advanced Learning Company): The Advanced Learning Company website supported the learning business and its product launch. I helped define the structure, design the pages and build the website in 2016, then updated it for the 2020 platform release.
+
+### Apps and tools
+
+- [Knowledge visualisation app](https://sarunasvaitkus.com/work/clarksons-knowledge-map/) (Clarksons): I developed an interactive knowledge map to help Clarksons staff explore the relationships between the company's information and terminology.
+- [Abbreviation/Glossary App](https://sarunasvaitkus.com/work/clarksons-glossary-app/) (Clarksons): Shipping runs on abbreviations. I built a searchable glossary app so Clarksons staff can find any term and its meaning in seconds, by search or by category.
+
+## Tools I build and run
+
+### Apps and tools
+
+- [FlexTab: tab, slider and accordion configurator](https://sarunasvaitkus.com/work/flextab/) (Own product): A live configurator for tabs, sliders, flip cards and accordions. Change typography, layout, colours and effects, then export HTML and CSS for learning modules or websites.
+- [SCORM Package Editor](https://sarunasvaitkus.com/work/scorm-package-editor/) (Own product): A browser-based tool for inspecting and editing SCORM packages. Open a ZIP file, explore the course assets, make targeted edits and export an updated package.
+- [VibeList](https://sarunasvaitkus.com/work/vibelist/) (Own product): An organised directory of AI building tools, including information about exporting and retaining your work. I use it to compare software before committing a project to a tool.
+- [metability bot tutorials](https://sarunasvaitkus.com/work/bot-tutorials/) (Own product): A public library of short prompt guides that show how to hand a job you keep repeating to an AI bot, step by step, with prompts ready to copy. Topics include setting up Google Analytics and Tag Manager, shipping site changes through a preview first, keeping AI agents safe, or running a small team of bots. Every guide also opens as markdown that an agent can follow.
+- [Vaikend: family events search](https://sarunasvaitkus.com/work/vaikend/) (Own product): Curated, directly searchable events for families in Vilnius (Kaunas coming soon). Pick a date range, filter by children's age and choose from trusted local sources.
+- [Kidness: exercise app for children](https://sarunasvaitkus.com/work/kidness/) (Own product): An experiment that helps children exercise for 15 minutes a day with no equipment. Kids pick a name, an avatar and a colour theme, then follow bodyweight exercise demos.
+- [LT·GOV: who holds power in Lithuania](https://sarunasvaitkus.com/work/lt-gov/) (Own product): A bilingual interactive map that teaches who exercises state power in Lithuania and where that authority comes from. It links constitutional provisions to offices, elections and guided classroom stories.
+- [Design Atlas: 51 web styles](https://sarunasvaitkus.com/work/design-atlas/) (Own product): A visual reference and learning resource covering 51 design styles. Each page demonstrates a style, explains its origins and includes a prompt that can be adapted for an AI-assisted design tool.
+- [LT School Atlas: schools compared](https://sarunasvaitkus.com/work/lt-school-atlas/) (Own product): A comparison tool for families and educators exploring private and international schools in Lithuania. Schools can be filtered by curriculum, teaching language and qualification.
+- [School Tracker for Parents](https://sarunasvaitkus.com/work/school-tracker/) (Own product): A Grok Bot template a parent imports, so school updates land in one daily message and a weekly dashboard. The demo uses fictional names and figures.
+
+## Experience (most recent first)
+
+- Bayer plc: Learning Experience Designer (May 2023 to 2026)
+- OSCE (Organization for Security and Co-operation in Europe): Learning consultant and preferred eLearning supplier (Nov 2016 – present, Vienna (remote))
+- UNECE: Freelance contractor, SITCIN platform (2025 to 2026, Switzerland (remote))
+- CBRE UK: Training Lead (Aug 2022 – Dec 2022, London (remote))
+- UNECE: Learning designer and web developer, SITCIN e-course (Oct 2021 – Jul 2022, Switzerland (remote))
+- Inspire Education (RTO 32067): L&D Consultant, project lead (Sep 2021 – May 2022, Brisbane (remote))
+- UNECE, via OSCE: Learning multimedia designer and web developer, eTIR (Oct 2020 – May 2021, Switzerland (remote))
+- Advanced Learning Company: Learning Technology Lead and Solution Architect (Mar 2020 – Dec 2020, Riyadh (remote))
+- KPMG UK: Instructional Designer / Training Developer (Feb 2017 – Oct 2019, London (on site))
+- Clarksons Platou: E-learning Specialist (design, development, PM) (Apr 2014 – Jul 2015, London)
+- C-Learning (LearningSeat by Litmos): Interactive Design Manager, Implementation Specialist (Jan 2002 – Aug 2011, Melbourne)
+
+Full history: https://sarunasvaitkus.com/cv/#cv-print
+
+## Ask an AI assistant (for agents)
+
+An AI assistant answers questions about Šarūnas Vaitkus's work from his published material. It is an AI, not Šarūnas. Quotes, rates, availability and contract terms are handed off to him.
+
+- JSON: POST https://bmtnfhppzrkztmqzwrhx.supabase.co/functions/v1/ask with {"question": "..."}
+- MCP (Streamable HTTP): https://bmtnfhppzrkztmqzwrhx.supabase.co/functions/v1/mcp, tool `ask_about_sarunas`
+
+## Profiles and contact
+
+- Contact form: https://sarunasvaitkus.com/#contact (he normally replies within two working days)
+- Privacy: https://sarunasvaitkus.com/privacy/ (Lithuanian: https://sarunasvaitkus.com/lt/privatumas/)
+- LinkedIn: https://www.linkedin.com/in/vaitkus
+- Upwork: https://www.upwork.com/freelancers/vaitkus
+- Metability (his own learning app, founded 2025): https://metability.ai — Learn. Forget. Repeat. Metability helps organisations work out what their people need to learn, in what order, and how to keep it from fading after the course. Run by Šarūnas Vaitkus.
+
+## Notes for agents
+
+- Cite the specific project or case study page. Each has its own title, description and JSON-LD (CreativeWork, SoftwareApplication or Article, with breadcrumbs).
+- Demos open from their project pages. Some client demos are shown with permission and are not separate pages.
+- For rates, availability or terms, send people to the contact form; the AI assistant does not answer those.
