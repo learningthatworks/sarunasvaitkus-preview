@@ -1,0 +1,880 @@
+{
+  "schema_version": "3.1.0",
+  "updated_at": "2026-10-05",
+  "id": "eu",
+  "name": {
+    "en": "European Parliament representatives",
+    "lt": "Europos Parlamento atstovai"
+  },
+  "sources": {
+    "en": "Sitting MEPs and EP groups: European Parliament (europarl.europa.eu, Lithuania, 10th term). 2024 election allocation: VRK official results (11 seats). Europarty membership: official PES, EPP, ALDE, European Greens and ECR Party member lists. Legal basis: Electoral Code of the Republic of Lithuania. No invented affiliations.",
+    "lt": "Einamieji EP nariai ir frakcijos: Europos Parlamentas (europarl.europa.eu, Lietuva, 10-oji kadencija). 2024 m. mandatų paskirstymas: oficialūs VRK rezultatai (11 mandatų). Europartijų narystė: oficialūs PES, EPP, ALDE, Europos žaliųjų ir ECR partijos narių sąrašai. Teisinis pagrindas: Lietuvos Respublikos rinkimų kodeksas. Priklausomybės neišgalvotos."
+  },
+  "documents": {
+    "electoral-code": {
+      "name": {
+        "en": "Electoral Code of the Republic of Lithuania",
+        "lt": "Lietuvos Respublikos rinkimų kodeksas"
+      },
+      "short": {
+        "en": "Electoral Code",
+        "lt": "Rinkimų kodeksas"
+      },
+      "url": {
+        "lt": "https://www.e-tar.lt/portal/lt/legalAct/418f26f0082b11edb4cae1b158f98ea5",
+        "en": "https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/44e06821075711edbfe9c72e552dd5bd"
+      }
+    }
+  },
+  "ep": {
+    "term": 10,
+    "term_start": "2024-07-16",
+    "term_end": "2029",
+    "seats": 11,
+    "election": "2024-06-09",
+    "election_name": {
+      "en": "2024 European Parliament election in Lithuania",
+      "lt": "2024 m. rinkimai į Europos Parlamentą Lietuvoje"
+    }
+  },
+  "ep_groups": [
+    {
+      "id": "sd",
+      "abbr": "S&D",
+      "name": {
+        "en": "Group of the Progressive Alliance of Socialists and Democrats in the European Parliament",
+        "lt": "Europos Parlamento socialistų ir demokratų pažangiojo aljanso frakcija"
+      },
+      "short": {
+        "en": "S&D",
+        "lt": "S&D"
+      },
+      "website": "https://www.socialistsanddemocrats.eu/"
+    },
+    {
+      "id": "epp-g",
+      "abbr": "EPP",
+      "name": {
+        "en": "Group of the European People's Party (Christian Democrats)",
+        "lt": "Europos liaudies partijos (krikščionių demokratų) frakcija"
+      },
+      "short": {
+        "en": "EPP Group",
+        "lt": "ELP frakcija"
+      },
+      "website": "https://www.eppgroup.eu/"
+    },
+    {
+      "id": "renew",
+      "abbr": "Renew",
+      "name": {
+        "en": "Renew Europe Group",
+        "lt": "Frakcija „Renew Europe“"
+      },
+      "short": {
+        "en": "Renew Europe",
+        "lt": "Renew Europe"
+      },
+      "website": "https://www.reneweuropegroup.eu/"
+    },
+    {
+      "id": "greens-efa",
+      "abbr": "Greens/EFA",
+      "name": {
+        "en": "Group of the Greens/European Free Alliance",
+        "lt": "Žaliųjų frakcija / Europos laisvasis aljansas"
+      },
+      "short": {
+        "en": "Greens/EFA",
+        "lt": "Žalieji/ELA"
+      },
+      "website": "https://www.greens-efa.eu/"
+    },
+    {
+      "id": "ecr-g",
+      "abbr": "ECR",
+      "name": {
+        "en": "European Conservatives and Reformists Group",
+        "lt": "Europos konservatorių ir reformuotojų frakcija"
+      },
+      "short": {
+        "en": "ECR Group",
+        "lt": "EKR frakcija"
+      },
+      "website": "https://ecrgroup.eu/"
+    },
+    {
+      "id": "esn",
+      "abbr": "ESN",
+      "name": {
+        "en": "Europe of Sovereign Nations Group",
+        "lt": "Suverenių tautų Europos frakcija"
+      },
+      "short": {
+        "en": "ESN",
+        "lt": "ESN"
+      },
+      "website": "https://esn-group.eu/"
+    }
+  ],
+  "europarties": [
+    {
+      "id": "pes",
+      "abbr": "PES",
+      "name": {
+        "en": "Party of European Socialists",
+        "lt": "Europos socialistų partija"
+      },
+      "short": {
+        "en": "PES",
+        "lt": "PES"
+      },
+      "website": "https://pes.eu/"
+    },
+    {
+      "id": "epp",
+      "abbr": "EPP",
+      "name": {
+        "en": "European People's Party",
+        "lt": "Europos liaudies partija"
+      },
+      "short": {
+        "en": "EPP",
+        "lt": "ELP"
+      },
+      "website": "https://www.epp.eu/"
+    },
+    {
+      "id": "alde",
+      "abbr": "ALDE",
+      "name": {
+        "en": "Alliance of Liberals and Democrats for Europe Party",
+        "lt": "Europos liberalų ir demokratų aljanso partija"
+      },
+      "short": {
+        "en": "ALDE Party",
+        "lt": "ALDE partija"
+      },
+      "website": "https://www.aldeparty.eu/"
+    },
+    {
+      "id": "egp",
+      "abbr": "EGP",
+      "name": {
+        "en": "European Green Party",
+        "lt": "Europos žaliųjų partija"
+      },
+      "short": {
+        "en": "European Greens",
+        "lt": "Europos žalieji"
+      },
+      "website": "https://europeangreens.eu/"
+    },
+    {
+      "id": "ecr-party",
+      "abbr": "ECR Party",
+      "name": {
+        "en": "European Conservatives and Reformists Party",
+        "lt": "Europos konservatorių ir reformuotojų partija"
+      },
+      "short": {
+        "en": "ECR Party",
+        "lt": "EKR partija"
+      },
+      "website": "https://ecrparty.eu/"
+    }
+  ],
+  "parties": [
+    {
+      "id": "lsdp",
+      "abbr": "LSDP",
+      "name": {
+        "en": "Social Democratic Party of Lithuania",
+        "lt": "Lietuvos socialdemokratų partija"
+      },
+      "short": {
+        "en": "Social Democrats",
+        "lt": "Socialdemokratai"
+      },
+      "color": "#e30613",
+      "note": {
+        "en": "Label source for the EP view if seimas.json is unavailable. Seimas seats stay in seimas.json.",
+        "lt": "EP vaizdo etiketės, jei seimas.json neįkeliamas. Seimo mandatai lieka seimas.json."
+      }
+    },
+    {
+      "id": "tslkd",
+      "abbr": "TS-LKD",
+      "name": {
+        "en": "Homeland Union – Lithuanian Christian Democrats",
+        "lt": "Tėvynės sąjunga – Lietuvos krikščionys demokratai"
+      },
+      "short": {
+        "en": "Homeland Union",
+        "lt": "Tėvynės sąjunga"
+      },
+      "color": "#00a3e0",
+      "note": {
+        "en": "Label source for the EP view if seimas.json is unavailable. Seimas seats stay in seimas.json.",
+        "lt": "EP vaizdo etiketės, jei seimas.json neįkeliamas. Seimo mandatai lieka seimas.json."
+      }
+    },
+    {
+      "id": "lvzs",
+      "abbr": "LVŽS",
+      "name": {
+        "en": "Lithuanian Farmers and Greens Union",
+        "lt": "Lietuvos valstiečių ir žaliųjų sąjunga"
+      },
+      "short": {
+        "en": "Farmers and Greens",
+        "lt": "Valstiečiai ir žalieji"
+      },
+      "color": "#16a34a",
+      "note": {
+        "en": "Label source for the EP view if seimas.json is unavailable. Seimas seats stay in seimas.json.",
+        "lt": "EP vaizdo etiketės, jei seimas.json neįkeliamas. Seimo mandatai lieka seimas.json."
+      }
+    },
+    {
+      "id": "dsvl",
+      "abbr": "DSVL",
+      "name": {
+        "en": "Union of Democrats “For Lithuania”",
+        "lt": "Demokratų sąjunga „Vardan Lietuvos“"
+      },
+      "short": {
+        "en": "Democrats “For Lithuania”",
+        "lt": "Demokratai „Vardan Lietuvos“"
+      },
+      "color": "#7c3aed",
+      "note": {
+        "en": "Label source for the EP view if seimas.json is unavailable. Seimas seats stay in seimas.json.",
+        "lt": "EP vaizdo etiketės, jei seimas.json neįkeliamas. Seimo mandatai lieka seimas.json."
+      }
+    },
+    {
+      "id": "llra",
+      "abbr": "LLRA-KŠS",
+      "name": {
+        "en": "Electoral Action of Poles in Lithuania – Christian Families Alliance",
+        "lt": "Lietuvos lenkų rinkimų akcija – Krikščioniškų šeimų sąjunga"
+      },
+      "short": {
+        "en": "Polish Electoral Action",
+        "lt": "Lenkų rinkimų akcija"
+      },
+      "color": "#b91c1c",
+      "note": {
+        "en": "Label source for the EP view if seimas.json is unavailable. Seimas seats stay in seimas.json.",
+        "lt": "EP vaizdo etiketės, jei seimas.json neįkeliamas. Seimo mandatai lieka seimas.json."
+      }
+    },
+    {
+      "id": "ls",
+      "abbr": "LS",
+      "name": {
+        "en": "Liberal Movement",
+        "lt": "Liberalų sąjūdis"
+      },
+      "short": {
+        "en": "Liberals",
+        "lt": "Liberalų sąjūdis"
+      },
+      "color": "#f59e0b",
+      "note": {
+        "en": "Label source for the EP view if seimas.json is unavailable. Seimas seats stay in seimas.json.",
+        "lt": "EP vaizdo etiketės, jei seimas.json neįkeliamas. Seimo mandatai lieka seimas.json."
+      }
+    },
+    {
+      "id": "lp",
+      "abbr": "LP",
+      "name": {
+        "en": "Freedom Party",
+        "lt": "Laisvės partija"
+      },
+      "short": {
+        "en": "Freedom Party",
+        "lt": "Laisvės partija"
+      },
+      "color": "#ec4899",
+      "seats": 0,
+      "coalition": false,
+      "website": "https://laisvespartija.lt/",
+      "note": {
+        "en": "No Seimas seats in the 2024–2028 term. One MEP. Not added to seimas.json so the Seimas hemicycle stays unchanged.",
+        "lt": "2024–2028 m. kadencijoje Seime mandatų neturi. Vienas EP narys. Neįtraukta į seimas.json, kad Seimo vizualizacija nesikeistų."
+      }
+    },
+    {
+      "id": "tts",
+      "abbr": "TTS",
+      "name": {
+        "en": "People and Justice Union (Centrists, Nationalists)",
+        "lt": "Tautos ir teisingumo sąjunga (centristai, tautininkai)"
+      },
+      "short": {
+        "en": "People and Justice Union",
+        "lt": "Tautos ir teisingumo sąjunga"
+      },
+      "color": "#1e3a8a",
+      "seats": 0,
+      "coalition": false,
+      "website": "https://tautateisingumas.lt/",
+      "note": {
+        "en": "No Seimas seats recorded in seimas.json. One MEP. Not added to seimas.json so the Seimas hemicycle stays unchanged.",
+        "lt": "seimas.json Seimo mandatų neregistruoja. Vienas EP narys. Neįtraukta į seimas.json, kad Seimo vizualizacija nesikeistų."
+      }
+    }
+  ],
+  "meps": [
+    {
+      "id": "mep-andriukaitis",
+      "ep_id": 119652,
+      "name": {
+        "en": "Vytenis Povilas Andriukaitis",
+        "lt": "Vytenis Povilas Andriukaitis"
+      },
+      "party": "lsdp",
+      "ep_group": "sd",
+      "since": "2024-07-16",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/119652/VYTENIS_POVILAS_ANDRIUKAITIS/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/119652/VYTENIS_POVILAS_ANDRIUKAITIS/home"
+      }
+    },
+    {
+      "id": "mep-blinkeviciute",
+      "ep_id": 96681,
+      "name": {
+        "en": "Vilija Blinkevičiūtė",
+        "lt": "Vilija Blinkevičiūtė"
+      },
+      "party": "lsdp",
+      "ep_group": "sd",
+      "since": "2024-07-16",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/96681/VILIJA_BLINKEVICIUTE/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/96681/VILIJA_BLINKEVICIUTE/home"
+      }
+    },
+    {
+      "id": "mep-jukneviciene",
+      "ep_id": 197840,
+      "name": {
+        "en": "Rasa Juknevičienė",
+        "lt": "Rasa Juknevičienė"
+      },
+      "party": "tslkd",
+      "ep_group": "epp-g",
+      "since": "2024-07-16",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/197840/RASA_JUKNEVICIENE/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/197840/RASA_JUKNEVICIENE/home"
+      }
+    },
+    {
+      "id": "mep-saudargas",
+      "ep_id": 256809,
+      "name": {
+        "en": "Paulius Saudargas",
+        "lt": "Paulius Saudargas"
+      },
+      "party": "tslkd",
+      "ep_group": "epp-g",
+      "since": "2024-07-16",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/256809/PAULIUS_SAUDARGAS/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/256809/PAULIUS_SAUDARGAS/home"
+      }
+    },
+    {
+      "id": "mep-mazylis",
+      "ep_id": 197841,
+      "name": {
+        "en": "Liudas Mažylis",
+        "lt": "Liudas Mažylis"
+      },
+      "party": "tslkd",
+      "ep_group": "epp-g",
+      "since": "2024-12-05",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/197841/LIUDAS_MAZYLIS/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/197841/LIUDAS_MAZYLIS/home"
+      },
+      "note": {
+        "en": "Took the TS-LKD seat on 5 December 2024 after Andrius Kubilius left the Parliament on 30 November 2024 to become European Commissioner for Defence and Space.",
+        "lt": "TS-LKD mandatą perėmė 2024 m. gruodžio 5 d., kai Andrius Kubilius 2024 m. lapkričio 30 d. paliko Parlamentą ir tapo Europos Komisijos nariu, atsakingu už gynybą ir kosmosą."
+      }
+    },
+    {
+      "id": "mep-veryga",
+      "ep_id": 256811,
+      "name": {
+        "en": "Aurelijus Veryga",
+        "lt": "Aurelijus Veryga"
+      },
+      "party": "lvzs",
+      "ep_group": "ecr-g",
+      "since": "2024-07-16",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/256811/AURELIJUS_VERYGA/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/256811/AURELIJUS_VERYGA/home"
+      }
+    },
+    {
+      "id": "mep-zalimas",
+      "ep_id": 256807,
+      "name": {
+        "en": "Dainius Žalimas",
+        "lt": "Dainius Žalimas"
+      },
+      "party": "lp",
+      "ep_group": "renew",
+      "since": "2024-07-16",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/256807/DAINIUS_ZALIMAS/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/256807/DAINIUS_ZALIMAS/home"
+      }
+    },
+    {
+      "id": "mep-sinkevicius",
+      "ep_id": 201945,
+      "name": {
+        "en": "Virginijus Sinkevičius",
+        "lt": "Virginijus Sinkevičius"
+      },
+      "party": "dsvl",
+      "ep_group": "greens-efa",
+      "since": "2024-07-16",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/201945/VIRGINIJUS_SINKEVICIUS/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/201945/VIRGINIJUS_SINKEVICIUS/home"
+      }
+    },
+    {
+      "id": "mep-tomaszewski",
+      "ep_id": 96697,
+      "name": {
+        "en": "Waldemar Tomaszewski",
+        "lt": "Valdemar Tomaševski"
+      },
+      "party": "llra",
+      "ep_group": "ecr-g",
+      "since": "2024-07-16",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/96697/WALDEMAR_TOMASZEWSKI/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/96697/WALDEMAR_TOMASZEWSKI/home"
+      }
+    },
+    {
+      "id": "mep-grazulis",
+      "ep_id": 256808,
+      "name": {
+        "en": "Petras Gražulis",
+        "lt": "Petras Gražulis"
+      },
+      "party": "tts",
+      "ep_group": "esn",
+      "since": "2024-07-16",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/256808/PETRAS_GRAZULIS/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/256808/PETRAS_GRAZULIS/home"
+      }
+    },
+    {
+      "id": "mep-austrevicius",
+      "ep_id": 124766,
+      "name": {
+        "en": "Petras Auštrevičius",
+        "lt": "Petras Auštrevičius"
+      },
+      "party": "ls",
+      "ep_group": "renew",
+      "since": "2024-07-16",
+      "profile": {
+        "en": "https://www.europarl.europa.eu/meps/en/124766/PETRAS_AUSTREVICIUS/home",
+        "lt": "https://www.europarl.europa.eu/meps/lt/124766/PETRAS_AUSTREVICIUS/home"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "from": "mep-andriukaitis",
+      "to": "lsdp",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-blinkeviciute",
+      "to": "lsdp",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-jukneviciene",
+      "to": "tslkd",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-saudargas",
+      "to": "tslkd",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-mazylis",
+      "to": "tslkd",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-veryga",
+      "to": "lvzs",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-zalimas",
+      "to": "lp",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-sinkevicius",
+      "to": "dsvl",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-tomaszewski",
+      "to": "llra",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-grazulis",
+      "to": "tts",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-austrevicius",
+      "to": "ls",
+      "from_kind": "mep",
+      "to_kind": "party",
+      "type": "member_of"
+    },
+    {
+      "from": "mep-andriukaitis",
+      "to": "sd",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "mep-blinkeviciute",
+      "to": "sd",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "mep-jukneviciene",
+      "to": "epp-g",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "mep-saudargas",
+      "to": "epp-g",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "mep-mazylis",
+      "to": "epp-g",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "mep-veryga",
+      "to": "ecr-g",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "mep-zalimas",
+      "to": "renew",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "mep-sinkevicius",
+      "to": "greens-efa",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "mep-tomaszewski",
+      "to": "ecr-g",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "mep-grazulis",
+      "to": "esn",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "mep-austrevicius",
+      "to": "renew",
+      "from_kind": "mep",
+      "to_kind": "ep_group",
+      "type": "sits_in"
+    },
+    {
+      "from": "lsdp",
+      "to": "pes",
+      "from_kind": "party",
+      "to_kind": "europarty",
+      "type": "member_of",
+      "sources": [
+        "https://pes.eu/member/lietuvos-socialdemokratu-partija-lithuanian-social-democratic-party/"
+      ]
+    },
+    {
+      "from": "tslkd",
+      "to": "epp",
+      "from_kind": "party",
+      "to_kind": "europarty",
+      "type": "member_of",
+      "sources": [
+        "https://www.epp.eu/parties-and-partners/",
+        "https://appf.europa.eu/cmsdata/281915/EPP%20List%20of%20Full%20Members%202024-03-20.pdf"
+      ]
+    },
+    {
+      "from": "ls",
+      "to": "alde",
+      "from_kind": "party",
+      "to_kind": "europarty",
+      "type": "member_of",
+      "sources": [
+        "https://www.aldeparty.eu/member-parties/lithuania"
+      ]
+    },
+    {
+      "from": "lp",
+      "to": "alde",
+      "from_kind": "party",
+      "to_kind": "europarty",
+      "type": "member_of",
+      "sources": [
+        "https://www.aldeparty.eu/member-parties/lithuania"
+      ]
+    },
+    {
+      "from": "dsvl",
+      "to": "egp",
+      "from_kind": "party",
+      "to_kind": "europarty",
+      "type": "member_of",
+      "sources": [
+        "https://europeangreens.eu/our-member-parties/lt/"
+      ]
+    },
+    {
+      "from": "lvzs",
+      "to": "ecr-party",
+      "from_kind": "party",
+      "to_kind": "europarty",
+      "type": "member_of",
+      "note": {
+        "en": "Full member of the ECR Party from 14 January 2025 (ECR Party Council, Brussels).",
+        "lt": "Visateisė ECR partijos narė nuo 2025 m. sausio 14 d. (ECR partijos Taryba, Briuselis)."
+      },
+      "sources": [
+        "https://ecrparty.eu/about-us/"
+      ]
+    },
+    {
+      "from": "llra",
+      "to": "ecr-party",
+      "from_kind": "party",
+      "to_kind": "europarty",
+      "type": "member_of",
+      "sources": [
+        "https://ecrparty.eu/about-us/"
+      ]
+    },
+    {
+      "from": "lsdp",
+      "to": "sd",
+      "from_kind": "party",
+      "to_kind": "ep_group",
+      "type": "sits_in",
+      "via": "meps",
+      "note": {
+        "en": "Derived from the party's sitting MEPs, not a separate group-membership instrument.",
+        "lt": "Išvesta iš einamųjų partijos EP narių frakcijų, ne iš atskiro frakcijos narystės dokumento."
+      }
+    },
+    {
+      "from": "tslkd",
+      "to": "epp-g",
+      "from_kind": "party",
+      "to_kind": "ep_group",
+      "type": "sits_in",
+      "via": "meps",
+      "note": {
+        "en": "Derived from the party's sitting MEPs, not a separate group-membership instrument.",
+        "lt": "Išvesta iš einamųjų partijos EP narių frakcijų, ne iš atskiro frakcijos narystės dokumento."
+      }
+    },
+    {
+      "from": "ls",
+      "to": "renew",
+      "from_kind": "party",
+      "to_kind": "ep_group",
+      "type": "sits_in",
+      "via": "meps",
+      "note": {
+        "en": "Derived from the party's sitting MEPs, not a separate group-membership instrument.",
+        "lt": "Išvesta iš einamųjų partijos EP narių frakcijų, ne iš atskiro frakcijos narystės dokumento."
+      }
+    },
+    {
+      "from": "lp",
+      "to": "renew",
+      "from_kind": "party",
+      "to_kind": "ep_group",
+      "type": "sits_in",
+      "via": "meps",
+      "note": {
+        "en": "Derived from the party's sitting MEPs, not a separate group-membership instrument.",
+        "lt": "Išvesta iš einamųjų partijos EP narių frakcijų, ne iš atskiro frakcijos narystės dokumento."
+      }
+    },
+    {
+      "from": "dsvl",
+      "to": "greens-efa",
+      "from_kind": "party",
+      "to_kind": "ep_group",
+      "type": "sits_in",
+      "via": "meps",
+      "note": {
+        "en": "Derived from the party's sitting MEPs, not a separate group-membership instrument.",
+        "lt": "Išvesta iš einamųjų partijos EP narių frakcijų, ne iš atskiro frakcijos narystės dokumento."
+      }
+    },
+    {
+      "from": "lvzs",
+      "to": "ecr-g",
+      "from_kind": "party",
+      "to_kind": "ep_group",
+      "type": "sits_in",
+      "via": "meps",
+      "note": {
+        "en": "Derived from the party's sitting MEPs, not a separate group-membership instrument.",
+        "lt": "Išvesta iš einamųjų partijos EP narių frakcijų, ne iš atskiro frakcijos narystės dokumento."
+      }
+    },
+    {
+      "from": "llra",
+      "to": "ecr-g",
+      "from_kind": "party",
+      "to_kind": "ep_group",
+      "type": "sits_in",
+      "via": "meps",
+      "note": {
+        "en": "Derived from the party's sitting MEPs, not a separate group-membership instrument.",
+        "lt": "Išvesta iš einamųjų partijos EP narių frakcijų, ne iš atskiro frakcijos narystės dokumento."
+      }
+    },
+    {
+      "from": "tts",
+      "to": "esn",
+      "from_kind": "party",
+      "to_kind": "ep_group",
+      "type": "sits_in",
+      "via": "meps",
+      "informal": true,
+      "note": {
+        "en": "No sourced TTS membership of a registered European political party. The ESN link is the sitting MEP's European Parliament group only.",
+        "lt": "Nėra patvirtintos TTS narystės registruotoje Europos politinėje partijoje. ESN ryšys – tik einamojo EP nario frakcija."
+      }
+    }
+  ],
+  "citations": [
+    {
+      "id": "europarl-lt-meps",
+      "name": {
+        "en": "European Parliament: MEPs from Lithuania",
+        "lt": "Europos Parlamentas: EP nariai iš Lietuvos"
+      },
+      "url": "https://www.europarl.europa.eu/meps/en/search/advanced?countryCode=LT"
+    },
+    {
+      "id": "europarl-lt-xml",
+      "name": {
+        "en": "European Parliament: Lithuania MEPs (XML)",
+        "lt": "Europos Parlamentas: Lietuvos EP nariai (XML)"
+      },
+      "url": "https://www.europarl.europa.eu/meps/en/download/advanced/xml?countryCode=LT"
+    },
+    {
+      "id": "vrk-2024",
+      "name": {
+        "en": "Central Electoral Commission: 9 June 2024 European Parliament election",
+        "lt": "Vyriausioji rinkimų komisija: 2024 m. birželio 9 d. Europos Parlamento rinkimai"
+      },
+      "url": "https://www.vrk.lt/2024-europos-parlamento/rezultatai"
+    },
+    {
+      "id": "vrk-results-etar",
+      "name": {
+        "en": "VRK vote-counting and results protocol (TAR)",
+        "lt": "VRK balsų skaičiavimo ir rezultatų nustatymo protokolas (TAR)"
+      },
+      "url": "https://e-tar.lt/rs/lasupplement/01ba29102be411efbdaea558de59136c/f9a573d02bf011efbdaea558de59136c/format/ISO_PDF/"
+    },
+    {
+      "id": "mazylis-history",
+      "name": {
+        "en": "European Parliament: Liudas Mažylis, 10th term (from 5 December 2024)",
+        "lt": "Europos Parlamentas: Liudas Mažylis, 10-oji kadencija (nuo 2024 m. gruodžio 5 d.)"
+      },
+      "url": "https://www.europarl.europa.eu/meps/en/197841/LIUDAS_MAZYLIS/history/10"
+    },
+    {
+      "id": "kubilius-history",
+      "name": {
+        "en": "European Parliament: Andrius Kubilius, 10th term (until 30 November 2024)",
+        "lt": "Europos Parlamentas: Andrius Kubilius, 10-oji kadencija (iki 2024 m. lapkričio 30 d.)"
+      },
+      "url": "https://www.europarl.europa.eu/meps/en/197843/ANDRIUS_KUBILIUS/history/10"
+    }
+  ]
+}

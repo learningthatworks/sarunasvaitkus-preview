@@ -1,0 +1,293 @@
+{
+  "schema_version": "3.1.0",
+  "updated_at": "2026-09-28",
+  "stories": [
+    {
+      "id": "prime-minister",
+      "title": {
+        "en": "How a Prime Minister gets the job",
+        "lt": "Kaip skiriamas Ministras Pirmininkas"
+      },
+      "steps": [
+        {
+          "focus": "people",
+          "basis": {
+            "doc": "constitution",
+            "art": "55"
+          },
+          "text": {
+            "en": "It starts with the People. Citizens elect the 141 members of the Seimas for four years.",
+            "lt": "Viskas prasideda nuo Tautos. Piliečiai ketveriems metams renka 141 Seimo narį."
+          }
+        },
+        {
+          "focus": "president",
+          "basis": {
+            "doc": "constitution",
+            "art": "78"
+          },
+          "text": {
+            "en": "Citizens also elect the President, for five years.",
+            "lt": "Piliečiai taip pat renka Respublikos Prezidentą penkeriems metams."
+          }
+        },
+        {
+          "focus": "seimas",
+          "basis": {
+            "doc": "constitution",
+            "art": "67",
+            "item": "6"
+          },
+          "text": {
+            "en": "The President proposes a candidate for Prime Minister. The Seimas votes to approve or reject them.",
+            "lt": "Prezidentas pateikia Ministro Pirmininko kandidatūrą. Seimas balsuoja, ar jai pritarti."
+          }
+        },
+        {
+          "focus": "pm",
+          "basis": {
+            "doc": "constitution",
+            "art": "92"
+          },
+          "text": {
+            "en": "With the Seimas' approval, the President appoints the Prime Minister.",
+            "lt": "Seimui pritarus, Prezidentas skiria Ministrą Pirmininką."
+          }
+        },
+        {
+          "focus": "gov",
+          "basis": {
+            "doc": "constitution",
+            "art": "97"
+          },
+          "text": {
+            "en": "The Prime Minister leads the Government and proposes ministers, whom the President appoints.",
+            "lt": "Ministras Pirmininkas vadovauja Vyriausybei ir teikia ministrų kandidatūras, o ministrus skiria Prezidentas."
+          }
+        }
+      ],
+      "quiz": {
+        "question": {
+          "en": "Who must approve the candidate before the President can appoint a Prime Minister?",
+          "lt": "Kas turi pritarti kandidatūrai, kad Prezidentas galėtų paskirti Ministrą Pirmininką?"
+        },
+        "options": [
+          {
+            "text": {
+              "en": "The Seimas",
+              "lt": "Seimas"
+            },
+            "correct": true,
+            "show": "seimas"
+          },
+          {
+            "text": {
+              "en": "The Constitutional Court",
+              "lt": "Konstitucinis Teismas"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "en": "The Government",
+              "lt": "Vyriausybė"
+            },
+            "correct": false
+          }
+        ],
+        "explain": {
+          "en": "The President appoints the Prime Minister with the approval of the Seimas.",
+          "lt": "Ministrą Pirmininką Prezidentas skiria Seimo pritarimu."
+        },
+        "basis": {
+          "doc": "constitution",
+          "art": "92"
+        }
+      }
+    },
+    {
+      "id": "judges",
+      "title": {
+        "en": "Who picks the top judges",
+        "lt": "Kas skiria aukščiausiųjų teismų teisėjus"
+      },
+      "steps": [
+        {
+          "focus": "constcourt",
+          "basis": {
+            "doc": "constitution",
+            "art": "103"
+          },
+          "text": {
+            "en": "Nine judges of the Constitutional Court decide whether laws comply with the Constitution. Each serves one nine-year term.",
+            "lt": "Devyni Konstitucinio Teismo teisėjai sprendžia, ar įstatymai neprieštarauja Konstitucijai. Kiekvienas skiriamas vienai devynerių metų kadencijai."
+          }
+        },
+        {
+          "focus": "seimas",
+          "basis": {
+            "doc": "constitution",
+            "art": "103"
+          },
+          "text": {
+            "en": "The Seimas appoints them. The President, the Speaker of the Seimas and the President of the Supreme Court each put forward candidates.",
+            "lt": "Juos skiria Seimas. Kandidatus teikia Respublikos Prezidentas, Seimo Pirmininkas ir Aukščiausiojo Teismo pirmininkas."
+          }
+        },
+        {
+          "focus": "cc-pres",
+          "basis": {
+            "doc": "constitution",
+            "art": "103"
+          },
+          "text": {
+            "en": "The President of the Republic proposes who leads the Constitutional Court, and the Seimas appoints them.",
+            "lt": "Konstitucinio Teismo pirmininko kandidatūrą teikia Respublikos Prezidentas, o skiria Seimas."
+          }
+        },
+        {
+          "focus": "sc-pres",
+          "basis": {
+            "doc": "constitution",
+            "art": "112"
+          },
+          "text": {
+            "en": "Supreme Court judges and its President are appointed by the Seimas, on the proposal of the President of the Republic.",
+            "lt": "Aukščiausiojo Teismo teisėjus ir pirmininką skiria Seimas Respublikos Prezidento teikimu."
+          }
+        }
+      ],
+      "quiz": {
+        "question": {
+          "en": "Who proposes the candidates for the Supreme Court?",
+          "lt": "Kas teikia Aukščiausiojo Teismo teisėjų kandidatūras?"
+        },
+        "options": [
+          {
+            "text": {
+              "en": "The Prime Minister",
+              "lt": "Ministras Pirmininkas"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "en": "The President of the Republic",
+              "lt": "Respublikos Prezidentas"
+            },
+            "correct": true,
+            "show": "sc-pres"
+          },
+          {
+            "text": {
+              "en": "The Prosecutor General",
+              "lt": "Generalinis prokuroras"
+            },
+            "correct": false
+          }
+        ],
+        "explain": {
+          "en": "The Seimas appoints Supreme Court judges on the proposal of the President of the Republic.",
+          "lt": "Aukščiausiojo Teismo teisėjus skiria Seimas Respublikos Prezidento teikimu."
+        },
+        "basis": {
+          "doc": "constitution",
+          "art": "112"
+        }
+      }
+    },
+    {
+      "id": "oversight",
+      "title": {
+        "en": "Who keeps an eye on power",
+        "lt": "Kas prižiūri valdžią"
+      },
+      "steps": [
+        {
+          "focus": "gov",
+          "basis": {
+            "doc": "constitution",
+            "art": "67",
+            "item": "9"
+          },
+          "text": {
+            "en": "The Seimas supervises the Government. It can vote no confidence in the Prime Minister or a minister.",
+            "lt": "Seimas prižiūri Vyriausybės veiklą. Jis gali pareikšti nepasitikėjimą Ministru Pirmininku ar ministru."
+          }
+        },
+        {
+          "focus": "auditor",
+          "basis": {
+            "doc": "constitution",
+            "art": "133"
+          },
+          "text": {
+            "en": "The Auditor General is appointed by the Seimas for five years, on the President's proposal.",
+            "lt": "Valstybės kontrolierių penkeriems metams skiria Seimas Respublikos Prezidento teikimu."
+          }
+        },
+        {
+          "focus": "audit",
+          "basis": {
+            "doc": "constitution",
+            "art": "133"
+          },
+          "text": {
+            "en": "The Auditor General leads the National Audit Office. It checks whether state property is managed and the budget is spent lawfully.",
+            "lt": "Valstybės kontrolierius vadovauja Valstybės kontrolei. Ji prižiūri, ar teisėtai valdomas valstybės turtas ir vykdomas biudžetas."
+          }
+        },
+        {
+          "focus": "prosecutor",
+          "basis": {
+            "doc": "constitution",
+            "art": "118"
+          },
+          "text": {
+            "en": "The Prosecutor General is appointed by the President with the consent of the Seimas.",
+            "lt": "Generalinį prokurorą skiria Respublikos Prezidentas Seimo pritarimu."
+          }
+        }
+      ],
+      "quiz": {
+        "question": {
+          "en": "Who can vote no confidence in the Prime Minister?",
+          "lt": "Kas gali pareikšti nepasitikėjimą Ministru Pirmininku?"
+        },
+        "options": [
+          {
+            "text": {
+              "en": "The President",
+              "lt": "Respublikos Prezidentas"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "en": "The National Audit Office",
+              "lt": "Valstybės kontrolė"
+            },
+            "correct": false
+          },
+          {
+            "text": {
+              "en": "The Seimas",
+              "lt": "Seimas"
+            },
+            "correct": true,
+            "show": "seimas"
+          }
+        ],
+        "explain": {
+          "en": "The Seimas supervises the Government and may express no confidence in the Prime Minister or a minister.",
+          "lt": "Seimas prižiūri Vyriausybės veiklą ir gali pareikšti nepasitikėjimą Ministru Pirmininku ar ministru."
+        },
+        "basis": {
+          "doc": "constitution",
+          "art": "67",
+          "item": "9"
+        }
+      }
+    }
+  ]
+}

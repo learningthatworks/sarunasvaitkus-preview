@@ -1,0 +1,83 @@
+/* ==========================================================================
+   home-lt.css: sections only the Lithuanian homepage (/lt/) has, built by scripts/build-lt.py.
+   Loaded after home.css. Buttons, links and type come from theme.css.
+   ========================================================================== */
+.svc-dl {
+  margin: 2px 0 6px;
+  display: grid;
+  gap: 8px;
+}
+.svc-dl dt {
+  color: color-mix(in srgb, var(--c) 72%, #000);
+}
+:root[data-theme="dark"] .svc-dl dt {
+  color: color-mix(in srgb, var(--c) 55%, #fff);
+}
+.svc-dl dd {
+  margin: 2px 0 0;
+  color: var(--ink-2);
+}
+/* 'Nuo ko galima pradėti': four small first steps */
+.lt-start-h {
+  margin-top: clamp(36px, 5vw, 56px) !important;
+}
+.lt-start {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.lt-start-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 26px 0 0;
+}
+@media (max-width: 900px) {
+  .lt-start {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .lt-start {
+    grid-template-columns: 1fr;
+  }
+}
+/* 'Patirtis skaičiais': numbers strip */
+.lt-numbers {
+  border-top: 1px solid var(--line);
+  padding: clamp(22px, 3vw, 32px) 0 0;
+}
+.lt-numbers dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px 32px;
+  margin: 0;
+}
+.lt-num dt {
+  color: var(--red-large, var(--red));
+}
+.lt-num dd {
+  margin: 6px 0 0;
+  color: var(--ink-2);
+}
+@media (max-width: 760px) {
+  .lt-numbers dl {
+    grid-template-columns: 1fr;
+  }
+}
+/* recommendations: Lithuanian summary, with the English original in a toggle */
+.q-note {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+.q-orig {
+  margin: 12px 0 0;
+  color: var(--ink-2);
+}
+.q-orig summary {
+  cursor: pointer;
+  color: var(--muted);
+}
+.q-orig p {
+  margin: 8px 0 0;
+  font-style: italic;
+}
