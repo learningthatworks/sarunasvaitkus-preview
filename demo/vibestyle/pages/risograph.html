@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  try {
+    var svParams = new URLSearchParams(location.search);
+    if (svParams.get('notrack') === '1') localStorage.setItem('sv_notrack', '1');
+    else if (svParams.get('notrack') === '0') localStorage.removeItem('sv_notrack');
+  } catch (e) {}
+  var svNotrack = false;
+  try {
+    svNotrack = localStorage.getItem('sv_notrack') === '1';
+  } catch (e) {}
+  var svHost = '';
+  try {
+    svHost = String(location.hostname || '').toLowerCase();
+  } catch (e) {}
+  if (svNotrack || navigator.webdriver === true || (svHost !== 'sarunasvaitkus.com' && svHost !== 'www.sarunasvaitkus.com')) {
+    window['ga-disable-G-KN31FWTLQ1'] = true;
+    window.svNoTrack = true;
+  }
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5P279');</script>
+<!-- End Google Tag Manager -->
+<!-- design-atlas-seo -->
+<meta name="description" content="Risograph design system, one of the Design Atlas styles. Copy the ready-to-use prompt into a design tool.">
+<link rel="canonical" href="https://sarunasvaitkus.com/demo/vibestyle/pages/risograph.html">
+<link rel="alternate" hreflang="en" href="https://sarunasvaitkus.com/demo/vibestyle/pages/risograph.html">
+<link rel="alternate" hreflang="x-default" href="https://sarunasvaitkus.com/demo/vibestyle/pages/risograph.html">
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Risograph design system · Anti-Boring">
+<meta property="og:description" content="Risograph design system, one of the Design Atlas styles. Copy the ready-to-use prompt into a design tool.">
+<meta property="og:url" content="https://sarunasvaitkus.com/demo/vibestyle/pages/risograph.html">
+<meta property="og:image" content="https://sarunasvaitkus.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Risograph design system · Anti-Boring">
+<meta name="twitter:description" content="Risograph design system, one of the Design Atlas styles. Copy the ready-to-use prompt into a design tool.">
+<meta name="twitter:image" content="https://sarunasvaitkus.com/assets/img/og-image.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Risograph design system · Anti-Boring", "description": "Risograph design system, one of the Design Atlas styles. Copy the ready-to-use prompt into a design tool.", "url": "https://sarunasvaitkus.com/demo/vibestyle/pages/risograph.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "Šarūnas Vaitkus", "url": "https://sarunasvaitkus.com/"}}</script>
+<!-- /design-atlas-seo -->
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Risograph design system · Anti-Boring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script>try{var m=localStorage.getItem('atlas-theme');if(m&&m!=='light')document.documentElement.classList.add('alt')}catch(e){}</script>
+<style id="kit">
+/* Risograph kit · Anti-Boring */
+:root{
+  --bg:#F4EFE4;
+  --surface:#FAF6EC;
+  --surface2:#EAE3D2;
+  --fg:#1F2A44;
+  --muted:#46506A;
+  --accent:#FF48B0;
+  --accent-fg:#1F2A44;
+  --accent2:#0078BF;
+  --accent2-fg:#FFFFFF;
+  --border:#1F2A44;
+  --bw:2px;
+  --radius:4px;
+  --radius-sm:3px;
+  --shadow:6px 6px 0 rgba(255,72,176,.85);
+  --shadow-sm:3px 3px 0 rgba(0,120,191,.85);
+  --font-d:"Anton",Impact,sans-serif;
+  --font-b:"Instrument Sans",system-ui,sans-serif;
+  --font-m:ui-monospace,Menlo,monospace;
+  --h-weight:400;
+  --h-track:.01em;
+  --h-case:uppercase;
+  --h-style:normal;
+  --h-lh:.95;
+  --gap:24px;
+  --pad:24px;
+  --focus:rgba(255,232,0,.9);
+  --ok:#00838A;
+  --warn:#9A5A00;
+  --danger:#D6246E;
+  --info:#0078BF;
+  --field-bg:var(--surface);
+  --field-shadow:none;
+  --media:radial-gradient(circle at 35% 45%,rgba(0,120,191,.9) 0 30%,transparent 31%),radial-gradient(circle at 60% 55%,rgba(255,72,176,.9) 0 30%,transparent 31%),#FFE800;
+  --code-bg:#1F2A44;
+  --code-fg:#FAF6EC;
+  --btn-case:none;
+  --btn-track:0;
+  --btn-weight:700;
+  --badge-radius:999px;
+  --maxw:1160px;
+  --fs-sm:13.1px;
+  --fs-body:17px;
+  --fs-4:22.1px;
+  --fs-3:28.7px;
+  --fs-2:37.3px;
+  --fs-1:48.6px;
+  --fs-d:clamp(49px, 9vw, 107px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 var(--fs-body)/1.6 var(--font-b);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-d);font-weight:var(--h-weight);letter-spacing:var(--h-track);text-transform:var(--h-case);font-style:var(--h-style);line-height:var(--h-lh);margin:0 0 .4em}
+h1{font-size:var(--fs-1)} h2{font-size:var(--fs-2)} h3{font-size:var(--fs-3)} h4{font-size:var(--fs-4)}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+code,pre,kbd{font-family:var(--font-m)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font:var(--btn-weight) 1rem/1 var(--font-b);text-transform:var(--btn-case);letter-spacing:var(--btn-track);padding:.85em 1.4em;border:var(--bw) solid var(--border);border-radius:var(--radius);background:var(--accent);color:var(--accent-fg);box-shadow:var(--shadow-sm);text-decoration:none;cursor:pointer;transition:transform .12s,box-shadow .12s,background-color .12s,color .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.btn-2{background:var(--accent2);color:var(--accent2-fg)}
+.btn-ghost{background:transparent;color:var(--fg);box-shadow:none}
+.btn-sm{font-size:.85rem;padding:.6em 1em}
+.btn-lg{font-size:1.15rem;padding:1em 1.7em}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+
+/* forms */
+.field{display:grid;gap:.4em;margin-bottom:1.1em}
+.label{font-weight:600;font-size:.95rem}
+.help{font-size:.85rem;color:var(--muted)}
+.input,.select,.textarea{width:100%;font:1rem/1.4 var(--font-b);color:var(--fg);padding:.75em .9em;background:var(--field-bg);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--field-shadow);appearance:none}
+.select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.4em}
+.textarea{min-height:110px;resize:vertical}
+.input:focus,.select:focus,.textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--field-shadow),0 0 0 3px var(--focus)}
+.is-error .input{border-color:var(--danger)} .is-error .help{color:var(--danger)}
+.choice{display:flex;align-items:center;gap:.6em;margin:.35em 0;cursor:pointer}
+.check,.radio{appearance:none;width:1.25em;height:1.25em;margin:0;flex:none;border:var(--bw) solid var(--border);background:var(--field-bg);box-shadow:var(--field-shadow);display:grid;place-items:center;cursor:pointer}
+.check{border-radius:calc(var(--radius-sm)/2)} .radio{border-radius:50%}
+.check::after{content:"";width:.55em;height:.3em;border-left:2.5px solid var(--accent-fg);border-bottom:2.5px solid var(--accent-fg);transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.radio::after{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--accent-fg);opacity:0}
+.check:checked,.radio:checked{background:var(--accent);border-color:var(--border)}
+.check:checked::after,.radio:checked::after{opacity:1}
+.switch{appearance:none;width:2.8em;height:1.6em;margin:0;flex:none;border-radius:999px;border:var(--bw) solid var(--border);background:var(--surface2);position:relative;cursor:pointer;transition:background .15s;box-shadow:var(--field-shadow)}
+.switch::before{content:"";position:absolute;top:50%;left:.18em;width:1.1em;height:1.1em;border-radius:50%;background:var(--fg);transform:translateY(-50%);transition:left .15s}
+.switch:checked{background:var(--accent)}
+.switch:checked::before{left:calc(100% - 1.28em);background:var(--accent-fg)}
+.range{width:100%;accent-color:var(--accent)}
+
+/* surfaces */
+.card{background:var(--surface);color:var(--fg);border:var(--bw) solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--pad);position:relative}
+.card-media{aspect-ratio:16/9;border-radius:var(--radius-sm);background:var(--media);margin-bottom:1em}
+.badge{display:inline-block;font:600 .75rem/1 var(--font-b);padding:.45em .75em;border-radius:var(--badge-radius);background:var(--accent2);color:var(--accent2-fg);border:var(--bw) solid var(--border)}
+.alert{padding:1em 1.2em;border:var(--bw) solid var(--border);border-left:6px solid var(--c,var(--info));border-radius:var(--radius-sm);background:var(--surface);margin-bottom:.8em}
+.alert b{color:var(--c,var(--info))}
+.alert-ok{--c:var(--ok)} .alert-warn{--c:var(--warn)} .alert-danger{--c:var(--danger)}
+.progress{height:.8em;border-radius:999px;background:var(--surface2);border:var(--bw) solid var(--border);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent)}
+
+/* navigation */
+.tabs{display:flex;gap:.25em;border-bottom:var(--bw) solid var(--border);flex-wrap:wrap}
+.tab{font:600 .95rem var(--font-b);padding:.7em 1em;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);cursor:pointer;margin-bottom:calc(var(--bw) * -1)}
+.tab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.crumbs{display:flex;gap:.5em;flex-wrap:wrap;font-size:.9rem;color:var(--muted);list-style:none;padding:0;margin:0}
+.crumbs li+li::before{content:"/";margin-right:.5em;opacity:.6}
+.pager{display:flex;gap:.4em;list-style:none;padding:0;margin:0;flex-wrap:wrap}
+.pager a{display:grid;place-items:center;min-width:2.4em;height:2.4em;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);text-decoration:none;background:var(--surface)}
+.pager a[aria-current]{background:var(--accent);color:var(--accent-fg)}
+
+/* table */
+.table-wrap{overflow-x:auto;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);background:var(--surface)}
+.table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:460px}
+.table th,.table td{text-align:left;padding:.75em 1em;border-bottom:1px solid color-mix(in srgb,var(--border) 30%,transparent)}
+.table th{font-family:var(--font-d);font-weight:var(--h-weight)}
+
+/* grid */
+.row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
+.col-3{grid-column:span 3}.col-4{grid-column:span 4}.col-5{grid-column:span 5}.col-6{grid-column:span 6}.col-7{grid-column:span 7}.col-8{grid-column:span 8}.col-12{grid-column:span 12}
+@media (max-width:760px){.row{grid-template-columns:minmax(0,1fr);gap:min(var(--gap),16px)}.row>*{grid-column:auto!important;grid-row:auto!important}}
+
+/* signature */
+.btn{border:0;box-shadow:3px 2px 0 rgba(0,120,191,.85)}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 4px 0 rgba(0,120,191,.85)}
+.btn-2{box-shadow:3px 2px 0 rgba(255,72,176,.85)}
+.btn-2:hover{box-shadow:5px 4px 0 rgba(255,72,176,.85)}
+.btn-ghost{border:2px solid #1F2A44;box-shadow:none}
+.card{box-shadow:7px 6px 0 rgba(255,72,176,.75)}
+.card:nth-child(2n){box-shadow:7px 6px 0 rgba(0,120,191,.7)}
+.badge{background:#FFE800;border:0;color:#1F2A44}
+.input:focus,.select:focus,.textarea:focus{box-shadow:4px 4px 0 rgba(255,72,176,.8)}
+.alert{background:color-mix(in srgb,var(--c) 10%,#FAF6EC);border:0;border-left:6px solid var(--c);box-shadow:3px 3px 0 color-mix(in srgb,var(--c) 45%,transparent)}
+.progress i{background:repeating-linear-gradient(90deg,#FF48B0 0 8px,rgba(0,120,191,.8) 8px 16px)}
+.switch::before{background:#FFE800;box-shadow:2px 1px 0 #FF48B0}
+.tab[aria-selected="true"]{border-bottom-color:#FF48B0}
+.table th{font-family:var(--font-d);font-weight:400;letter-spacing:.04em;color:#0078BF}
+
+/* dark theme: add class="alt" to <html> */
+html.alt{
+  --bg:#1C2233;
+  --surface:#242B40;
+  --surface2:#20273A;
+  --fg:#F4EFE4;
+  --muted:#C3C8D6;
+  --border:#F4EFE4;
+  --code-bg:#10141F;
+}
+html.alt .alert{background:#242B40}html.alt .sec-title{color:#6FC3FF}html.alt .table th{color:#6FC3FF}html.alt .stage{background:#F4EFE4}html.alt .blobs i{mix-blend-mode:screen}html.alt .riso-title span{mix-blend-mode:normal}html.alt .riso-title span:first-child{color:#6FC3FF}
+</style>
+<style>
+
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.docnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--nav-bg,var(--bg));border-bottom:var(--bw) solid var(--border)}
+.docnav .container{display:flex;align-items:center;gap:6px;height:58px;overflow-x:auto;scrollbar-width:none}
+.docnav .container::-webkit-scrollbar{display:none}
+.docnav .brand{font-family:var(--font-d);font-weight:var(--h-weight);text-transform:var(--h-case);margin-right:auto;padding-right:16px;white-space:nowrap;text-decoration:none;font-size:1.05rem}
+.docnav a:not(.brand){text-decoration:none;font-size:.9rem;padding:6px 10px;border-radius:var(--radius-sm);white-space:nowrap;color:var(--muted)}
+.docnav a:not(.brand):hover{color:var(--fg);background:var(--surface2)}
+.hero{position:relative;overflow:hidden}
+.sec{padding:clamp(56px,9vw,104px) 0;position:relative}
+.sec.alt{background:var(--surface2)}
+.sec-title{font-size:var(--fs-2);margin-bottom:.3em}
+.sec-lede{font-size:1.1rem;color:var(--muted);max-width:62ch;margin-bottom:2.2em}
+.auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:var(--gap)}
+.traits .card h3{font-size:var(--fs-4)}
+.traits .card p:last-child,.pit .card p:last-child{margin:0}
+.tl{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.tl li{display:grid;grid-template-columns:minmax(90px,150px) 1fr;gap:20px;padding:18px 0;border-top:var(--bw) solid var(--border)}
+.tl .yr{font-family:var(--font-d);font-weight:var(--h-weight);font-size:var(--fs-3);line-height:1}
+.tl h4{margin-bottom:.25em}
+.tl p{margin:0;max-width:62ch}
+.stage{position:relative;height:clamp(240px,42vw,380px);overflow:hidden;border:var(--bw) solid var(--border);border-radius:var(--radius);background:var(--surface)}
+.stage.paused *,.stage.paused *::before,.stage.paused *::after{animation-play-state:paused!important}
+.stage-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+.stage-bar p{margin:0;color:var(--muted);max-width:60ch}
+.mocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:var(--gap)}
+.mocks figure{margin:0}
+.mocks figcaption{margin-top:14px}
+.mocks figcaption h4{font-size:var(--fs-4)}
+.mock{font-size:10px;height:250px;background:var(--bg);border:var(--bw) solid var(--border);border-radius:var(--radius);overflow:hidden;padding:12px;display:flex;flex-direction:column;gap:10px;position:relative}
+.mock .btn{font-size:9px}
+.mock .card{padding:10px}
+.m-nav{display:flex;align-items:center;gap:8px;font-family:var(--font-d);font-weight:var(--h-weight);font-size:12px}
+.m-nav i{flex:1}
+.m-nav s{width:26px;height:5px;background:var(--muted);opacity:.5;border-radius:3px}
+.m-h{font-family:var(--font-d);font-weight:var(--h-weight);text-transform:var(--h-case);font-style:var(--h-style);font-size:22px;line-height:1;letter-spacing:var(--h-track)}
+.m-line{height:6px;border-radius:3px;background:var(--muted);opacity:.35}
+.m-media{flex:1;border-radius:var(--radius-sm);background:var(--media)}
+.mock-app{align-items:center;justify-content:center;background:var(--surface2)}
+.phone{width:140px;height:226px;border:var(--bw) solid var(--border);border-radius:calc(var(--radius) + 10px);background:var(--bg);padding:10px;display:flex;flex-direction:column;gap:7px;box-shadow:var(--shadow);overflow:hidden}
+.phone .card{padding:7px;display:flex;align-items:center;justify-content:space-between;font-size:10px;box-shadow:var(--shadow-sm)}
+.phone .switch{font-size:8px}
+.mock-dash .card{flex:1;display:flex;flex-direction:column;gap:6px}
+.bars{flex:1;display:flex;align-items:flex-end;gap:6px}
+.bars i{flex:1;background:var(--accent);border-radius:var(--radius-sm) var(--radius-sm) 0 0}
+.bars i:nth-child(even){background:var(--accent2)}
+.stat{font-family:var(--font-d);font-weight:var(--h-weight);font-size:26px;line-height:1}
+.block{margin-top:64px}
+.block:first-of-type{margin-top:0}
+.block>h3{font-size:var(--fs-3)}
+.block>p{color:var(--muted);max-width:62ch}
+.demo{padding:clamp(18px,4vw,32px);border:var(--bw) dashed color-mix(in srgb,var(--border) 45%,transparent);border-radius:var(--radius);background:var(--bg);margin:18px 0 0}
+.demo-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.code{position:relative;margin-top:12px}
+.code pre{margin:0;max-height:340px;overflow:auto;padding:18px 18px 18px;background:var(--code-bg);color:var(--code-fg);border-radius:var(--radius-sm);font:400 .8rem/1.55 var(--font-m);tab-size:2}
+.code .copy{position:absolute;top:10px;right:10px;font:600 .75rem system-ui,sans-serif;padding:6px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:var(--code-fg);cursor:pointer;backdrop-filter:blur(4px)}
+.code .copy:hover{background:rgba(255,255,255,.25)}
+details.code-toggle{margin-top:12px}
+details.code-toggle summary{cursor:pointer;font-weight:600;font-size:.9rem;color:var(--muted)}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+.swatch{all:unset;cursor:pointer;display:block;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);overflow:hidden;background:var(--surface)}
+.swatch:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.swatch i{display:block;height:84px}
+.swatch span{display:block;padding:10px 12px;font-size:.85rem;line-height:1.3}
+.swatch small{font-family:var(--font-m);color:var(--muted)}
+.specimen{display:grid;gap:18px}
+.spec{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:baseline;border-bottom:1px solid color-mix(in srgb,var(--border) 25%,transparent);padding-bottom:14px}
+.spec small{font-family:var(--font-m);color:var(--muted);font-size:.72rem;line-height:1.4}
+.spec>div{overflow-wrap:anywhere;min-width:0}
+.gdemo .row>div{min-height:64px;display:grid;place-items:center;font:600 .8rem var(--font-m);background:color-mix(in srgb,var(--accent) 22%,var(--surface));border:var(--bw) solid var(--border);border-radius:var(--radius-sm);color:var(--fg)}
+.gdemo+.gdemo{margin-top:12px}
+.shapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px}
+.shapes .card{min-height:110px;display:grid;place-items:end start;font-size:.85rem}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px;align-items:end}
+.pg label{display:grid;gap:6px;font-weight:600;font-size:.9rem}
+.pg input[type=color]{width:100%;height:44px;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);background:var(--surface);padding:3px}
+.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:4px 28px}
+.prompt pre{white-space:pre-wrap;max-height:none;font-size:.85rem}
+footer.docfoot{padding:36px 0 48px;border-top:var(--bw) solid var(--border);font-size:.9rem;color:var(--muted)}
+@media (max-width:640px){.tl li,.spec{grid-template-columns:1fr;gap:6px}}
+.theme-toggle{flex:none;display:inline-flex;align-items:center;gap:6px;margin-left:8px;font:600 .8rem/1 system-ui,sans-serif;color:var(--fg);background:transparent;border:1px solid currentColor;border-radius:999px;padding:7px 11px;cursor:pointer;opacity:.85}
+.theme-toggle:hover{opacity:1}
+.theme-toggle svg{width:15px;height:15px}
+html.alt body{background-color:var(--bg)!important}
+html.alt .sec.alt{background:var(--surface2)!important}
+html.alt .docnav{background:var(--bg)!important}
+html.alt .demo{background:var(--bg)!important}
+html.alt .mock,html.alt .phone{background:var(--bg)!important}
+html.alt .mock-app{background:var(--surface2)!important}
+html.alt .swatch{background:var(--surface)!important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+
+body{background-color:#F4EFE4;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
+.docnav{background:rgba(244,239,228,.94)}
+.hero{padding:50px 0 70px}
+.hero .in{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+.riso-title{position:relative;font:400 var(--fs-d)/.85 "Anton",Impact,sans-serif;text-transform:uppercase;margin:0}
+.riso-title span{display:block;color:#0078BF;mix-blend-mode:multiply}
+.riso-title span+span{position:absolute;inset:0;color:#FF48B0;transform:translate(6px,4px);animation:reg 5s ease-in-out infinite}
+@keyframes reg{50%{transform:translate(2px,1px)}}
+.hero .lede{font-size:1.15rem;max-width:44ch;margin:24px 0 28px}
+.blobs{position:relative;height:400px;isolation:isolate}
+.blobs i{position:absolute;mix-blend-mode:multiply;opacity:.92}
+.blobs .p1{width:62%;aspect-ratio:1;border-radius:50%;background:#FF48B0;left:4%;top:6%}
+.blobs .p2{width:54%;aspect-ratio:1;border-radius:50%;background:#0078BF;right:4%;top:24%}
+.blobs .p3{width:46%;height:40%;background:#FFE800;left:22%;bottom:2%;transform:rotate(-8deg)}
+.blobs .dots{inset:0;background:radial-gradient(#1F2A44 1.4px,transparent 1.6px) 0 0/10px 10px;opacity:.25}
+.stage{background:#FAF6EC;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");isolation:isolate;display:grid;place-items:center}
+.stage .l{position:absolute;width:40%;aspect-ratio:1;border-radius:50%;mix-blend-mode:multiply}
+.stage .l1{background:#FF48B0;animation:m1 4s ease-in-out infinite}
+.stage .l2{background:#0078BF;animation:m2 4s ease-in-out infinite}
+.stage .l3{background:#FFE800;width:30%;animation:m3 4s ease-in-out infinite}
+@keyframes m1{0%,100%{transform:translate(-30%,-10%)}50%{transform:translate(-4%,0)}}
+@keyframes m2{0%,100%{transform:translate(30%,10%)}50%{transform:translate(4%,0)}}
+@keyframes m3{0%,100%{transform:translate(0,40%)}50%{transform:translate(0,4%)}}
+.sec.alt{background:#EAE3D2;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
+.tl li{border-top:2px solid #1F2A44}
+.tl .yr{color:#FF48B0;mix-blend-mode:multiply}
+.sec-title{color:#0078BF;text-shadow:4px 3px 0 rgba(255,72,176,.7)}
+@media (max-width:780px){.hero .in{grid-template-columns:1fr}.blobs{height:300px}}
+
+
+html.alt .alert{background:#242B40}html.alt .sec-title{color:#6FC3FF}html.alt .table th{color:#6FC3FF}html.alt .stage{background:#F4EFE4}html.alt .blobs i{mix-blend-mode:screen}html.alt .riso-title span{mix-blend-mode:normal}html.alt .riso-title span:first-child{color:#6FC3FF}
+</style>
+</head>
+<body class="st-risograph">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5P279"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav class="docnav" aria-label="Sections"><div class="container"><a class="brand" href="#top">Risograph</a><a href="#overview">Overview</a><a href="#history">History</a><a href="#motion">Motion</a><a href="#examples">Examples</a><a href="#foundations">Foundations</a><a href="#components">Components</a><a href="#prompt">Prompt</a><a href="#pitfalls">Pitfalls</a><button class="theme-toggle" id="theme-toggle" data-native="light" aria-label="Switch colour theme"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6"/><path d="M8 2a6 6 0 0 0 0 12z" fill="currentColor"/></svg><span id="theme-lbl"></span></button></div></nav>
+<header class="hero" id="top"><div class="container in"><div><h1 class="riso-title" aria-label="Risograph"><span aria-hidden="true">Riso<br>graph</span><span aria-hidden="true">Riso<br>graph</span></h1><p class="lede">A print look made of a few bright spot inks. Colours overlap into new ones, grain shows through, and the layers never line up perfectly, which is exactly the charm.</p><a class="btn btn-lg" href="#foundations">Open the kit</a> <a class="btn btn-lg btn-2" href="#prompt">Copy prompt</a></div>
+<div class="blobs" aria-hidden="true"><i class="p1"></i><i class="p2"></i><i class="p3"></i><i class="dots"></i></div></div></header>
+
+<section id="overview" class="sec"><div class="container">
+<h2 class="sec-title">What defines it</h2>
+<p class="sec-lede">Risograph printing uses one drum per ink colour. Designers love its fluorescent inks, visible grain and slightly shifted layers, and the web version copies them with blend modes.</p>
+<div class="auto traits"><article class="card"><h3>Spot colour inks</h3><p>Two to four bold inks, often fluorescent pink, blue and yellow, instead of full colour.</p></article><article class="card"><h3>Overprinting</h3><p>Where inks overlap they mix into new colours. On screen, mix-blend-mode: multiply does the same.</p></article><article class="card"><h3>Misregistration</h3><p>Each colour layer lands slightly off. Offsets of a few pixels make the print feel real.</p></article><article class="card"><h3>Grain and texture</h3><p>Paper texture and uneven ink coverage add warmth. A subtle noise layer recreates it.</p></article></div>
+</div></section>
+
+<section id="history" class="sec alt"><div class="container">
+<h2 class="sec-title">Where it came from</h2>
+<p class="sec-lede">The Risograph was built as an office duplicator. Artists and zine makers turned it into a design style.</p>
+<ol class="tl"><li><span class="yr">1946</span><div><h4>A printing company</h4><p>Noboru Hayama founds the company in Tokyo that will later make Risograph machines.</p></div></li><li><span class="yr">1980</span><div><h4>Print Gocco</h4><p>The company releases a small home screen printer that becomes a craft favourite in Japan.</p></div></li><li><span class="yr">1986</span><div><h4>The Risograph arrives</h4><p>The first Risograph duplicators are sold to schools, churches and offices for cheap bulk printing.</p></div></li><li><span class="yr">2000s</span><div><h4>Art school rediscovery</h4><p>Designers and illustrators start using old machines for zines, posters and art books.</p></div></li><li><span class="yr">2010s+</span><div><h4>Riso culture</h4><p>Independent riso studios and zine fairs spread, and the look moves onto websites through CSS blend modes.</p></div></li></ol>
+</div></section>
+
+<section id="motion" class="sec"><div class="container">
+<h2 class="sec-title">Motion study</h2>
+<p class="sec-lede">Riso motion plays with registration. Ink layers slide apart and back together, mixing new colours where they overlap.</p>
+<div class="stage" id="stage" role="img" aria-label="Pink, blue and yellow circles overlapping and mixing colours"><i class="l l1"></i><i class="l l2"></i><i class="l l3"></i></div>
+<div class="stage-bar"><p>The purple, green and orange you see are never drawn. They appear where two inks multiply.</p><button class="btn btn-2 btn-sm" id="toggle">Pause</button></div>
+</div></section>
+
+<section id="examples" class="sec alt"><div class="container">
+<h2 class="sec-title">Where you meet it</h2>
+<p class="sec-lede">These three mockups are built only from the kit on this page. Swap the tokens and they change style with it.</p>
+<div class="mocks">
+<figure><div class="mock" aria-hidden="true"><div class="m-nav"><b>INK CLUB</b><i></i><s></s><s></s><span class="btn btn-sm">Join</span></div><div class="m-h">Print it loud</div><div class="m-line"></div><div class="m-line" style="width:60%"></div><div><span class="btn btn-sm">Get started</span></div><div class="m-media"></div></div>
+<figcaption><h4>Zines and illustrators</h4><p>Artists sell prints and zines on sites that echo their printed work.</p></figcaption></figure>
+<figure><div class="mock mock-app" aria-hidden="true"><div class="phone"><div class="m-nav"><b>Studio</b></div><div class="card"><span>Posters</span><input type="checkbox" class="switch" checked tabindex="-1"></div><div class="card"><span>Zines</span><input type="checkbox" class="switch" tabindex="-1"></div><div class="card"><span>Stickers</span><span class="badge">3</span></div><span class="btn btn-sm">Continue</span></div></div>
+<figcaption><h4>Festivals and events</h4><p>Music and book fairs use riso-style posters and pages for handmade energy.</p></figcaption></figure>
+<figure><div class="mock mock-dash" aria-hidden="true"><div class="card"><span class="badge" style="align-self:flex-start">Prints</span><div class="stat">2,400</div><div class="bars"><i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:85%"></i><i style="height:70%"></i><i style="height:95%"></i></div></div></div>
+<figcaption><h4>Indie studios and shops</h4><p>Small brands use overprinted colour and grain to feel crafted.</p></figcaption></figure>
+</div>
+</div></section>
+
+<section id="foundations" class="sec"><div class="container">
+<h2 class="sec-title">Foundations</h2>
+<p class="sec-lede">The tokens every component on this page is built from. Copy them as a starting point, then adjust with intent.</p>
+<div class="block"><h3>Color</h3><p>Three spot inks on warm paper. Their overlaps create extra colours for free. Tap a swatch to copy its hex value.</p><div class="swatches" style="margin-top:18px"><button class="swatch" data-copy="#F4EFE4" aria-label="Copy Paper #F4EFE4"><i style="background:#F4EFE4"></i><span class="lbl"><b>Paper</b><br><small>#F4EFE4</small></span></button><button class="swatch" data-copy="#FF48B0" aria-label="Copy Fluorescent pink #FF48B0"><i style="background:#FF48B0"></i><span class="lbl"><b>Fluorescent pink</b><br><small>#FF48B0</small></span></button><button class="swatch" data-copy="#0078BF" aria-label="Copy Riso blue #0078BF"><i style="background:#0078BF"></i><span class="lbl"><b>Riso blue</b><br><small>#0078BF</small></span></button><button class="swatch" data-copy="#FFE800" aria-label="Copy Yellow #FFE800"><i style="background:#FFE800"></i><span class="lbl"><b>Yellow</b><br><small>#FFE800</small></span></button><button class="swatch" data-copy="#00838A" aria-label="Copy Teal #00838A"><i style="background:#00838A"></i><span class="lbl"><b>Teal</b><br><small>#00838A</small></span></button><button class="swatch" data-copy="#1F2A44" aria-label="Copy Ink navy #1F2A44"><i style="background:#1F2A44"></i><span class="lbl"><b>Ink navy</b><br><small>#1F2A44</small></span></button></div><div class="code"><button class="copy" data-copy="#palcss"><span class="lbl">Copy palette CSS</span></button><pre><code id="palcss">:root{
+  --paper: #F4EFE4;
+  --fluorescent-pink: #FF48B0;
+  --riso-blue: #0078BF;
+  --yellow: #FFE800;
+  --teal: #00838A;
+  --ink-navy: #1F2A44;
+}</code></pre></div></div>
+<div class="block"><h3>Typography</h3><p>A tall condensed display face for big printed headlines, and a clean grotesque for reading.</p><div class="demo specimen"><div class="spec"><small>Display<br>clamp(49px, 9vw, 107px)</small><div style="font-family:var(--font-d);font-weight:var(--h-weight);text-transform:var(--h-case);font-style:var(--h-style);letter-spacing:var(--h-track);font-size:var(--fs-d);line-height:.95">INK!</div></div><div class="spec"><small>Heading 1<br>48.6px</small><div><h1 style="margin:0">Risograph heading</h1></div></div><div class="spec"><small>Heading 2<br>37.3px</small><div><h2 style="margin:0">Risograph heading</h2></div></div><div class="spec"><small>Heading 3<br>28.7px</small><div><h3 style="margin:0">Risograph heading</h3></div></div><div class="spec"><small>Heading 4<br>22.1px</small><div><h4 style="margin:0">Risograph heading</h4></div></div><div class="spec"><small>Body<br>17px</small><div><p style="margin:0;max-width:60ch">Body text carries the explanation. Keep lines under about 75 characters so the eye can find the next line.</p></div></div><div class="spec"><small>Small<br>13.1px</small><div style="font-size:var(--fs-sm);color:var(--muted)">Captions, helper text and metadata.</div></div><div class="spec"><small>Mono<br>13.1px</small><div style="font-family:var(--font-m);font-size:var(--fs-sm)">--radius: 8px;</div></div></div><div class="code"><button class="copy" data-copy="#typecss"><span class="lbl">Copy type CSS</span></button><pre><code id="typecss">:root{
+  --font-d: "Anton",Impact,sans-serif;
+  --font-b: "Instrument Sans",system-ui,sans-serif;
+  --font-m: ui-monospace,Menlo,monospace;
+  --fs-d: clamp(49px, 9vw, 107px);
+  --fs-1: 48.6px; --fs-2: 37.3px;
+  --fs-3: 28.7px; --fs-4: 22.1px;
+  --fs-body: 17px; --fs-sm: 13.1px;
+}
+h1,h2,h3,h4 {
+  font-family: var(--font-d);
+  font-weight: 400;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  line-height: .95;
+}
+/* fonts: Anton and Instrument Sans */</code></pre></div></div>
+<div class="block"><h3>Grid</h3><p>Poster-like layouts with big type and overlapping shapes. Keep body text in calm, readable columns.</p><div class="demo"><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Even columns</h4><p class="help" style="margin:0 0 10px">Equal cards, product tiles, feature lists.</p><div class="row"><div class="col-4">4</div><div class="col-4">4</div><div class="col-4">4</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g0"><span class="lbl">Copy</span></button><pre><code id="g0">&lt;div class="row"&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Content and sidebar</h4><p class="help" style="margin:0 0 10px">Articles, documentation, settings pages.</p><div class="row"><div class="col-8">8</div><div class="col-4">4</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g1"><span class="lbl">Copy</span></button><pre><code id="g1">&lt;div class="row"&gt;&lt;div class="col-8"&gt;8&lt;/div&gt;&lt;div class="col-4"&gt;4&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Asymmetric split</h4><p class="help" style="margin:0 0 10px">Heroes and feature sections with tension.</p><div class="row"><div class="col-5">5</div><div class="col-7">7</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g2"><span class="lbl">Copy</span></button><pre><code id="g2">&lt;div class="row"&gt;&lt;div class="col-5"&gt;5&lt;/div&gt;&lt;div class="col-7"&gt;7&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="gdemo"><h4 style="font-size:1rem;margin:22px 0 4px">Four up</h4><p class="help" style="margin:0 0 10px">Dense galleries and logo walls.</p><div class="row"><div class="col-3">3</div><div class="col-3">3</div><div class="col-3">3</div><div class="col-3">3</div></div><details class="code-toggle"><summary>Show code</summary><div class="code"><button class="copy" data-copy="#g3"><span class="lbl">Copy</span></button><pre><code id="g3">&lt;div class="row"&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;div class="col-3"&gt;3&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div></div><div class="code"><button class="copy" data-copy="#gridcss"><span class="lbl">Copy grid CSS</span></button><pre><code id="gridcss">.row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+}
+.col-3 { grid-column: span 3; }  .col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }  .col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+@media (max-width: 760px) {
+  .row { grid-template-columns: 1fr; }
+  .row &gt; * { grid-column: auto; }
+}</code></pre></div></div>
+<div class="block"><h3>Shape and depth</h3><p>Small radius. Shadows are coloured ink layers, slightly offset like a misprint.</p><div class="demo"><div class="shapes">
+<div class="card" style="box-shadow:none">radius: 4px<br>border: 2px</div>
+<div class="card" style="border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)">radius-sm: 3px<br>shadow-sm</div>
+<div class="card">shadow (raised)</div>
+<div class="card" style="background:var(--media);color:var(--accent-fg)">media fill</div></div></div><div class="code"><button class="copy" data-copy="#shapecss"><span class="lbl">Copy shape tokens</span></button><pre><code id="shapecss">:root {
+  --radius: 4px;
+  --radius-sm: 3px;
+  --bw: 2px;
+  --shadow: 6px 6px 0 rgba(255,72,176,.85);
+  --shadow-sm: 3px 3px 0 rgba(0,120,191,.85);
+  --gap: 24px;
+  --pad: 24px;
+}</code></pre></div></div>
+<div class="block"><h3>Token playground</h3><p>Change three tokens and the whole page responds, because every component reads from them. Reset brings back the style defaults.</p>
+<div class="demo"><div class="pg"><label>Corner radius<input type="range" class="range" id="pg-r" min="0" max="48"></label><label>Border width<input type="range" class="range" id="pg-b" min="0" max="8"></label><label>Accent color<input type="color" id="pg-a"></label><button class="btn btn-2" id="pg-reset">Reset tokens</button></div></div>
+<div class="code"><pre><code id="pg-out">Move a control to see the token change.</code></pre></div></div>
+</div></section>
+
+<section id="components" class="sec alt"><div class="container">
+<h2 class="sec-title">Components</h2>
+<p class="sec-lede">Every component below is plain HTML with class names from the kit. Copy the full kit CSS once, then paste any snippet.</p>
+<div class="code"><button class="copy" data-copy="#kitcss"><span class="lbl">Copy full kit CSS</span></button><pre><code id="kitcss">/* Risograph kit · Anti-Boring */
+:root{
+  --bg:#F4EFE4;
+  --surface:#FAF6EC;
+  --surface2:#EAE3D2;
+  --fg:#1F2A44;
+  --muted:#46506A;
+  --accent:#FF48B0;
+  --accent-fg:#1F2A44;
+  --accent2:#0078BF;
+  --accent2-fg:#FFFFFF;
+  --border:#1F2A44;
+  --bw:2px;
+  --radius:4px;
+  --radius-sm:3px;
+  --shadow:6px 6px 0 rgba(255,72,176,.85);
+  --shadow-sm:3px 3px 0 rgba(0,120,191,.85);
+  --font-d:"Anton",Impact,sans-serif;
+  --font-b:"Instrument Sans",system-ui,sans-serif;
+  --font-m:ui-monospace,Menlo,monospace;
+  --h-weight:400;
+  --h-track:.01em;
+  --h-case:uppercase;
+  --h-style:normal;
+  --h-lh:.95;
+  --gap:24px;
+  --pad:24px;
+  --focus:rgba(255,232,0,.9);
+  --ok:#00838A;
+  --warn:#9A5A00;
+  --danger:#D6246E;
+  --info:#0078BF;
+  --field-bg:var(--surface);
+  --field-shadow:none;
+  --media:radial-gradient(circle at 35% 45%,rgba(0,120,191,.9) 0 30%,transparent 31%),radial-gradient(circle at 60% 55%,rgba(255,72,176,.9) 0 30%,transparent 31%),#FFE800;
+  --code-bg:#1F2A44;
+  --code-fg:#FAF6EC;
+  --btn-case:none;
+  --btn-track:0;
+  --btn-weight:700;
+  --badge-radius:999px;
+  --maxw:1160px;
+  --fs-sm:13.1px;
+  --fs-body:17px;
+  --fs-4:22.1px;
+  --fs-3:28.7px;
+  --fs-2:37.3px;
+  --fs-1:48.6px;
+  --fs-d:clamp(49px, 9vw, 107px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 var(--fs-body)/1.6 var(--font-b);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-d);font-weight:var(--h-weight);letter-spacing:var(--h-track);text-transform:var(--h-case);font-style:var(--h-style);line-height:var(--h-lh);margin:0 0 .4em}
+h1{font-size:var(--fs-1)} h2{font-size:var(--fs-2)} h3{font-size:var(--fs-3)} h4{font-size:var(--fs-4)}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+code,pre,kbd{font-family:var(--font-m)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font:var(--btn-weight) 1rem/1 var(--font-b);text-transform:var(--btn-case);letter-spacing:var(--btn-track);padding:.85em 1.4em;border:var(--bw) solid var(--border);border-radius:var(--radius);background:var(--accent);color:var(--accent-fg);box-shadow:var(--shadow-sm);text-decoration:none;cursor:pointer;transition:transform .12s,box-shadow .12s,background-color .12s,color .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(1px)}
+.btn-2{background:var(--accent2);color:var(--accent2-fg)}
+.btn-ghost{background:transparent;color:var(--fg);box-shadow:none}
+.btn-sm{font-size:.85rem;padding:.6em 1em}
+.btn-lg{font-size:1.15rem;padding:1em 1.7em}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+
+/* forms */
+.field{display:grid;gap:.4em;margin-bottom:1.1em}
+.label{font-weight:600;font-size:.95rem}
+.help{font-size:.85rem;color:var(--muted)}
+.input,.select,.textarea{width:100%;font:1rem/1.4 var(--font-b);color:var(--fg);padding:.75em .9em;background:var(--field-bg);border:var(--bw) solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--field-shadow);appearance:none}
+.select{background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.4em}
+.textarea{min-height:110px;resize:vertical}
+.input:focus,.select:focus,.textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--field-shadow),0 0 0 3px var(--focus)}
+.is-error .input{border-color:var(--danger)} .is-error .help{color:var(--danger)}
+.choice{display:flex;align-items:center;gap:.6em;margin:.35em 0;cursor:pointer}
+.check,.radio{appearance:none;width:1.25em;height:1.25em;margin:0;flex:none;border:var(--bw) solid var(--border);background:var(--field-bg);box-shadow:var(--field-shadow);display:grid;place-items:center;cursor:pointer}
+.check{border-radius:calc(var(--radius-sm)/2)} .radio{border-radius:50%}
+.check::after{content:"";width:.55em;height:.3em;border-left:2.5px solid var(--accent-fg);border-bottom:2.5px solid var(--accent-fg);transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.radio::after{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--accent-fg);opacity:0}
+.check:checked,.radio:checked{background:var(--accent);border-color:var(--border)}
+.check:checked::after,.radio:checked::after{opacity:1}
+.switch{appearance:none;width:2.8em;height:1.6em;margin:0;flex:none;border-radius:999px;border:var(--bw) solid var(--border);background:var(--surface2);position:relative;cursor:pointer;transition:background .15s;box-shadow:var(--field-shadow)}
+.switch::before{content:"";position:absolute;top:50%;left:.18em;width:1.1em;height:1.1em;border-radius:50%;background:var(--fg);transform:translateY(-50%);transition:left .15s}
+.switch:checked{background:var(--accent)}
+.switch:checked::before{left:calc(100% - 1.28em);background:var(--accent-fg)}
+.range{width:100%;accent-color:var(--accent)}
+
+/* surfaces */
+.card{background:var(--surface);color:var(--fg);border:var(--bw) solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--pad);position:relative}
+.card-media{aspect-ratio:16/9;border-radius:var(--radius-sm);background:var(--media);margin-bottom:1em}
+.badge{display:inline-block;font:600 .75rem/1 var(--font-b);padding:.45em .75em;border-radius:var(--badge-radius);background:var(--accent2);color:var(--accent2-fg);border:var(--bw) solid var(--border)}
+.alert{padding:1em 1.2em;border:var(--bw) solid var(--border);border-left:6px solid var(--c,var(--info));border-radius:var(--radius-sm);background:var(--surface);margin-bottom:.8em}
+.alert b{color:var(--c,var(--info))}
+.alert-ok{--c:var(--ok)} .alert-warn{--c:var(--warn)} .alert-danger{--c:var(--danger)}
+.progress{height:.8em;border-radius:999px;background:var(--surface2);border:var(--bw) solid var(--border);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent)}
+
+/* navigation */
+.tabs{display:flex;gap:.25em;border-bottom:var(--bw) solid var(--border);flex-wrap:wrap}
+.tab{font:600 .95rem var(--font-b);padding:.7em 1em;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);cursor:pointer;margin-bottom:calc(var(--bw) * -1)}
+.tab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.crumbs{display:flex;gap:.5em;flex-wrap:wrap;font-size:.9rem;color:var(--muted);list-style:none;padding:0;margin:0}
+.crumbs li+li::before{content:"/";margin-right:.5em;opacity:.6}
+.pager{display:flex;gap:.4em;list-style:none;padding:0;margin:0;flex-wrap:wrap}
+.pager a{display:grid;place-items:center;min-width:2.4em;height:2.4em;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);text-decoration:none;background:var(--surface)}
+.pager a[aria-current]{background:var(--accent);color:var(--accent-fg)}
+
+/* table */
+.table-wrap{overflow-x:auto;border:var(--bw) solid var(--border);border-radius:var(--radius-sm);background:var(--surface)}
+.table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:460px}
+.table th,.table td{text-align:left;padding:.75em 1em;border-bottom:1px solid color-mix(in srgb,var(--border) 30%,transparent)}
+.table th{font-family:var(--font-d);font-weight:var(--h-weight)}
+
+/* grid */
+.row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap)}
+.col-3{grid-column:span 3}.col-4{grid-column:span 4}.col-5{grid-column:span 5}.col-6{grid-column:span 6}.col-7{grid-column:span 7}.col-8{grid-column:span 8}.col-12{grid-column:span 12}
+@media (max-width:760px){.row{grid-template-columns:minmax(0,1fr);gap:min(var(--gap),16px)}.row&gt;*{grid-column:auto!important;grid-row:auto!important}}
+
+/* signature */
+.btn{border:0;box-shadow:3px 2px 0 rgba(0,120,191,.85)}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 4px 0 rgba(0,120,191,.85)}
+.btn-2{box-shadow:3px 2px 0 rgba(255,72,176,.85)}
+.btn-2:hover{box-shadow:5px 4px 0 rgba(255,72,176,.85)}
+.btn-ghost{border:2px solid #1F2A44;box-shadow:none}
+.card{box-shadow:7px 6px 0 rgba(255,72,176,.75)}
+.card:nth-child(2n){box-shadow:7px 6px 0 rgba(0,120,191,.7)}
+.badge{background:#FFE800;border:0;color:#1F2A44}
+.input:focus,.select:focus,.textarea:focus{box-shadow:4px 4px 0 rgba(255,72,176,.8)}
+.alert{background:color-mix(in srgb,var(--c) 10%,#FAF6EC);border:0;border-left:6px solid var(--c);box-shadow:3px 3px 0 color-mix(in srgb,var(--c) 45%,transparent)}
+.progress i{background:repeating-linear-gradient(90deg,#FF48B0 0 8px,rgba(0,120,191,.8) 8px 16px)}
+.switch::before{background:#FFE800;box-shadow:2px 1px 0 #FF48B0}
+.tab[aria-selected="true"]{border-bottom-color:#FF48B0}
+.table th{font-family:var(--font-d);font-weight:400;letter-spacing:.04em;color:#0078BF}
+
+/* dark theme: add class="alt" to &lt;html&gt; */
+html.alt{
+  --bg:#1C2233;
+  --surface:#242B40;
+  --surface2:#20273A;
+  --fg:#F4EFE4;
+  --muted:#C3C8D6;
+  --border:#F4EFE4;
+  --code-bg:#10141F;
+}
+html.alt .alert{background:#242B40}html.alt .sec-title{color:#6FC3FF}html.alt .table th{color:#6FC3FF}html.alt .stage{background:#F4EFE4}html.alt .blobs i{mix-blend-mode:screen}html.alt .riso-title span{mix-blend-mode:normal}html.alt .riso-title span:first-child{color:#6FC3FF}</code></pre></div>
+<div class="block" id="c-buttons"><h3>Buttons</h3><p>Three emphasis levels, three sizes and a disabled state. Keep one primary button per view.</p><div class="demo"><div class="demo-row">
+  <button class="btn">Primary</button>
+  <button class="btn btn-2">Secondary</button>
+  <button class="btn btn-ghost">Ghost</button>
+  <button class="btn" disabled>Disabled</button>
+</div>
+<div class="demo-row" style="margin-top:14px">
+  <button class="btn btn-sm">Small</button>
+  <button class="btn">Default</button>
+  <button class="btn btn-lg">Large</button>
+</div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cbuttons"><span class="lbl">Copy</span></button><pre><code id="cbuttons">&lt;div class="demo-row"&gt;
+  &lt;button class="btn"&gt;Primary&lt;/button&gt;
+  &lt;button class="btn btn-2"&gt;Secondary&lt;/button&gt;
+  &lt;button class="btn btn-ghost"&gt;Ghost&lt;/button&gt;
+  &lt;button class="btn" disabled&gt;Disabled&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="demo-row" style="margin-top:14px"&gt;
+  &lt;button class="btn btn-sm"&gt;Small&lt;/button&gt;
+  &lt;button class="btn"&gt;Default&lt;/button&gt;
+  &lt;button class="btn btn-lg"&gt;Large&lt;/button&gt;
+&lt;/div&gt;</code></pre></div></details></div><div class="block" id="c-forms"><h3>Form elements</h3><p>Text fields, choices and toggles share the same border, radius and focus ring, so a form reads as one family.</p><div class="demo"><form class="formgrid" onsubmit="return false">
+  <div>
+    <div class="field">
+      <label class="label" for="f-name">Full name</label>
+      <input class="input" id="f-name" placeholder="Ada Lovelace">
+      <span class="help">As it appears on your ID.</span>
+    </div>
+    <div class="field is-error">
+      <label class="label" for="f-mail">Email</label>
+      <input class="input" id="f-mail" type="email" value="ada@">
+      <span class="help">Enter a complete email address.</span>
+    </div>
+    <div class="field">
+      <label class="label" for="f-plan">Plan</label>
+      <select class="select" id="f-plan"><option>Starter</option><option>Studio</option><option>Team</option></select>
+    </div>
+  </div>
+  <div>
+    <div class="field">
+      <label class="label" for="f-msg">Message</label>
+      <textarea class="textarea" id="f-msg" placeholder="Tell us about your project"></textarea>
+    </div>
+    <fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em">
+      <legend class="label">Interests</legend>
+      <label class="choice"><input type="checkbox" class="check" checked> Typography</label>
+      <label class="choice"><input type="checkbox" class="check"> Motion</label>
+    </fieldset>
+    <fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em">
+      <legend class="label">Billing</legend>
+      <label class="choice"><input type="radio" name="bill" class="radio" checked> Monthly</label>
+      <label class="choice"><input type="radio" name="bill" class="radio"> Yearly</label>
+    </fieldset>
+    <label class="choice"><input type="checkbox" class="switch" checked> Email me updates</label>
+    <div class="field" style="margin-top:1em">
+      <label class="label" for="f-range">Budget</label>
+      <input class="range" id="f-range" type="range" value="60">
+    </div>
+    <button class="btn">Send request</button>
+  </div>
+</form></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cforms"><span class="lbl">Copy</span></button><pre><code id="cforms">&lt;form class="formgrid" onsubmit="return false"&gt;
+  &lt;div&gt;
+    &lt;div class="field"&gt;
+      &lt;label class="label" for="f-name"&gt;Full name&lt;/label&gt;
+      &lt;input class="input" id="f-name" placeholder="Ada Lovelace"&gt;
+      &lt;span class="help"&gt;As it appears on your ID.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="field is-error"&gt;
+      &lt;label class="label" for="f-mail"&gt;Email&lt;/label&gt;
+      &lt;input class="input" id="f-mail" type="email" value="ada@"&gt;
+      &lt;span class="help"&gt;Enter a complete email address.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="field"&gt;
+      &lt;label class="label" for="f-plan"&gt;Plan&lt;/label&gt;
+      &lt;select class="select" id="f-plan"&gt;&lt;option&gt;Starter&lt;/option&gt;&lt;option&gt;Studio&lt;/option&gt;&lt;option&gt;Team&lt;/option&gt;&lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;div class="field"&gt;
+      &lt;label class="label" for="f-msg"&gt;Message&lt;/label&gt;
+      &lt;textarea class="textarea" id="f-msg" placeholder="Tell us about your project"&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    &lt;fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em"&gt;
+      &lt;legend class="label"&gt;Interests&lt;/legend&gt;
+      &lt;label class="choice"&gt;&lt;input type="checkbox" class="check" checked&gt; Typography&lt;/label&gt;
+      &lt;label class="choice"&gt;&lt;input type="checkbox" class="check"&gt; Motion&lt;/label&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class="field" style="border:0;padding:0;margin:0 0 1.1em"&gt;
+      &lt;legend class="label"&gt;Billing&lt;/legend&gt;
+      &lt;label class="choice"&gt;&lt;input type="radio" name="bill" class="radio" checked&gt; Monthly&lt;/label&gt;
+      &lt;label class="choice"&gt;&lt;input type="radio" name="bill" class="radio"&gt; Yearly&lt;/label&gt;
+    &lt;/fieldset&gt;
+    &lt;label class="choice"&gt;&lt;input type="checkbox" class="switch" checked&gt; Email me updates&lt;/label&gt;
+    &lt;div class="field" style="margin-top:1em"&gt;
+      &lt;label class="label" for="f-range"&gt;Budget&lt;/label&gt;
+      &lt;input class="range" id="f-range" type="range" value="60"&gt;
+    &lt;/div&gt;
+    &lt;button class="btn"&gt;Send request&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre></div></details></div><div class="block" id="c-cards"><h3>Cards</h3><p>A container for one idea. Media sits on top, then a badge, title, short text and one action.</p><div class="demo"><div class="auto">
+  <article class="card">
+    <div class="card-media"></div>
+    <span class="badge">New</span>
+    <h4 style="margin-top:.6em">Card title</h4>
+    <p>Short supporting text that explains what this card is about.</p>
+    <a class="btn btn-sm" href="#">Read more</a>
+  </article>
+  <article class="card">
+    <div class="card-media" style="filter:hue-rotate(40deg)"></div>
+    <span class="badge">Guide</span>
+    <h4 style="margin-top:.6em">Second card</h4>
+    <p>Cards in a row share height and spacing, so the grid stays calm.</p>
+    <a class="btn btn-sm btn-2" href="#">Open</a>
+  </article>
+</div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#ccards"><span class="lbl">Copy</span></button><pre><code id="ccards">&lt;div class="auto"&gt;
+  &lt;article class="card"&gt;
+    &lt;div class="card-media"&gt;&lt;/div&gt;
+    &lt;span class="badge"&gt;New&lt;/span&gt;
+    &lt;h4 style="margin-top:.6em"&gt;Card title&lt;/h4&gt;
+    &lt;p&gt;Short supporting text that explains what this card is about.&lt;/p&gt;
+    &lt;a class="btn btn-sm" href="#"&gt;Read more&lt;/a&gt;
+  &lt;/article&gt;
+  &lt;article class="card"&gt;
+    &lt;div class="card-media" style="filter:hue-rotate(40deg)"&gt;&lt;/div&gt;
+    &lt;span class="badge"&gt;Guide&lt;/span&gt;
+    &lt;h4 style="margin-top:.6em"&gt;Second card&lt;/h4&gt;
+    &lt;p&gt;Cards in a row share height and spacing, so the grid stays calm.&lt;/p&gt;
+    &lt;a class="btn btn-sm btn-2" href="#"&gt;Open&lt;/a&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre></div></details></div><div class="block" id="c-feedback"><h3>Feedback</h3><p>Alerts, badges and progress tell people what just happened and what to do next.</p><div class="demo"><div class="alert"><b>Info.</b> Your draft saves every 30 seconds.</div>
+<div class="alert alert-ok"><b>Saved.</b> Changes are live on your site.</div>
+<div class="alert alert-warn"><b>Check this.</b> Two images are missing alt text.</div>
+<div class="alert alert-danger"><b>Upload failed.</b> Files must be under 10 MB. Try a smaller file.</div>
+<div class="demo-row" style="margin-top:14px">
+  <span class="badge">Default</span>
+  <span class="badge" style="background:var(--accent);color:var(--accent-fg)">Accent</span>
+</div>
+<div style="margin-top:18px"><div class="progress" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" aria-label="Upload progress"><i style="width:64%"></i></div></div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cfeedback"><span class="lbl">Copy</span></button><pre><code id="cfeedback">&lt;div class="alert"&gt;&lt;b&gt;Info.&lt;/b&gt; Your draft saves every 30 seconds.&lt;/div&gt;
+&lt;div class="alert alert-ok"&gt;&lt;b&gt;Saved.&lt;/b&gt; Changes are live on your site.&lt;/div&gt;
+&lt;div class="alert alert-warn"&gt;&lt;b&gt;Check this.&lt;/b&gt; Two images are missing alt text.&lt;/div&gt;
+&lt;div class="alert alert-danger"&gt;&lt;b&gt;Upload failed.&lt;/b&gt; Files must be under 10 MB. Try a smaller file.&lt;/div&gt;
+&lt;div class="demo-row" style="margin-top:14px"&gt;
+  &lt;span class="badge"&gt;Default&lt;/span&gt;
+  &lt;span class="badge" style="background:var(--accent);color:var(--accent-fg)"&gt;Accent&lt;/span&gt;
+&lt;/div&gt;
+&lt;div style="margin-top:18px"&gt;&lt;div class="progress" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" aria-label="Upload progress"&gt;&lt;i style="width:64%"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;</code></pre></div></details></div><div class="block" id="c-navigation"><h3>Navigation</h3><p>Tabs switch views in place. Breadcrumbs show location. Pagination moves through long lists.</p><div class="demo"><div class="tabs" role="tablist">
+  <button class="tab" role="tab" aria-selected="true">Overview</button>
+  <button class="tab" role="tab" aria-selected="false">Specs</button>
+  <button class="tab" role="tab" aria-selected="false">Reviews</button>
+</div>
+<ol class="crumbs" style="margin-top:20px">
+  <li><a href="#">Home</a></li><li><a href="#">Library</a></li><li aria-current="page">This page</li>
+</ol>
+<ul class="pager" style="margin-top:20px">
+  <li><a href="#">1</a></li><li><a href="#" aria-current="page">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li>
+</ul></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#cnavigation"><span class="lbl">Copy</span></button><pre><code id="cnavigation">&lt;div class="tabs" role="tablist"&gt;
+  &lt;button class="tab" role="tab" aria-selected="true"&gt;Overview&lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false"&gt;Specs&lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false"&gt;Reviews&lt;/button&gt;
+&lt;/div&gt;
+&lt;ol class="crumbs" style="margin-top:20px"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;&lt;li aria-current="page"&gt;This page&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul class="pager" style="margin-top:20px"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#" aria-current="page"&gt;2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre></div></details></div><div class="block" id="c-table"><h3>Data table</h3><p>Tables scroll sideways on small screens instead of squashing columns.</p><div class="demo"><div class="table-wrap">
+  <table class="table">
+    <thead><tr><th>Project</th><th>Owner</th><th>Status</th><th>Due</th></tr></thead>
+    <tbody>
+      <tr><td>Homepage</td><td>Rūta</td><td><span class="badge">Review</span></td><td>12 Oct</td></tr>
+      <tr><td>Checkout</td><td>Tomas</td><td><span class="badge">Draft</span></td><td>19 Oct</td></tr>
+      <tr><td>Onboarding</td><td>Ieva</td><td><span class="badge">Live</span></td><td>2 Oct</td></tr>
+    </tbody>
+  </table>
+</div></div><details class="code-toggle"><summary>Show HTML</summary><div class="code"><button class="copy" data-copy="#ctable"><span class="lbl">Copy</span></button><pre><code id="ctable">&lt;div class="table-wrap"&gt;
+  &lt;table class="table"&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Project&lt;/th&gt;&lt;th&gt;Owner&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Due&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;&lt;td&gt;Homepage&lt;/td&gt;&lt;td&gt;Rūta&lt;/td&gt;&lt;td&gt;&lt;span class="badge"&gt;Review&lt;/span&gt;&lt;/td&gt;&lt;td&gt;12 Oct&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Checkout&lt;/td&gt;&lt;td&gt;Tomas&lt;/td&gt;&lt;td&gt;&lt;span class="badge"&gt;Draft&lt;/span&gt;&lt;/td&gt;&lt;td&gt;19 Oct&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Onboarding&lt;/td&gt;&lt;td&gt;Ieva&lt;/td&gt;&lt;td&gt;&lt;span class="badge"&gt;Live&lt;/span&gt;&lt;/td&gt;&lt;td&gt;2 Oct&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre></div></details></div>
+</div></section>
+
+
+<section id="prompt" class="sec"><div class="container">
+<h2 class="sec-title">Prompt it</h2>
+<p class="sec-lede">A ready prompt for AI design and coding tools. It names exact tokens and bans the usual defaults, so the output keeps this style's point of view.</p>
+<div class="prompt"><div class="code"><button class="copy" data-copy="#prompttext"><span class="lbl">Copy prompt</span></button><pre><code id="prompttext">Design a responsive landing page for an independent print studio and zine shop in an authentic Risograph style.
+
+Palette: Paper #F4EFE4, Fluorescent pink #FF48B0, Riso blue #0078BF, Yellow #FFE800, Teal #00838A, Ink navy #1F2A44.
+Typography: Anton uppercase for headlines, Instrument Sans for body.
+Layout: Two-column hero: a huge two-layer headline (blue layer plus pink layer offset a few pixels with multiply blending), and overlapping pink, blue and yellow shapes on the right with a halftone dot layer.
+Signature details: Only three spot inks (#FF48B0, #0078BF, #FFE800) on warm paper, mix-blend-mode: multiply for overprinting, slight misregistration, subtle SVG grain texture.
+Components: Buttons with an offset ink layer behind them, cards with a multiplied pink or blue ink shadow slightly rotated, yellow highlighter badges, striped two-ink progress bars.
+Motion: Ink layers sliding in and out of registration, colours mixing where they overlap.
+Avoid: full-colour photos, gradients, pink or yellow text, heavy noise, offsets on small text.
+Do not fall back on generic AI defaults: no centered hero with a gradient blob, no identical rounded cards with soft grey shadows, no purple-to-blue gradients, no emoji icons, unless this style explicitly calls for them.
+Accessibility: body text contrast of at least 4.5:1, visible keyboard focus on every control, labels on all form fields, and respect prefers-reduced-motion.
+Deliver one self-contained HTML file with CSS variables for every color, font, radius and shadow token.</code></pre></div></div>
+</div></section>
+
+<section id="pitfalls" class="sec alt"><div class="container">
+<h2 class="sec-title">Common mistakes</h2>
+<p class="sec-lede">Where this style usually goes wrong, and how to keep it honest.</p>
+<div class="auto pit"><article class="card"><h3>Muddy overlaps</h3><p>Too many overlapping inks turn brown. Stick to two or three.</p></article><article class="card"><h3>Offset text</h3><p>Misregistration on small text makes it unreadable. Only offset big headlines.</p></article><article class="card"><h3>Pink text</h3><p>Fluorescent pink and yellow fail contrast as text colours. Use them for shapes.</p></article><article class="card"><h3>Fake grain overload</h3><p>Heavy noise textures look dirty. Keep grain subtle.</p></article></div>
+</div></section>
+
+<footer class="docfoot"><div class="container">Anti-Boring · Risograph · every illustration, animation and component on this page is original and drawn in code.</div></footer>
+<script>
+function copyText(t,btn){const o=btn.innerHTML;const done=()=>{btn.textContent='Copied';setTimeout(()=>btn.innerHTML=o,1400)};
+ const fb=()=>{const ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;top:0;left:0;opacity:0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();ok?done():(btn.textContent='Press Ctrl+C',setTimeout(()=>btn.innerHTML=o,1800))};
+ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,fb)}else fb()}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-copy]');if(!b)return;e.preventDefault();
+ const v=b.dataset.copy;const t=v.startsWith('#')?document.querySelector(v).textContent:v;copyText(t,b.querySelector('.lbl')||b)});
+(function(){const b=document.getElementById('theme-toggle');if(!b)return;const R=document.documentElement,nat=b.dataset.native,oth=nat==='light'?'dark':'light';
+ const cur=()=>R.classList.contains('alt')?oth:nat;const lbl=()=>{document.getElementById('theme-lbl').textContent=cur()==='light'?'Dark':'Light';b.setAttribute('aria-label','Switch to '+(cur()==='light'?'dark':'light')+' theme')};lbl();
+ b.onclick=()=>{R.classList.toggle('alt');try{localStorage.setItem('atlas-theme',cur())}catch(e){}lbl();try{parent.postMessage({atlasTheme:cur()},'*')}catch(e){}}})();
+const st=document.getElementById('stage'),tg=document.getElementById('toggle');
+if(st&&tg)tg.onclick=()=>{st.classList.toggle('paused');tg.textContent=st.classList.contains('paused')?'Play':'Pause'};
+document.querySelectorAll('.tabs').forEach(t=>t.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;t.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===b))}));
+document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+(function(){const R=document.documentElement,rad=document.getElementById('pg-r'),bw=document.getElementById('pg-b'),ac=document.getElementById('pg-a'),out=document.getElementById('pg-out'),rs=document.getElementById('pg-reset');
+ if(!rad)return;const cs=getComputedStyle(R);const init={r:cs.getPropertyValue('--radius').trim(),b:cs.getPropertyValue('--bw').trim(),a:cs.getPropertyValue('--accent').trim()};
+ rad.value=parseInt(init.r)||0;bw.value=parseInt(init.b)||0;if(/^#[0-9a-f]{6}$/i.test(init.a))ac.value=init.a;
+ function upd(){R.style.setProperty('--radius',rad.value+'px');R.style.setProperty('--radius-sm',Math.round(rad.value*.6)+'px');R.style.setProperty('--bw',bw.value+'px');R.style.setProperty('--accent',ac.value);
+ out.textContent=`:root {\n  --radius: ${rad.value}px;\n  --radius-sm: ${Math.round(rad.value*.6)}px;\n  --bw: ${bw.value}px;\n  --accent: ${ac.value};\n}`}
+ rad.oninput=bw.oninput=ac.oninput=upd;
+ rs.onclick=()=>{['--radius','--radius-sm','--bw','--accent'].forEach(p=>R.style.removeProperty(p));rad.value=parseInt(init.r)||0;bw.value=parseInt(init.b)||0;if(/^#/.test(init.a))ac.value=init.a;out.textContent='Tokens reset to the style defaults.'};
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+{
+  "schema_version": "3.1.0",
+  "updated_at": "2026-09-30",
+  "holders": {
+    "speaker": {
+      "name": "Juozas Olekas",
+      "party": "lsdp",
+      "since": "2025-09",
+      "profile": {
+        "lt": "https://www.lrs.lt/sip/portal.show?p_a=498&p_asm_id=7193&p_k=1&p_r=35299",
+        "en": "https://www.lrs.lt/sip/portal.show?p_a=498&p_asm_id=7193&p_k=2&p_r=35299"
+      }
+    },
+    "president": {
+      "name": "Gitanas Nausėda",
+      "independent": true,
+      "since": "2019-07-12",
+      "note": {
+        "en": "2nd term",
+        "lt": "antroji kadencija"
+      },
+      "profile": {
+        "lt": "https://lrp.lt/lt/institucija/prezidentas-gitanas-nauseda/32725",
+        "en": "https://lrp.lt/en/institution/president-gitanas-nauseda/32727"
+      }
+    },
+    "pm": {
+      "name": "Mindaugas Sinkevičius",
+      "party": "lsdp",
+      "since": "2026-07-14",
+      "profile": {
+        "lt": "https://lrv.lt/lt/apie-vyriausybe/ministras-pirmininkas/",
+        "en": "https://lrv.lt/en/about-government/prime-minister/"
+      }
+    },
+    "min-agri": {
+      "name": "Kęstutis Mažeika",
+      "party": "dsvl"
+    },
+    "min-cult": {
+      "name": "Lukas Alsys",
+      "party": "lsdp"
+    },
+    "min-econ": {
+      "name": "Edvinas Grikšas",
+      "party": "lvzs"
+    },
+    "min-edu": {
+      "name": "Raminta Popovienė",
+      "party": "lsdp"
+    },
+    "min-energy": {
+      "name": "Lukas Savickas",
+      "party": "dsvl"
+    },
+    "min-env": {
+      "name": "Ieva Andriulaitytė",
+      "independent": true
+    },
+    "min-fin": {
+      "name": "Taurimas Valys",
+      "party": "lsdp"
+    },
+    "min-fa": {
+      "name": "Kęstutis Budrys",
+      "independent": true
+    },
+    "min-health": {
+      "name": "Linas Kukuraitis",
+      "party": "dsvl"
+    },
+    "min-interior": {
+      "name": "Martynas Katelynas",
+      "party": "lsdp"
+    },
+    "min-justice": {
+      "name": "Rita Tamašunienė",
+      "party": "llra"
+    },
+    "min-defence": {
+      "name": "Robertas Kaunas",
+      "party": "lsdp"
+    },
+    "min-social": {
+      "name": "Inga Ruginienė",
+      "party": "lsdp"
+    },
+    "min-transport": {
+      "name": "Juras Taminskas",
+      "party": "lsdp"
+    },
+    "cc-pres": {
+      "name": "Tomas Davulis",
+      "since": "2026-04-21"
+    },
+    "sc-pres": {
+      "name": "Danguolė Bublienė",
+      "since": "2023-03"
+    },
+    "bank-chair": {
+      "name": "Gediminas Šimkus",
+      "since": "2021-04"
+    },
+    "auditor": {
+      "name": "Irena Segalovičienė",
+      "since": "2025-05"
+    },
+    "prosecutor": {
+      "name": "Nida Grunskienė",
+      "since": "2021-01"
+    }
+  }
+}
