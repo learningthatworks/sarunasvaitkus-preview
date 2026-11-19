@@ -1,0 +1,131 @@
+{
+  "schema_version": "3.1.0",
+  "updated_at": "2026-09-30",
+  "seimas": {
+    "total_seats": 141,
+    "majority": 71,
+    "election": "2024",
+    "other_seats": 4
+  },
+  "parties": [
+    {
+      "id": "lsdp",
+      "abbr": "LSDP",
+      "name": {
+        "en": "Social Democratic Party of Lithuania",
+        "lt": "Lietuvos socialdemokratų partija"
+      },
+      "short": {
+        "en": "Social Democrats",
+        "lt": "Socialdemokratai"
+      },
+      "color": "#e30613",
+      "seats": 52,
+      "vote": "19.7%",
+      "coalition": true,
+      "website": "https://www.lsdp.lt/"
+    },
+    {
+      "id": "dsvl",
+      "abbr": "DSVL",
+      "name": {
+        "en": "Union of Democrats “For Lithuania”",
+        "lt": "Demokratų sąjunga „Vardan Lietuvos“"
+      },
+      "short": {
+        "en": "Democrats “For Lithuania”",
+        "lt": "Demokratai „Vardan Lietuvos“"
+      },
+      "color": "#7c3aed",
+      "seats": 14,
+      "vote": "9.4%",
+      "coalition": true,
+      "website": "https://www.demokratai.lt/"
+    },
+    {
+      "id": "lvzs",
+      "abbr": "LVŽS",
+      "name": {
+        "en": "Lithuanian Farmers and Greens Union",
+        "lt": "Lietuvos valstiečių ir žaliųjų sąjunga"
+      },
+      "short": {
+        "en": "Farmers and Greens",
+        "lt": "Valstiečiai ir žalieji"
+      },
+      "color": "#16a34a",
+      "seats": 8,
+      "vote": "7.2%",
+      "coalition": true,
+      "website": "https://www.lvzs.lt/"
+    },
+    {
+      "id": "llra",
+      "abbr": "LLRA-KŠS",
+      "name": {
+        "en": "Electoral Action of Poles in Lithuania – Christian Families Alliance",
+        "lt": "Lietuvos lenkų rinkimų akcija – Krikščioniškų šeimų sąjunga"
+      },
+      "short": {
+        "en": "Polish Electoral Action",
+        "lt": "Lenkų rinkimų akcija"
+      },
+      "color": "#b91c1c",
+      "seats": 3,
+      "vote": "4.0%",
+      "coalition": true,
+      "website": "https://www.awpl.lt/?lang=lt"
+    },
+    {
+      "id": "tslkd",
+      "abbr": "TS-LKD",
+      "name": {
+        "en": "Homeland Union – Lithuanian Christian Democrats",
+        "lt": "Tėvynės sąjunga – Lietuvos krikščionys demokratai"
+      },
+      "short": {
+        "en": "Homeland Union",
+        "lt": "Tėvynės sąjunga"
+      },
+      "color": "#00a3e0",
+      "seats": 28,
+      "vote": "18.4%",
+      "coalition": false,
+      "website": "https://tsajunga.lt/"
+    },
+    {
+      "id": "ppna",
+      "abbr": "PPNA",
+      "name": {
+        "en": "Dawn of Nemunas",
+        "lt": "Partija „Nemuno aušra“"
+      },
+      "short": {
+        "en": "Dawn of Nemunas",
+        "lt": "Nemuno aušra"
+      },
+      "color": "#ff6b00",
+      "seats": 20,
+      "vote": "15.3%",
+      "coalition": false,
+      "website": "https://nemunoausra.lt/"
+    },
+    {
+      "id": "ls",
+      "abbr": "LS",
+      "name": {
+        "en": "Liberal Movement",
+        "lt": "Liberalų sąjūdis"
+      },
+      "short": {
+        "en": "Liberals",
+        "lt": "Liberalų sąjūdis"
+      },
+      "color": "#f59e0b",
+      "seats": 12,
+      "vote": "7.9%",
+      "coalition": false,
+      "website": "https://liberalai.lt/"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "3.1.0",
+  "id": "lt",
+  "name": {
+    "en": "Lithuania",
+    "lt": "Lietuva"
+  },
+  "files": {
+    "structure": "structure.json",
+    "holders": "holders.json",
+    "seimas": "seimas.json",
+    "stories": "stories.json"
+  },
+  "layers": [
+    {
+      "id": "eu",
+      "file": "eu.json",
+      "name": {
+        "en": "European Parliament representatives",
+        "lt": "Europos Parlamento atstovai"
+      },
+      "default": false
+    },
+    {
+      "id": "education",
+      "file": "education.json",
+      "name": {
+        "en": "Municipal education",
+        "lt": "Savivaldybių švietimas"
+      },
+      "default": false
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>School Tracker for Parents - Demo</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#1c2430;--muted:#5b6676;--line:#e3e8ef;--brand:#2f5bd3;--brand-soft:#e8eefc;--red:#b42318;--red-soft:#fdecea;--amber:#a15c07;--amber-soft:#fff4e0;--green:#18794e;--green-soft:#e6f6ee;--violet:#6941c6;--violet-soft:#f1ecfd;--r:14px}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:16px}
+.demo{background:var(--amber-soft);color:var(--amber);border:1px solid #f3d9a6;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:600;margin-bottom:12px;text-align:center}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:14px}
+h1{font-size:24px;margin:0}
+.sub{color:var(--muted);font-size:13px;margin-top:2px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;background:var(--brand-soft);color:var(--brand);border:1px solid #cdd9f7}
+.chip.opt{background:#fff;color:var(--muted);border-style:dashed;border-color:#c5ccd6}
+.chip .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:5px;vertical-align:1px}
+.chip.opt .dot{background:#9aa4b2}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:16px;overflow-x:auto}
+.tab{appearance:none;border:0;background:none;font:inherit;font-weight:600;color:var(--muted);padding:10px 14px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+.tab[aria-selected=true]{color:var(--brand);border-bottom-color:var(--brand)}
+.tab:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.panel[hidden]{display:none}
+.kid{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff}
+.kid b{font-size:18px}.kid span{color:var(--muted);font-size:13px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.tile .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+.tile .v{font-size:28px;font-weight:700;margin-top:4px}
+.tile .n{font-size:12px;color:var(--muted)}
+.tile.bad{border-color:#f4c7c3;background:var(--red-soft)}.tile.bad .v{color:var(--ink)}
+.tile.warn{border-color:#f3d9a6;background:var(--amber-soft)}.tile.warn .v{color:var(--amber)}
+.tile.good .v{color:var(--green)}
+h2{font-size:16px;margin:22px 0 10px}
+.att{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ac{border-radius:var(--r);padding:12px 14px;border:1px solid;border-left-width:6px;background:var(--card)}
+.ac.u{border-color:#f4c7c3;border-left-color:var(--red);background:var(--red-soft)}
+.ac.w{border-color:#f3d9a6;border-left-color:var(--amber);background:var(--amber-soft)}
+.ac .tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.ac.u .tag{color:var(--red)}.ac.w .tag{color:var(--amber)}
+.ac .t{font-weight:700;margin:3px 0}.ac .d{font-size:13px;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tl{overflow-x:auto}
+.tl svg{display:block;width:100%;min-width:900px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.todo label{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.todo label:last-child{border-bottom:0}
+.todo input{width:18px;height:18px;margin-top:1px;accent-color:var(--brand)}
+.todo input:checked+span{text-decoration:line-through;color:var(--muted)}
+.todo small{display:block;color:var(--muted);font-size:12px}
+.contacts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ct{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px}
+.ct b{display:block;font-size:14px}.ct .r{color:var(--muted)}
+.ct a{color:var(--brand);text-decoration:none;word-break:break-all}
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-top:16px}
+summary{cursor:pointer;padding:12px 14px;font-weight:600}
+.nl{list-style:none;margin:0;padding:0 14px 10px}
+.nl li{display:flex;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:13px}
+.nl .when{color:var(--muted);min-width:92px}
+.src{font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;height:fit-content}
+.src.mb{background:var(--brand-soft);color:var(--brand)}.src.cd{background:var(--violet-soft);color:var(--violet)}.src.em{background:#eef0f3;color:var(--muted)}
+.inv{display:grid;gap:10px}
+.iv{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.iv .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;font-weight:600;display:none}
+.badge{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;justify-self:start}
+.badge.paid{background:var(--green-soft);color:var(--green)}.badge.due{background:var(--amber-soft);color:var(--amber)}.badge.over{background:var(--red-soft);color:var(--red)}
+.amt{font-weight:700;font-variant-numeric:tabular-nums}
+.next{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.next .big{font-size:30px;font-weight:800}
+footer{color:var(--muted);font-size:12px;text-align:center;margin:28px 0 8px}
+svg text{font-family:inherit}
+@media (max-width:860px){.tiles{grid-template-columns:repeat(2,1fr)}.att,.contacts{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}}
+@media (max-width:560px){.wrap{padding:12px}h1{font-size:20px}.att,.contacts{grid-template-columns:1fr}.tile .v{font-size:24px}
+.iv{grid-template-columns:1fr 1fr}.iv .lbl{display:block}.iv>div:first-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="demo" role="note">Demo with sample data. All names and figures are fictional.</div>
+<header>
+ <div>
+  <h1>School Tracker for Parents</h1>
+  <div class="sub">Example International School &middot; As of Wed 28 Oct 2026, 08:30</div>
+ </div>
+ <div class="chips" aria-label="Data sources">
+  <span class="chip"><span class="dot"></span>ManageBac</span>
+  <span class="chip"><span class="dot"></span>ClassDojo</span>
+  <span class="chip opt"><span class="dot"></span>Email (optional)</span>
+ </div>
+</header>
+
+<div class="tabs" role="tablist">
+ <button class="tab" role="tab" id="t-mia" aria-controls="p-mia" aria-selected="true">Mia</button>
+ <button class="tab" role="tab" id="t-leo" aria-controls="p-leo" aria-selected="false" tabindex="-1">Leo</button>
+ <button class="tab" role="tab" id="t-fees" aria-controls="p-fees" aria-selected="false" tabindex="-1">Fees and payments</button>
+</div>
+
+<!-- MIA -->
+<section class="panel" id="p-mia" role="tabpanel" aria-labelledby="t-mia">
+ <div class="kid"><div class="av" style="background:#2f5bd3">M</div><div><b>Mia</b><br><span>Grade 6 &middot; Class 6B &middot; ManageBac</span></div></div>
+ <div class="tiles">
+  <div class="tile good"><div class="k">Overall</div><div class="v">B+ 84%</div><div class="n">Up 3 points this term</div></div>
+  <div class="tile bad"><div class="k">Missing work</div><div class="v">2</div><div class="n">Science, Art</div></div>
+  <div class="tile warn"><div class="k">Due next 7 days</div><div class="v">5</div><div class="n">1 test on Tue</div></div>
+  <div class="tile"><div class="k">Unread teacher notes</div><div class="v">3</div><div class="n">2 in ManageBac, 1 email</div></div>
+ </div>
+ <h2>Needs attention</h2>
+ <div class="att">
+  <div class="ac u"><div class="tag">Missing</div><div class="t">Science: Plant cell lab report</div><div class="d">Was due Mon 26 Oct. Not submitted.</div></div>
+  <div class="ac u"><div class="tag">Low grade</div><div class="t">Maths: D on Fractions quiz</div><div class="d">58%. Below C for the second time.</div></div>
+  <div class="ac w"><div class="tag">Due soon</div><div class="t">History: Ancient Rome poster</div><div class="d">Due Fri 30 Oct. Draft not uploaded yet.</div></div>
+ </div>
+ <h2>Next 14 days</h2>
+ <div class="card tl"><div id="tl-mia"></div>
+  <div class="legend"><span><i style="background:#2f5bd3"></i>Task</span><span><i style="background:#b42318"></i>Test</span><span><i style="background:#18794e"></i>Event</span></div></div>
+ <h2>Progress</h2>
+ <div class="grid2">
+  <div class="card"><div style="font-weight:600;margin-bottom:6px">Grade by subject</div><div id="bars-mia"></div></div>
+  <div class="card"><div style="font-weight:600;margin-bottom:6px">Overall trend this term</div><div id="trend-mia"></div></div>
+ </div>
+ <h2>Parent to-do</h2>
+ <div class="card todo">
+  <label><input type="checkbox"><span>Ask Mia to upload the Science lab report tonight<small>Missing since Mon</small></span></label>
+  <label><input type="checkbox"><span>Book a 15 minute chat with the Maths teacher<small>Two low quiz results</small></span></label>
+  <label><input type="checkbox"><span>Sign the Science Museum trip form<small>Due Thu 5 Nov</small></span></label>
+  <label><input type="checkbox" checked><span>Read the English reading log comment<small>Done</small></span></label>
+ </div>
+ <h2>Contacts</h2>
+ <div class="contacts">
+  <div class="ct"><b>Ms Hannah Reed</b><span class="r">Homeroom 6B</span><br><a href="mailto:h.reed@example.com">h.reed@example.com</a></div>
+  <div class="ct"><b>Mr Daniel Ortiz</b><span class="r">Maths</span><br><a href="mailto:d.ortiz@example.com">d.ortiz@example.com</a></div>
+  <div class="ct"><b>Dr Priya Nair</b><span class="r">Science</span><br><a href="mailto:p.nair@example.com">p.nair@example.com</a></div>
+  <div class="ct"><b>Ms Clara Whitfield</b><span class="r">English</span><br><a href="mailto:c.whitfield@example.com">c.whitfield@example.com</a></div>
+  <div class="ct"><b>Mr Tomas Berg</b><span class="r">History and Art</span><br><a href="mailto:t.berg@example.com">t.berg@example.com</a></div>
+  <div class="ct"><b>School office</b><span class="r">Front desk</span><br><a href="mailto:office@example.com">office@example.com</a></div>
+ </div>
+ <details>
+  <summary>Recent notifications (6)</summary>
+  <ul class="nl">
+   <li><span class="when">Tue 27 Oct</span><span class="src mb">ManageBac</span><span>Maths: grade posted for Fractions quiz</span></li>
+   <li><span class="when">Tue 27 Oct</span><span class="src mb">ManageBac</span><span>Science: comment on lab safety task</span></li>
+   <li><span class="when">Mon 26 Oct</span><span class="src em">Email</span><span>Office: Science Museum trip letter</span></li>
+   <li><span class="when">Fri 23 Oct</span><span class="src mb">ManageBac</span><span>English: Short story marked A</span></li>
+   <li><span class="when">Thu 22 Oct</span><span class="src mb">ManageBac</span><span>History: new task Ancient Rome poster</span></li>
+   <li><span class="when">Wed 21 Oct</span><span class="src mb">ManageBac</span><span>Calendar: parent conferences 3 to 5 Nov</span></li>
+  </ul>
+ </details>
+</section>
+
+<!-- LEO -->
+<section class="panel" id="p-leo" role="tabpanel" aria-labelledby="t-leo" hidden>
+ <div class="kid"><div class="av" style="background:#6941c6">L</div><div><b>Leo</b><br><span>Grade 3 &middot; Class 3A &middot; ClassDojo</span></div></div>
+ <div class="tiles">
+  <div class="tile good"><div class="k">Dojo points (term)</div><div class="v">142</div><div class="n">92% positive</div></div>
+  <div class="tile"><div class="k">Missing work</div><div class="v">0</div><div class="n">All caught up</div></div>
+  <div class="tile warn"><div class="k">Due next 7 days</div><div class="v">2</div><div class="n">Reading log, show and tell</div></div>
+  <div class="tile"><div class="k">Unread teacher notes</div><div class="v">1</div><div class="n">ClassDojo message</div></div>
+ </div>
+ <h2>Needs attention</h2>
+ <div class="att">
+  <div class="ac w"><div class="tag">Needs work</div><div class="t">3 needs-work points this week</div><div class="d">All for "On task". Last week had 1.</div></div>
+  <div class="ac w"><div class="tag">Bring to school</div><div class="t">Show and tell: a favourite book</div><div class="d">Mon 2 Nov.</div></div>
+  <div class="ac u"><div class="tag">Reply needed</div><div class="t">Teacher asks about the class trip</div><div class="d">Please confirm by Fri 30 Oct.</div></div>
+ </div>
+ <h2>Next 14 days</h2>
+ <div class="card tl"><div id="tl-leo"></div>
+  <div class="legend"><span><i style="background:#2f5bd3"></i>Task</span><span><i style="background:#b42318"></i>Test</span><span><i style="background:#18794e"></i>Event</span></div></div>
+ <h2>Progress</h2>
+ <div class="grid2">
+  <div class="card"><div style="font-weight:600;margin-bottom:6px">Dojo points per week</div><div id="dojo-leo"></div>
+   <div class="legend"><span><i style="background:#18794e"></i>Positive</span><span><i style="background:#b42318"></i>Needs work</span></div></div>
+  <div class="card"><div style="font-weight:600;margin-bottom:6px">Skills breakdown (term)</div><div id="skills-leo"></div></div>
+ </div>
+ <h2>Parent to-do</h2>
+ <div class="card todo">
+  <label><input type="checkbox"><span>Reply to the teacher about the class trip<small>By Fri 30 Oct</small></span></label>
+  <label><input type="checkbox"><span>Talk with Leo about staying on task<small>3 needs-work points this week</small></span></label>
+  <label><input type="checkbox"><span>Pack a book for show and tell<small>Mon 2 Nov</small></span></label>
+  <label><input type="checkbox" checked><span>Join the parent conference slot<small>Booked Tue 3 Nov 17:00</small></span></label>
+ </div>
+ <h2>Contacts</h2>
+ <div class="contacts">
+  <div class="ct"><b>Mrs Laura Benson</b><span class="r">Homeroom 3A (ClassDojo)</span><br><a href="mailto:l.benson@example.com">l.benson@example.com</a></div>
+  <div class="ct"><b>School office</b><span class="r">Front desk</span><br><a href="mailto:office@example.com">office@example.com</a></div>
+  <div class="ct"><b>Primary coordinator</b><span class="r">Primary</span><br><a href="mailto:primary@example.com">primary@example.com</a></div>
+ </div>
+ <details>
+  <summary>Recent notifications (5)</summary>
+  <ul class="nl">
+   <li><span class="when">Tue 27 Oct</span><span class="src cd">ClassDojo</span><span>Message: class trip question</span></li>
+   <li><span class="when">Tue 27 Oct</span><span class="src cd">ClassDojo</span><span>+2 Teamwork, +1 Kindness</span></li>
+   <li><span class="when">Mon 26 Oct</span><span class="src cd">ClassDojo</span><span>Story post: science corner photos</span></li>
+   <li><span class="when">Mon 26 Oct</span><span class="src cd">ClassDojo</span><span>Needs work: On task (2)</span></li>
+   <li><span class="when">Fri 23 Oct</span><span class="src em">Email</span><span>Office: autumn break reminder</span></li>
+  </ul>
+ </details>
+</section>
+
+<!-- FEES -->
+<section class="panel" id="p-fees" role="tabpanel" aria-labelledby="t-fees" hidden>
+ <div class="tiles">
+  <div class="tile"><div class="k">Billed this year</div><div class="v">&euro;9,840</div><div class="n">Both children</div></div>
+  <div class="tile good"><div class="k">Paid</div><div class="v">&euro;6,560</div><div class="n">4 invoices</div></div>
+  <div class="tile warn"><div class="k">Due</div><div class="v">&euro;3,280</div><div class="n">Includes overdue</div></div>
+  <div class="tile bad"><div class="k">Overdue</div><div class="v">&euro;45</div><div class="n">Lunch top up</div></div>
+ </div>
+ <div class="grid2">
+  <div class="card next"><div><div class="k" style="font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase">Next payment due</div><div class="big">&euro;3,235</div><div class="sub">Term 2 tuition, Mia and Leo &middot; Due Sun 15 Nov 2026</div></div></div>
+  <div class="card"><div style="font-weight:600;margin-bottom:6px">Paid vs due</div><div id="fees-chart"></div></div>
+ </div>
+ <h2>Invoices</h2>
+ <div class="inv" id="inv"></div>
+</section>
+
+<footer>School Tracker for Parents &middot; Sample dashboard for demonstration only</footer>
+</div>
+
+<script>
+(function(){
+var NS='http://www.w3.org/2000/svg';
+function el(t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
+function svg(w,h,label){return el('svg',{viewBox:'0 0 '+w+' '+h,width:'100%',role:'img','aria-label':label});}
+var C={task:'#2f5bd3',test:'#b42318',event:'#18794e',muted:'#5b6676',line:'#e3e8ef'};
+
+/* Timeline: 14 days from Wed 28 Oct 2026 */
+function timeline(id,items){
+ var W=1120,H=150,L=10,dw=(W-2*L)/14,s=svg(W,H,'14 day timeline');
+ var days=['Wed','Thu','Fri','Sat','Sun','Mon','Tue'];
+ for(var i=0;i<14;i++){
+  var d=28+i,m='Oct';if(d>31){d-=31;m='Nov';}
+  var x=L+i*dw,we=(i%7===3||i%7===4);
+  s.appendChild(el('rect',{x:x+1,y:0,width:dw-2,height:H,rx:6,fill:i===0?'#e8eefc':(we?'#f3f4f6':'#fafbfd')}));
+  s.appendChild(el('text',{x:x+dw/2,y:16,'text-anchor':'middle','font-size':11,fill:C.muted,'font-weight':i===0?700:400},days[i%7]));
+  s.appendChild(el('text',{x:x+dw/2,y:30,'text-anchor':'middle','font-size':12,fill:'#1c2430','font-weight':600},d+' '+m));
+ }
+ var lane={};
+ items.forEach(function(it){
+  var n=lane[it.d]||0;lane[it.d]=n+1;
+  var x=L+it.d*dw+4,y=42+n*34,w=dw*(it.span||1)-8;
+  var g=el('g',{});
+  g.appendChild(el('rect',{x:x,y:y,width:w,height:28,rx:6,fill:C[it.k]}));
+  g.appendChild(el('text',{x:x+5,y:y+18,'font-size':10.5,fill:'#fff','font-weight':600},it.t));
+  g.appendChild(el('title',{},it.k+': '+it.t));
+  s.appendChild(g);
+ });
+ document.getElementById(id).appendChild(s);
+}
+timeline('tl-mia',[{d:0,k:'task',t:'Maths HW'},{d:2,k:'task',t:'Rome poster'},{d:1,k:'task',t:'Reading log'},{d:6,k:'test',t:'Science test'},{d:6,k:'event',t:'Conferences',span:3},{d:8,k:'event',t:'Museum trip'},{d:9,k:'task',t:'Art project'},{d:12,k:'test',t:'Maths quiz'},{d:13,k:'task',t:'Essay draft'}]);
+timeline('tl-leo',[{d:1,k:'task',t:'Reading log'},{d:2,k:'event',t:'Trip reply'},{d:5,k:'task',t:'Show and tell'},{d:6,k:'event',t:'Conference'},{d:8,k:'task',t:'Spelling'},{d:10,k:'event',t:'Sports day'},{d:12,k:'test',t:'Times tables'}]);
+
+/* Mia subject bars */
+(function(){
+ var data=[['English','A',91],['Maths','D',58],['Science','B',78],['History','B+',85],['Art','A-',88],['Music','A',93]];
+ var W=460,rowH=34,H=data.length*rowH+24,lx=78,mx=W-56,s=svg(W,H,'Grade by subject');
+ [0,25,50,75,100].forEach(function(v){var x=lx+(mx-lx)*v/100;s.appendChild(el('line',{x1:x,x2:x,y1:0,y2:H-20,stroke:C.line}));s.appendChild(el('text',{x:x,y:H-6,'text-anchor':'middle','font-size':10,fill:C.muted},v+'%'));});
+ data.forEach(function(r,i){
+  var y=i*rowH+6,w=(mx-lx)*r[2]/100,col=r[2]<60?'#b42318':(r[2]<80?'#d08a1a':'#2f5bd3');
+  s.appendChild(el('text',{x:lx-8,y:y+16,'text-anchor':'end','font-size':12,fill:'#1c2430'},r[0]));
+  s.appendChild(el('rect',{x:lx,y:y,width:w,height:22,rx:5,fill:col}));
+  s.appendChild(el('text',{x:lx+w+6,y:y+16,'font-size':12,'font-weight':700,fill:col},r[1]+' '+r[2]+'%'));
+ });
+ document.getElementById('bars-mia').appendChild(s);
+})();
+
+/* Mia trend line */
+(function(){
+ var pts=[['Wk 1',79],['Wk 2',80],['Wk 3',78],['Wk 4',81],['Wk 5',82],['Wk 6',80],['Wk 7',83],['Wk 8',84]];
+ var W=460,H=230,l=36,r=14,t=14,b=30,s=svg(W,H,'Overall grade trend');
+ var lo=70,hi=90;function X(i){return l+(W-l-r)*i/(pts.length-1);}function Y(v){return t+(H-t-b)*(hi-v)/(hi-lo);}
+ [70,75,80,85,90].forEach(function(v){s.appendChild(el('line',{x1:l,x2:W-r,y1:Y(v),y2:Y(v),stroke:C.line}));s.appendChild(el('text',{x:l-6,y:Y(v)+4,'text-anchor':'end','font-size':10,fill:C.muted},v));});
+ var d='',a='M'+X(0)+' '+Y(lo);
+ pts.forEach(function(p,i){d+=(i?'L':'M')+X(i)+' '+Y(p[1]);a+='L'+X(i)+' '+Y(p[1]);s.appendChild(el('text',{x:X(i),y:H-10,'text-anchor':'middle','font-size':10,fill:C.muted},p[0]));});
+ a+='L'+X(pts.length-1)+' '+Y(lo)+'Z';
+ s.appendChild(el('path',{d:a,fill:'#2f5bd3','fill-opacity':.1}));
+ s.appendChild(el('path',{d:d,fill:'none',stroke:'#2f5bd3','stroke-width':3,'stroke-linejoin':'round'}));
+ pts.forEach(function(p,i){s.appendChild(el('circle',{cx:X(i),cy:Y(p[1]),r:4,fill:'#fff',stroke:'#2f5bd3','stroke-width':2}));});
+ var li=pts.length-1;s.appendChild(el('text',{x:X(li)-4,y:Y(pts[li][1])-10,'text-anchor':'end','font-size':12,'font-weight':700,fill:'#2f5bd3'},pts[li][1]+'%'));
+ document.getElementById('trend-mia').appendChild(s);
+})();
+
+/* Leo dojo stacked weekly */
+(function(){
+ var wk=[['Wk 3',18,1],['Wk 4',21,2],['Wk 5',17,0],['Wk 6',22,1],['Wk 7',19,1],['Wk 8',16,3]];
+ var W=460,H=230,l=30,r=10,t=14,b=30,s=svg(W,H,'Dojo points per week'),max=25;
+ function Y(v){return t+(H-t-b)*(1-v/max);}
+ [0,5,10,15,20,25].forEach(function(v){s.appendChild(el('line',{x1:l,x2:W-r,y1:Y(v),y2:Y(v),stroke:C.line}));s.appendChild(el('text',{x:l-6,y:Y(v)+4,'text-anchor':'end','font-size':10,fill:C.muted},v));});
+ var bw=(W-l-r)/wk.length;
+ wk.forEach(function(w,i){
+  var x=l+i*bw+bw*.22,bwid=bw*.56;
+  s.appendChild(el('rect',{x:x,y:Y(w[1]),width:bwid,height:Y(0)-Y(w[1]),rx:4,fill:'#18794e'}));
+  if(w[2])s.appendChild(el('rect',{x:x,y:Y(w[1]+w[2]),width:bwid,height:Y(0)-Y(w[2])-1,rx:3,fill:'#b42318'}));
+  s.appendChild(el('text',{x:x+bwid/2,y:Y(w[1]+w[2])-5,'text-anchor':'middle','font-size':11,'font-weight':600,fill:'#1c2430'},'+'+w[1]+(w[2]?' / -'+w[2]:'')));
+  s.appendChild(el('text',{x:x+bwid/2,y:H-10,'text-anchor':'middle','font-size':10,fill:C.muted},w[0]));
+ });
+ document.getElementById('dojo-leo').appendChild(s);
+})();
+
+/* Leo skills donut */
+(function(){
+ var sk=[['Teamwork',34,'#2f5bd3'],['Kindness',28,'#18794e'],['Working hard',30,'#6941c6'],['Participation',22,'#d08a1a'],['Helping others',17,'#0e7c86'],['On task (needs work)',11,'#b42318']];
+ var W=460,H=230,cx=105,cy=112,R=86,ri=52,s=svg(W,H,'Skills breakdown'),tot=sk.reduce(function(a,b){return a+b[1];},0),ang=-Math.PI/2;
+ sk.forEach(function(k,i){
+  var a2=ang+2*Math.PI*k[1]/tot,lg=(a2-ang)>Math.PI?1:0;
+  var p='M'+(cx+R*Math.cos(ang))+' '+(cy+R*Math.sin(ang))+'A'+R+' '+R+' 0 '+lg+' 1 '+(cx+R*Math.cos(a2))+' '+(cy+R*Math.sin(a2))+'L'+(cx+ri*Math.cos(a2))+' '+(cy+ri*Math.sin(a2))+'A'+ri+' '+ri+' 0 '+lg+' 0 '+(cx+ri*Math.cos(ang))+' '+(cy+ri*Math.sin(ang))+'Z';
+  s.appendChild(el('path',{d:p,fill:k[2],stroke:'#fff','stroke-width':2}));ang=a2;
+  var y=34+i*30;
+  s.appendChild(el('rect',{x:222,y:y-10,width:12,height:12,rx:3,fill:k[2]}));
+  s.appendChild(el('text',{x:242,y:y,'font-size':12,fill:'#1c2430'},k[0]));
+  s.appendChild(el('text',{x:W-8,y:y,'text-anchor':'end','font-size':12,'font-weight':700,fill:'#1c2430'},k[1]));
+ });
+ s.appendChild(el('text',{x:cx,y:cy+2,'text-anchor':'middle','font-size':24,'font-weight':800,fill:'#1c2430'},tot));
+ s.appendChild(el('text',{x:cx,y:cy+20,'text-anchor':'middle','font-size':11,fill:C.muted},'points'));
+ document.getElementById('skills-leo').appendChild(s);
+})();
+
+/* Fees */
+var inv=[
+ ['Term 1 tuition','Mia','INV-1001','01 Sep 2026',1640,'paid'],
+ ['Term 1 tuition','Leo','INV-1002','01 Sep 2026',1640,'paid'],
+ ['Annual registration','Both','INV-1003','01 Sep 2026',1600,'paid'],
+ ['Bus service, autumn','Both','INV-1004','15 Sep 2026',1680,'paid'],
+ ['Lunch top up','Leo','INV-1011','20 Oct 2026',45,'over'],
+ ['Term 2 tuition','Mia and Leo','INV-1020','15 Nov 2026',3235,'due']];
+var box=document.getElementById('inv'),lab={paid:'Paid',due:'Due',over:'Overdue'};
+inv.forEach(function(v){
+ var d=document.createElement('div');d.className='iv';
+ d.innerHTML='<div><b>'+v[0]+'</b><div class="sub">'+v[1]+' &middot; '+v[2]+'</div></div>'+
+ '<div><span class="lbl">Due date</span>'+v[3]+'</div>'+
+ '<div><span class="lbl">Amount</span><span class="amt">&euro;'+v[4].toLocaleString('en-US')+'</span></div>'+
+ '<div><span class="lbl">Status</span><span class="badge '+v[5]+'">'+lab[v[5]]+'</span></div>';
+ box.appendChild(d);
+});
+(function(){
+ var paid=6560,due=3235,over=45,tot=paid+due+over,W=460,H=130,s=svg(W,H,'Paid vs due'),x=0;
+ [[paid,'#18794e','Paid'],[due,'#d08a1a','Due'],[over,'#b42318','Overdue']].forEach(function(p,i){
+  var w=(W)*p[0]/tot;s.appendChild(el('rect',{x:x,y:10,width:Math.max(w,4),height:36,fill:p[1],rx:i===0?8:0}));x+=w;
+  s.appendChild(el('rect',{x:i*150,y:72,width:12,height:12,rx:3,fill:p[1]}));
+  s.appendChild(el('text',{x:i*150+18,y:82,'font-size':12,fill:'#1c2430'},p[2]));
+  s.appendChild(el('text',{x:i*150+18,y:102,'font-size':14,'font-weight':700,fill:'#1c2430'},'\u20AC'+p[0].toLocaleString('en-US')));
+ });
+ s.appendChild(el('text',{x:0,y:124,'font-size':11,fill:C.muted},Math.round(paid/tot*100)+'% of this year paid'));
+ document.getElementById('fees-chart').appendChild(s);
+})();
+
+/* Tabs */
+var tabs=[].slice.call(document.querySelectorAll('.tab'));
+function sel(t){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on;});t.focus();if(history.replaceState)history.replaceState(null,'','#'+t.id.slice(2));}
+tabs.forEach(function(b,i){b.addEventListener('click',function(){sel(b);});b.addEventListener('keydown',function(e){if(e.key==='ArrowRight')sel(tabs[(i+1)%tabs.length]);if(e.key==='ArrowLeft')sel(tabs[(i+tabs.length-1)%tabs.length]);});});
+var h=location.hash.slice(1);tabs.forEach(function(b){if(b.id==='t-'+h){sel(b);window.scrollTo(0,0);}});
+})();
+</script>
+</body>
+</html>

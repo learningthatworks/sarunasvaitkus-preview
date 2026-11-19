@@ -1,0 +1,7 @@
+# The Power Map may be embedded by schools and news sites (the site root sends X-Frame-Options: SAMEORIGIN).
+# "always" matches the root and demo/.htaccess, so this replaces their policy instead of adding a second one.
+<IfModule mod_headers.c>
+  Header always unset X-Frame-Options
+  Header unset X-Frame-Options
+  Header always set Content-Security-Policy "frame-ancestors *; upgrade-insecure-requests; object-src 'none'; base-uri 'self'"
+</IfModule>

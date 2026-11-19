@@ -1,0 +1,3290 @@
+{
+  "schema_version": "3.1.0",
+  "updated_at": "2026-11-16",
+  "fetched_at": "2026-11-16",
+  "id": "education",
+  "name": {
+    "en": "Municipal education",
+    "lt": "Savivaldybių švietimas"
+  },
+  "attribution": {
+    "en": "Duomenys: duomenys.svietimas.lt (VšĮ Švietimas numeris vienas)",
+    "lt": "Duomenys: duomenys.svietimas.lt (VšĮ Švietimas numeris vienas)"
+  },
+  "url": "https://duomenys.svietimas.lt/indeksas",
+  "pages": {
+    "home": "https://duomenys.svietimas.lt/",
+    "index": "https://duomenys.svietimas.lt/indeksas",
+    "pupils": "https://duomenys.svietimas.lt/mokiniai/savivaldybes",
+    "teachers": "https://duomenys.svietimas.lt/pedagogai/savivaldybes",
+    "funding": "https://duomenys.svietimas.lt/finansavimas/savivaldybes",
+    "terms": "https://duomenys.svietimas.lt/naudojimosi-salygos"
+  },
+  "periods": {
+    "funding_school_year": "2024-2025"
+  },
+  "sources": {
+    "en": "Leadership index (final score, rank and four category scores), current pupil and school counts, funding per pupil and exam averages are copied from the public Švietimo Duomenys tables run by VšĮ Švietimas numeris vienas. English municipality names and category labels are translations for this demo. The numbers are not recalculated. The learning-outcomes score already includes the published socioeconomic context coefficient. Funding per pupil is the publisher's finansavimas_vienam_mokiniui metric (state-school funding divided by state-school pupils) for the latest school year with a figure (2024-2025). Pupil and school counts are the latest counts on the municipality list: a school is counted when it is open and has general-education pupils, and a branch is not counted as its own school. Exam averages are the latest municipal PUPP averages for Lithuanian language and mathematics. Municipal state-exam (VBE) averages are not published, so they are left out. Nothing on this layer is estimated. The map shows index scores to one decimal place, exam averages to two decimal places, and funding to the nearest euro. This file keeps the published figures.",
+    "lt": "Lyderystės indekso galutinis balas, vieta ir keturių kategorijų balai, naujausi mokinių ir mokyklų skaičiai, finansavimas vienam mokiniui ir egzaminų vidurkiai nukopijuoti iš viešų Švietimo Duomenų lentelių, kurias tvarko VšĮ Švietimas numeris vienas. Angliški savivaldybių ir kategorijų pavadinimai yra šios demonstracijos vertimai. Skaičiai neperskaičiuoti. Ugdymo pasiekimų balas jau apima paskelbtą socialinio ir ekonominio konteksto koeficientą. Finansavimas vienam mokiniui yra duomenų leidėjo rodiklis finansavimas_vienam_mokiniui (valstybinių mokyklų finansavimas, padalytas iš valstybinių mokyklų mokinių) už paskutinius mokslo metus, kuriems rodiklis paskelbtas (2024-2025). Mokinių ir mokyklų skaičiai yra naujausi savivaldybių sąrašo skaičiai: mokykla skaičiuojama, kai veikia ir turi bendrojo ugdymo mokinių, o padalinys neskaičiuojamas kaip atskira mokykla. Egzaminų vidurkiai yra paskutiniai paskelbti savivaldybių PUPP vidurkiai lietuvių kalbos ir matematikos. Savivaldybių valstybinių brandos egzaminų vidurkiai neskelbiami, todėl jų čia nėra. Šiame sluoksnyje niekas neįvertinta apytiksliai. Žemėlapis indekso balus rodo vienos dešimtosios tikslumu, egzaminų vidurkius dviem dešimtosiomis, o finansavimą iki artimiausio euro. Šiame faile palikti paskelbti skaičiai."
+  },
+  "categories": {
+    "strategic_leadership": {
+      "en": "Strategic leadership and management",
+      "lt": "Strateginė lyderystė ir valdymas"
+    },
+    "inclusion": {
+      "en": "Pupil inclusion and wellbeing",
+      "lt": "Mokinio įtrauktis ir gerovė"
+    },
+    "teaching_staff": {
+      "en": "Teaching staff",
+      "lt": "Pedagoginis personalas"
+    },
+    "learning_outcomes": {
+      "en": "Learning outcomes",
+      "lt": "Ugdymo pasiekimai"
+    }
+  },
+  "municipalities": [
+    {
+      "id": "11",
+      "code": 11,
+      "node_id": null,
+      "name": {
+        "en": "Alytus City Municipality",
+        "lt": "Alytaus miesto savivaldybė"
+      },
+      "short": {
+        "en": "Alytus City",
+        "lt": "Alytaus m."
+      },
+      "index": {
+        "score": 75.39687752689343,
+        "rank": 9,
+        "context": 0.9710419014796549,
+        "parts": {
+          "strategic_leadership": 79.52947216189136,
+          "inclusion": 72.56979477023984,
+          "teaching_staff": 74.996951599356,
+          "learning_outcomes": 73.8385356369144
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 6839,
+      "schools": 15,
+      "funding_per_pupil": 4394.387303427268,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.19
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.74
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "code": 12,
+      "node_id": null,
+      "name": {
+        "en": "Birštonas Municipality",
+        "lt": "Birštono savivaldybė"
+      },
+      "short": {
+        "en": "Birštonas",
+        "lt": "Birštono"
+      },
+      "index": {
+        "score": 72.46675085497503,
+        "rank": 20,
+        "context": 0.87090564932786,
+        "parts": {
+          "strategic_leadership": 73.28642144181221,
+          "inclusion": 75.73524694533754,
+          "teaching_staff": 73.98487622850551,
+          "learning_outcomes": 64.81637546564504
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 511,
+      "schools": 1,
+      "funding_per_pupil": 5104.292661688963,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.630000000000001
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 6.039999999999999
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "code": 13,
+      "node_id": null,
+      "name": {
+        "en": "Vilnius City Municipality",
+        "lt": "Vilniaus miesto savivaldybė"
+      },
+      "short": {
+        "en": "Vilnius City",
+        "lt": "Vilniaus m."
+      },
+      "index": {
+        "score": 68.89737349225359,
+        "rank": 44,
+        "context": 0.908267645239816,
+        "parts": {
+          "strategic_leadership": 79.46419585206627,
+          "inclusion": 63.13575442813261,
+          "teaching_staff": 57.83221610707579,
+          "learning_outcomes": 72.75472593389388
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 87365,
+      "schools": 169,
+      "funding_per_pupil": 5147.320718182406,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.49
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 6.723841543633972
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "code": 15,
+      "node_id": null,
+      "name": {
+        "en": "Druskininkai Municipality",
+        "lt": "Druskininkų savivaldybė"
+      },
+      "short": {
+        "en": "Druskininkai",
+        "lt": "Druskininkų"
+      },
+      "index": {
+        "score": 74.49687878351693,
+        "rank": 12,
+        "context": 0.9588047417209641,
+        "parts": {
+          "strategic_leadership": 80.40084695775069,
+          "inclusion": 72.44346040368404,
+          "teaching_staff": 71.47121512798762,
+          "learning_outcomes": 71.74671774744495
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2229,
+      "schools": 5,
+      "funding_per_pupil": 5410.183595763312,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.72
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.54
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "code": 18,
+      "node_id": null,
+      "name": {
+        "en": "Marijampolė Municipality",
+        "lt": "Marijampolės savivaldybė"
+      },
+      "short": {
+        "en": "Marijampolė",
+        "lt": "Marijampolės"
+      },
+      "index": {
+        "score": 72.41335693093487,
+        "rank": 21,
+        "context": 1.0058262169299217,
+        "parts": {
+          "strategic_leadership": 70.71229672123845,
+          "inclusion": 67.65257166648382,
+          "teaching_staff": 77.02344665297113,
+          "learning_outcomes": 77.49603542011981
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 6582,
+      "schools": 15,
+      "funding_per_pupil": 4629.220792063036,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.62
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.79
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "code": 19,
+      "node_id": null,
+      "name": {
+        "en": "Kaunas City Municipality",
+        "lt": "Kauno miesto savivaldybė"
+      },
+      "short": {
+        "en": "Kaunas City",
+        "lt": "Kauno m."
+      },
+      "index": {
+        "score": 76.86712225575396,
+        "rank": 5,
+        "context": 0.9702647376317066,
+        "parts": {
+          "strategic_leadership": 85.06643607854184,
+          "inclusion": 70.8058054059958,
+          "teaching_staff": 68.00590047959393,
+          "learning_outcomes": 82.52134857236939
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 41354,
+      "schools": 74,
+      "funding_per_pupil": 4483.860578451344,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.81
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 6.583341365461848
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "code": 21,
+      "node_id": null,
+      "name": {
+        "en": "Klaipėda City Municipality",
+        "lt": "Klaipėdos miesto savivaldybė"
+      },
+      "short": {
+        "en": "Klaipėda City",
+        "lt": "Klaipėdos m."
+      },
+      "index": {
+        "score": 71.29863936685587,
+        "rank": 27,
+        "context": 0.8923369047378142,
+        "parts": {
+          "strategic_leadership": 85.2774970075804,
+          "inclusion": 62.214825829958485,
+          "teaching_staff": 68.47158476759675,
+          "learning_outcomes": 66.78312781037425
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 23972,
+      "schools": 49,
+      "funding_per_pupil": 4611.079173674921,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.19
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.934065464895636
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "code": 23,
+      "node_id": null,
+      "name": {
+        "en": "Neringa Municipality",
+        "lt": "Neringos savivaldybė"
+      },
+      "short": {
+        "en": "Neringa",
+        "lt": "Neringos"
+      },
+      "index": {
+        "score": 68.07935157018316,
+        "rank": 47,
+        "context": 0.8796551048270429,
+        "parts": {
+          "strategic_leadership": 68.2020559951179,
+          "inclusion": 66.95611686612187,
+          "teaching_staff": 70.63131816515428,
+          "learning_outcomes": 67.02818039390188
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 149,
+      "schools": 1,
+      "funding_per_pupil": 11048.404681929005,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.11
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.0
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "code": 25,
+      "node_id": null,
+      "name": {
+        "en": "Palanga City Municipality",
+        "lt": "Palangos miesto savivaldybė"
+      },
+      "short": {
+        "en": "Palanga City",
+        "lt": "Palangos m."
+      },
+      "index": {
+        "score": 71.91791840547396,
+        "rank": 25,
+        "context": 0.9597740008596569,
+        "parts": {
+          "strategic_leadership": 64.05210662498695,
+          "inclusion": 76.59397940186614,
+          "teaching_staff": 70.99088368876579,
+          "learning_outcomes": 77.62957929832437
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2281,
+      "schools": 6,
+      "funding_per_pupil": 4824.484287040925,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.640000000000001
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.69
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "code": 27,
+      "node_id": null,
+      "name": {
+        "en": "Panevėžys City Municipality",
+        "lt": "Panevėžio miesto savivaldybė"
+      },
+      "short": {
+        "en": "Panevėžys City",
+        "lt": "Panevėžio m."
+      },
+      "index": {
+        "score": 75.42631669664146,
+        "rank": 8,
+        "context": 0.9778204326417558,
+        "parts": {
+          "strategic_leadership": 78.38389929134067,
+          "inclusion": 71.42011347461815,
+          "teaching_staff": 75.58204958589019,
+          "learning_outcomes": 76.84351474837888
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 10673,
+      "schools": 21,
+      "funding_per_pupil": 5097.8607723099085,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.38
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.92
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "code": 29,
+      "node_id": null,
+      "name": {
+        "en": "Šiauliai City Municipality",
+        "lt": "Šiaulių miesto savivaldybė"
+      },
+      "short": {
+        "en": "Šiauliai City",
+        "lt": "Šiaulių m."
+      },
+      "index": {
+        "score": 78.84885692097131,
+        "rank": 2,
+        "context": 0.8489072191105208,
+        "parts": {
+          "strategic_leadership": 88.07943362181155,
+          "inclusion": 76.33743216528354,
+          "teaching_staff": 81.45084044323956,
+          "learning_outcomes": 66.1681454809744
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 14898,
+      "schools": 34,
+      "funding_per_pupil": 5452.721565854251,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.36
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.75
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "code": 30,
+      "node_id": null,
+      "name": {
+        "en": "Visaginas Municipality",
+        "lt": "Visagino savivaldybė"
+      },
+      "short": {
+        "en": "Visaginas",
+        "lt": "Visagino"
+      },
+      "index": {
+        "score": 76.38038708255522,
+        "rank": 7,
+        "context": 1.0720705638278896,
+        "parts": {
+          "strategic_leadership": 80.63644520135173,
+          "inclusion": 76.64598240906051,
+          "teaching_staff": 73.6085263393896,
+          "learning_outcomes": 72.36976765776808
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1811,
+      "schools": 5,
+      "funding_per_pupil": 5159.605013124603,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 4.91
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.789166666666667
+        }
+      ]
+    },
+    {
+      "id": "32",
+      "code": 32,
+      "node_id": null,
+      "name": {
+        "en": "Akmenė District Municipality",
+        "lt": "Akmenės rajono savivaldybė"
+      },
+      "short": {
+        "en": "Akmenė District",
+        "lt": "Akmenės r."
+      },
+      "index": {
+        "score": 74.40201562418785,
+        "rank": 13,
+        "context": 1.075931904866874,
+        "parts": {
+          "strategic_leadership": 83.07660828666872,
+          "inclusion": 75.48020698714363,
+          "teaching_staff": 66.25158294934126,
+          "learning_outcomes": 67.92327226087954
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2160,
+      "schools": 6,
+      "funding_per_pupil": 6109.677775044344,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.11
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.66
+        }
+      ]
+    },
+    {
+      "id": "33",
+      "code": 33,
+      "node_id": null,
+      "name": {
+        "en": "Alytus District Municipality",
+        "lt": "Alytaus rajono savivaldybė"
+      },
+      "short": {
+        "en": "Alytus District",
+        "lt": "Alytaus r."
+      },
+      "index": {
+        "score": 72.98043941830534,
+        "rank": 17,
+        "context": 0.9616135764942614,
+        "parts": {
+          "strategic_leadership": 76.58042123969726,
+          "inclusion": 73.35984158486075,
+          "teaching_staff": 70.35134721165505,
+          "learning_outcomes": 69.64045564303464
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1258,
+      "schools": 5,
+      "funding_per_pupil": 7363.744257019227,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.22
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.44
+        }
+      ]
+    },
+    {
+      "id": "34",
+      "code": 34,
+      "node_id": null,
+      "name": {
+        "en": "Anykščiai District Municipality",
+        "lt": "Anykščių rajono savivaldybė"
+      },
+      "short": {
+        "en": "Anykščiai District",
+        "lt": "Anykščių r."
+      },
+      "index": {
+        "score": 71.99503175683898,
+        "rank": 24,
+        "context": 1.1406093717010717,
+        "parts": {
+          "strategic_leadership": 67.61403754547858,
+          "inclusion": 74.39965820884811,
+          "teaching_staff": 67.74412627714865,
+          "learning_outcomes": 79.21048887555624
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1793,
+      "schools": 6,
+      "funding_per_pupil": 6764.142929704445,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.76
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.17
+        }
+      ]
+    },
+    {
+      "id": "36",
+      "code": 36,
+      "node_id": null,
+      "name": {
+        "en": "Biržai District Municipality",
+        "lt": "Biržų rajono savivaldybė"
+      },
+      "short": {
+        "en": "Biržai District",
+        "lt": "Biržų r."
+      },
+      "index": {
+        "score": 70.0476019942331,
+        "rank": 37,
+        "context": 1.1502041830517002,
+        "parts": {
+          "strategic_leadership": 66.97984090812092,
+          "inclusion": 63.233367633143544,
+          "teaching_staff": 73.85005708708283,
+          "learning_outcomes": 81.06814007218601
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1825,
+      "schools": 6,
+      "funding_per_pupil": 6745.772676430878,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.97
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.19
+        }
+      ]
+    },
+    {
+      "id": "38",
+      "code": 38,
+      "node_id": null,
+      "name": {
+        "en": "Varėna District Municipality",
+        "lt": "Varėnos rajono savivaldybė"
+      },
+      "short": {
+        "en": "Varėna District",
+        "lt": "Varėnos r."
+      },
+      "index": {
+        "score": 70.98818717229014,
+        "rank": 30,
+        "context": 1.0090175339615821,
+        "parts": {
+          "strategic_leadership": 75.8268313714387,
+          "inclusion": 61.68154592578129,
+          "teaching_staff": 67.52596851240797,
+          "learning_outcomes": 81.15240140321278
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1649,
+      "schools": 5,
+      "funding_per_pupil": 5328.694296912436,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.88
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.37
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "code": 39,
+      "node_id": null,
+      "name": {
+        "en": "Vilkaviškis District Municipality",
+        "lt": "Vilkaviškio rajono savivaldybė"
+      },
+      "short": {
+        "en": "Vilkaviškis District",
+        "lt": "Vilkaviškio r."
+      },
+      "index": {
+        "score": 69.44181169528669,
+        "rank": 40,
+        "context": 1.06922083961193,
+        "parts": {
+          "strategic_leadership": 76.1326915987621,
+          "inclusion": 69.45124093491937,
+          "teaching_staff": 57.126799887555904,
+          "learning_outcomes": 71.70635978835536
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 3499,
+      "schools": 10,
+      "funding_per_pupil": 6219.183079980671,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.25
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.07
+        }
+      ]
+    },
+    {
+      "id": "41",
+      "code": 41,
+      "node_id": null,
+      "name": {
+        "en": "Vilnius District Municipality",
+        "lt": "Vilniaus rajono savivaldybė"
+      },
+      "short": {
+        "en": "Vilnius District",
+        "lt": "Vilniaus r."
+      },
+      "index": {
+        "score": 67.15651637167161,
+        "rank": 51,
+        "context": 0.9461665888588713,
+        "parts": {
+          "strategic_leadership": 74.99819352583035,
+          "inclusion": 63.73332892146131,
+          "teaching_staff": 62.139505236621325,
+          "learning_outcomes": 65.54579295079924
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 12947,
+      "schools": 43,
+      "funding_per_pupil": 6469.150399936513,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.96
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 6.3866793893129765
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "code": 42,
+      "node_id": null,
+      "name": {
+        "en": "Elektrėnai Municipality",
+        "lt": "Elektrėnų savivaldybė"
+      },
+      "short": {
+        "en": "Elektrėnai",
+        "lt": "Elektrėnų"
+      },
+      "index": {
+        "score": 66.87543056541102,
+        "rank": 54,
+        "context": 0.8135328477803915,
+        "parts": {
+          "strategic_leadership": 73.65695141995658,
+          "inclusion": 68.61475580489999,
+          "teaching_staff": 66.37153562689497,
+          "learning_outcomes": 54.598056362875305
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2789,
+      "schools": 8,
+      "funding_per_pupil": 5458.20255471063,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.69
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.13
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "code": 43,
+      "node_id": null,
+      "name": {
+        "en": "Zarasai District Municipality",
+        "lt": "Zarasų rajono savivaldybė"
+      },
+      "short": {
+        "en": "Zarasai District",
+        "lt": "Zarasų r."
+      },
+      "index": {
+        "score": 69.88192572091282,
+        "rank": 38,
+        "context": 1.1428893674171519,
+        "parts": {
+          "strategic_leadership": 72.16847505584329,
+          "inclusion": 60.37405765365706,
+          "teaching_staff": 68.20264475357355,
+          "learning_outcomes": 82.39318478673998
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1067,
+      "schools": 4,
+      "funding_per_pupil": 7303.701891328191,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.929999999999999
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 4.93
+        }
+      ]
+    },
+    {
+      "id": "45",
+      "code": 45,
+      "node_id": null,
+      "name": {
+        "en": "Ignalina District Municipality",
+        "lt": "Ignalinos rajono savivaldybė"
+      },
+      "short": {
+        "en": "Ignalina District",
+        "lt": "Ignalinos r."
+      },
+      "index": {
+        "score": 72.92353408812363,
+        "rank": 18,
+        "context": 1.1377063303833639,
+        "parts": {
+          "strategic_leadership": 74.30260791099047,
+          "inclusion": 70.71539809330832,
+          "teaching_staff": 69.35369030135787,
+          "learning_outcomes": 77.7369711328121
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 927,
+      "schools": 4,
+      "funding_per_pupil": 8315.033796998117,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.63
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 4.91
+        }
+      ]
+    },
+    {
+      "id": "46",
+      "code": 46,
+      "node_id": null,
+      "name": {
+        "en": "Jonava District Municipality",
+        "lt": "Jonavos rajono savivaldybė"
+      },
+      "short": {
+        "en": "Jonava District",
+        "lt": "Jonavos r."
+      },
+      "index": {
+        "score": 77.71596428638564,
+        "rank": 4,
+        "context": 1.0691981625085705,
+        "parts": {
+          "strategic_leadership": 82.03328937558643,
+          "inclusion": 71.46092633494936,
+          "teaching_staff": 81.01355209156333,
+          "learning_outcomes": 77.32494577456116
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 4422,
+      "schools": 10,
+      "funding_per_pupil": 5264.7801293875455,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.13
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.69
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "code": 47,
+      "node_id": null,
+      "name": {
+        "en": "Joniškis District Municipality",
+        "lt": "Joniškio rajono savivaldybė"
+      },
+      "short": {
+        "en": "Joniškis District",
+        "lt": "Joniškio r."
+      },
+      "index": {
+        "score": 69.35457114293713,
+        "rank": 41,
+        "context": 0.9128765693676807,
+        "parts": {
+          "strategic_leadership": 65.04731839968603,
+          "inclusion": 84.55665582133915,
+          "teaching_staff": 63.08309577290774,
+          "learning_outcomes": 59.28379861024015
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1511,
+      "schools": 4,
+      "funding_per_pupil": 6791.804895056485,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.35
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 4.67
+        }
+      ]
+    },
+    {
+      "id": "48",
+      "code": 48,
+      "node_id": null,
+      "name": {
+        "en": "Kalvarija Municipality",
+        "lt": "Kalvarijos savivaldybė"
+      },
+      "short": {
+        "en": "Kalvarija",
+        "lt": "Kalvarijos"
+      },
+      "index": {
+        "score": 68.71241160858912,
+        "rank": 45,
+        "context": 1.1529454000607335,
+        "parts": {
+          "strategic_leadership": 70.34402690625726,
+          "inclusion": 63.10051866377939,
+          "teaching_staff": 67.83044564283539,
+          "learning_outcomes": 75.56479404505521
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 967,
+      "schools": 4,
+      "funding_per_pupil": 6045.080810663354,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.2
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.03
+        }
+      ]
+    },
+    {
+      "id": "49",
+      "code": 49,
+      "node_id": null,
+      "name": {
+        "en": "Kaišiadorys District Municipality",
+        "lt": "Kaišiadorių rajono savivaldybė"
+      },
+      "short": {
+        "en": "Kaišiadorys District",
+        "lt": "Kaišiadorių r."
+      },
+      "index": {
+        "score": 67.62636744919372,
+        "rank": 48,
+        "context": 0.9510649757115505,
+        "parts": {
+          "strategic_leadership": 70.5567690769749,
+          "inclusion": 67.05616536556185,
+          "teaching_staff": 65.13947673677109,
+          "learning_outcomes": 66.57295884539238
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 3241,
+      "schools": 12,
+      "funding_per_pupil": 6275.226162649866,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.21
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 6.34
+        }
+      ]
+    },
+    {
+      "id": "52",
+      "code": 52,
+      "node_id": null,
+      "name": {
+        "en": "Kaunas District Municipality",
+        "lt": "Kauno rajono savivaldybė"
+      },
+      "short": {
+        "en": "Kaunas District",
+        "lt": "Kauno r."
+      },
+      "index": {
+        "score": 70.95325372994841,
+        "rank": 31,
+        "context": 0.8811490441540685,
+        "parts": {
+          "strategic_leadership": 72.61510029848436,
+          "inclusion": 75.5262766912417,
+          "teaching_staff": 63.10877975047744,
+          "learning_outcomes": 69.44542341467555
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 11643,
+      "schools": 29,
+      "funding_per_pupil": 5236.065999236785,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.5
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 6.3
+        }
+      ]
+    },
+    {
+      "id": "53",
+      "code": 53,
+      "node_id": null,
+      "name": {
+        "en": "Kėdainiai District Municipality",
+        "lt": "Kėdainių rajono savivaldybė"
+      },
+      "short": {
+        "en": "Kėdainiai District",
+        "lt": "Kėdainių r."
+      },
+      "index": {
+        "score": 73.55475397138838,
+        "rank": 15,
+        "context": 0.9283331923409505,
+        "parts": {
+          "strategic_leadership": 74.13314506196099,
+          "inclusion": 78.25950109021748,
+          "teaching_staff": 69.87174612791183,
+          "learning_outcomes": 69.31305450076232
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 4960,
+      "schools": 14,
+      "funding_per_pupil": 5998.557894397236,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.15
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.77
+        }
+      ]
+    },
+    {
+      "id": "54",
+      "code": 54,
+      "node_id": null,
+      "name": {
+        "en": "Kelmė District Municipality",
+        "lt": "Kelmės rajono savivaldybė"
+      },
+      "short": {
+        "en": "Kelmė District",
+        "lt": "Kelmės r."
+      },
+      "index": {
+        "score": 70.7525003493264,
+        "rank": 33,
+        "context": 1.1375669107131734,
+        "parts": {
+          "strategic_leadership": 70.00920311842629,
+          "inclusion": 71.85824831799987,
+          "teaching_staff": 61.84017326022192,
+          "learning_outcomes": 79.1211513317708
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2290,
+      "schools": 9,
+      "funding_per_pupil": 6961.390254935703,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.85
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.35
+        }
+      ]
+    },
+    {
+      "id": "55",
+      "code": 55,
+      "node_id": null,
+      "name": {
+        "en": "Klaipėda District Municipality",
+        "lt": "Klaipėdos rajono savivaldybė"
+      },
+      "short": {
+        "en": "Klaipėda District",
+        "lt": "Klaipėdos r."
+      },
+      "index": {
+        "score": 68.53288652496202,
+        "rank": 46,
+        "context": 0.8381334992317772,
+        "parts": {
+          "strategic_leadership": 75.67712341594799,
+          "inclusion": 69.94212267093305,
+          "teaching_staff": 61.67303975385422,
+          "learning_outcomes": 62.56252374063435
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 6862,
+      "schools": 16,
+      "funding_per_pupil": 6228.641836354089,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.13
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.81
+        }
+      ]
+    },
+    {
+      "id": "56",
+      "code": 56,
+      "node_id": null,
+      "name": {
+        "en": "Kretinga District Municipality",
+        "lt": "Kretingos rajono savivaldybė"
+      },
+      "short": {
+        "en": "Kretinga District",
+        "lt": "Kretingos r."
+      },
+      "index": {
+        "score": 70.24218236188811,
+        "rank": 34,
+        "context": 0.9549700450398172,
+        "parts": {
+          "strategic_leadership": 68.42916584809869,
+          "inclusion": 72.94708664630387,
+          "teaching_staff": 69.45498377305378,
+          "learning_outcomes": 69.69154929478293
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 4743,
+      "schools": 13,
+      "funding_per_pupil": 6236.234969680374,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.019999999999999
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 6.029999999999999
+        }
+      ]
+    },
+    {
+      "id": "57",
+      "code": 57,
+      "node_id": null,
+      "name": {
+        "en": "Kupiškis District Municipality",
+        "lt": "Kupiškio rajono savivaldybė"
+      },
+      "short": {
+        "en": "Kupiškis District",
+        "lt": "Kupiškio r."
+      },
+      "index": {
+        "score": 70.81080845332548,
+        "rank": 32,
+        "context": 1.0473080809981936,
+        "parts": {
+          "strategic_leadership": 67.59151448406261,
+          "inclusion": 68.46940884783315,
+          "teaching_staff": 81.5465322581275,
+          "learning_outcomes": 68.41612501065632
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1327,
+      "schools": 5,
+      "funding_per_pupil": 6385.611777398819,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.4
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 4.53
+        }
+      ]
+    },
+    {
+      "id": "58",
+      "code": 58,
+      "node_id": null,
+      "name": {
+        "en": "Kazlų Rūda Municipality",
+        "lt": "Kazlų Rūdos savivaldybė"
+      },
+      "short": {
+        "en": "Kazlų Rūda",
+        "lt": "Kazlų Rūdos"
+      },
+      "index": {
+        "score": 66.4951177216667,
+        "rank": 57,
+        "context": 1.0593955120143357,
+        "parts": {
+          "strategic_leadership": 70.25200121105195,
+          "inclusion": 69.65342399508317,
+          "teaching_staff": 61.42378202941538,
+          "learning_outcomes": 61.193668769715465
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1377,
+      "schools": 6,
+      "funding_per_pupil": 7662.644000918952,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.76
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 4.59
+        }
+      ]
+    },
+    {
+      "id": "59",
+      "code": 59,
+      "node_id": null,
+      "name": {
+        "en": "Lazdijai District Municipality",
+        "lt": "Lazdijų rajono savivaldybė"
+      },
+      "short": {
+        "en": "Lazdijai District",
+        "lt": "Lazdijų r."
+      },
+      "index": {
+        "score": 78.09749173138455,
+        "rank": 3,
+        "context": 1.1153386533989624,
+        "parts": {
+          "strategic_leadership": 75.03835900650486,
+          "inclusion": 84.09743036718386,
+          "teaching_staff": 68.20578041546737,
+          "learning_outcomes": 83.57799418092233
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1516,
+      "schools": 7,
+      "funding_per_pupil": 7051.411487276592,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.34
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 6.01
+        }
+      ]
+    },
+    {
+      "id": "61",
+      "code": 61,
+      "node_id": null,
+      "name": {
+        "en": "Mažeikiai District Municipality",
+        "lt": "Mažeikių rajono savivaldybė"
+      },
+      "short": {
+        "en": "Mažeikiai District",
+        "lt": "Mažeikių r."
+      },
+      "index": {
+        "score": 73.13666192117844,
+        "rank": 16,
+        "context": 0.9542783098981722,
+        "parts": {
+          "strategic_leadership": 72.46464012869593,
+          "inclusion": 76.91843951248843,
+          "teaching_staff": 71.61604802842481,
+          "learning_outcomes": 69.99264211569088
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 5931,
+      "schools": 16,
+      "funding_per_pupil": 4905.453359362054,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.86
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.35
+        }
+      ]
+    },
+    {
+      "id": "62",
+      "code": 62,
+      "node_id": null,
+      "name": {
+        "en": "Molėtai District Municipality",
+        "lt": "Molėtų rajono savivaldybė"
+      },
+      "short": {
+        "en": "Molėtai District",
+        "lt": "Molėtų r."
+      },
+      "index": {
+        "score": 76.55454685727693,
+        "rank": 6,
+        "context": 1.002637629237696,
+        "parts": {
+          "strategic_leadership": 72.82614316034912,
+          "inclusion": 81.08232492809633,
+          "teaching_staff": 72.40166867022661,
+          "learning_outcomes": 79.50836348348984
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1405,
+      "schools": 5,
+      "funding_per_pupil": 5880.281486521582,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.25
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.88
+        }
+      ]
+    },
+    {
+      "id": "63",
+      "code": 63,
+      "node_id": null,
+      "name": {
+        "en": "Pagėgiai Municipality",
+        "lt": "Pagėgių savivaldybė"
+      },
+      "short": {
+        "en": "Pagėgiai",
+        "lt": "Pagėgių"
+      },
+      "index": {
+        "score": 69.3217922543366,
+        "rank": 42,
+        "context": 0.9793162214339676,
+        "parts": {
+          "strategic_leadership": 78.34235886179208,
+          "inclusion": 66.10062177004619,
+          "teaching_staff": 70.90256851433612,
+          "learning_outcomes": 59.04192180958944
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 623,
+      "schools": 2,
+      "funding_per_pupil": 5659.899338886164,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.0
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.12
+        }
+      ]
+    },
+    {
+      "id": "65",
+      "code": 65,
+      "node_id": null,
+      "name": {
+        "en": "Pakruojis District Municipality",
+        "lt": "Pakruojo rajono savivaldybė"
+      },
+      "short": {
+        "en": "Pakruojis District",
+        "lt": "Pakruojo r."
+      },
+      "index": {
+        "score": 61.85827408321682,
+        "rank": 60,
+        "context": 0.9648805846181396,
+        "parts": {
+          "strategic_leadership": 60.633650652868056,
+          "inclusion": 66.12292569868517,
+          "teaching_staff": 57.9986205843181,
+          "learning_outcomes": 61.15788530443616
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1472,
+      "schools": 6,
+      "funding_per_pupil": 7628.252699466488,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.29
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 4.91
+        }
+      ]
+    },
+    {
+      "id": "66",
+      "code": 66,
+      "node_id": null,
+      "name": {
+        "en": "Panevėžys District Municipality",
+        "lt": "Panevėžio rajono savivaldybė"
+      },
+      "short": {
+        "en": "Panevėžys District",
+        "lt": "Panevėžio r."
+      },
+      "index": {
+        "score": 72.07995132063289,
+        "rank": 23,
+        "context": 1.0506978269635898,
+        "parts": {
+          "strategic_leadership": 74.43449675552911,
+          "inclusion": 72.06840730034251,
+          "teaching_staff": 68.01000970978771,
+          "learning_outcomes": 72.6353908095693
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2761,
+      "schools": 11,
+      "funding_per_pupil": 7621.652553283712,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.76
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.03
+        }
+      ]
+    },
+    {
+      "id": "67",
+      "code": 67,
+      "node_id": null,
+      "name": {
+        "en": "Pasvalys District Municipality",
+        "lt": "Pasvalio rajono savivaldybė"
+      },
+      "short": {
+        "en": "Pasvalys District",
+        "lt": "Pasvalio r."
+      },
+      "index": {
+        "score": 75.1503673582491,
+        "rank": 10,
+        "context": 1.0916796585160051,
+        "parts": {
+          "strategic_leadership": 77.95453564730991,
+          "inclusion": 68.23308846901782,
+          "teaching_staff": 73.18470080990221,
+          "learning_outcomes": 83.28569980685175
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2232,
+      "schools": 8,
+      "funding_per_pupil": 6485.201414573444,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.26
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.72
+        }
+      ]
+    },
+    {
+      "id": "68",
+      "code": 68,
+      "node_id": null,
+      "name": {
+        "en": "Plungė District Municipality",
+        "lt": "Plungės rajono savivaldybė"
+      },
+      "short": {
+        "en": "Plungė District",
+        "lt": "Plungės r."
+      },
+      "index": {
+        "score": 69.08650968045016,
+        "rank": 43,
+        "context": 0.946846062259807,
+        "parts": {
+          "strategic_leadership": 67.18735025008479,
+          "inclusion": 68.85436172100704,
+          "teaching_staff": 70.40162928255623,
+          "learning_outcomes": 70.96835116305682
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 4055,
+      "schools": 8,
+      "funding_per_pupil": 4639.558750204979,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.18
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.85
+        }
+      ]
+    },
+    {
+      "id": "69",
+      "code": 69,
+      "node_id": null,
+      "name": {
+        "en": "Prienai District Municipality",
+        "lt": "Prienų rajono savivaldybė"
+      },
+      "short": {
+        "en": "Prienai District",
+        "lt": "Prienų r."
+      },
+      "index": {
+        "score": 70.071920816878,
+        "rank": 36,
+        "context": 0.9021817340550866,
+        "parts": {
+          "strategic_leadership": 69.520936191546,
+          "inclusion": 75.67271272572198,
+          "teaching_staff": 62.75736914029666,
+          "learning_outcomes": 69.81176156819141
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2455,
+      "schools": 6,
+      "funding_per_pupil": 6761.239684313126,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.37
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.83
+        }
+      ]
+    },
+    {
+      "id": "71",
+      "code": 71,
+      "node_id": null,
+      "name": {
+        "en": "Radviliškis District Municipality",
+        "lt": "Radviliškio rajono savivaldybė"
+      },
+      "short": {
+        "en": "Radviliškis District",
+        "lt": "Radviliškio r."
+      },
+      "index": {
+        "score": 75.07396014924767,
+        "rank": 11,
+        "context": 1.0864962833160876,
+        "parts": {
+          "strategic_leadership": 79.28794823890271,
+          "inclusion": 72.72848779805186,
+          "teaching_staff": 72.56280714932517,
+          "learning_outcomes": 74.78233954148133
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 3348,
+      "schools": 11,
+      "funding_per_pupil": 6314.469052430511,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.98
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.33
+        }
+      ]
+    },
+    {
+      "id": "72",
+      "code": 72,
+      "node_id": null,
+      "name": {
+        "en": "Raseiniai District Municipality",
+        "lt": "Raseinių rajono savivaldybė"
+      },
+      "short": {
+        "en": "Raseiniai District",
+        "lt": "Raseinių r."
+      },
+      "index": {
+        "score": 74.2029178395405,
+        "rank": 14,
+        "context": 1.0892654730162543,
+        "parts": {
+          "strategic_leadership": 74.14939460760974,
+          "inclusion": 71.36048476241913,
+          "teaching_staff": 75.5417726744307,
+          "learning_outcomes": 77.20799746822848
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2951,
+      "schools": 10,
+      "funding_per_pupil": 6321.839779728473,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.23
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.14
+        }
+      ]
+    },
+    {
+      "id": "73",
+      "code": 73,
+      "node_id": null,
+      "name": {
+        "en": "Rokiškis District Municipality",
+        "lt": "Rokiškio rajono savivaldybė"
+      },
+      "short": {
+        "en": "Rokiškis District",
+        "lt": "Rokiškio r."
+      },
+      "index": {
+        "score": 71.16186101719542,
+        "rank": 28,
+        "context": 1.1028640849636262,
+        "parts": {
+          "strategic_leadership": 64.9426545586328,
+          "inclusion": 74.32715966779425,
+          "teaching_staff": 71.95833293701254,
+          "learning_outcomes": 74.94625080932397
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2438,
+      "schools": 9,
+      "funding_per_pupil": 6669.123717173046,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.61
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.1
+        }
+      ]
+    },
+    {
+      "id": "74",
+      "code": 74,
+      "node_id": null,
+      "name": {
+        "en": "Rietavas Municipality",
+        "lt": "Rietavo savivaldybė"
+      },
+      "short": {
+        "en": "Rietavas",
+        "lt": "Rietavo"
+      },
+      "index": {
+        "score": 71.79039054546948,
+        "rank": 26,
+        "context": 0.9450956881265573,
+        "parts": {
+          "strategic_leadership": 66.47496087264494,
+          "inclusion": 72.94847973533864,
+          "teaching_staff": 82.14518569482976,
+          "learning_outcomes": 67.67160612054224
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 801,
+      "schools": 2,
+      "funding_per_pupil": 5633.67671650516,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.02
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.53
+        }
+      ]
+    },
+    {
+      "id": "75",
+      "code": 75,
+      "node_id": null,
+      "name": {
+        "en": "Skuodas District Municipality",
+        "lt": "Skuodo rajono savivaldybė"
+      },
+      "short": {
+        "en": "Skuodas District",
+        "lt": "Skuodo r."
+      },
+      "index": {
+        "score": 66.93912958559646,
+        "rank": 53,
+        "context": 0.8865728905707598,
+        "parts": {
+          "strategic_leadership": 67.82234884940056,
+          "inclusion": 63.36818864219773,
+          "teaching_staff": 74.47769519075293,
+          "learning_outcomes": 63.43214649983195
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1409,
+      "schools": 4,
+      "funding_per_pupil": 5740.6526840424585,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.16
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.25
+        }
+      ]
+    },
+    {
+      "id": "77",
+      "code": 77,
+      "node_id": null,
+      "name": {
+        "en": "Tauragė District Municipality",
+        "lt": "Tauragės rajono savivaldybė"
+      },
+      "short": {
+        "en": "Tauragė District",
+        "lt": "Tauragės r."
+      },
+      "index": {
+        "score": 79.15447635143137,
+        "rank": 1,
+        "context": 0.9650524907132874,
+        "parts": {
+          "strategic_leadership": 90.58741393437384,
+          "inclusion": 73.31477011345841,
+          "teaching_staff": 79.37558627619495,
+          "learning_outcomes": 70.54351940921354
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 4390,
+      "schools": 11,
+      "funding_per_pupil": 4492.307976478605,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.08
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.47
+        }
+      ]
+    },
+    {
+      "id": "78",
+      "code": 78,
+      "node_id": null,
+      "name": {
+        "en": "Telšiai District Municipality",
+        "lt": "Telšių rajono savivaldybė"
+      },
+      "short": {
+        "en": "Telšiai District",
+        "lt": "Telšių r."
+      },
+      "index": {
+        "score": 66.71711336912014,
+        "rank": 55,
+        "context": 0.9554671265081577,
+        "parts": {
+          "strategic_leadership": 65.03221130603711,
+          "inclusion": 65.29758217495777,
+          "teaching_staff": 70.23847530540998,
+          "learning_outcomes": 67.85240131869844
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 4207,
+      "schools": 12,
+      "funding_per_pupil": 5147.053188303966,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.15
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.5
+        }
+      ]
+    },
+    {
+      "id": "79",
+      "code": 79,
+      "node_id": null,
+      "name": {
+        "en": "Trakai District Municipality",
+        "lt": "Trakų rajono savivaldybė"
+      },
+      "short": {
+        "en": "Trakai District",
+        "lt": "Trakų r."
+      },
+      "index": {
+        "score": 64.76122110804441,
+        "rank": 59,
+        "context": 0.9507030300190132,
+        "parts": {
+          "strategic_leadership": 73.94219817316169,
+          "inclusion": 56.06848431053093,
+          "teaching_staff": 63.708148007055996,
+          "learning_outcomes": 65.08193380762714
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 3975,
+      "schools": 15,
+      "funding_per_pupil": 6518.159812595533,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.01
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.95768253968254
+        }
+      ]
+    },
+    {
+      "id": "81",
+      "code": 81,
+      "node_id": null,
+      "name": {
+        "en": "Ukmergė District Municipality",
+        "lt": "Ukmergės rajono savivaldybė"
+      },
+      "short": {
+        "en": "Ukmergė District",
+        "lt": "Ukmergės r."
+      },
+      "index": {
+        "score": 72.80677609990947,
+        "rank": 19,
+        "context": 0.9883216193571768,
+        "parts": {
+          "strategic_leadership": 79.30924503303001,
+          "inclusion": 66.7387185649491,
+          "teaching_staff": 71.04843168041833,
+          "learning_outcomes": 73.91350342216035
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 3566,
+      "schools": 15,
+      "funding_per_pupil": 6018.80637190753,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.12
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.4
+        }
+      ]
+    },
+    {
+      "id": "82",
+      "code": 82,
+      "node_id": null,
+      "name": {
+        "en": "Utena District Municipality",
+        "lt": "Utenos rajono savivaldybė"
+      },
+      "short": {
+        "en": "Utena District",
+        "lt": "Utenos r."
+      },
+      "index": {
+        "score": 71.11918496946353,
+        "rank": 29,
+        "context": 0.8896690784492352,
+        "parts": {
+          "strategic_leadership": 71.59838365392395,
+          "inclusion": 74.83859604271808,
+          "teaching_staff": 70.94150135299368,
+          "learning_outcomes": 64.99895394936098
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 3653,
+      "schools": 9,
+      "funding_per_pupil": 4875.2359581860865,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.07
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 4.92
+        }
+      ]
+    },
+    {
+      "id": "84",
+      "code": 84,
+      "node_id": null,
+      "name": {
+        "en": "Šakiai District Municipality",
+        "lt": "Šakių rajono savivaldybė"
+      },
+      "short": {
+        "en": "Šakiai District",
+        "lt": "Šakių r."
+      },
+      "index": {
+        "score": 67.31624316689116,
+        "rank": 50,
+        "context": 0.8929918603858386,
+        "parts": {
+          "strategic_leadership": 69.6151956667392,
+          "inclusion": 66.4334596339647,
+          "teaching_staff": 67.25242365340175,
+          "learning_outcomes": 65.2558092299981
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2575,
+      "schools": 9,
+      "funding_per_pupil": 7372.261861222541,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.52
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.93
+        }
+      ]
+    },
+    {
+      "id": "85",
+      "code": 85,
+      "node_id": null,
+      "name": {
+        "en": "Šalčininkai District Municipality",
+        "lt": "Šalčininkų rajono savivaldybė"
+      },
+      "short": {
+        "en": "Šalčininkai District",
+        "lt": "Šalčininkų r."
+      },
+      "index": {
+        "score": 64.8620607949355,
+        "rank": 58,
+        "context": 1.0514514106992128,
+        "parts": {
+          "strategic_leadership": 66.84152470754633,
+          "inclusion": 62.89626268561896,
+          "teaching_staff": 64.22955610946624,
+          "learning_outcomes": 65.4740667754633
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 3514,
+      "schools": 19,
+      "funding_per_pupil": 7340.742274522781,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.55
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 6.203156146179403
+        }
+      ]
+    },
+    {
+      "id": "86",
+      "code": 86,
+      "node_id": null,
+      "name": {
+        "en": "Švenčionys District Municipality",
+        "lt": "Švenčionių rajono savivaldybė"
+      },
+      "short": {
+        "en": "Švenčionys District",
+        "lt": "Švenčionių r."
+      },
+      "index": {
+        "score": 67.53470677186824,
+        "rank": 49,
+        "context": 1.0403253210757837,
+        "parts": {
+          "strategic_leadership": 69.80365137180932,
+          "inclusion": 68.57291302261355,
+          "teaching_staff": 71.13544920082784,
+          "learning_outcomes": 58.9732380668791
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2032,
+      "schools": 4,
+      "funding_per_pupil": 6225.382473972276,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.400000000000001
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.03
+        }
+      ]
+    },
+    {
+      "id": "87",
+      "code": 87,
+      "node_id": null,
+      "name": {
+        "en": "Šilalė District Municipality",
+        "lt": "Šilalės rajono savivaldybė"
+      },
+      "short": {
+        "en": "Šilalė District",
+        "lt": "Šilalės r."
+      },
+      "index": {
+        "score": 66.64316106221116,
+        "rank": 56,
+        "context": 0.9787119824104519,
+        "parts": {
+          "strategic_leadership": 65.4663526699518,
+          "inclusion": 64.4216067510642,
+          "teaching_staff": 72.2263372610136,
+          "learning_outcomes": 66.15752891851814
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2421,
+      "schools": 7,
+      "funding_per_pupil": 5489.890384157299,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.49
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.779999999999999
+        }
+      ]
+    },
+    {
+      "id": "88",
+      "code": 88,
+      "node_id": null,
+      "name": {
+        "en": "Šilutė District Municipality",
+        "lt": "Šilutės rajono savivaldybė"
+      },
+      "short": {
+        "en": "Šilutė District",
+        "lt": "Šilutės r."
+      },
+      "index": {
+        "score": 70.21429883140854,
+        "rank": 35,
+        "context": 1.0032795281181264,
+        "parts": {
+          "strategic_leadership": 66.83737198051048,
+          "inclusion": 69.50540285018393,
+          "teaching_staff": 70.70403827695829,
+          "learning_outcomes": 75.85329363404281
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 4406,
+      "schools": 16,
+      "funding_per_pupil": 5948.830823464789,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.170000000000001
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.97
+        }
+      ]
+    },
+    {
+      "id": "89",
+      "code": 89,
+      "node_id": null,
+      "name": {
+        "en": "Širvintos District Municipality",
+        "lt": "Širvintų rajono savivaldybė"
+      },
+      "short": {
+        "en": "Širvintos District",
+        "lt": "Širvintų r."
+      },
+      "index": {
+        "score": 69.58438749453853,
+        "rank": 39,
+        "context": 0.9867456949888072,
+        "parts": {
+          "strategic_leadership": 73.37577743831103,
+          "inclusion": 71.86913727605126,
+          "teaching_staff": 56.759183208445016,
+          "learning_outcomes": 73.29538219270424
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 1480,
+      "schools": 5,
+      "funding_per_pupil": 5062.532066980587,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 5.63
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.45
+        }
+      ]
+    },
+    {
+      "id": "91",
+      "code": 91,
+      "node_id": null,
+      "name": {
+        "en": "Šiauliai District Municipality",
+        "lt": "Šiaulių rajono savivaldybė"
+      },
+      "short": {
+        "en": "Šiauliai District",
+        "lt": "Šiaulių r."
+      },
+      "index": {
+        "score": 72.1061728989122,
+        "rank": 22,
+        "context": 0.9735150996588692,
+        "parts": {
+          "strategic_leadership": 76.0300698262828,
+          "inclusion": 72.3221708142285,
+          "teaching_staff": 69.1531187686996,
+          "learning_outcomes": 68.8493847650945
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 3377,
+      "schools": 13,
+      "funding_per_pupil": 6904.85580650938,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.09
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.62
+        }
+      ]
+    },
+    {
+      "id": "94",
+      "code": 94,
+      "node_id": null,
+      "name": {
+        "en": "Jurbarkas District Municipality",
+        "lt": "Jurbarko rajono savivaldybė"
+      },
+      "short": {
+        "en": "Jurbarkas District",
+        "lt": "Jurbarko r."
+      },
+      "index": {
+        "score": 67.12177922225482,
+        "rank": 52,
+        "context": 1.016829774076281,
+        "parts": {
+          "strategic_leadership": 61.94165270033749,
+          "inclusion": 67.40524195819796,
+          "teaching_staff": 68.97463177263823,
+          "learning_outcomes": 72.61392235083265
+        },
+        "weights": {
+          "strategic_leadership": 0.3,
+          "inclusion": 0.3,
+          "teaching_staff": 0.2,
+          "learning_outcomes": 0.2
+        }
+      },
+      "pupils": 2212,
+      "schools": 9,
+      "funding_per_pupil": 6385.62205852329,
+      "funding_school_year": "2024-2025",
+      "exams": [
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Lithuanian language",
+            "lt": "Lietuvių kalba"
+          },
+          "year": 2026,
+          "average": 6.06
+        },
+        {
+          "exam": "PUPP",
+          "subject": {
+            "en": "Mathematics",
+            "lt": "Matematika"
+          },
+          "year": 2026,
+          "average": 5.460000000000001
+        }
+      ]
+    }
+  ]
+}
