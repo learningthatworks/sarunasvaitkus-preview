@@ -1,0 +1,171 @@
+{
+  "schema_version": "3.1.0",
+  "updated_at": "2026-11-16",
+  "title": {
+    "en": "Who decides about a school",
+    "lt": "Kas sprendžia dėl mokyklos"
+  },
+  "intro": {
+    "en": "A municipal school answers to several levels of power. Each step below cites the Law on Education.",
+    "lt": "Savivaldybės mokykla priklauso nuo kelių valdžios lygių. Kiekvienas žingsnis remiasi Švietimo įstatymu."
+  },
+  "document": {
+    "name": {
+      "en": "Law on Education of the Republic of Lithuania",
+      "lt": "Lietuvos Respublikos švietimo įstatymas"
+    },
+    "short": {
+      "en": "Education Law",
+      "lt": "Švietimo įst."
+    },
+    "url": "https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.1480/asr",
+    "edition": "2026-09-01"
+  },
+  "steps": [
+    {
+      "id": "seimas",
+      "node": "seimas",
+      "who": {
+        "en": "Seimas",
+        "lt": "Seimas"
+      },
+      "does": {
+        "en": "Sets the direction of education policy. It does this by passing laws and approving the State Progress Strategy.",
+        "lt": "Nustato švietimo politikos vystymosi kryptis, priimdamas įstatymus ir tvirtindamas Valstybės pažangos strategiją."
+      },
+      "basis": [
+        {
+          "art": "54",
+          "part": "2"
+        }
+      ]
+    },
+    {
+      "id": "gov",
+      "node": "gov",
+      "who": {
+        "en": "Government",
+        "lt": "Vyriausybė"
+      },
+      "does": {
+        "en": "Sets education goals in the National Progress Plan. It also approves the rules for calculating and sharing out teaching funds.",
+        "lt": "Nacionaliniame pažangos plane nustato švietimo tikslus. Tvirtina aprašus, pagal kuriuos apskaičiuojamos ir paskirstomos mokymo lėšos."
+      },
+      "basis": [
+        {
+          "art": "55",
+          "point": "1"
+        },
+        {
+          "art": "67",
+          "part": "1"
+        }
+      ],
+      "metric": "funding"
+    },
+    {
+      "id": "minister",
+      "node": "min-edu",
+      "who": {
+        "en": "Minister of Education, Science and Sport",
+        "lt": "Švietimo, mokslo ir sporto ministras"
+      },
+      "does": {
+        "en": "Approves the general teaching plans every two years. Pupils' tests and exams follow the general curricula the minister approves.",
+        "lt": "Kas dvejus metus tvirtina bendruosius ugdymo planus. Mokinių pasiekimų patikrinimai vyksta pagal ministro tvirtinamas bendrąsias programas."
+      },
+      "basis": [
+        {
+          "art": "56",
+          "part": "2",
+          "point": "1"
+        },
+        {
+          "art": "38",
+          "part": "4"
+        }
+      ],
+      "metric": "exam"
+    },
+    {
+      "id": "council",
+      "who": {
+        "en": "Municipal council",
+        "lt": "Savivaldybės taryba"
+      },
+      "does": {
+        "en": "Shapes the network of schools in its municipality, from pre-school to upper secondary. The law calls it the municipality's representative institution.",
+        "lt": "Formuoja savivaldybės mokyklų tinklą nuo ikimokyklinio iki vidurinio ugdymo. Įstatyme ji vadinama savivaldybės atstovaujamąja institucija."
+      },
+      "basis": [
+        {
+          "art": "58",
+          "part": "1",
+          "point": "3"
+        }
+      ],
+      "metric": "pupils"
+    },
+    {
+      "id": "mayor",
+      "who": {
+        "en": "Mayor",
+        "lt": "Meras"
+      },
+      "does": {
+        "en": "Appoints the head of a municipal budget-funded school for five years after a public competition, and dismisses them.",
+        "lt": "Viešo konkurso būdu penkeriems metams skiria savivaldybės biudžetinės mokyklos vadovą ir jį atleidžia."
+      },
+      "basis": [
+        {
+          "art": "59",
+          "part": "1"
+        }
+      ]
+    },
+    {
+      "id": "money",
+      "who": {
+        "en": "State budget and the school's owner",
+        "lt": "Valstybės biudžetas ir mokyklos savininkas"
+      },
+      "does": {
+        "en": "Teaching funds are allocated per class and per pupil. Upkeep funds come from the institution that holds the owner's rights, which for a municipal school is the municipality.",
+        "lt": "Mokymo lėšos skiriamos klasei ir mokiniui. Ūkio lėšas skiria savininko teises įgyvendinanti institucija, o savivaldybės mokyklos savininkė yra savivaldybė."
+      },
+      "basis": [
+        {
+          "art": "67",
+          "part": "1"
+        },
+        {
+          "art": "67",
+          "part": "3"
+        }
+      ],
+      "metric": "funding"
+    },
+    {
+      "id": "school",
+      "who": {
+        "en": "School head and school council",
+        "lt": "Mokyklos vadovas ir mokyklos taryba"
+      },
+      "does": {
+        "en": "The head runs the school and answers for its results. The school council is its highest self-governing body, made up of pupils, teachers, parents and the local community.",
+        "lt": "Vadovas organizuoja mokyklos veiklą ir atsako už jos rezultatus. Mokyklos taryba yra aukščiausioji mokyklos savivaldos institucija, sudaryta iš mokinių, mokytojų, tėvų ir vietos bendruomenės atstovų."
+      },
+      "basis": [
+        {
+          "art": "59",
+          "part": "8",
+          "point": "1"
+        },
+        {
+          "art": "60",
+          "part": "3"
+        }
+      ]
+    }
+  ]
+}

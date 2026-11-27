@@ -1,0 +1,31 @@
+{
+  "name": "Sarunas Vaitkus",
+  "short_name": "Vaitkus",
+  "description": "eLearning, instructional design, and web design. Learning experiences and the tools that make them work.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "display": "standalone",
+  "background_color": "#F8F9FA",
+  "theme_color": "#F8F9FA",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+import{t as e}from"./index-DMBqJ_cI.js";import{i as t,t as n}from"./publicSchools-Cz182BHJ.js";var r=null;function i(){return t()?Promise.resolve():(r||=e(()=>import(`./public-schools-snapshot-DFAQX7zr.js`).then(e=>{let t=e.default??e;n(t)}),[],import.meta.url),r)}export{i as ensurePublicSchools};
